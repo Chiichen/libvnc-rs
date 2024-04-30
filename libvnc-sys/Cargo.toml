@@ -1,0 +1,21 @@
+[package]
+name = "libvnc-sys"
+authors = ["Chiichen <chiichen@qq.com>"]
+version = "0.1.0"
+edition = "2021"
+keywords = ["vnc", "libvnc", "vncserver", "binding"]
+license = "LGPL 3.0"
+readme = "README.md"
+
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.69.4"
+cc = "1.0.95"
+pkg-config = "0.3.30"
+
+[features]
+default = ["pkg"]
+source = []
+pkg = []

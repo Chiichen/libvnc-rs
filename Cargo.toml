@@ -1,0 +1,6 @@
+[workspace]
+members = ["libvnc", "libvnc-sys"]
+resolver = "2"
+
+[patch.crates-io]
+libvnc-sys = { path = "./libvnc-sys" }
