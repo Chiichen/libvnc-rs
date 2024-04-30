@@ -2,11 +2,11 @@
 
 #[repr(C)]
 #[derive(Default)]
-pub struct __IncompleteArrayField<T>(::std::marker::PhantomData<T>, [T; 0]);
+pub struct __IncompleteArrayField<T>(::core::marker::PhantomData<T>, [T; 0]);
 impl<T> __IncompleteArrayField<T> {
     #[inline]
     pub const fn new() -> Self {
-        __IncompleteArrayField(::std::marker::PhantomData, [])
+        __IncompleteArrayField(::core::marker::PhantomData, [])
     }
     #[inline]
     pub fn as_ptr(&self) -> *const T {
@@ -18,15 +18,15 @@ impl<T> __IncompleteArrayField<T> {
     }
     #[inline]
     pub unsafe fn as_slice(&self, len: usize) -> &[T] {
-        ::std::slice::from_raw_parts(self.as_ptr(), len)
+        ::core::slice::from_raw_parts(self.as_ptr(), len)
     }
     #[inline]
     pub unsafe fn as_mut_slice(&mut self, len: usize) -> &mut [T] {
-        ::std::slice::from_raw_parts_mut(self.as_mut_ptr(), len)
+        ::core::slice::from_raw_parts_mut(self.as_mut_ptr(), len)
     }
 }
-impl<T> ::std::fmt::Debug for __IncompleteArrayField<T> {
-    fn fmt(&self, fmt: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+impl<T> ::core::fmt::Debug for __IncompleteArrayField<T> {
+    fn fmt(&self, fmt: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         fmt.write_str("__IncompleteArrayField")
     }
 }
@@ -1191,19 +1191,691 @@ pub const VNC_ENCODE_ZLIB_MIN_COMP_SIZE: u32 = 17;
 pub const ZLIB_MAX_RECT_SIZE: u32 = 32768;
 pub const TIGHT_DEFAULT_COMPRESSION: u32 = 6;
 pub const TURBO_DEFAULT_SUBSAMP: u32 = 0;
+pub const XK_VoidSymbol: u32 = 16777215;
+pub const XK_BackSpace: u32 = 65288;
+pub const XK_Tab: u32 = 65289;
+pub const XK_Linefeed: u32 = 65290;
+pub const XK_Clear: u32 = 65291;
+pub const XK_Return: u32 = 65293;
+pub const XK_Pause: u32 = 65299;
+pub const XK_Scroll_Lock: u32 = 65300;
+pub const XK_Sys_Req: u32 = 65301;
+pub const XK_Escape: u32 = 65307;
+pub const XK_Delete: u32 = 65535;
+pub const XK_Multi_key: u32 = 65312;
+pub const XK_SingleCandidate: u32 = 65340;
+pub const XK_MultipleCandidate: u32 = 65341;
+pub const XK_PreviousCandidate: u32 = 65342;
+pub const XK_Kanji: u32 = 65313;
+pub const XK_Muhenkan: u32 = 65314;
+pub const XK_Henkan_Mode: u32 = 65315;
+pub const XK_Henkan: u32 = 65315;
+pub const XK_Romaji: u32 = 65316;
+pub const XK_Hiragana: u32 = 65317;
+pub const XK_Katakana: u32 = 65318;
+pub const XK_Hiragana_Katakana: u32 = 65319;
+pub const XK_Zenkaku: u32 = 65320;
+pub const XK_Hankaku: u32 = 65321;
+pub const XK_Zenkaku_Hankaku: u32 = 65322;
+pub const XK_Touroku: u32 = 65323;
+pub const XK_Massyo: u32 = 65324;
+pub const XK_Kana_Lock: u32 = 65325;
+pub const XK_Kana_Shift: u32 = 65326;
+pub const XK_Eisu_Shift: u32 = 65327;
+pub const XK_Eisu_toggle: u32 = 65328;
+pub const XK_Zen_Koho: u32 = 65341;
+pub const XK_Mae_Koho: u32 = 65342;
+pub const XK_Home: u32 = 65360;
+pub const XK_Left: u32 = 65361;
+pub const XK_Up: u32 = 65362;
+pub const XK_Right: u32 = 65363;
+pub const XK_Down: u32 = 65364;
+pub const XK_Prior: u32 = 65365;
+pub const XK_Page_Up: u32 = 65365;
+pub const XK_Next: u32 = 65366;
+pub const XK_Page_Down: u32 = 65366;
+pub const XK_End: u32 = 65367;
+pub const XK_Begin: u32 = 65368;
+pub const XK_Select: u32 = 65376;
+pub const XK_Print: u32 = 65377;
+pub const XK_Execute: u32 = 65378;
+pub const XK_Insert: u32 = 65379;
+pub const XK_Undo: u32 = 65381;
+pub const XK_Redo: u32 = 65382;
+pub const XK_Menu: u32 = 65383;
+pub const XK_Find: u32 = 65384;
+pub const XK_Cancel: u32 = 65385;
+pub const XK_Help: u32 = 65386;
+pub const XK_Break: u32 = 65387;
+pub const XK_Mode_switch: u32 = 65406;
+pub const XK_script_switch: u32 = 65406;
+pub const XK_Num_Lock: u32 = 65407;
+pub const XK_KP_Space: u32 = 65408;
+pub const XK_KP_Tab: u32 = 65417;
+pub const XK_KP_Enter: u32 = 65421;
+pub const XK_KP_F1: u32 = 65425;
+pub const XK_KP_F2: u32 = 65426;
+pub const XK_KP_F3: u32 = 65427;
+pub const XK_KP_F4: u32 = 65428;
+pub const XK_KP_Home: u32 = 65429;
+pub const XK_KP_Left: u32 = 65430;
+pub const XK_KP_Up: u32 = 65431;
+pub const XK_KP_Right: u32 = 65432;
+pub const XK_KP_Down: u32 = 65433;
+pub const XK_KP_Prior: u32 = 65434;
+pub const XK_KP_Page_Up: u32 = 65434;
+pub const XK_KP_Next: u32 = 65435;
+pub const XK_KP_Page_Down: u32 = 65435;
+pub const XK_KP_End: u32 = 65436;
+pub const XK_KP_Begin: u32 = 65437;
+pub const XK_KP_Insert: u32 = 65438;
+pub const XK_KP_Delete: u32 = 65439;
+pub const XK_KP_Equal: u32 = 65469;
+pub const XK_KP_Multiply: u32 = 65450;
+pub const XK_KP_Add: u32 = 65451;
+pub const XK_KP_Separator: u32 = 65452;
+pub const XK_KP_Subtract: u32 = 65453;
+pub const XK_KP_Decimal: u32 = 65454;
+pub const XK_KP_Divide: u32 = 65455;
+pub const XK_KP_0: u32 = 65456;
+pub const XK_KP_1: u32 = 65457;
+pub const XK_KP_2: u32 = 65458;
+pub const XK_KP_3: u32 = 65459;
+pub const XK_KP_4: u32 = 65460;
+pub const XK_KP_5: u32 = 65461;
+pub const XK_KP_6: u32 = 65462;
+pub const XK_KP_7: u32 = 65463;
+pub const XK_KP_8: u32 = 65464;
+pub const XK_KP_9: u32 = 65465;
+pub const XK_F1: u32 = 65470;
+pub const XK_F2: u32 = 65471;
+pub const XK_F3: u32 = 65472;
+pub const XK_F4: u32 = 65473;
+pub const XK_F5: u32 = 65474;
+pub const XK_F6: u32 = 65475;
+pub const XK_F7: u32 = 65476;
+pub const XK_F8: u32 = 65477;
+pub const XK_F9: u32 = 65478;
+pub const XK_F10: u32 = 65479;
+pub const XK_F11: u32 = 65480;
+pub const XK_L1: u32 = 65480;
+pub const XK_F12: u32 = 65481;
+pub const XK_L2: u32 = 65481;
+pub const XK_F13: u32 = 65482;
+pub const XK_L3: u32 = 65482;
+pub const XK_F14: u32 = 65483;
+pub const XK_L4: u32 = 65483;
+pub const XK_F15: u32 = 65484;
+pub const XK_L5: u32 = 65484;
+pub const XK_F16: u32 = 65485;
+pub const XK_L6: u32 = 65485;
+pub const XK_F17: u32 = 65486;
+pub const XK_L7: u32 = 65486;
+pub const XK_F18: u32 = 65487;
+pub const XK_L8: u32 = 65487;
+pub const XK_F19: u32 = 65488;
+pub const XK_L9: u32 = 65488;
+pub const XK_F20: u32 = 65489;
+pub const XK_L10: u32 = 65489;
+pub const XK_F21: u32 = 65490;
+pub const XK_R1: u32 = 65490;
+pub const XK_F22: u32 = 65491;
+pub const XK_R2: u32 = 65491;
+pub const XK_F23: u32 = 65492;
+pub const XK_R3: u32 = 65492;
+pub const XK_F24: u32 = 65493;
+pub const XK_R4: u32 = 65493;
+pub const XK_F25: u32 = 65494;
+pub const XK_R5: u32 = 65494;
+pub const XK_F26: u32 = 65495;
+pub const XK_R6: u32 = 65495;
+pub const XK_F27: u32 = 65496;
+pub const XK_R7: u32 = 65496;
+pub const XK_F28: u32 = 65497;
+pub const XK_R8: u32 = 65497;
+pub const XK_F29: u32 = 65498;
+pub const XK_R9: u32 = 65498;
+pub const XK_F30: u32 = 65499;
+pub const XK_R10: u32 = 65499;
+pub const XK_F31: u32 = 65500;
+pub const XK_R11: u32 = 65500;
+pub const XK_F32: u32 = 65501;
+pub const XK_R12: u32 = 65501;
+pub const XK_F33: u32 = 65502;
+pub const XK_R13: u32 = 65502;
+pub const XK_F34: u32 = 65503;
+pub const XK_R14: u32 = 65503;
+pub const XK_F35: u32 = 65504;
+pub const XK_R15: u32 = 65504;
+pub const XK_Shift_L: u32 = 65505;
+pub const XK_Shift_R: u32 = 65506;
+pub const XK_Control_L: u32 = 65507;
+pub const XK_Control_R: u32 = 65508;
+pub const XK_Caps_Lock: u32 = 65509;
+pub const XK_Shift_Lock: u32 = 65510;
+pub const XK_Meta_L: u32 = 65511;
+pub const XK_Meta_R: u32 = 65512;
+pub const XK_Alt_L: u32 = 65513;
+pub const XK_Alt_R: u32 = 65514;
+pub const XK_Super_L: u32 = 65515;
+pub const XK_Super_R: u32 = 65516;
+pub const XK_Hyper_L: u32 = 65517;
+pub const XK_Hyper_R: u32 = 65518;
+pub const XK_ISO_Lock: u32 = 65025;
+pub const XK_ISO_Level2_Latch: u32 = 65026;
+pub const XK_ISO_Level3_Shift: u32 = 65027;
+pub const XK_ISO_Level3_Latch: u32 = 65028;
+pub const XK_ISO_Level3_Lock: u32 = 65029;
+pub const XK_ISO_Group_Shift: u32 = 65406;
+pub const XK_ISO_Group_Latch: u32 = 65030;
+pub const XK_ISO_Group_Lock: u32 = 65031;
+pub const XK_ISO_Next_Group: u32 = 65032;
+pub const XK_ISO_Next_Group_Lock: u32 = 65033;
+pub const XK_ISO_Prev_Group: u32 = 65034;
+pub const XK_ISO_Prev_Group_Lock: u32 = 65035;
+pub const XK_ISO_First_Group: u32 = 65036;
+pub const XK_ISO_First_Group_Lock: u32 = 65037;
+pub const XK_ISO_Last_Group: u32 = 65038;
+pub const XK_ISO_Last_Group_Lock: u32 = 65039;
+pub const XK_ISO_Left_Tab: u32 = 65056;
+pub const XK_ISO_Move_Line_Up: u32 = 65057;
+pub const XK_ISO_Move_Line_Down: u32 = 65058;
+pub const XK_ISO_Partial_Line_Up: u32 = 65059;
+pub const XK_ISO_Partial_Line_Down: u32 = 65060;
+pub const XK_ISO_Partial_Space_Left: u32 = 65061;
+pub const XK_ISO_Partial_Space_Right: u32 = 65062;
+pub const XK_ISO_Set_Margin_Left: u32 = 65063;
+pub const XK_ISO_Set_Margin_Right: u32 = 65064;
+pub const XK_ISO_Release_Margin_Left: u32 = 65065;
+pub const XK_ISO_Release_Margin_Right: u32 = 65066;
+pub const XK_ISO_Release_Both_Margins: u32 = 65067;
+pub const XK_ISO_Fast_Cursor_Left: u32 = 65068;
+pub const XK_ISO_Fast_Cursor_Right: u32 = 65069;
+pub const XK_ISO_Fast_Cursor_Up: u32 = 65070;
+pub const XK_ISO_Fast_Cursor_Down: u32 = 65071;
+pub const XK_ISO_Continuous_Underline: u32 = 65072;
+pub const XK_ISO_Discontinuous_Underline: u32 = 65073;
+pub const XK_ISO_Emphasize: u32 = 65074;
+pub const XK_ISO_Center_Object: u32 = 65075;
+pub const XK_ISO_Enter: u32 = 65076;
+pub const XK_dead_grave: u32 = 65104;
+pub const XK_dead_acute: u32 = 65105;
+pub const XK_dead_circumflex: u32 = 65106;
+pub const XK_dead_tilde: u32 = 65107;
+pub const XK_dead_macron: u32 = 65108;
+pub const XK_dead_breve: u32 = 65109;
+pub const XK_dead_abovedot: u32 = 65110;
+pub const XK_dead_diaeresis: u32 = 65111;
+pub const XK_dead_abovering: u32 = 65112;
+pub const XK_dead_doubleacute: u32 = 65113;
+pub const XK_dead_caron: u32 = 65114;
+pub const XK_dead_cedilla: u32 = 65115;
+pub const XK_dead_ogonek: u32 = 65116;
+pub const XK_dead_iota: u32 = 65117;
+pub const XK_dead_voiced_sound: u32 = 65118;
+pub const XK_dead_semivoiced_sound: u32 = 65119;
+pub const XK_dead_belowdot: u32 = 65120;
+pub const XK_First_Virtual_Screen: u32 = 65232;
+pub const XK_Prev_Virtual_Screen: u32 = 65233;
+pub const XK_Next_Virtual_Screen: u32 = 65234;
+pub const XK_Last_Virtual_Screen: u32 = 65236;
+pub const XK_Terminate_Server: u32 = 65237;
+pub const XK_AccessX_Enable: u32 = 65136;
+pub const XK_AccessX_Feedback_Enable: u32 = 65137;
+pub const XK_RepeatKeys_Enable: u32 = 65138;
+pub const XK_SlowKeys_Enable: u32 = 65139;
+pub const XK_BounceKeys_Enable: u32 = 65140;
+pub const XK_StickyKeys_Enable: u32 = 65141;
+pub const XK_MouseKeys_Enable: u32 = 65142;
+pub const XK_MouseKeys_Accel_Enable: u32 = 65143;
+pub const XK_Overlay1_Enable: u32 = 65144;
+pub const XK_Overlay2_Enable: u32 = 65145;
+pub const XK_AudibleBell_Enable: u32 = 65146;
+pub const XK_Pointer_Left: u32 = 65248;
+pub const XK_Pointer_Right: u32 = 65249;
+pub const XK_Pointer_Up: u32 = 65250;
+pub const XK_Pointer_Down: u32 = 65251;
+pub const XK_Pointer_UpLeft: u32 = 65252;
+pub const XK_Pointer_UpRight: u32 = 65253;
+pub const XK_Pointer_DownLeft: u32 = 65254;
+pub const XK_Pointer_DownRight: u32 = 65255;
+pub const XK_Pointer_Button_Dflt: u32 = 65256;
+pub const XK_Pointer_Button1: u32 = 65257;
+pub const XK_Pointer_Button2: u32 = 65258;
+pub const XK_Pointer_Button3: u32 = 65259;
+pub const XK_Pointer_Button4: u32 = 65260;
+pub const XK_Pointer_Button5: u32 = 65261;
+pub const XK_Pointer_DblClick_Dflt: u32 = 65262;
+pub const XK_Pointer_DblClick1: u32 = 65263;
+pub const XK_Pointer_DblClick2: u32 = 65264;
+pub const XK_Pointer_DblClick3: u32 = 65265;
+pub const XK_Pointer_DblClick4: u32 = 65266;
+pub const XK_Pointer_DblClick5: u32 = 65267;
+pub const XK_Pointer_Drag_Dflt: u32 = 65268;
+pub const XK_Pointer_Drag1: u32 = 65269;
+pub const XK_Pointer_Drag2: u32 = 65270;
+pub const XK_Pointer_Drag3: u32 = 65271;
+pub const XK_Pointer_Drag4: u32 = 65272;
+pub const XK_Pointer_Drag5: u32 = 65277;
+pub const XK_Pointer_EnableKeys: u32 = 65273;
+pub const XK_Pointer_Accelerate: u32 = 65274;
+pub const XK_Pointer_DfltBtnNext: u32 = 65275;
+pub const XK_Pointer_DfltBtnPrev: u32 = 65276;
+pub const XK_space: u32 = 32;
+pub const XK_exclam: u32 = 33;
+pub const XK_quotedbl: u32 = 34;
+pub const XK_numbersign: u32 = 35;
+pub const XK_dollar: u32 = 36;
+pub const XK_percent: u32 = 37;
+pub const XK_ampersand: u32 = 38;
+pub const XK_apostrophe: u32 = 39;
+pub const XK_quoteright: u32 = 39;
+pub const XK_parenleft: u32 = 40;
+pub const XK_parenright: u32 = 41;
+pub const XK_asterisk: u32 = 42;
+pub const XK_plus: u32 = 43;
+pub const XK_comma: u32 = 44;
+pub const XK_minus: u32 = 45;
+pub const XK_period: u32 = 46;
+pub const XK_slash: u32 = 47;
+pub const XK_0: u32 = 48;
+pub const XK_1: u32 = 49;
+pub const XK_2: u32 = 50;
+pub const XK_3: u32 = 51;
+pub const XK_4: u32 = 52;
+pub const XK_5: u32 = 53;
+pub const XK_6: u32 = 54;
+pub const XK_7: u32 = 55;
+pub const XK_8: u32 = 56;
+pub const XK_9: u32 = 57;
+pub const XK_colon: u32 = 58;
+pub const XK_semicolon: u32 = 59;
+pub const XK_less: u32 = 60;
+pub const XK_equal: u32 = 61;
+pub const XK_greater: u32 = 62;
+pub const XK_question: u32 = 63;
+pub const XK_at: u32 = 64;
+pub const XK_A: u32 = 65;
+pub const XK_B: u32 = 66;
+pub const XK_C: u32 = 67;
+pub const XK_D: u32 = 68;
+pub const XK_E: u32 = 69;
+pub const XK_F: u32 = 70;
+pub const XK_G: u32 = 71;
+pub const XK_H: u32 = 72;
+pub const XK_I: u32 = 73;
+pub const XK_J: u32 = 74;
+pub const XK_K: u32 = 75;
+pub const XK_L: u32 = 76;
+pub const XK_M: u32 = 77;
+pub const XK_N: u32 = 78;
+pub const XK_O: u32 = 79;
+pub const XK_P: u32 = 80;
+pub const XK_Q: u32 = 81;
+pub const XK_R: u32 = 82;
+pub const XK_S: u32 = 83;
+pub const XK_T: u32 = 84;
+pub const XK_U: u32 = 85;
+pub const XK_V: u32 = 86;
+pub const XK_W: u32 = 87;
+pub const XK_X: u32 = 88;
+pub const XK_Y: u32 = 89;
+pub const XK_Z: u32 = 90;
+pub const XK_bracketleft: u32 = 91;
+pub const XK_backslash: u32 = 92;
+pub const XK_bracketright: u32 = 93;
+pub const XK_asciicircum: u32 = 94;
+pub const XK_underscore: u32 = 95;
+pub const XK_grave: u32 = 96;
+pub const XK_quoteleft: u32 = 96;
+pub const XK_a: u32 = 97;
+pub const XK_b: u32 = 98;
+pub const XK_c: u32 = 99;
+pub const XK_d: u32 = 100;
+pub const XK_e: u32 = 101;
+pub const XK_f: u32 = 102;
+pub const XK_g: u32 = 103;
+pub const XK_h: u32 = 104;
+pub const XK_i: u32 = 105;
+pub const XK_j: u32 = 106;
+pub const XK_k: u32 = 107;
+pub const XK_l: u32 = 108;
+pub const XK_m: u32 = 109;
+pub const XK_n: u32 = 110;
+pub const XK_o: u32 = 111;
+pub const XK_p: u32 = 112;
+pub const XK_q: u32 = 113;
+pub const XK_r: u32 = 114;
+pub const XK_s: u32 = 115;
+pub const XK_t: u32 = 116;
+pub const XK_u: u32 = 117;
+pub const XK_v: u32 = 118;
+pub const XK_w: u32 = 119;
+pub const XK_x: u32 = 120;
+pub const XK_y: u32 = 121;
+pub const XK_z: u32 = 122;
+pub const XK_braceleft: u32 = 123;
+pub const XK_bar: u32 = 124;
+pub const XK_braceright: u32 = 125;
+pub const XK_asciitilde: u32 = 126;
+pub const XK_nobreakspace: u32 = 160;
+pub const XK_exclamdown: u32 = 161;
+pub const XK_cent: u32 = 162;
+pub const XK_sterling: u32 = 163;
+pub const XK_currency: u32 = 164;
+pub const XK_yen: u32 = 165;
+pub const XK_brokenbar: u32 = 166;
+pub const XK_section: u32 = 167;
+pub const XK_diaeresis: u32 = 168;
+pub const XK_copyright: u32 = 169;
+pub const XK_ordfeminine: u32 = 170;
+pub const XK_guillemotleft: u32 = 171;
+pub const XK_notsign: u32 = 172;
+pub const XK_hyphen: u32 = 173;
+pub const XK_registered: u32 = 174;
+pub const XK_macron: u32 = 175;
+pub const XK_degree: u32 = 176;
+pub const XK_plusminus: u32 = 177;
+pub const XK_twosuperior: u32 = 178;
+pub const XK_threesuperior: u32 = 179;
+pub const XK_acute: u32 = 180;
+pub const XK_mu: u32 = 181;
+pub const XK_paragraph: u32 = 182;
+pub const XK_periodcentered: u32 = 183;
+pub const XK_cedilla: u32 = 184;
+pub const XK_onesuperior: u32 = 185;
+pub const XK_masculine: u32 = 186;
+pub const XK_guillemotright: u32 = 187;
+pub const XK_onequarter: u32 = 188;
+pub const XK_onehalf: u32 = 189;
+pub const XK_threequarters: u32 = 190;
+pub const XK_questiondown: u32 = 191;
+pub const XK_Agrave: u32 = 192;
+pub const XK_Aacute: u32 = 193;
+pub const XK_Acircumflex: u32 = 194;
+pub const XK_Atilde: u32 = 195;
+pub const XK_Adiaeresis: u32 = 196;
+pub const XK_Aring: u32 = 197;
+pub const XK_AE: u32 = 198;
+pub const XK_Ccedilla: u32 = 199;
+pub const XK_Egrave: u32 = 200;
+pub const XK_Eacute: u32 = 201;
+pub const XK_Ecircumflex: u32 = 202;
+pub const XK_Ediaeresis: u32 = 203;
+pub const XK_Igrave: u32 = 204;
+pub const XK_Iacute: u32 = 205;
+pub const XK_Icircumflex: u32 = 206;
+pub const XK_Idiaeresis: u32 = 207;
+pub const XK_ETH: u32 = 208;
+pub const XK_Eth: u32 = 208;
+pub const XK_Ntilde: u32 = 209;
+pub const XK_Ograve: u32 = 210;
+pub const XK_Oacute: u32 = 211;
+pub const XK_Ocircumflex: u32 = 212;
+pub const XK_Otilde: u32 = 213;
+pub const XK_Odiaeresis: u32 = 214;
+pub const XK_multiply: u32 = 215;
+pub const XK_Ooblique: u32 = 216;
+pub const XK_Ugrave: u32 = 217;
+pub const XK_Uacute: u32 = 218;
+pub const XK_Ucircumflex: u32 = 219;
+pub const XK_Udiaeresis: u32 = 220;
+pub const XK_Yacute: u32 = 221;
+pub const XK_THORN: u32 = 222;
+pub const XK_Thorn: u32 = 222;
+pub const XK_ssharp: u32 = 223;
+pub const XK_agrave: u32 = 224;
+pub const XK_aacute: u32 = 225;
+pub const XK_acircumflex: u32 = 226;
+pub const XK_atilde: u32 = 227;
+pub const XK_adiaeresis: u32 = 228;
+pub const XK_aring: u32 = 229;
+pub const XK_ae: u32 = 230;
+pub const XK_ccedilla: u32 = 231;
+pub const XK_egrave: u32 = 232;
+pub const XK_eacute: u32 = 233;
+pub const XK_ecircumflex: u32 = 234;
+pub const XK_ediaeresis: u32 = 235;
+pub const XK_igrave: u32 = 236;
+pub const XK_iacute: u32 = 237;
+pub const XK_icircumflex: u32 = 238;
+pub const XK_idiaeresis: u32 = 239;
+pub const XK_eth: u32 = 240;
+pub const XK_ntilde: u32 = 241;
+pub const XK_ograve: u32 = 242;
+pub const XK_oacute: u32 = 243;
+pub const XK_ocircumflex: u32 = 244;
+pub const XK_otilde: u32 = 245;
+pub const XK_odiaeresis: u32 = 246;
+pub const XK_division: u32 = 247;
+pub const XK_oslash: u32 = 248;
+pub const XK_ugrave: u32 = 249;
+pub const XK_uacute: u32 = 250;
+pub const XK_ucircumflex: u32 = 251;
+pub const XK_udiaeresis: u32 = 252;
+pub const XK_yacute: u32 = 253;
+pub const XK_thorn: u32 = 254;
+pub const XK_ydiaeresis: u32 = 255;
+pub const XK_Aogonek: u32 = 417;
+pub const XK_breve: u32 = 418;
+pub const XK_Lstroke: u32 = 419;
+pub const XK_Lcaron: u32 = 421;
+pub const XK_Sacute: u32 = 422;
+pub const XK_Scaron: u32 = 425;
+pub const XK_Scedilla: u32 = 426;
+pub const XK_Tcaron: u32 = 427;
+pub const XK_Zacute: u32 = 428;
+pub const XK_Zcaron: u32 = 430;
+pub const XK_Zabovedot: u32 = 431;
+pub const XK_aogonek: u32 = 433;
+pub const XK_ogonek: u32 = 434;
+pub const XK_lstroke: u32 = 435;
+pub const XK_lcaron: u32 = 437;
+pub const XK_sacute: u32 = 438;
+pub const XK_caron: u32 = 439;
+pub const XK_scaron: u32 = 441;
+pub const XK_scedilla: u32 = 442;
+pub const XK_tcaron: u32 = 443;
+pub const XK_zacute: u32 = 444;
+pub const XK_doubleacute: u32 = 445;
+pub const XK_zcaron: u32 = 446;
+pub const XK_zabovedot: u32 = 447;
+pub const XK_Racute: u32 = 448;
+pub const XK_Abreve: u32 = 451;
+pub const XK_Lacute: u32 = 453;
+pub const XK_Cacute: u32 = 454;
+pub const XK_Ccaron: u32 = 456;
+pub const XK_Eogonek: u32 = 458;
+pub const XK_Ecaron: u32 = 460;
+pub const XK_Dcaron: u32 = 463;
+pub const XK_Dstroke: u32 = 464;
+pub const XK_Nacute: u32 = 465;
+pub const XK_Ncaron: u32 = 466;
+pub const XK_Odoubleacute: u32 = 469;
+pub const XK_Rcaron: u32 = 472;
+pub const XK_Uring: u32 = 473;
+pub const XK_Udoubleacute: u32 = 475;
+pub const XK_Tcedilla: u32 = 478;
+pub const XK_racute: u32 = 480;
+pub const XK_abreve: u32 = 483;
+pub const XK_lacute: u32 = 485;
+pub const XK_cacute: u32 = 486;
+pub const XK_ccaron: u32 = 488;
+pub const XK_eogonek: u32 = 490;
+pub const XK_ecaron: u32 = 492;
+pub const XK_dcaron: u32 = 495;
+pub const XK_dstroke: u32 = 496;
+pub const XK_nacute: u32 = 497;
+pub const XK_ncaron: u32 = 498;
+pub const XK_odoubleacute: u32 = 501;
+pub const XK_udoubleacute: u32 = 507;
+pub const XK_rcaron: u32 = 504;
+pub const XK_uring: u32 = 505;
+pub const XK_tcedilla: u32 = 510;
+pub const XK_abovedot: u32 = 511;
+pub const XK_Hstroke: u32 = 673;
+pub const XK_Hcircumflex: u32 = 678;
+pub const XK_Iabovedot: u32 = 681;
+pub const XK_Gbreve: u32 = 683;
+pub const XK_Jcircumflex: u32 = 684;
+pub const XK_hstroke: u32 = 689;
+pub const XK_hcircumflex: u32 = 694;
+pub const XK_idotless: u32 = 697;
+pub const XK_gbreve: u32 = 699;
+pub const XK_jcircumflex: u32 = 700;
+pub const XK_Cabovedot: u32 = 709;
+pub const XK_Ccircumflex: u32 = 710;
+pub const XK_Gabovedot: u32 = 725;
+pub const XK_Gcircumflex: u32 = 728;
+pub const XK_Ubreve: u32 = 733;
+pub const XK_Scircumflex: u32 = 734;
+pub const XK_cabovedot: u32 = 741;
+pub const XK_ccircumflex: u32 = 742;
+pub const XK_gabovedot: u32 = 757;
+pub const XK_gcircumflex: u32 = 760;
+pub const XK_ubreve: u32 = 765;
+pub const XK_scircumflex: u32 = 766;
+pub const XK_kra: u32 = 930;
+pub const XK_kappa: u32 = 930;
+pub const XK_Rcedilla: u32 = 931;
+pub const XK_Itilde: u32 = 933;
+pub const XK_Lcedilla: u32 = 934;
+pub const XK_Emacron: u32 = 938;
+pub const XK_Gcedilla: u32 = 939;
+pub const XK_Tslash: u32 = 940;
+pub const XK_rcedilla: u32 = 947;
+pub const XK_itilde: u32 = 949;
+pub const XK_lcedilla: u32 = 950;
+pub const XK_emacron: u32 = 954;
+pub const XK_gcedilla: u32 = 955;
+pub const XK_tslash: u32 = 956;
+pub const XK_ENG: u32 = 957;
+pub const XK_eng: u32 = 959;
+pub const XK_Amacron: u32 = 960;
+pub const XK_Iogonek: u32 = 967;
+pub const XK_Eabovedot: u32 = 972;
+pub const XK_Imacron: u32 = 975;
+pub const XK_Ncedilla: u32 = 977;
+pub const XK_Omacron: u32 = 978;
+pub const XK_Kcedilla: u32 = 979;
+pub const XK_Uogonek: u32 = 985;
+pub const XK_Utilde: u32 = 989;
+pub const XK_Umacron: u32 = 990;
+pub const XK_amacron: u32 = 992;
+pub const XK_iogonek: u32 = 999;
+pub const XK_eabovedot: u32 = 1004;
+pub const XK_imacron: u32 = 1007;
+pub const XK_ncedilla: u32 = 1009;
+pub const XK_omacron: u32 = 1010;
+pub const XK_kcedilla: u32 = 1011;
+pub const XK_uogonek: u32 = 1017;
+pub const XK_utilde: u32 = 1021;
+pub const XK_umacron: u32 = 1022;
+pub const XK_Greek_ALPHAaccent: u32 = 1953;
+pub const XK_Greek_EPSILONaccent: u32 = 1954;
+pub const XK_Greek_ETAaccent: u32 = 1955;
+pub const XK_Greek_IOTAaccent: u32 = 1956;
+pub const XK_Greek_IOTAdieresis: u32 = 1957;
+pub const XK_Greek_OMICRONaccent: u32 = 1959;
+pub const XK_Greek_UPSILONaccent: u32 = 1960;
+pub const XK_Greek_UPSILONdieresis: u32 = 1961;
+pub const XK_Greek_OMEGAaccent: u32 = 1963;
+pub const XK_Greek_accentdieresis: u32 = 1966;
+pub const XK_Greek_horizbar: u32 = 1967;
+pub const XK_Greek_alphaaccent: u32 = 1969;
+pub const XK_Greek_epsilonaccent: u32 = 1970;
+pub const XK_Greek_etaaccent: u32 = 1971;
+pub const XK_Greek_iotaaccent: u32 = 1972;
+pub const XK_Greek_iotadieresis: u32 = 1973;
+pub const XK_Greek_iotaaccentdieresis: u32 = 1974;
+pub const XK_Greek_omicronaccent: u32 = 1975;
+pub const XK_Greek_upsilonaccent: u32 = 1976;
+pub const XK_Greek_upsilondieresis: u32 = 1977;
+pub const XK_Greek_upsilonaccentdieresis: u32 = 1978;
+pub const XK_Greek_omegaaccent: u32 = 1979;
+pub const XK_Greek_ALPHA: u32 = 1985;
+pub const XK_Greek_BETA: u32 = 1986;
+pub const XK_Greek_GAMMA: u32 = 1987;
+pub const XK_Greek_DELTA: u32 = 1988;
+pub const XK_Greek_EPSILON: u32 = 1989;
+pub const XK_Greek_ZETA: u32 = 1990;
+pub const XK_Greek_ETA: u32 = 1991;
+pub const XK_Greek_THETA: u32 = 1992;
+pub const XK_Greek_IOTA: u32 = 1993;
+pub const XK_Greek_KAPPA: u32 = 1994;
+pub const XK_Greek_LAMDA: u32 = 1995;
+pub const XK_Greek_LAMBDA: u32 = 1995;
+pub const XK_Greek_MU: u32 = 1996;
+pub const XK_Greek_NU: u32 = 1997;
+pub const XK_Greek_XI: u32 = 1998;
+pub const XK_Greek_OMICRON: u32 = 1999;
+pub const XK_Greek_PI: u32 = 2000;
+pub const XK_Greek_RHO: u32 = 2001;
+pub const XK_Greek_SIGMA: u32 = 2002;
+pub const XK_Greek_TAU: u32 = 2004;
+pub const XK_Greek_UPSILON: u32 = 2005;
+pub const XK_Greek_PHI: u32 = 2006;
+pub const XK_Greek_CHI: u32 = 2007;
+pub const XK_Greek_PSI: u32 = 2008;
+pub const XK_Greek_OMEGA: u32 = 2009;
+pub const XK_Greek_alpha: u32 = 2017;
+pub const XK_Greek_beta: u32 = 2018;
+pub const XK_Greek_gamma: u32 = 2019;
+pub const XK_Greek_delta: u32 = 2020;
+pub const XK_Greek_epsilon: u32 = 2021;
+pub const XK_Greek_zeta: u32 = 2022;
+pub const XK_Greek_eta: u32 = 2023;
+pub const XK_Greek_theta: u32 = 2024;
+pub const XK_Greek_iota: u32 = 2025;
+pub const XK_Greek_kappa: u32 = 2026;
+pub const XK_Greek_lamda: u32 = 2027;
+pub const XK_Greek_lambda: u32 = 2027;
+pub const XK_Greek_mu: u32 = 2028;
+pub const XK_Greek_nu: u32 = 2029;
+pub const XK_Greek_xi: u32 = 2030;
+pub const XK_Greek_omicron: u32 = 2031;
+pub const XK_Greek_pi: u32 = 2032;
+pub const XK_Greek_rho: u32 = 2033;
+pub const XK_Greek_sigma: u32 = 2034;
+pub const XK_Greek_finalsmallsigma: u32 = 2035;
+pub const XK_Greek_tau: u32 = 2036;
+pub const XK_Greek_upsilon: u32 = 2037;
+pub const XK_Greek_phi: u32 = 2038;
+pub const XK_Greek_chi: u32 = 2039;
+pub const XK_Greek_psi: u32 = 2040;
+pub const XK_Greek_omega: u32 = 2041;
+pub const XK_Greek_switch: u32 = 65406;
+pub const XK_EuroSign: u32 = 8364;
+pub const FLASH_PORT_OFFSET: u32 = 5400;
+pub const LISTEN_PORT_OFFSET: u32 = 5500;
+pub const TUNNEL_PORT_OFFSET: u32 = 5500;
+pub const SERVER_PORT_OFFSET: u32 = 5900;
+pub const DEFAULT_CONNECT_TIMEOUT: u32 = 60;
+pub const DEFAULT_READ_TIMEOUT: u32 = 0;
+pub const DEFAULT_SSH_CMD: &[u8; 13] = b"/usr/bin/ssh\0";
+pub const DEFAULT_TUNNEL_CMD: &[u8; 47] = b"/usr/bin/ssh -f -L %L:localhost:%R %H sleep 20\0";
+pub const DEFAULT_VIA_CMD: &[u8; 40] = b"/usr/bin/ssh -f -L %L:%H:%R %G sleep 20\0";
+pub const rfbCredentialTypeX509: u32 = 1;
+pub const rfbCredentialTypeUser: u32 = 2;
+pub const rfbX509CrlVerifyNone: u32 = 0;
+pub const rfbX509CrlVerifyClient: u32 = 1;
+pub const rfbX509CrlVerifyAll: u32 = 2;
+pub const RFB_BUFFER_SIZE: u32 = 307200;
+pub const RFB_BUF_SIZE: u32 = 8192;
+pub const ZLIB_BUFFER_SIZE: u32 = 30000;
 pub type __gnuc_va_list = __builtin_va_list;
-pub type __u_char = ::std::os::raw::c_uchar;
-pub type __u_short = ::std::os::raw::c_ushort;
-pub type __u_int = ::std::os::raw::c_uint;
-pub type __u_long = ::std::os::raw::c_ulong;
-pub type __int8_t = ::std::os::raw::c_schar;
-pub type __uint8_t = ::std::os::raw::c_uchar;
-pub type __int16_t = ::std::os::raw::c_short;
-pub type __uint16_t = ::std::os::raw::c_ushort;
-pub type __int32_t = ::std::os::raw::c_int;
-pub type __uint32_t = ::std::os::raw::c_uint;
-pub type __int64_t = ::std::os::raw::c_long;
-pub type __uint64_t = ::std::os::raw::c_ulong;
+pub type __u_char = ::core::ffi::c_uchar;
+pub type __u_short = ::core::ffi::c_ushort;
+pub type __u_int = ::core::ffi::c_uint;
+pub type __u_long = ::core::ffi::c_ulong;
+pub type __int8_t = ::core::ffi::c_schar;
+pub type __uint8_t = ::core::ffi::c_uchar;
+pub type __int16_t = ::core::ffi::c_short;
+pub type __uint16_t = ::core::ffi::c_ushort;
+pub type __int32_t = ::core::ffi::c_int;
+pub type __uint32_t = ::core::ffi::c_uint;
+pub type __int64_t = ::core::ffi::c_long;
+pub type __uint64_t = ::core::ffi::c_ulong;
 pub type __int_least8_t = __int8_t;
 pub type __uint_least8_t = __uint8_t;
 pub type __int_least16_t = __int16_t;
@@ -1212,41 +1884,41 @@ pub type __int_least32_t = __int32_t;
 pub type __uint_least32_t = __uint32_t;
 pub type __int_least64_t = __int64_t;
 pub type __uint_least64_t = __uint64_t;
-pub type __quad_t = ::std::os::raw::c_long;
-pub type __u_quad_t = ::std::os::raw::c_ulong;
-pub type __intmax_t = ::std::os::raw::c_long;
-pub type __uintmax_t = ::std::os::raw::c_ulong;
-pub type __dev_t = ::std::os::raw::c_ulong;
-pub type __uid_t = ::std::os::raw::c_uint;
-pub type __gid_t = ::std::os::raw::c_uint;
-pub type __ino_t = ::std::os::raw::c_ulong;
-pub type __ino64_t = ::std::os::raw::c_ulong;
-pub type __mode_t = ::std::os::raw::c_uint;
-pub type __nlink_t = ::std::os::raw::c_ulong;
-pub type __off_t = ::std::os::raw::c_long;
-pub type __off64_t = ::std::os::raw::c_long;
-pub type __pid_t = ::std::os::raw::c_int;
+pub type __quad_t = ::core::ffi::c_long;
+pub type __u_quad_t = ::core::ffi::c_ulong;
+pub type __intmax_t = ::core::ffi::c_long;
+pub type __uintmax_t = ::core::ffi::c_ulong;
+pub type __dev_t = ::core::ffi::c_ulong;
+pub type __uid_t = ::core::ffi::c_uint;
+pub type __gid_t = ::core::ffi::c_uint;
+pub type __ino_t = ::core::ffi::c_ulong;
+pub type __ino64_t = ::core::ffi::c_ulong;
+pub type __mode_t = ::core::ffi::c_uint;
+pub type __nlink_t = ::core::ffi::c_ulong;
+pub type __off_t = ::core::ffi::c_long;
+pub type __off64_t = ::core::ffi::c_long;
+pub type __pid_t = ::core::ffi::c_int;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __fsid_t {
-    pub __val: [::std::os::raw::c_int; 2usize],
+    pub __val: [::core::ffi::c_int; 2usize],
 }
 #[test]
 fn bindgen_test_layout___fsid_t() {
-    const UNINIT: ::std::mem::MaybeUninit<__fsid_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__fsid_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__fsid_t>(),
+        ::core::mem::size_of::<__fsid_t>(),
         8usize,
         concat!("Size of: ", stringify!(__fsid_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<__fsid_t>(),
+        ::core::mem::align_of::<__fsid_t>(),
         4usize,
         concat!("Alignment of ", stringify!(__fsid_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__val) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__val) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -1256,63 +1928,63 @@ fn bindgen_test_layout___fsid_t() {
         )
     );
 }
-pub type __clock_t = ::std::os::raw::c_long;
-pub type __rlim_t = ::std::os::raw::c_ulong;
-pub type __rlim64_t = ::std::os::raw::c_ulong;
-pub type __id_t = ::std::os::raw::c_uint;
-pub type __time_t = ::std::os::raw::c_long;
-pub type __useconds_t = ::std::os::raw::c_uint;
-pub type __suseconds_t = ::std::os::raw::c_long;
-pub type __suseconds64_t = ::std::os::raw::c_long;
-pub type __daddr_t = ::std::os::raw::c_int;
-pub type __key_t = ::std::os::raw::c_int;
-pub type __clockid_t = ::std::os::raw::c_int;
-pub type __timer_t = *mut ::std::os::raw::c_void;
-pub type __blksize_t = ::std::os::raw::c_long;
-pub type __blkcnt_t = ::std::os::raw::c_long;
-pub type __blkcnt64_t = ::std::os::raw::c_long;
-pub type __fsblkcnt_t = ::std::os::raw::c_ulong;
-pub type __fsblkcnt64_t = ::std::os::raw::c_ulong;
-pub type __fsfilcnt_t = ::std::os::raw::c_ulong;
-pub type __fsfilcnt64_t = ::std::os::raw::c_ulong;
-pub type __fsword_t = ::std::os::raw::c_long;
-pub type __ssize_t = ::std::os::raw::c_long;
-pub type __syscall_slong_t = ::std::os::raw::c_long;
-pub type __syscall_ulong_t = ::std::os::raw::c_ulong;
+pub type __clock_t = ::core::ffi::c_long;
+pub type __rlim_t = ::core::ffi::c_ulong;
+pub type __rlim64_t = ::core::ffi::c_ulong;
+pub type __id_t = ::core::ffi::c_uint;
+pub type __time_t = ::core::ffi::c_long;
+pub type __useconds_t = ::core::ffi::c_uint;
+pub type __suseconds_t = ::core::ffi::c_long;
+pub type __suseconds64_t = ::core::ffi::c_long;
+pub type __daddr_t = ::core::ffi::c_int;
+pub type __key_t = ::core::ffi::c_int;
+pub type __clockid_t = ::core::ffi::c_int;
+pub type __timer_t = *mut ::core::ffi::c_void;
+pub type __blksize_t = ::core::ffi::c_long;
+pub type __blkcnt_t = ::core::ffi::c_long;
+pub type __blkcnt64_t = ::core::ffi::c_long;
+pub type __fsblkcnt_t = ::core::ffi::c_ulong;
+pub type __fsblkcnt64_t = ::core::ffi::c_ulong;
+pub type __fsfilcnt_t = ::core::ffi::c_ulong;
+pub type __fsfilcnt64_t = ::core::ffi::c_ulong;
+pub type __fsword_t = ::core::ffi::c_long;
+pub type __ssize_t = ::core::ffi::c_long;
+pub type __syscall_slong_t = ::core::ffi::c_long;
+pub type __syscall_ulong_t = ::core::ffi::c_ulong;
 pub type __loff_t = __off64_t;
-pub type __caddr_t = *mut ::std::os::raw::c_char;
-pub type __intptr_t = ::std::os::raw::c_long;
-pub type __socklen_t = ::std::os::raw::c_uint;
-pub type __sig_atomic_t = ::std::os::raw::c_int;
+pub type __caddr_t = *mut ::core::ffi::c_char;
+pub type __intptr_t = ::core::ffi::c_long;
+pub type __socklen_t = ::core::ffi::c_uint;
+pub type __sig_atomic_t = ::core::ffi::c_int;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct __mbstate_t {
-    pub __count: ::std::os::raw::c_int,
+    pub __count: ::core::ffi::c_int,
     pub __value: __mbstate_t__bindgen_ty_1,
 }
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union __mbstate_t__bindgen_ty_1 {
-    pub __wch: ::std::os::raw::c_uint,
-    pub __wchb: [::std::os::raw::c_char; 4usize],
+    pub __wch: ::core::ffi::c_uint,
+    pub __wchb: [::core::ffi::c_char; 4usize],
 }
 #[test]
 fn bindgen_test_layout___mbstate_t__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<__mbstate_t__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__mbstate_t__bindgen_ty_1> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__mbstate_t__bindgen_ty_1>(),
+        ::core::mem::size_of::<__mbstate_t__bindgen_ty_1>(),
         4usize,
         concat!("Size of: ", stringify!(__mbstate_t__bindgen_ty_1))
     );
     assert_eq!(
-        ::std::mem::align_of::<__mbstate_t__bindgen_ty_1>(),
+        ::core::mem::align_of::<__mbstate_t__bindgen_ty_1>(),
         4usize,
         concat!("Alignment of ", stringify!(__mbstate_t__bindgen_ty_1))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__wch) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__wch) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -1322,7 +1994,7 @@ fn bindgen_test_layout___mbstate_t__bindgen_ty_1() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__wchb) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__wchb) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -1334,20 +2006,20 @@ fn bindgen_test_layout___mbstate_t__bindgen_ty_1() {
 }
 #[test]
 fn bindgen_test_layout___mbstate_t() {
-    const UNINIT: ::std::mem::MaybeUninit<__mbstate_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__mbstate_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__mbstate_t>(),
+        ::core::mem::size_of::<__mbstate_t>(),
         8usize,
         concat!("Size of: ", stringify!(__mbstate_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<__mbstate_t>(),
+        ::core::mem::align_of::<__mbstate_t>(),
         4usize,
         concat!("Alignment of ", stringify!(__mbstate_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__count) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__count) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -1357,7 +2029,7 @@ fn bindgen_test_layout___mbstate_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__value) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__value) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -1375,20 +2047,20 @@ pub struct _G_fpos_t {
 }
 #[test]
 fn bindgen_test_layout__G_fpos_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_G_fpos_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_G_fpos_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_G_fpos_t>(),
+        ::core::mem::size_of::<_G_fpos_t>(),
         16usize,
         concat!("Size of: ", stringify!(_G_fpos_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<_G_fpos_t>(),
+        ::core::mem::align_of::<_G_fpos_t>(),
         8usize,
         concat!("Alignment of ", stringify!(_G_fpos_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__pos) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__pos) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -1398,7 +2070,7 @@ fn bindgen_test_layout__G_fpos_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__state) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__state) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -1417,20 +2089,20 @@ pub struct _G_fpos64_t {
 }
 #[test]
 fn bindgen_test_layout__G_fpos64_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_G_fpos64_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_G_fpos64_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_G_fpos64_t>(),
+        ::core::mem::size_of::<_G_fpos64_t>(),
         16usize,
         concat!("Size of: ", stringify!(_G_fpos64_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<_G_fpos64_t>(),
+        ::core::mem::align_of::<_G_fpos64_t>(),
         8usize,
         concat!("Alignment of ", stringify!(_G_fpos64_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__pos) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__pos) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -1440,7 +2112,7 @@ fn bindgen_test_layout__G_fpos64_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__state) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__state) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -1468,56 +2140,56 @@ pub struct _IO_codecvt {
 pub struct _IO_wide_data {
     _unused: [u8; 0],
 }
-pub type _IO_lock_t = ::std::os::raw::c_void;
+pub type _IO_lock_t = ::core::ffi::c_void;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _IO_FILE {
-    pub _flags: ::std::os::raw::c_int,
-    pub _IO_read_ptr: *mut ::std::os::raw::c_char,
-    pub _IO_read_end: *mut ::std::os::raw::c_char,
-    pub _IO_read_base: *mut ::std::os::raw::c_char,
-    pub _IO_write_base: *mut ::std::os::raw::c_char,
-    pub _IO_write_ptr: *mut ::std::os::raw::c_char,
-    pub _IO_write_end: *mut ::std::os::raw::c_char,
-    pub _IO_buf_base: *mut ::std::os::raw::c_char,
-    pub _IO_buf_end: *mut ::std::os::raw::c_char,
-    pub _IO_save_base: *mut ::std::os::raw::c_char,
-    pub _IO_backup_base: *mut ::std::os::raw::c_char,
-    pub _IO_save_end: *mut ::std::os::raw::c_char,
+    pub _flags: ::core::ffi::c_int,
+    pub _IO_read_ptr: *mut ::core::ffi::c_char,
+    pub _IO_read_end: *mut ::core::ffi::c_char,
+    pub _IO_read_base: *mut ::core::ffi::c_char,
+    pub _IO_write_base: *mut ::core::ffi::c_char,
+    pub _IO_write_ptr: *mut ::core::ffi::c_char,
+    pub _IO_write_end: *mut ::core::ffi::c_char,
+    pub _IO_buf_base: *mut ::core::ffi::c_char,
+    pub _IO_buf_end: *mut ::core::ffi::c_char,
+    pub _IO_save_base: *mut ::core::ffi::c_char,
+    pub _IO_backup_base: *mut ::core::ffi::c_char,
+    pub _IO_save_end: *mut ::core::ffi::c_char,
     pub _markers: *mut _IO_marker,
     pub _chain: *mut _IO_FILE,
-    pub _fileno: ::std::os::raw::c_int,
-    pub _flags2: ::std::os::raw::c_int,
+    pub _fileno: ::core::ffi::c_int,
+    pub _flags2: ::core::ffi::c_int,
     pub _old_offset: __off_t,
-    pub _cur_column: ::std::os::raw::c_ushort,
-    pub _vtable_offset: ::std::os::raw::c_schar,
-    pub _shortbuf: [::std::os::raw::c_char; 1usize],
+    pub _cur_column: ::core::ffi::c_ushort,
+    pub _vtable_offset: ::core::ffi::c_schar,
+    pub _shortbuf: [::core::ffi::c_char; 1usize],
     pub _lock: *mut _IO_lock_t,
     pub _offset: __off64_t,
     pub _codecvt: *mut _IO_codecvt,
     pub _wide_data: *mut _IO_wide_data,
     pub _freeres_list: *mut _IO_FILE,
-    pub _freeres_buf: *mut ::std::os::raw::c_void,
+    pub _freeres_buf: *mut ::core::ffi::c_void,
     pub __pad5: usize,
-    pub _mode: ::std::os::raw::c_int,
-    pub _unused2: [::std::os::raw::c_char; 20usize],
+    pub _mode: ::core::ffi::c_int,
+    pub _unused2: [::core::ffi::c_char; 20usize],
 }
 #[test]
 fn bindgen_test_layout__IO_FILE() {
-    const UNINIT: ::std::mem::MaybeUninit<_IO_FILE> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_IO_FILE> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_IO_FILE>(),
+        ::core::mem::size_of::<_IO_FILE>(),
         216usize,
         concat!("Size of: ", stringify!(_IO_FILE))
     );
     assert_eq!(
-        ::std::mem::align_of::<_IO_FILE>(),
+        ::core::mem::align_of::<_IO_FILE>(),
         8usize,
         concat!("Alignment of ", stringify!(_IO_FILE))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._flags) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._flags) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -1527,7 +2199,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_read_ptr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_read_ptr) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -1537,7 +2209,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_read_end) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_read_end) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -1547,7 +2219,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_read_base) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_read_base) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -1557,7 +2229,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_write_base) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_write_base) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -1567,7 +2239,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_write_ptr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_write_ptr) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -1577,7 +2249,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_write_end) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_write_end) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -1587,7 +2259,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_buf_base) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_buf_base) as usize - ptr as usize },
         56usize,
         concat!(
             "Offset of field: ",
@@ -1597,7 +2269,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_buf_end) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_buf_end) as usize - ptr as usize },
         64usize,
         concat!(
             "Offset of field: ",
@@ -1607,7 +2279,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_save_base) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_save_base) as usize - ptr as usize },
         72usize,
         concat!(
             "Offset of field: ",
@@ -1617,7 +2289,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_backup_base) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_backup_base) as usize - ptr as usize },
         80usize,
         concat!(
             "Offset of field: ",
@@ -1627,7 +2299,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._IO_save_end) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._IO_save_end) as usize - ptr as usize },
         88usize,
         concat!(
             "Offset of field: ",
@@ -1637,7 +2309,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._markers) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._markers) as usize - ptr as usize },
         96usize,
         concat!(
             "Offset of field: ",
@@ -1647,7 +2319,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._chain) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._chain) as usize - ptr as usize },
         104usize,
         concat!(
             "Offset of field: ",
@@ -1657,7 +2329,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._fileno) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._fileno) as usize - ptr as usize },
         112usize,
         concat!(
             "Offset of field: ",
@@ -1667,7 +2339,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._flags2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._flags2) as usize - ptr as usize },
         116usize,
         concat!(
             "Offset of field: ",
@@ -1677,7 +2349,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._old_offset) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._old_offset) as usize - ptr as usize },
         120usize,
         concat!(
             "Offset of field: ",
@@ -1687,7 +2359,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._cur_column) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._cur_column) as usize - ptr as usize },
         128usize,
         concat!(
             "Offset of field: ",
@@ -1697,7 +2369,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._vtable_offset) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._vtable_offset) as usize - ptr as usize },
         130usize,
         concat!(
             "Offset of field: ",
@@ -1707,7 +2379,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._shortbuf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._shortbuf) as usize - ptr as usize },
         131usize,
         concat!(
             "Offset of field: ",
@@ -1717,7 +2389,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._lock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._lock) as usize - ptr as usize },
         136usize,
         concat!(
             "Offset of field: ",
@@ -1727,7 +2399,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._offset) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._offset) as usize - ptr as usize },
         144usize,
         concat!(
             "Offset of field: ",
@@ -1737,7 +2409,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._codecvt) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._codecvt) as usize - ptr as usize },
         152usize,
         concat!(
             "Offset of field: ",
@@ -1747,7 +2419,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._wide_data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._wide_data) as usize - ptr as usize },
         160usize,
         concat!(
             "Offset of field: ",
@@ -1757,7 +2429,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._freeres_list) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._freeres_list) as usize - ptr as usize },
         168usize,
         concat!(
             "Offset of field: ",
@@ -1767,7 +2439,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._freeres_buf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._freeres_buf) as usize - ptr as usize },
         176usize,
         concat!(
             "Offset of field: ",
@@ -1777,7 +2449,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__pad5) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__pad5) as usize - ptr as usize },
         184usize,
         concat!(
             "Offset of field: ",
@@ -1787,7 +2459,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._mode) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._mode) as usize - ptr as usize },
         192usize,
         concat!(
             "Offset of field: ",
@@ -1797,7 +2469,7 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._unused2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr)._unused2) as usize - ptr as usize },
         196usize,
         concat!(
             "Offset of field: ",
@@ -1807,29 +2479,29 @@ fn bindgen_test_layout__IO_FILE() {
         )
     );
 }
-pub type cookie_read_function_t = ::std::option::Option<
+pub type cookie_read_function_t = ::core::option::Option<
     unsafe extern "C" fn(
-        __cookie: *mut ::std::os::raw::c_void,
-        __buf: *mut ::std::os::raw::c_char,
+        __cookie: *mut ::core::ffi::c_void,
+        __buf: *mut ::core::ffi::c_char,
         __nbytes: usize,
     ) -> __ssize_t,
 >;
-pub type cookie_write_function_t = ::std::option::Option<
+pub type cookie_write_function_t = ::core::option::Option<
     unsafe extern "C" fn(
-        __cookie: *mut ::std::os::raw::c_void,
-        __buf: *const ::std::os::raw::c_char,
+        __cookie: *mut ::core::ffi::c_void,
+        __buf: *const ::core::ffi::c_char,
         __nbytes: usize,
     ) -> __ssize_t,
 >;
-pub type cookie_seek_function_t = ::std::option::Option<
+pub type cookie_seek_function_t = ::core::option::Option<
     unsafe extern "C" fn(
-        __cookie: *mut ::std::os::raw::c_void,
+        __cookie: *mut ::core::ffi::c_void,
         __pos: *mut __off64_t,
-        __w: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int,
+        __w: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int,
 >;
-pub type cookie_close_function_t = ::std::option::Option<
-    unsafe extern "C" fn(__cookie: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int,
+pub type cookie_close_function_t = ::core::option::Option<
+    unsafe extern "C" fn(__cookie: *mut ::core::ffi::c_void) -> ::core::ffi::c_int,
 >;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -1841,21 +2513,21 @@ pub struct _IO_cookie_io_functions_t {
 }
 #[test]
 fn bindgen_test_layout__IO_cookie_io_functions_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_IO_cookie_io_functions_t> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_IO_cookie_io_functions_t> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_IO_cookie_io_functions_t>(),
+        ::core::mem::size_of::<_IO_cookie_io_functions_t>(),
         32usize,
         concat!("Size of: ", stringify!(_IO_cookie_io_functions_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<_IO_cookie_io_functions_t>(),
+        ::core::mem::align_of::<_IO_cookie_io_functions_t>(),
         8usize,
         concat!("Alignment of ", stringify!(_IO_cookie_io_functions_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).read) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).read) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -1865,7 +2537,7 @@ fn bindgen_test_layout__IO_cookie_io_functions_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).write) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).write) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -1875,7 +2547,7 @@ fn bindgen_test_layout__IO_cookie_io_functions_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).seek) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).seek) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -1885,7 +2557,7 @@ fn bindgen_test_layout__IO_cookie_io_functions_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).close) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).close) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -1909,96 +2581,95 @@ extern "C" {
     pub static mut stderr: *mut FILE;
 }
 extern "C" {
-    pub fn remove(__filename: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn remove(__filename: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rename(
-        __old: *const ::std::os::raw::c_char,
-        __new: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __old: *const ::core::ffi::c_char,
+        __new: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn renameat(
-        __oldfd: ::std::os::raw::c_int,
-        __old: *const ::std::os::raw::c_char,
-        __newfd: ::std::os::raw::c_int,
-        __new: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __oldfd: ::core::ffi::c_int,
+        __old: *const ::core::ffi::c_char,
+        __newfd: ::core::ffi::c_int,
+        __new: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fclose(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn fclose(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn tmpfile() -> *mut FILE;
 }
 extern "C" {
-    pub fn tmpnam(arg1: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn tmpnam(arg1: *mut ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn tmpnam_r(__s: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn tmpnam_r(__s: *mut ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn tempnam(
-        __dir: *const ::std::os::raw::c_char,
-        __pfx: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __dir: *const ::core::ffi::c_char,
+        __pfx: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn fflush(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn fflush(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fflush_unlocked(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn fflush_unlocked(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn fopen(
-        __filename: *const ::std::os::raw::c_char,
-        __modes: *const ::std::os::raw::c_char,
+        __filename: *const ::core::ffi::c_char,
+        __modes: *const ::core::ffi::c_char,
     ) -> *mut FILE;
 }
 extern "C" {
     pub fn freopen(
-        __filename: *const ::std::os::raw::c_char,
-        __modes: *const ::std::os::raw::c_char,
+        __filename: *const ::core::ffi::c_char,
+        __modes: *const ::core::ffi::c_char,
         __stream: *mut FILE,
     ) -> *mut FILE;
 }
 extern "C" {
-    pub fn fdopen(__fd: ::std::os::raw::c_int, __modes: *const ::std::os::raw::c_char)
-        -> *mut FILE;
+    pub fn fdopen(__fd: ::core::ffi::c_int, __modes: *const ::core::ffi::c_char) -> *mut FILE;
 }
 extern "C" {
     pub fn fopencookie(
-        __magic_cookie: *mut ::std::os::raw::c_void,
-        __modes: *const ::std::os::raw::c_char,
+        __magic_cookie: *mut ::core::ffi::c_void,
+        __modes: *const ::core::ffi::c_char,
         __io_funcs: cookie_io_functions_t,
     ) -> *mut FILE;
 }
 extern "C" {
     pub fn fmemopen(
-        __s: *mut ::std::os::raw::c_void,
+        __s: *mut ::core::ffi::c_void,
         __len: usize,
-        __modes: *const ::std::os::raw::c_char,
+        __modes: *const ::core::ffi::c_char,
     ) -> *mut FILE;
 }
 extern "C" {
     pub fn open_memstream(
-        __bufloc: *mut *mut ::std::os::raw::c_char,
+        __bufloc: *mut *mut ::core::ffi::c_char,
         __sizeloc: *mut usize,
     ) -> *mut FILE;
 }
 extern "C" {
-    pub fn setbuf(__stream: *mut FILE, __buf: *mut ::std::os::raw::c_char);
+    pub fn setbuf(__stream: *mut FILE, __buf: *mut ::core::ffi::c_char);
 }
 extern "C" {
     pub fn setvbuf(
         __stream: *mut FILE,
-        __buf: *mut ::std::os::raw::c_char,
-        __modes: ::std::os::raw::c_int,
+        __buf: *mut ::core::ffi::c_char,
+        __modes: ::core::ffi::c_int,
         __n: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn setbuffer(__stream: *mut FILE, __buf: *mut ::std::os::raw::c_char, __size: usize);
+    pub fn setbuffer(__stream: *mut FILE, __buf: *mut ::core::ffi::c_char, __size: usize);
 }
 extern "C" {
     pub fn setlinebuf(__stream: *mut FILE);
@@ -2006,107 +2677,107 @@ extern "C" {
 extern "C" {
     pub fn fprintf(
         __stream: *mut FILE,
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn printf(__format: *const ::std::os::raw::c_char, ...) -> ::std::os::raw::c_int;
+    pub fn printf(__format: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn sprintf(
-        __s: *mut ::std::os::raw::c_char,
-        __format: *const ::std::os::raw::c_char,
+        __s: *mut ::core::ffi::c_char,
+        __format: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn vfprintf(
         __s: *mut FILE,
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn vprintf(
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn vsprintf(
-        __s: *mut ::std::os::raw::c_char,
-        __format: *const ::std::os::raw::c_char,
+        __s: *mut ::core::ffi::c_char,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn snprintf(
-        __s: *mut ::std::os::raw::c_char,
-        __maxlen: ::std::os::raw::c_ulong,
-        __format: *const ::std::os::raw::c_char,
+        __s: *mut ::core::ffi::c_char,
+        __maxlen: ::core::ffi::c_ulong,
+        __format: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn vsnprintf(
-        __s: *mut ::std::os::raw::c_char,
-        __maxlen: ::std::os::raw::c_ulong,
-        __format: *const ::std::os::raw::c_char,
+        __s: *mut ::core::ffi::c_char,
+        __maxlen: ::core::ffi::c_ulong,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn vasprintf(
-        __ptr: *mut *mut ::std::os::raw::c_char,
-        __f: *const ::std::os::raw::c_char,
+        __ptr: *mut *mut ::core::ffi::c_char,
+        __f: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn __asprintf(
-        __ptr: *mut *mut ::std::os::raw::c_char,
-        __fmt: *const ::std::os::raw::c_char,
+        __ptr: *mut *mut ::core::ffi::c_char,
+        __fmt: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn asprintf(
-        __ptr: *mut *mut ::std::os::raw::c_char,
-        __fmt: *const ::std::os::raw::c_char,
+        __ptr: *mut *mut ::core::ffi::c_char,
+        __fmt: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn vdprintf(
-        __fd: ::std::os::raw::c_int,
-        __fmt: *const ::std::os::raw::c_char,
+        __fd: ::core::ffi::c_int,
+        __fmt: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn dprintf(
-        __fd: ::std::os::raw::c_int,
-        __fmt: *const ::std::os::raw::c_char,
+        __fd: ::core::ffi::c_int,
+        __fmt: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn fscanf(
         __stream: *mut FILE,
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn scanf(__format: *const ::std::os::raw::c_char, ...) -> ::std::os::raw::c_int;
+    pub fn scanf(__format: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn sscanf(
-        __s: *const ::std::os::raw::c_char,
-        __format: *const ::std::os::raw::c_char,
+        __s: *const ::core::ffi::c_char,
+        __format: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 pub type _Float32 = f32;
 pub type _Float64 = f64;
@@ -2116,166 +2787,165 @@ extern "C" {
     #[link_name = "\u{1}__isoc99_fscanf"]
     pub fn fscanf1(
         __stream: *mut FILE,
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     #[link_name = "\u{1}__isoc99_scanf"]
-    pub fn scanf1(__format: *const ::std::os::raw::c_char, ...) -> ::std::os::raw::c_int;
+    pub fn scanf1(__format: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
 }
 extern "C" {
     #[link_name = "\u{1}__isoc99_sscanf"]
     pub fn sscanf1(
-        __s: *const ::std::os::raw::c_char,
-        __format: *const ::std::os::raw::c_char,
+        __s: *const ::core::ffi::c_char,
+        __format: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn vfscanf(
         __s: *mut FILE,
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn vscanf(
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn vsscanf(
-        __s: *const ::std::os::raw::c_char,
-        __format: *const ::std::os::raw::c_char,
+        __s: *const ::core::ffi::c_char,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     #[link_name = "\u{1}__isoc99_vfscanf"]
     pub fn vfscanf1(
         __s: *mut FILE,
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     #[link_name = "\u{1}__isoc99_vscanf"]
     pub fn vscanf1(
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     #[link_name = "\u{1}__isoc99_vsscanf"]
     pub fn vsscanf1(
-        __s: *const ::std::os::raw::c_char,
-        __format: *const ::std::os::raw::c_char,
+        __s: *const ::core::ffi::c_char,
+        __format: *const ::core::ffi::c_char,
         __arg: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fgetc(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn fgetc(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getc(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn getc(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getchar() -> ::std::os::raw::c_int;
+    pub fn getchar() -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getc_unlocked(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn getc_unlocked(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getchar_unlocked() -> ::std::os::raw::c_int;
+    pub fn getchar_unlocked() -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fgetc_unlocked(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn fgetc_unlocked(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fputc(__c: ::std::os::raw::c_int, __stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn fputc(__c: ::core::ffi::c_int, __stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn putc(__c: ::std::os::raw::c_int, __stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn putc(__c: ::core::ffi::c_int, __stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn putchar(__c: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn putchar(__c: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fputc_unlocked(__c: ::std::os::raw::c_int, __stream: *mut FILE)
-        -> ::std::os::raw::c_int;
+    pub fn fputc_unlocked(__c: ::core::ffi::c_int, __stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn putc_unlocked(__c: ::std::os::raw::c_int, __stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn putc_unlocked(__c: ::core::ffi::c_int, __stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn putchar_unlocked(__c: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn putchar_unlocked(__c: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getw(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn getw(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn putw(__w: ::std::os::raw::c_int, __stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn putw(__w: ::core::ffi::c_int, __stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn fgets(
-        __s: *mut ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_int,
+        __s: *mut ::core::ffi::c_char,
+        __n: ::core::ffi::c_int,
         __stream: *mut FILE,
-    ) -> *mut ::std::os::raw::c_char;
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn __getdelim(
-        __lineptr: *mut *mut ::std::os::raw::c_char,
+        __lineptr: *mut *mut ::core::ffi::c_char,
         __n: *mut usize,
-        __delimiter: ::std::os::raw::c_int,
+        __delimiter: ::core::ffi::c_int,
         __stream: *mut FILE,
     ) -> __ssize_t;
 }
 extern "C" {
     pub fn getdelim(
-        __lineptr: *mut *mut ::std::os::raw::c_char,
+        __lineptr: *mut *mut ::core::ffi::c_char,
         __n: *mut usize,
-        __delimiter: ::std::os::raw::c_int,
+        __delimiter: ::core::ffi::c_int,
         __stream: *mut FILE,
     ) -> __ssize_t;
 }
 extern "C" {
     pub fn getline(
-        __lineptr: *mut *mut ::std::os::raw::c_char,
+        __lineptr: *mut *mut ::core::ffi::c_char,
         __n: *mut usize,
         __stream: *mut FILE,
     ) -> __ssize_t;
 }
 extern "C" {
-    pub fn fputs(__s: *const ::std::os::raw::c_char, __stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn fputs(__s: *const ::core::ffi::c_char, __stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn puts(__s: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn puts(__s: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn ungetc(__c: ::std::os::raw::c_int, __stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn ungetc(__c: ::core::ffi::c_int, __stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn fread(
-        __ptr: *mut ::std::os::raw::c_void,
-        __size: ::std::os::raw::c_ulong,
-        __n: ::std::os::raw::c_ulong,
+        __ptr: *mut ::core::ffi::c_void,
+        __size: ::core::ffi::c_ulong,
+        __n: ::core::ffi::c_ulong,
         __stream: *mut FILE,
-    ) -> ::std::os::raw::c_ulong;
+    ) -> ::core::ffi::c_ulong;
 }
 extern "C" {
     pub fn fwrite(
-        __ptr: *const ::std::os::raw::c_void,
-        __size: ::std::os::raw::c_ulong,
-        __n: ::std::os::raw::c_ulong,
+        __ptr: *const ::core::ffi::c_void,
+        __size: ::core::ffi::c_ulong,
+        __n: ::core::ffi::c_ulong,
         __s: *mut FILE,
-    ) -> ::std::os::raw::c_ulong;
+    ) -> ::core::ffi::c_ulong;
 }
 extern "C" {
     pub fn fread_unlocked(
-        __ptr: *mut ::std::os::raw::c_void,
+        __ptr: *mut ::core::ffi::c_void,
         __size: usize,
         __n: usize,
         __stream: *mut FILE,
@@ -2283,7 +2953,7 @@ extern "C" {
 }
 extern "C" {
     pub fn fwrite_unlocked(
-        __ptr: *const ::std::os::raw::c_void,
+        __ptr: *const ::core::ffi::c_void,
         __size: usize,
         __n: usize,
         __stream: *mut FILE,
@@ -2292,12 +2962,12 @@ extern "C" {
 extern "C" {
     pub fn fseek(
         __stream: *mut FILE,
-        __off: ::std::os::raw::c_long,
-        __whence: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __off: ::core::ffi::c_long,
+        __whence: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn ftell(__stream: *mut FILE) -> ::std::os::raw::c_long;
+    pub fn ftell(__stream: *mut FILE) -> ::core::ffi::c_long;
 }
 extern "C" {
     pub fn rewind(__stream: *mut FILE);
@@ -2306,95 +2976,95 @@ extern "C" {
     pub fn fseeko(
         __stream: *mut FILE,
         __off: __off_t,
-        __whence: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __whence: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn ftello(__stream: *mut FILE) -> __off_t;
 }
 extern "C" {
-    pub fn fgetpos(__stream: *mut FILE, __pos: *mut fpos_t) -> ::std::os::raw::c_int;
+    pub fn fgetpos(__stream: *mut FILE, __pos: *mut fpos_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fsetpos(__stream: *mut FILE, __pos: *const fpos_t) -> ::std::os::raw::c_int;
+    pub fn fsetpos(__stream: *mut FILE, __pos: *const fpos_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn clearerr(__stream: *mut FILE);
 }
 extern "C" {
-    pub fn feof(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn feof(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn ferror(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn ferror(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn clearerr_unlocked(__stream: *mut FILE);
 }
 extern "C" {
-    pub fn feof_unlocked(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn feof_unlocked(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn ferror_unlocked(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn ferror_unlocked(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn perror(__s: *const ::std::os::raw::c_char);
+    pub fn perror(__s: *const ::core::ffi::c_char);
 }
 extern "C" {
-    pub fn fileno(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn fileno(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fileno_unlocked(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn fileno_unlocked(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pclose(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn pclose(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn popen(
-        __command: *const ::std::os::raw::c_char,
-        __modes: *const ::std::os::raw::c_char,
+        __command: *const ::core::ffi::c_char,
+        __modes: *const ::core::ffi::c_char,
     ) -> *mut FILE;
 }
 extern "C" {
-    pub fn ctermid(__s: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn ctermid(__s: *mut ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn flockfile(__stream: *mut FILE);
 }
 extern "C" {
-    pub fn ftrylockfile(__stream: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn ftrylockfile(__stream: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn funlockfile(__stream: *mut FILE);
 }
 extern "C" {
-    pub fn __uflow(arg1: *mut FILE) -> ::std::os::raw::c_int;
+    pub fn __uflow(arg1: *mut FILE) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn __overflow(arg1: *mut FILE, arg2: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn __overflow(arg1: *mut FILE, arg2: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
-pub type wchar_t = ::std::os::raw::c_int;
+pub type wchar_t = ::core::ffi::c_int;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct div_t {
-    pub quot: ::std::os::raw::c_int,
-    pub rem: ::std::os::raw::c_int,
+    pub quot: ::core::ffi::c_int,
+    pub rem: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_div_t() {
-    const UNINIT: ::std::mem::MaybeUninit<div_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<div_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<div_t>(),
+        ::core::mem::size_of::<div_t>(),
         8usize,
         concat!("Size of: ", stringify!(div_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<div_t>(),
+        ::core::mem::align_of::<div_t>(),
         4usize,
         concat!("Alignment of ", stringify!(div_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).quot) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).quot) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2404,7 +3074,7 @@ fn bindgen_test_layout_div_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rem) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rem) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -2417,25 +3087,25 @@ fn bindgen_test_layout_div_t() {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct ldiv_t {
-    pub quot: ::std::os::raw::c_long,
-    pub rem: ::std::os::raw::c_long,
+    pub quot: ::core::ffi::c_long,
+    pub rem: ::core::ffi::c_long,
 }
 #[test]
 fn bindgen_test_layout_ldiv_t() {
-    const UNINIT: ::std::mem::MaybeUninit<ldiv_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<ldiv_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<ldiv_t>(),
+        ::core::mem::size_of::<ldiv_t>(),
         16usize,
         concat!("Size of: ", stringify!(ldiv_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<ldiv_t>(),
+        ::core::mem::align_of::<ldiv_t>(),
         8usize,
         concat!("Alignment of ", stringify!(ldiv_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).quot) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).quot) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2445,7 +3115,7 @@ fn bindgen_test_layout_ldiv_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rem) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rem) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -2458,25 +3128,25 @@ fn bindgen_test_layout_ldiv_t() {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct lldiv_t {
-    pub quot: ::std::os::raw::c_longlong,
-    pub rem: ::std::os::raw::c_longlong,
+    pub quot: ::core::ffi::c_longlong,
+    pub rem: ::core::ffi::c_longlong,
 }
 #[test]
 fn bindgen_test_layout_lldiv_t() {
-    const UNINIT: ::std::mem::MaybeUninit<lldiv_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<lldiv_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<lldiv_t>(),
+        ::core::mem::size_of::<lldiv_t>(),
         16usize,
         concat!("Size of: ", stringify!(lldiv_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<lldiv_t>(),
+        ::core::mem::align_of::<lldiv_t>(),
         8usize,
         concat!("Alignment of ", stringify!(lldiv_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).quot) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).quot) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2486,7 +3156,7 @@ fn bindgen_test_layout_lldiv_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rem) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rem) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -2500,82 +3170,82 @@ extern "C" {
     pub fn __ctype_get_mb_cur_max() -> usize;
 }
 extern "C" {
-    pub fn atof(__nptr: *const ::std::os::raw::c_char) -> f64;
+    pub fn atof(__nptr: *const ::core::ffi::c_char) -> f64;
 }
 extern "C" {
-    pub fn atoi(__nptr: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn atoi(__nptr: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn atol(__nptr: *const ::std::os::raw::c_char) -> ::std::os::raw::c_long;
+    pub fn atol(__nptr: *const ::core::ffi::c_char) -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn atoll(__nptr: *const ::std::os::raw::c_char) -> ::std::os::raw::c_longlong;
+    pub fn atoll(__nptr: *const ::core::ffi::c_char) -> ::core::ffi::c_longlong;
 }
 extern "C" {
     pub fn strtod(
-        __nptr: *const ::std::os::raw::c_char,
-        __endptr: *mut *mut ::std::os::raw::c_char,
+        __nptr: *const ::core::ffi::c_char,
+        __endptr: *mut *mut ::core::ffi::c_char,
     ) -> f64;
 }
 extern "C" {
     pub fn strtof(
-        __nptr: *const ::std::os::raw::c_char,
-        __endptr: *mut *mut ::std::os::raw::c_char,
+        __nptr: *const ::core::ffi::c_char,
+        __endptr: *mut *mut ::core::ffi::c_char,
     ) -> f32;
 }
 extern "C" {
     pub fn strtold(
-        __nptr: *const ::std::os::raw::c_char,
-        __endptr: *mut *mut ::std::os::raw::c_char,
+        __nptr: *const ::core::ffi::c_char,
+        __endptr: *mut *mut ::core::ffi::c_char,
     ) -> u128;
 }
 extern "C" {
     pub fn strtol(
-        __nptr: *const ::std::os::raw::c_char,
-        __endptr: *mut *mut ::std::os::raw::c_char,
-        __base: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_long;
+        __nptr: *const ::core::ffi::c_char,
+        __endptr: *mut *mut ::core::ffi::c_char,
+        __base: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_long;
 }
 extern "C" {
     pub fn strtoul(
-        __nptr: *const ::std::os::raw::c_char,
-        __endptr: *mut *mut ::std::os::raw::c_char,
-        __base: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_ulong;
+        __nptr: *const ::core::ffi::c_char,
+        __endptr: *mut *mut ::core::ffi::c_char,
+        __base: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_ulong;
 }
 extern "C" {
     pub fn strtoq(
-        __nptr: *const ::std::os::raw::c_char,
-        __endptr: *mut *mut ::std::os::raw::c_char,
-        __base: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_longlong;
+        __nptr: *const ::core::ffi::c_char,
+        __endptr: *mut *mut ::core::ffi::c_char,
+        __base: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_longlong;
 }
 extern "C" {
     pub fn strtouq(
-        __nptr: *const ::std::os::raw::c_char,
-        __endptr: *mut *mut ::std::os::raw::c_char,
-        __base: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_ulonglong;
+        __nptr: *const ::core::ffi::c_char,
+        __endptr: *mut *mut ::core::ffi::c_char,
+        __base: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_ulonglong;
 }
 extern "C" {
     pub fn strtoll(
-        __nptr: *const ::std::os::raw::c_char,
-        __endptr: *mut *mut ::std::os::raw::c_char,
-        __base: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_longlong;
+        __nptr: *const ::core::ffi::c_char,
+        __endptr: *mut *mut ::core::ffi::c_char,
+        __base: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_longlong;
 }
 extern "C" {
     pub fn strtoull(
-        __nptr: *const ::std::os::raw::c_char,
-        __endptr: *mut *mut ::std::os::raw::c_char,
-        __base: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_ulonglong;
+        __nptr: *const ::core::ffi::c_char,
+        __endptr: *mut *mut ::core::ffi::c_char,
+        __base: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_ulonglong;
 }
 extern "C" {
-    pub fn l64a(__n: ::std::os::raw::c_long) -> *mut ::std::os::raw::c_char;
+    pub fn l64a(__n: ::core::ffi::c_long) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn a64l(__s: *const ::std::os::raw::c_char) -> ::std::os::raw::c_long;
+    pub fn a64l(__s: *const ::core::ffi::c_char) -> ::core::ffi::c_long;
 }
 pub type u_char = __u_char;
 pub type u_short = __u_short;
@@ -2600,35 +3270,35 @@ pub type clock_t = __clock_t;
 pub type clockid_t = __clockid_t;
 pub type time_t = __time_t;
 pub type timer_t = __timer_t;
-pub type ulong = ::std::os::raw::c_ulong;
-pub type ushort = ::std::os::raw::c_ushort;
-pub type uint = ::std::os::raw::c_uint;
+pub type ulong = ::core::ffi::c_ulong;
+pub type ushort = ::core::ffi::c_ushort;
+pub type uint = ::core::ffi::c_uint;
 pub type u_int8_t = __uint8_t;
 pub type u_int16_t = __uint16_t;
 pub type u_int32_t = __uint32_t;
 pub type u_int64_t = __uint64_t;
-pub type register_t = ::std::os::raw::c_long;
+pub type register_t = ::core::ffi::c_long;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __sigset_t {
-    pub __val: [::std::os::raw::c_ulong; 16usize],
+    pub __val: [::core::ffi::c_ulong; 16usize],
 }
 #[test]
 fn bindgen_test_layout___sigset_t() {
-    const UNINIT: ::std::mem::MaybeUninit<__sigset_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__sigset_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__sigset_t>(),
+        ::core::mem::size_of::<__sigset_t>(),
         128usize,
         concat!("Size of: ", stringify!(__sigset_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<__sigset_t>(),
+        ::core::mem::align_of::<__sigset_t>(),
         8usize,
         concat!("Alignment of ", stringify!(__sigset_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__val) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__val) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2647,20 +3317,20 @@ pub struct timeval {
 }
 #[test]
 fn bindgen_test_layout_timeval() {
-    const UNINIT: ::std::mem::MaybeUninit<timeval> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<timeval> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<timeval>(),
+        ::core::mem::size_of::<timeval>(),
         16usize,
         concat!("Size of: ", stringify!(timeval))
     );
     assert_eq!(
-        ::std::mem::align_of::<timeval>(),
+        ::core::mem::align_of::<timeval>(),
         8usize,
         concat!("Alignment of ", stringify!(timeval))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tv_sec) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tv_sec) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2670,7 +3340,7 @@ fn bindgen_test_layout_timeval() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tv_usec) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tv_usec) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -2688,20 +3358,20 @@ pub struct timespec {
 }
 #[test]
 fn bindgen_test_layout_timespec() {
-    const UNINIT: ::std::mem::MaybeUninit<timespec> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<timespec> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<timespec>(),
+        ::core::mem::size_of::<timespec>(),
         16usize,
         concat!("Size of: ", stringify!(timespec))
     );
     assert_eq!(
-        ::std::mem::align_of::<timespec>(),
+        ::core::mem::align_of::<timespec>(),
         8usize,
         concat!("Alignment of ", stringify!(timespec))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tv_sec) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tv_sec) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2711,7 +3381,7 @@ fn bindgen_test_layout_timespec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tv_nsec) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tv_nsec) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -2722,7 +3392,7 @@ fn bindgen_test_layout_timespec() {
     );
 }
 pub type suseconds_t = __suseconds_t;
-pub type __fd_mask = ::std::os::raw::c_long;
+pub type __fd_mask = ::core::ffi::c_long;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct fd_set {
@@ -2730,20 +3400,20 @@ pub struct fd_set {
 }
 #[test]
 fn bindgen_test_layout_fd_set() {
-    const UNINIT: ::std::mem::MaybeUninit<fd_set> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<fd_set> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<fd_set>(),
+        ::core::mem::size_of::<fd_set>(),
         128usize,
         concat!("Size of: ", stringify!(fd_set))
     );
     assert_eq!(
-        ::std::mem::align_of::<fd_set>(),
+        ::core::mem::align_of::<fd_set>(),
         8usize,
         concat!("Alignment of ", stringify!(fd_set))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__fds_bits) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__fds_bits) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2756,22 +3426,22 @@ fn bindgen_test_layout_fd_set() {
 pub type fd_mask = __fd_mask;
 extern "C" {
     pub fn select(
-        __nfds: ::std::os::raw::c_int,
+        __nfds: ::core::ffi::c_int,
         __readfds: *mut fd_set,
         __writefds: *mut fd_set,
         __exceptfds: *mut fd_set,
         __timeout: *mut timeval,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pselect(
-        __nfds: ::std::os::raw::c_int,
+        __nfds: ::core::ffi::c_int,
         __readfds: *mut fd_set,
         __writefds: *mut fd_set,
         __exceptfds: *mut fd_set,
         __timeout: *const timespec,
         __sigmask: *const __sigset_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 pub type blksize_t = __blksize_t;
 pub type blkcnt_t = __blkcnt_t;
@@ -2780,27 +3450,27 @@ pub type fsfilcnt_t = __fsfilcnt_t;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union __atomic_wide_counter {
-    pub __value64: ::std::os::raw::c_ulonglong,
+    pub __value64: ::core::ffi::c_ulonglong,
     pub __value32: __atomic_wide_counter__bindgen_ty_1,
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __atomic_wide_counter__bindgen_ty_1 {
-    pub __low: ::std::os::raw::c_uint,
-    pub __high: ::std::os::raw::c_uint,
+    pub __low: ::core::ffi::c_uint,
+    pub __high: ::core::ffi::c_uint,
 }
 #[test]
 fn bindgen_test_layout___atomic_wide_counter__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<__atomic_wide_counter__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__atomic_wide_counter__bindgen_ty_1> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__atomic_wide_counter__bindgen_ty_1>(),
+        ::core::mem::size_of::<__atomic_wide_counter__bindgen_ty_1>(),
         8usize,
         concat!("Size of: ", stringify!(__atomic_wide_counter__bindgen_ty_1))
     );
     assert_eq!(
-        ::std::mem::align_of::<__atomic_wide_counter__bindgen_ty_1>(),
+        ::core::mem::align_of::<__atomic_wide_counter__bindgen_ty_1>(),
         4usize,
         concat!(
             "Alignment of ",
@@ -2808,7 +3478,7 @@ fn bindgen_test_layout___atomic_wide_counter__bindgen_ty_1() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__low) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__low) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2818,7 +3488,7 @@ fn bindgen_test_layout___atomic_wide_counter__bindgen_ty_1() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__high) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__high) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -2830,21 +3500,21 @@ fn bindgen_test_layout___atomic_wide_counter__bindgen_ty_1() {
 }
 #[test]
 fn bindgen_test_layout___atomic_wide_counter() {
-    const UNINIT: ::std::mem::MaybeUninit<__atomic_wide_counter> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__atomic_wide_counter> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__atomic_wide_counter>(),
+        ::core::mem::size_of::<__atomic_wide_counter>(),
         8usize,
         concat!("Size of: ", stringify!(__atomic_wide_counter))
     );
     assert_eq!(
-        ::std::mem::align_of::<__atomic_wide_counter>(),
+        ::core::mem::align_of::<__atomic_wide_counter>(),
         8usize,
         concat!("Alignment of ", stringify!(__atomic_wide_counter))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__value64) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__value64) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2854,7 +3524,7 @@ fn bindgen_test_layout___atomic_wide_counter() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__value32) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__value32) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2872,21 +3542,21 @@ pub struct __pthread_internal_list {
 }
 #[test]
 fn bindgen_test_layout___pthread_internal_list() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_internal_list> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__pthread_internal_list> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__pthread_internal_list>(),
+        ::core::mem::size_of::<__pthread_internal_list>(),
         16usize,
         concat!("Size of: ", stringify!(__pthread_internal_list))
     );
     assert_eq!(
-        ::std::mem::align_of::<__pthread_internal_list>(),
+        ::core::mem::align_of::<__pthread_internal_list>(),
         8usize,
         concat!("Alignment of ", stringify!(__pthread_internal_list))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__prev) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__prev) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2896,7 +3566,7 @@ fn bindgen_test_layout___pthread_internal_list() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__next) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__next) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -2914,21 +3584,21 @@ pub struct __pthread_internal_slist {
 }
 #[test]
 fn bindgen_test_layout___pthread_internal_slist() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_internal_slist> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__pthread_internal_slist> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__pthread_internal_slist>(),
+        ::core::mem::size_of::<__pthread_internal_slist>(),
         8usize,
         concat!("Size of: ", stringify!(__pthread_internal_slist))
     );
     assert_eq!(
-        ::std::mem::align_of::<__pthread_internal_slist>(),
+        ::core::mem::align_of::<__pthread_internal_slist>(),
         8usize,
         concat!("Alignment of ", stringify!(__pthread_internal_slist))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__next) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__next) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2942,31 +3612,31 @@ pub type __pthread_slist_t = __pthread_internal_slist;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __pthread_mutex_s {
-    pub __lock: ::std::os::raw::c_int,
-    pub __count: ::std::os::raw::c_uint,
-    pub __owner: ::std::os::raw::c_int,
-    pub __nusers: ::std::os::raw::c_uint,
-    pub __kind: ::std::os::raw::c_int,
-    pub __spins: ::std::os::raw::c_short,
-    pub __elision: ::std::os::raw::c_short,
+    pub __lock: ::core::ffi::c_int,
+    pub __count: ::core::ffi::c_uint,
+    pub __owner: ::core::ffi::c_int,
+    pub __nusers: ::core::ffi::c_uint,
+    pub __kind: ::core::ffi::c_int,
+    pub __spins: ::core::ffi::c_short,
+    pub __elision: ::core::ffi::c_short,
     pub __list: __pthread_list_t,
 }
 #[test]
 fn bindgen_test_layout___pthread_mutex_s() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_mutex_s> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__pthread_mutex_s> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__pthread_mutex_s>(),
+        ::core::mem::size_of::<__pthread_mutex_s>(),
         40usize,
         concat!("Size of: ", stringify!(__pthread_mutex_s))
     );
     assert_eq!(
-        ::std::mem::align_of::<__pthread_mutex_s>(),
+        ::core::mem::align_of::<__pthread_mutex_s>(),
         8usize,
         concat!("Alignment of ", stringify!(__pthread_mutex_s))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__lock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__lock) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -2976,7 +3646,7 @@ fn bindgen_test_layout___pthread_mutex_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__count) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__count) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -2986,7 +3656,7 @@ fn bindgen_test_layout___pthread_mutex_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__owner) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__owner) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -2996,7 +3666,7 @@ fn bindgen_test_layout___pthread_mutex_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__nusers) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__nusers) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -3006,7 +3676,7 @@ fn bindgen_test_layout___pthread_mutex_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__kind) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__kind) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -3016,7 +3686,7 @@ fn bindgen_test_layout___pthread_mutex_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__spins) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__spins) as usize - ptr as usize },
         20usize,
         concat!(
             "Offset of field: ",
@@ -3026,7 +3696,7 @@ fn bindgen_test_layout___pthread_mutex_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__elision) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__elision) as usize - ptr as usize },
         22usize,
         concat!(
             "Offset of field: ",
@@ -3036,7 +3706,7 @@ fn bindgen_test_layout___pthread_mutex_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__list) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__list) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -3049,36 +3719,36 @@ fn bindgen_test_layout___pthread_mutex_s() {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __pthread_rwlock_arch_t {
-    pub __readers: ::std::os::raw::c_uint,
-    pub __writers: ::std::os::raw::c_uint,
-    pub __wrphase_futex: ::std::os::raw::c_uint,
-    pub __writers_futex: ::std::os::raw::c_uint,
-    pub __pad3: ::std::os::raw::c_uint,
-    pub __pad4: ::std::os::raw::c_uint,
-    pub __cur_writer: ::std::os::raw::c_int,
-    pub __shared: ::std::os::raw::c_int,
-    pub __rwelision: ::std::os::raw::c_schar,
-    pub __pad1: [::std::os::raw::c_uchar; 7usize],
-    pub __pad2: ::std::os::raw::c_ulong,
-    pub __flags: ::std::os::raw::c_uint,
+    pub __readers: ::core::ffi::c_uint,
+    pub __writers: ::core::ffi::c_uint,
+    pub __wrphase_futex: ::core::ffi::c_uint,
+    pub __writers_futex: ::core::ffi::c_uint,
+    pub __pad3: ::core::ffi::c_uint,
+    pub __pad4: ::core::ffi::c_uint,
+    pub __cur_writer: ::core::ffi::c_int,
+    pub __shared: ::core::ffi::c_int,
+    pub __rwelision: ::core::ffi::c_schar,
+    pub __pad1: [::core::ffi::c_uchar; 7usize],
+    pub __pad2: ::core::ffi::c_ulong,
+    pub __flags: ::core::ffi::c_uint,
 }
 #[test]
 fn bindgen_test_layout___pthread_rwlock_arch_t() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_rwlock_arch_t> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__pthread_rwlock_arch_t> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__pthread_rwlock_arch_t>(),
+        ::core::mem::size_of::<__pthread_rwlock_arch_t>(),
         56usize,
         concat!("Size of: ", stringify!(__pthread_rwlock_arch_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<__pthread_rwlock_arch_t>(),
+        ::core::mem::align_of::<__pthread_rwlock_arch_t>(),
         8usize,
         concat!("Alignment of ", stringify!(__pthread_rwlock_arch_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__readers) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__readers) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3088,7 +3758,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__writers) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__writers) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -3098,7 +3768,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__wrphase_futex) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__wrphase_futex) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -3108,7 +3778,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__writers_futex) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__writers_futex) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -3118,7 +3788,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__pad3) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__pad3) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -3128,7 +3798,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__pad4) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__pad4) as usize - ptr as usize },
         20usize,
         concat!(
             "Offset of field: ",
@@ -3138,7 +3808,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__cur_writer) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__cur_writer) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -3148,7 +3818,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__shared) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__shared) as usize - ptr as usize },
         28usize,
         concat!(
             "Offset of field: ",
@@ -3158,7 +3828,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__rwelision) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__rwelision) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -3168,7 +3838,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__pad1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__pad1) as usize - ptr as usize },
         33usize,
         concat!(
             "Offset of field: ",
@@ -3178,7 +3848,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__pad2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__pad2) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -3188,7 +3858,7 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__flags) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__flags) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -3203,28 +3873,28 @@ fn bindgen_test_layout___pthread_rwlock_arch_t() {
 pub struct __pthread_cond_s {
     pub __wseq: __atomic_wide_counter,
     pub __g1_start: __atomic_wide_counter,
-    pub __g_refs: [::std::os::raw::c_uint; 2usize],
-    pub __g_size: [::std::os::raw::c_uint; 2usize],
-    pub __g1_orig_size: ::std::os::raw::c_uint,
-    pub __wrefs: ::std::os::raw::c_uint,
-    pub __g_signals: [::std::os::raw::c_uint; 2usize],
+    pub __g_refs: [::core::ffi::c_uint; 2usize],
+    pub __g_size: [::core::ffi::c_uint; 2usize],
+    pub __g1_orig_size: ::core::ffi::c_uint,
+    pub __wrefs: ::core::ffi::c_uint,
+    pub __g_signals: [::core::ffi::c_uint; 2usize],
 }
 #[test]
 fn bindgen_test_layout___pthread_cond_s() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_cond_s> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__pthread_cond_s> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__pthread_cond_s>(),
+        ::core::mem::size_of::<__pthread_cond_s>(),
         48usize,
         concat!("Size of: ", stringify!(__pthread_cond_s))
     );
     assert_eq!(
-        ::std::mem::align_of::<__pthread_cond_s>(),
+        ::core::mem::align_of::<__pthread_cond_s>(),
         8usize,
         concat!("Alignment of ", stringify!(__pthread_cond_s))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__wseq) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__wseq) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3234,7 +3904,7 @@ fn bindgen_test_layout___pthread_cond_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__g1_start) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__g1_start) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -3244,7 +3914,7 @@ fn bindgen_test_layout___pthread_cond_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__g_refs) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__g_refs) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -3254,7 +3924,7 @@ fn bindgen_test_layout___pthread_cond_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__g_size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__g_size) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -3264,7 +3934,7 @@ fn bindgen_test_layout___pthread_cond_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__g1_orig_size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__g1_orig_size) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -3274,7 +3944,7 @@ fn bindgen_test_layout___pthread_cond_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__wrefs) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__wrefs) as usize - ptr as usize },
         36usize,
         concat!(
             "Offset of field: ",
@@ -3284,7 +3954,7 @@ fn bindgen_test_layout___pthread_cond_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__g_signals) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__g_signals) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -3294,29 +3964,29 @@ fn bindgen_test_layout___pthread_cond_s() {
         )
     );
 }
-pub type __tss_t = ::std::os::raw::c_uint;
-pub type __thrd_t = ::std::os::raw::c_ulong;
+pub type __tss_t = ::core::ffi::c_uint;
+pub type __thrd_t = ::core::ffi::c_ulong;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __once_flag {
-    pub __data: ::std::os::raw::c_int,
+    pub __data: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout___once_flag() {
-    const UNINIT: ::std::mem::MaybeUninit<__once_flag> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__once_flag> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__once_flag>(),
+        ::core::mem::size_of::<__once_flag>(),
         4usize,
         concat!("Size of: ", stringify!(__once_flag))
     );
     assert_eq!(
-        ::std::mem::align_of::<__once_flag>(),
+        ::core::mem::align_of::<__once_flag>(),
         4usize,
         concat!("Alignment of ", stringify!(__once_flag))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__data) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3326,29 +3996,30 @@ fn bindgen_test_layout___once_flag() {
         )
     );
 }
-pub type pthread_t = ::std::os::raw::c_ulong;
+pub type pthread_t = ::core::ffi::c_ulong;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union pthread_mutexattr_t {
-    pub __size: [::std::os::raw::c_char; 4usize],
-    pub __align: ::std::os::raw::c_int,
+    pub __size: [::core::ffi::c_char; 4usize],
+    pub __align: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_pthread_mutexattr_t() {
-    const UNINIT: ::std::mem::MaybeUninit<pthread_mutexattr_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<pthread_mutexattr_t> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<pthread_mutexattr_t>(),
+        ::core::mem::size_of::<pthread_mutexattr_t>(),
         4usize,
         concat!("Size of: ", stringify!(pthread_mutexattr_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<pthread_mutexattr_t>(),
+        ::core::mem::align_of::<pthread_mutexattr_t>(),
         4usize,
         concat!("Alignment of ", stringify!(pthread_mutexattr_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3358,7 +4029,7 @@ fn bindgen_test_layout_pthread_mutexattr_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3371,25 +4042,25 @@ fn bindgen_test_layout_pthread_mutexattr_t() {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union pthread_condattr_t {
-    pub __size: [::std::os::raw::c_char; 4usize],
-    pub __align: ::std::os::raw::c_int,
+    pub __size: [::core::ffi::c_char; 4usize],
+    pub __align: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_pthread_condattr_t() {
-    const UNINIT: ::std::mem::MaybeUninit<pthread_condattr_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<pthread_condattr_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<pthread_condattr_t>(),
+        ::core::mem::size_of::<pthread_condattr_t>(),
         4usize,
         concat!("Size of: ", stringify!(pthread_condattr_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<pthread_condattr_t>(),
+        ::core::mem::align_of::<pthread_condattr_t>(),
         4usize,
         concat!("Alignment of ", stringify!(pthread_condattr_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3399,7 +4070,7 @@ fn bindgen_test_layout_pthread_condattr_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3409,30 +4080,30 @@ fn bindgen_test_layout_pthread_condattr_t() {
         )
     );
 }
-pub type pthread_key_t = ::std::os::raw::c_uint;
-pub type pthread_once_t = ::std::os::raw::c_int;
+pub type pthread_key_t = ::core::ffi::c_uint;
+pub type pthread_once_t = ::core::ffi::c_int;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union pthread_attr_t {
-    pub __size: [::std::os::raw::c_char; 56usize],
-    pub __align: ::std::os::raw::c_long,
+    pub __size: [::core::ffi::c_char; 56usize],
+    pub __align: ::core::ffi::c_long,
 }
 #[test]
 fn bindgen_test_layout_pthread_attr_t() {
-    const UNINIT: ::std::mem::MaybeUninit<pthread_attr_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<pthread_attr_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<pthread_attr_t>(),
+        ::core::mem::size_of::<pthread_attr_t>(),
         56usize,
         concat!("Size of: ", stringify!(pthread_attr_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<pthread_attr_t>(),
+        ::core::mem::align_of::<pthread_attr_t>(),
         8usize,
         concat!("Alignment of ", stringify!(pthread_attr_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3442,7 +4113,7 @@ fn bindgen_test_layout_pthread_attr_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3456,25 +4127,25 @@ fn bindgen_test_layout_pthread_attr_t() {
 #[derive(Copy, Clone)]
 pub union pthread_mutex_t {
     pub __data: __pthread_mutex_s,
-    pub __size: [::std::os::raw::c_char; 40usize],
-    pub __align: ::std::os::raw::c_long,
+    pub __size: [::core::ffi::c_char; 40usize],
+    pub __align: ::core::ffi::c_long,
 }
 #[test]
 fn bindgen_test_layout_pthread_mutex_t() {
-    const UNINIT: ::std::mem::MaybeUninit<pthread_mutex_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<pthread_mutex_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<pthread_mutex_t>(),
+        ::core::mem::size_of::<pthread_mutex_t>(),
         40usize,
         concat!("Size of: ", stringify!(pthread_mutex_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<pthread_mutex_t>(),
+        ::core::mem::align_of::<pthread_mutex_t>(),
         8usize,
         concat!("Alignment of ", stringify!(pthread_mutex_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__data) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3484,7 +4155,7 @@ fn bindgen_test_layout_pthread_mutex_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3494,7 +4165,7 @@ fn bindgen_test_layout_pthread_mutex_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3508,25 +4179,25 @@ fn bindgen_test_layout_pthread_mutex_t() {
 #[derive(Copy, Clone)]
 pub union pthread_cond_t {
     pub __data: __pthread_cond_s,
-    pub __size: [::std::os::raw::c_char; 48usize],
-    pub __align: ::std::os::raw::c_longlong,
+    pub __size: [::core::ffi::c_char; 48usize],
+    pub __align: ::core::ffi::c_longlong,
 }
 #[test]
 fn bindgen_test_layout_pthread_cond_t() {
-    const UNINIT: ::std::mem::MaybeUninit<pthread_cond_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<pthread_cond_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<pthread_cond_t>(),
+        ::core::mem::size_of::<pthread_cond_t>(),
         48usize,
         concat!("Size of: ", stringify!(pthread_cond_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<pthread_cond_t>(),
+        ::core::mem::align_of::<pthread_cond_t>(),
         8usize,
         concat!("Alignment of ", stringify!(pthread_cond_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__data) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3536,7 +4207,7 @@ fn bindgen_test_layout_pthread_cond_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3546,7 +4217,7 @@ fn bindgen_test_layout_pthread_cond_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3560,25 +4231,25 @@ fn bindgen_test_layout_pthread_cond_t() {
 #[derive(Copy, Clone)]
 pub union pthread_rwlock_t {
     pub __data: __pthread_rwlock_arch_t,
-    pub __size: [::std::os::raw::c_char; 56usize],
-    pub __align: ::std::os::raw::c_long,
+    pub __size: [::core::ffi::c_char; 56usize],
+    pub __align: ::core::ffi::c_long,
 }
 #[test]
 fn bindgen_test_layout_pthread_rwlock_t() {
-    const UNINIT: ::std::mem::MaybeUninit<pthread_rwlock_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<pthread_rwlock_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<pthread_rwlock_t>(),
+        ::core::mem::size_of::<pthread_rwlock_t>(),
         56usize,
         concat!("Size of: ", stringify!(pthread_rwlock_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<pthread_rwlock_t>(),
+        ::core::mem::align_of::<pthread_rwlock_t>(),
         8usize,
         concat!("Alignment of ", stringify!(pthread_rwlock_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__data) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3588,7 +4259,7 @@ fn bindgen_test_layout_pthread_rwlock_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3598,7 +4269,7 @@ fn bindgen_test_layout_pthread_rwlock_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3611,25 +4282,26 @@ fn bindgen_test_layout_pthread_rwlock_t() {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union pthread_rwlockattr_t {
-    pub __size: [::std::os::raw::c_char; 8usize],
-    pub __align: ::std::os::raw::c_long,
+    pub __size: [::core::ffi::c_char; 8usize],
+    pub __align: ::core::ffi::c_long,
 }
 #[test]
 fn bindgen_test_layout_pthread_rwlockattr_t() {
-    const UNINIT: ::std::mem::MaybeUninit<pthread_rwlockattr_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<pthread_rwlockattr_t> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<pthread_rwlockattr_t>(),
+        ::core::mem::size_of::<pthread_rwlockattr_t>(),
         8usize,
         concat!("Size of: ", stringify!(pthread_rwlockattr_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<pthread_rwlockattr_t>(),
+        ::core::mem::align_of::<pthread_rwlockattr_t>(),
         8usize,
         concat!("Alignment of ", stringify!(pthread_rwlockattr_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3639,7 +4311,7 @@ fn bindgen_test_layout_pthread_rwlockattr_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3649,29 +4321,29 @@ fn bindgen_test_layout_pthread_rwlockattr_t() {
         )
     );
 }
-pub type pthread_spinlock_t = ::std::os::raw::c_int;
+pub type pthread_spinlock_t = ::core::ffi::c_int;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union pthread_barrier_t {
-    pub __size: [::std::os::raw::c_char; 32usize],
-    pub __align: ::std::os::raw::c_long,
+    pub __size: [::core::ffi::c_char; 32usize],
+    pub __align: ::core::ffi::c_long,
 }
 #[test]
 fn bindgen_test_layout_pthread_barrier_t() {
-    const UNINIT: ::std::mem::MaybeUninit<pthread_barrier_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<pthread_barrier_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<pthread_barrier_t>(),
+        ::core::mem::size_of::<pthread_barrier_t>(),
         32usize,
         concat!("Size of: ", stringify!(pthread_barrier_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<pthread_barrier_t>(),
+        ::core::mem::align_of::<pthread_barrier_t>(),
         8usize,
         concat!("Alignment of ", stringify!(pthread_barrier_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3681,7 +4353,7 @@ fn bindgen_test_layout_pthread_barrier_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3694,26 +4366,26 @@ fn bindgen_test_layout_pthread_barrier_t() {
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub union pthread_barrierattr_t {
-    pub __size: [::std::os::raw::c_char; 4usize],
-    pub __align: ::std::os::raw::c_int,
+    pub __size: [::core::ffi::c_char; 4usize],
+    pub __align: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_pthread_barrierattr_t() {
-    const UNINIT: ::std::mem::MaybeUninit<pthread_barrierattr_t> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<pthread_barrierattr_t> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<pthread_barrierattr_t>(),
+        ::core::mem::size_of::<pthread_barrierattr_t>(),
         4usize,
         concat!("Size of: ", stringify!(pthread_barrierattr_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<pthread_barrierattr_t>(),
+        ::core::mem::align_of::<pthread_barrierattr_t>(),
         4usize,
         concat!("Alignment of ", stringify!(pthread_barrierattr_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__size) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3723,7 +4395,7 @@ fn bindgen_test_layout_pthread_barrierattr_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__align) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3734,20 +4406,20 @@ fn bindgen_test_layout_pthread_barrierattr_t() {
     );
 }
 extern "C" {
-    pub fn random() -> ::std::os::raw::c_long;
+    pub fn random() -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn srandom(__seed: ::std::os::raw::c_uint);
+    pub fn srandom(__seed: ::core::ffi::c_uint);
 }
 extern "C" {
     pub fn initstate(
-        __seed: ::std::os::raw::c_uint,
-        __statebuf: *mut ::std::os::raw::c_char,
+        __seed: ::core::ffi::c_uint,
+        __statebuf: *mut ::core::ffi::c_char,
         __statelen: usize,
-    ) -> *mut ::std::os::raw::c_char;
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn setstate(__statebuf: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn setstate(__statebuf: *mut ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -3755,27 +4427,27 @@ pub struct random_data {
     pub fptr: *mut i32,
     pub rptr: *mut i32,
     pub state: *mut i32,
-    pub rand_type: ::std::os::raw::c_int,
-    pub rand_deg: ::std::os::raw::c_int,
-    pub rand_sep: ::std::os::raw::c_int,
+    pub rand_type: ::core::ffi::c_int,
+    pub rand_deg: ::core::ffi::c_int,
+    pub rand_sep: ::core::ffi::c_int,
     pub end_ptr: *mut i32,
 }
 #[test]
 fn bindgen_test_layout_random_data() {
-    const UNINIT: ::std::mem::MaybeUninit<random_data> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<random_data> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<random_data>(),
+        ::core::mem::size_of::<random_data>(),
         48usize,
         concat!("Size of: ", stringify!(random_data))
     );
     assert_eq!(
-        ::std::mem::align_of::<random_data>(),
+        ::core::mem::align_of::<random_data>(),
         8usize,
         concat!("Alignment of ", stringify!(random_data))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fptr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fptr) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3785,7 +4457,7 @@ fn bindgen_test_layout_random_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rptr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rptr) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -3795,7 +4467,7 @@ fn bindgen_test_layout_random_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -3805,7 +4477,7 @@ fn bindgen_test_layout_random_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rand_type) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rand_type) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -3815,7 +4487,7 @@ fn bindgen_test_layout_random_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rand_deg) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rand_deg) as usize - ptr as usize },
         28usize,
         concat!(
             "Offset of field: ",
@@ -3825,7 +4497,7 @@ fn bindgen_test_layout_random_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rand_sep) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rand_sep) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -3835,7 +4507,7 @@ fn bindgen_test_layout_random_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).end_ptr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).end_ptr) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -3846,89 +4518,86 @@ fn bindgen_test_layout_random_data() {
     );
 }
 extern "C" {
-    pub fn random_r(__buf: *mut random_data, __result: *mut i32) -> ::std::os::raw::c_int;
+    pub fn random_r(__buf: *mut random_data, __result: *mut i32) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn srandom_r(
-        __seed: ::std::os::raw::c_uint,
-        __buf: *mut random_data,
-    ) -> ::std::os::raw::c_int;
+    pub fn srandom_r(__seed: ::core::ffi::c_uint, __buf: *mut random_data) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn initstate_r(
-        __seed: ::std::os::raw::c_uint,
-        __statebuf: *mut ::std::os::raw::c_char,
+        __seed: ::core::ffi::c_uint,
+        __statebuf: *mut ::core::ffi::c_char,
         __statelen: usize,
         __buf: *mut random_data,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn setstate_r(
-        __statebuf: *mut ::std::os::raw::c_char,
+        __statebuf: *mut ::core::ffi::c_char,
         __buf: *mut random_data,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rand() -> ::std::os::raw::c_int;
+    pub fn rand() -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn srand(__seed: ::std::os::raw::c_uint);
+    pub fn srand(__seed: ::core::ffi::c_uint);
 }
 extern "C" {
-    pub fn rand_r(__seed: *mut ::std::os::raw::c_uint) -> ::std::os::raw::c_int;
+    pub fn rand_r(__seed: *mut ::core::ffi::c_uint) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn drand48() -> f64;
 }
 extern "C" {
-    pub fn erand48(__xsubi: *mut ::std::os::raw::c_ushort) -> f64;
+    pub fn erand48(__xsubi: *mut ::core::ffi::c_ushort) -> f64;
 }
 extern "C" {
-    pub fn lrand48() -> ::std::os::raw::c_long;
+    pub fn lrand48() -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn nrand48(__xsubi: *mut ::std::os::raw::c_ushort) -> ::std::os::raw::c_long;
+    pub fn nrand48(__xsubi: *mut ::core::ffi::c_ushort) -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn mrand48() -> ::std::os::raw::c_long;
+    pub fn mrand48() -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn jrand48(__xsubi: *mut ::std::os::raw::c_ushort) -> ::std::os::raw::c_long;
+    pub fn jrand48(__xsubi: *mut ::core::ffi::c_ushort) -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn srand48(__seedval: ::std::os::raw::c_long);
+    pub fn srand48(__seedval: ::core::ffi::c_long);
 }
 extern "C" {
-    pub fn seed48(__seed16v: *mut ::std::os::raw::c_ushort) -> *mut ::std::os::raw::c_ushort;
+    pub fn seed48(__seed16v: *mut ::core::ffi::c_ushort) -> *mut ::core::ffi::c_ushort;
 }
 extern "C" {
-    pub fn lcong48(__param: *mut ::std::os::raw::c_ushort);
+    pub fn lcong48(__param: *mut ::core::ffi::c_ushort);
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct drand48_data {
-    pub __x: [::std::os::raw::c_ushort; 3usize],
-    pub __old_x: [::std::os::raw::c_ushort; 3usize],
-    pub __c: ::std::os::raw::c_ushort,
-    pub __init: ::std::os::raw::c_ushort,
-    pub __a: ::std::os::raw::c_ulonglong,
+    pub __x: [::core::ffi::c_ushort; 3usize],
+    pub __old_x: [::core::ffi::c_ushort; 3usize],
+    pub __c: ::core::ffi::c_ushort,
+    pub __init: ::core::ffi::c_ushort,
+    pub __a: ::core::ffi::c_ulonglong,
 }
 #[test]
 fn bindgen_test_layout_drand48_data() {
-    const UNINIT: ::std::mem::MaybeUninit<drand48_data> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<drand48_data> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<drand48_data>(),
+        ::core::mem::size_of::<drand48_data>(),
         24usize,
         concat!("Size of: ", stringify!(drand48_data))
     );
     assert_eq!(
-        ::std::mem::align_of::<drand48_data>(),
+        ::core::mem::align_of::<drand48_data>(),
         8usize,
         concat!("Alignment of ", stringify!(drand48_data))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__x) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__x) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -3938,7 +4607,7 @@ fn bindgen_test_layout_drand48_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__old_x) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__old_x) as usize - ptr as usize },
         6usize,
         concat!(
             "Offset of field: ",
@@ -3948,7 +4617,7 @@ fn bindgen_test_layout_drand48_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__c) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__c) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -3958,7 +4627,7 @@ fn bindgen_test_layout_drand48_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__init) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__init) as usize - ptr as usize },
         14usize,
         concat!(
             "Offset of field: ",
@@ -3968,7 +4637,7 @@ fn bindgen_test_layout_drand48_data() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__a) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__a) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -3979,476 +4648,469 @@ fn bindgen_test_layout_drand48_data() {
     );
 }
 extern "C" {
-    pub fn drand48_r(__buffer: *mut drand48_data, __result: *mut f64) -> ::std::os::raw::c_int;
+    pub fn drand48_r(__buffer: *mut drand48_data, __result: *mut f64) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn erand48_r(
-        __xsubi: *mut ::std::os::raw::c_ushort,
+        __xsubi: *mut ::core::ffi::c_ushort,
         __buffer: *mut drand48_data,
         __result: *mut f64,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn lrand48_r(
         __buffer: *mut drand48_data,
-        __result: *mut ::std::os::raw::c_long,
-    ) -> ::std::os::raw::c_int;
+        __result: *mut ::core::ffi::c_long,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn nrand48_r(
-        __xsubi: *mut ::std::os::raw::c_ushort,
+        __xsubi: *mut ::core::ffi::c_ushort,
         __buffer: *mut drand48_data,
-        __result: *mut ::std::os::raw::c_long,
-    ) -> ::std::os::raw::c_int;
+        __result: *mut ::core::ffi::c_long,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn mrand48_r(
         __buffer: *mut drand48_data,
-        __result: *mut ::std::os::raw::c_long,
-    ) -> ::std::os::raw::c_int;
+        __result: *mut ::core::ffi::c_long,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn jrand48_r(
-        __xsubi: *mut ::std::os::raw::c_ushort,
+        __xsubi: *mut ::core::ffi::c_ushort,
         __buffer: *mut drand48_data,
-        __result: *mut ::std::os::raw::c_long,
-    ) -> ::std::os::raw::c_int;
+        __result: *mut ::core::ffi::c_long,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn srand48_r(
-        __seedval: ::std::os::raw::c_long,
+        __seedval: ::core::ffi::c_long,
         __buffer: *mut drand48_data,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn seed48_r(
-        __seed16v: *mut ::std::os::raw::c_ushort,
+        __seed16v: *mut ::core::ffi::c_ushort,
         __buffer: *mut drand48_data,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn lcong48_r(
-        __param: *mut ::std::os::raw::c_ushort,
+        __param: *mut ::core::ffi::c_ushort,
         __buffer: *mut drand48_data,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn arc4random() -> __uint32_t;
 }
 extern "C" {
-    pub fn arc4random_buf(__buf: *mut ::std::os::raw::c_void, __size: usize);
+    pub fn arc4random_buf(__buf: *mut ::core::ffi::c_void, __size: usize);
 }
 extern "C" {
     pub fn arc4random_uniform(__upper_bound: __uint32_t) -> __uint32_t;
 }
 extern "C" {
-    pub fn malloc(__size: ::std::os::raw::c_ulong) -> *mut ::std::os::raw::c_void;
+    pub fn malloc(__size: ::core::ffi::c_ulong) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn calloc(
-        __nmemb: ::std::os::raw::c_ulong,
-        __size: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_void;
+        __nmemb: ::core::ffi::c_ulong,
+        __size: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn realloc(
-        __ptr: *mut ::std::os::raw::c_void,
-        __size: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_void;
+        __ptr: *mut ::core::ffi::c_void,
+        __size: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
-    pub fn free(__ptr: *mut ::std::os::raw::c_void);
+    pub fn free(__ptr: *mut ::core::ffi::c_void);
 }
 extern "C" {
     pub fn reallocarray(
-        __ptr: *mut ::std::os::raw::c_void,
+        __ptr: *mut ::core::ffi::c_void,
         __nmemb: usize,
         __size: usize,
-    ) -> *mut ::std::os::raw::c_void;
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
-    pub fn alloca(__size: ::std::os::raw::c_ulong) -> *mut ::std::os::raw::c_void;
+    pub fn alloca(__size: ::core::ffi::c_ulong) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
-    pub fn valloc(__size: usize) -> *mut ::std::os::raw::c_void;
+    pub fn valloc(__size: usize) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn posix_memalign(
-        __memptr: *mut *mut ::std::os::raw::c_void,
+        __memptr: *mut *mut ::core::ffi::c_void,
         __alignment: usize,
         __size: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn aligned_alloc(
-        __alignment: ::std::os::raw::c_ulong,
-        __size: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_void;
+        __alignment: ::core::ffi::c_ulong,
+        __size: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn abort() -> !;
 }
 extern "C" {
-    pub fn atexit(__func: ::std::option::Option<unsafe extern "C" fn()>) -> ::std::os::raw::c_int;
+    pub fn atexit(__func: ::core::option::Option<unsafe extern "C" fn()>) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn at_quick_exit(
-        __func: ::std::option::Option<unsafe extern "C" fn()>,
-    ) -> ::std::os::raw::c_int;
+        __func: ::core::option::Option<unsafe extern "C" fn()>,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn on_exit(
-        __func: ::std::option::Option<
-            unsafe extern "C" fn(
-                __status: ::std::os::raw::c_int,
-                __arg: *mut ::std::os::raw::c_void,
-            ),
+        __func: ::core::option::Option<
+            unsafe extern "C" fn(__status: ::core::ffi::c_int, __arg: *mut ::core::ffi::c_void),
         >,
-        __arg: *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
+        __arg: *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn exit(__status: ::std::os::raw::c_int) -> !;
+    pub fn exit(__status: ::core::ffi::c_int) -> !;
 }
 extern "C" {
-    pub fn quick_exit(__status: ::std::os::raw::c_int) -> !;
+    pub fn quick_exit(__status: ::core::ffi::c_int) -> !;
 }
 extern "C" {
-    pub fn _Exit(__status: ::std::os::raw::c_int) -> !;
+    pub fn _Exit(__status: ::core::ffi::c_int) -> !;
 }
 extern "C" {
-    pub fn getenv(__name: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn getenv(__name: *const ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn putenv(__string: *mut ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn putenv(__string: *mut ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn setenv(
-        __name: *const ::std::os::raw::c_char,
-        __value: *const ::std::os::raw::c_char,
-        __replace: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __name: *const ::core::ffi::c_char,
+        __value: *const ::core::ffi::c_char,
+        __replace: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn unsetenv(__name: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn unsetenv(__name: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn clearenv() -> ::std::os::raw::c_int;
+    pub fn clearenv() -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn mktemp(__template: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn mktemp(__template: *mut ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn mkstemp(__template: *mut ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn mkstemp(__template: *mut ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn mkstemps(
-        __template: *mut ::std::os::raw::c_char,
-        __suffixlen: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __template: *mut ::core::ffi::c_char,
+        __suffixlen: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn mkdtemp(__template: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn mkdtemp(__template: *mut ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn system(__command: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn system(__command: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn realpath(
-        __name: *const ::std::os::raw::c_char,
-        __resolved: *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __name: *const ::core::ffi::c_char,
+        __resolved: *mut ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
-pub type __compar_fn_t = ::std::option::Option<
+pub type __compar_fn_t = ::core::option::Option<
     unsafe extern "C" fn(
-        arg1: *const ::std::os::raw::c_void,
-        arg2: *const ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int,
+        arg1: *const ::core::ffi::c_void,
+        arg2: *const ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int,
 >;
 extern "C" {
     pub fn bsearch(
-        __key: *const ::std::os::raw::c_void,
-        __base: *const ::std::os::raw::c_void,
+        __key: *const ::core::ffi::c_void,
+        __base: *const ::core::ffi::c_void,
         __nmemb: usize,
         __size: usize,
         __compar: __compar_fn_t,
-    ) -> *mut ::std::os::raw::c_void;
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn qsort(
-        __base: *mut ::std::os::raw::c_void,
+        __base: *mut ::core::ffi::c_void,
         __nmemb: usize,
         __size: usize,
         __compar: __compar_fn_t,
     );
 }
 extern "C" {
-    pub fn abs(__x: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn abs(__x: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn labs(__x: ::std::os::raw::c_long) -> ::std::os::raw::c_long;
+    pub fn labs(__x: ::core::ffi::c_long) -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn llabs(__x: ::std::os::raw::c_longlong) -> ::std::os::raw::c_longlong;
+    pub fn llabs(__x: ::core::ffi::c_longlong) -> ::core::ffi::c_longlong;
 }
 extern "C" {
-    pub fn div(__numer: ::std::os::raw::c_int, __denom: ::std::os::raw::c_int) -> div_t;
+    pub fn div(__numer: ::core::ffi::c_int, __denom: ::core::ffi::c_int) -> div_t;
 }
 extern "C" {
-    pub fn ldiv(__numer: ::std::os::raw::c_long, __denom: ::std::os::raw::c_long) -> ldiv_t;
+    pub fn ldiv(__numer: ::core::ffi::c_long, __denom: ::core::ffi::c_long) -> ldiv_t;
 }
 extern "C" {
-    pub fn lldiv(
-        __numer: ::std::os::raw::c_longlong,
-        __denom: ::std::os::raw::c_longlong,
-    ) -> lldiv_t;
+    pub fn lldiv(__numer: ::core::ffi::c_longlong, __denom: ::core::ffi::c_longlong) -> lldiv_t;
 }
 extern "C" {
     pub fn ecvt(
         __value: f64,
-        __ndigit: ::std::os::raw::c_int,
-        __decpt: *mut ::std::os::raw::c_int,
-        __sign: *mut ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        __ndigit: ::core::ffi::c_int,
+        __decpt: *mut ::core::ffi::c_int,
+        __sign: *mut ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn fcvt(
         __value: f64,
-        __ndigit: ::std::os::raw::c_int,
-        __decpt: *mut ::std::os::raw::c_int,
-        __sign: *mut ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        __ndigit: ::core::ffi::c_int,
+        __decpt: *mut ::core::ffi::c_int,
+        __sign: *mut ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn gcvt(
         __value: f64,
-        __ndigit: ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __ndigit: ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn qecvt(
         __value: u128,
-        __ndigit: ::std::os::raw::c_int,
-        __decpt: *mut ::std::os::raw::c_int,
-        __sign: *mut ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        __ndigit: ::core::ffi::c_int,
+        __decpt: *mut ::core::ffi::c_int,
+        __sign: *mut ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn qfcvt(
         __value: u128,
-        __ndigit: ::std::os::raw::c_int,
-        __decpt: *mut ::std::os::raw::c_int,
-        __sign: *mut ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        __ndigit: ::core::ffi::c_int,
+        __decpt: *mut ::core::ffi::c_int,
+        __sign: *mut ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn qgcvt(
         __value: u128,
-        __ndigit: ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __ndigit: ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn ecvt_r(
         __value: f64,
-        __ndigit: ::std::os::raw::c_int,
-        __decpt: *mut ::std::os::raw::c_int,
-        __sign: *mut ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_char,
+        __ndigit: ::core::ffi::c_int,
+        __decpt: *mut ::core::ffi::c_int,
+        __sign: *mut ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_char,
         __len: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn fcvt_r(
         __value: f64,
-        __ndigit: ::std::os::raw::c_int,
-        __decpt: *mut ::std::os::raw::c_int,
-        __sign: *mut ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_char,
+        __ndigit: ::core::ffi::c_int,
+        __decpt: *mut ::core::ffi::c_int,
+        __sign: *mut ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_char,
         __len: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn qecvt_r(
         __value: u128,
-        __ndigit: ::std::os::raw::c_int,
-        __decpt: *mut ::std::os::raw::c_int,
-        __sign: *mut ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_char,
+        __ndigit: ::core::ffi::c_int,
+        __decpt: *mut ::core::ffi::c_int,
+        __sign: *mut ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_char,
         __len: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn qfcvt_r(
         __value: u128,
-        __ndigit: ::std::os::raw::c_int,
-        __decpt: *mut ::std::os::raw::c_int,
-        __sign: *mut ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_char,
+        __ndigit: ::core::ffi::c_int,
+        __decpt: *mut ::core::ffi::c_int,
+        __sign: *mut ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_char,
         __len: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn mblen(__s: *const ::std::os::raw::c_char, __n: usize) -> ::std::os::raw::c_int;
+    pub fn mblen(__s: *const ::core::ffi::c_char, __n: usize) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn mbtowc(
         __pwc: *mut wchar_t,
-        __s: *const ::std::os::raw::c_char,
+        __s: *const ::core::ffi::c_char,
         __n: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn wctomb(__s: *mut ::std::os::raw::c_char, __wchar: wchar_t) -> ::std::os::raw::c_int;
+    pub fn wctomb(__s: *mut ::core::ffi::c_char, __wchar: wchar_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn mbstowcs(__pwcs: *mut wchar_t, __s: *const ::std::os::raw::c_char, __n: usize) -> usize;
+    pub fn mbstowcs(__pwcs: *mut wchar_t, __s: *const ::core::ffi::c_char, __n: usize) -> usize;
 }
 extern "C" {
-    pub fn wcstombs(__s: *mut ::std::os::raw::c_char, __pwcs: *const wchar_t, __n: usize) -> usize;
+    pub fn wcstombs(__s: *mut ::core::ffi::c_char, __pwcs: *const wchar_t, __n: usize) -> usize;
 }
 extern "C" {
-    pub fn rpmatch(__response: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn rpmatch(__response: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn getsubopt(
-        __optionp: *mut *mut ::std::os::raw::c_char,
-        __tokens: *const *mut ::std::os::raw::c_char,
-        __valuep: *mut *mut ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __optionp: *mut *mut ::core::ffi::c_char,
+        __tokens: *const *mut ::core::ffi::c_char,
+        __valuep: *mut *mut ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getloadavg(__loadavg: *mut f64, __nelem: ::std::os::raw::c_int)
-        -> ::std::os::raw::c_int;
+    pub fn getloadavg(__loadavg: *mut f64, __nelem: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn memcpy(
-        __dest: *mut ::std::os::raw::c_void,
-        __src: *const ::std::os::raw::c_void,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_void;
+        __dest: *mut ::core::ffi::c_void,
+        __src: *const ::core::ffi::c_void,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn memmove(
-        __dest: *mut ::std::os::raw::c_void,
-        __src: *const ::std::os::raw::c_void,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_void;
+        __dest: *mut ::core::ffi::c_void,
+        __src: *const ::core::ffi::c_void,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn memccpy(
-        __dest: *mut ::std::os::raw::c_void,
-        __src: *const ::std::os::raw::c_void,
-        __c: ::std::os::raw::c_int,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_void;
+        __dest: *mut ::core::ffi::c_void,
+        __src: *const ::core::ffi::c_void,
+        __c: ::core::ffi::c_int,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn memset(
-        __s: *mut ::std::os::raw::c_void,
-        __c: ::std::os::raw::c_int,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_void;
+        __s: *mut ::core::ffi::c_void,
+        __c: ::core::ffi::c_int,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn memcmp(
-        __s1: *const ::std::os::raw::c_void,
-        __s2: *const ::std::os::raw::c_void,
-        __n: ::std::os::raw::c_ulong,
-    ) -> ::std::os::raw::c_int;
+        __s1: *const ::core::ffi::c_void,
+        __s2: *const ::core::ffi::c_void,
+        __n: ::core::ffi::c_ulong,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn __memcmpeq(
-        __s1: *const ::std::os::raw::c_void,
-        __s2: *const ::std::os::raw::c_void,
+        __s1: *const ::core::ffi::c_void,
+        __s2: *const ::core::ffi::c_void,
         __n: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn memchr(
-        __s: *const ::std::os::raw::c_void,
-        __c: ::std::os::raw::c_int,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_void;
+        __s: *const ::core::ffi::c_void,
+        __c: ::core::ffi::c_int,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn strcpy(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strncpy(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_char;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strcat(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strncat(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_char;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strcmp(
-        __s1: *const ::std::os::raw::c_char,
-        __s2: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __s1: *const ::core::ffi::c_char,
+        __s2: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn strncmp(
-        __s1: *const ::std::os::raw::c_char,
-        __s2: *const ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_ulong,
-    ) -> ::std::os::raw::c_int;
+        __s1: *const ::core::ffi::c_char,
+        __s2: *const ::core::ffi::c_char,
+        __n: ::core::ffi::c_ulong,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn strcoll(
-        __s1: *const ::std::os::raw::c_char,
-        __s2: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __s1: *const ::core::ffi::c_char,
+        __s2: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn strxfrm(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_ulong,
-    ) -> ::std::os::raw::c_ulong;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+        __n: ::core::ffi::c_ulong,
+    ) -> ::core::ffi::c_ulong;
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __locale_struct {
     pub __locales: [*mut __locale_data; 13usize],
-    pub __ctype_b: *const ::std::os::raw::c_ushort,
-    pub __ctype_tolower: *const ::std::os::raw::c_int,
-    pub __ctype_toupper: *const ::std::os::raw::c_int,
-    pub __names: [*const ::std::os::raw::c_char; 13usize],
+    pub __ctype_b: *const ::core::ffi::c_ushort,
+    pub __ctype_tolower: *const ::core::ffi::c_int,
+    pub __ctype_toupper: *const ::core::ffi::c_int,
+    pub __names: [*const ::core::ffi::c_char; 13usize],
 }
 #[test]
 fn bindgen_test_layout___locale_struct() {
-    const UNINIT: ::std::mem::MaybeUninit<__locale_struct> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__locale_struct> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__locale_struct>(),
+        ::core::mem::size_of::<__locale_struct>(),
         232usize,
         concat!("Size of: ", stringify!(__locale_struct))
     );
     assert_eq!(
-        ::std::mem::align_of::<__locale_struct>(),
+        ::core::mem::align_of::<__locale_struct>(),
         8usize,
         concat!("Alignment of ", stringify!(__locale_struct))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__locales) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__locales) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -4458,7 +5120,7 @@ fn bindgen_test_layout___locale_struct() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__ctype_b) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__ctype_b) as usize - ptr as usize },
         104usize,
         concat!(
             "Offset of field: ",
@@ -4468,7 +5130,7 @@ fn bindgen_test_layout___locale_struct() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__ctype_tolower) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__ctype_tolower) as usize - ptr as usize },
         112usize,
         concat!(
             "Offset of field: ",
@@ -4478,7 +5140,7 @@ fn bindgen_test_layout___locale_struct() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__ctype_toupper) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__ctype_toupper) as usize - ptr as usize },
         120usize,
         concat!(
             "Offset of field: ",
@@ -4488,7 +5150,7 @@ fn bindgen_test_layout___locale_struct() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__names) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__names) as usize - ptr as usize },
         128usize,
         concat!(
             "Offset of field: ",
@@ -4502,258 +5164,255 @@ pub type __locale_t = *mut __locale_struct;
 pub type locale_t = __locale_t;
 extern "C" {
     pub fn strcoll_l(
-        __s1: *const ::std::os::raw::c_char,
-        __s2: *const ::std::os::raw::c_char,
+        __s1: *const ::core::ffi::c_char,
+        __s2: *const ::core::ffi::c_char,
         __l: locale_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn strxfrm_l(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
         __n: usize,
         __l: locale_t,
     ) -> usize;
 }
 extern "C" {
-    pub fn strdup(__s: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn strdup(__s: *const ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strndup(
-        __string: *const ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_char;
+        __string: *const ::core::ffi::c_char,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strchr(
-        __s: *const ::std::os::raw::c_char,
-        __c: ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        __s: *const ::core::ffi::c_char,
+        __c: ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strrchr(
-        __s: *const ::std::os::raw::c_char,
-        __c: ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        __s: *const ::core::ffi::c_char,
+        __c: ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strchrnul(
-        __s: *const ::std::os::raw::c_char,
-        __c: ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        __s: *const ::core::ffi::c_char,
+        __c: ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strcspn(
-        __s: *const ::std::os::raw::c_char,
-        __reject: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_ulong;
+        __s: *const ::core::ffi::c_char,
+        __reject: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_ulong;
 }
 extern "C" {
     pub fn strspn(
-        __s: *const ::std::os::raw::c_char,
-        __accept: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_ulong;
+        __s: *const ::core::ffi::c_char,
+        __accept: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_ulong;
 }
 extern "C" {
     pub fn strpbrk(
-        __s: *const ::std::os::raw::c_char,
-        __accept: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __s: *const ::core::ffi::c_char,
+        __accept: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strstr(
-        __haystack: *const ::std::os::raw::c_char,
-        __needle: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __haystack: *const ::core::ffi::c_char,
+        __needle: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strtok(
-        __s: *mut ::std::os::raw::c_char,
-        __delim: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __s: *mut ::core::ffi::c_char,
+        __delim: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn __strtok_r(
-        __s: *mut ::std::os::raw::c_char,
-        __delim: *const ::std::os::raw::c_char,
-        __save_ptr: *mut *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __s: *mut ::core::ffi::c_char,
+        __delim: *const ::core::ffi::c_char,
+        __save_ptr: *mut *mut ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strtok_r(
-        __s: *mut ::std::os::raw::c_char,
-        __delim: *const ::std::os::raw::c_char,
-        __save_ptr: *mut *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __s: *mut ::core::ffi::c_char,
+        __delim: *const ::core::ffi::c_char,
+        __save_ptr: *mut *mut ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strcasestr(
-        __haystack: *const ::std::os::raw::c_char,
-        __needle: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __haystack: *const ::core::ffi::c_char,
+        __needle: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn memmem(
-        __haystack: *const ::std::os::raw::c_void,
+        __haystack: *const ::core::ffi::c_void,
         __haystacklen: usize,
-        __needle: *const ::std::os::raw::c_void,
+        __needle: *const ::core::ffi::c_void,
         __needlelen: usize,
-    ) -> *mut ::std::os::raw::c_void;
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn __mempcpy(
-        __dest: *mut ::std::os::raw::c_void,
-        __src: *const ::std::os::raw::c_void,
+        __dest: *mut ::core::ffi::c_void,
+        __src: *const ::core::ffi::c_void,
         __n: usize,
-    ) -> *mut ::std::os::raw::c_void;
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn mempcpy(
-        __dest: *mut ::std::os::raw::c_void,
-        __src: *const ::std::os::raw::c_void,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_void;
+        __dest: *mut ::core::ffi::c_void,
+        __src: *const ::core::ffi::c_void,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
-    pub fn strlen(__s: *const ::std::os::raw::c_char) -> ::std::os::raw::c_ulong;
+    pub fn strlen(__s: *const ::core::ffi::c_char) -> ::core::ffi::c_ulong;
 }
 extern "C" {
-    pub fn strnlen(__string: *const ::std::os::raw::c_char, __maxlen: usize) -> usize;
+    pub fn strnlen(__string: *const ::core::ffi::c_char, __maxlen: usize) -> usize;
 }
 extern "C" {
-    pub fn strerror(__errnum: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
+    pub fn strerror(__errnum: ::core::ffi::c_int) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     #[link_name = "\u{1}__xpg_strerror_r"]
     pub fn strerror_r(
-        __errnum: ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_char,
+        __errnum: ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_char,
         __buflen: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn strerror_l(
-        __errnum: ::std::os::raw::c_int,
-        __l: locale_t,
-    ) -> *mut ::std::os::raw::c_char;
+    pub fn strerror_l(__errnum: ::core::ffi::c_int, __l: locale_t) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn bcmp(
-        __s1: *const ::std::os::raw::c_void,
-        __s2: *const ::std::os::raw::c_void,
-        __n: ::std::os::raw::c_ulong,
-    ) -> ::std::os::raw::c_int;
+        __s1: *const ::core::ffi::c_void,
+        __s2: *const ::core::ffi::c_void,
+        __n: ::core::ffi::c_ulong,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn bcopy(
-        __src: *const ::std::os::raw::c_void,
-        __dest: *mut ::std::os::raw::c_void,
-        __n: ::std::os::raw::c_ulong,
+        __src: *const ::core::ffi::c_void,
+        __dest: *mut ::core::ffi::c_void,
+        __n: ::core::ffi::c_ulong,
     );
 }
 extern "C" {
-    pub fn bzero(__s: *mut ::std::os::raw::c_void, __n: ::std::os::raw::c_ulong);
+    pub fn bzero(__s: *mut ::core::ffi::c_void, __n: ::core::ffi::c_ulong);
 }
 extern "C" {
     pub fn index(
-        __s: *const ::std::os::raw::c_char,
-        __c: ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        __s: *const ::core::ffi::c_char,
+        __c: ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn rindex(
-        __s: *const ::std::os::raw::c_char,
-        __c: ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        __s: *const ::core::ffi::c_char,
+        __c: ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn ffs(__i: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn ffs(__i: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn ffsl(__l: ::std::os::raw::c_long) -> ::std::os::raw::c_int;
+    pub fn ffsl(__l: ::core::ffi::c_long) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn ffsll(__ll: ::std::os::raw::c_longlong) -> ::std::os::raw::c_int;
+    pub fn ffsll(__ll: ::core::ffi::c_longlong) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn strcasecmp(
-        __s1: *const ::std::os::raw::c_char,
-        __s2: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __s1: *const ::core::ffi::c_char,
+        __s2: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn strncasecmp(
-        __s1: *const ::std::os::raw::c_char,
-        __s2: *const ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_ulong,
-    ) -> ::std::os::raw::c_int;
+        __s1: *const ::core::ffi::c_char,
+        __s2: *const ::core::ffi::c_char,
+        __n: ::core::ffi::c_ulong,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn strcasecmp_l(
-        __s1: *const ::std::os::raw::c_char,
-        __s2: *const ::std::os::raw::c_char,
+        __s1: *const ::core::ffi::c_char,
+        __s2: *const ::core::ffi::c_char,
         __loc: locale_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn strncasecmp_l(
-        __s1: *const ::std::os::raw::c_char,
-        __s2: *const ::std::os::raw::c_char,
+        __s1: *const ::core::ffi::c_char,
+        __s2: *const ::core::ffi::c_char,
         __n: usize,
         __loc: locale_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn explicit_bzero(__s: *mut ::std::os::raw::c_void, __n: usize);
+    pub fn explicit_bzero(__s: *mut ::core::ffi::c_void, __n: usize);
 }
 extern "C" {
     pub fn strsep(
-        __stringp: *mut *mut ::std::os::raw::c_char,
-        __delim: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __stringp: *mut *mut ::core::ffi::c_char,
+        __delim: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn strsignal(__sig: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
+    pub fn strsignal(__sig: ::core::ffi::c_int) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn __stpcpy(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn stpcpy(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn __stpncpy(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
         __n: usize,
-    ) -> *mut ::std::os::raw::c_char;
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn stpncpy(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_ulong,
-    ) -> *mut ::std::os::raw::c_char;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+        __n: ::core::ffi::c_ulong,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn strlcpy(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_ulong,
-    ) -> ::std::os::raw::c_ulong;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+        __n: ::core::ffi::c_ulong,
+    ) -> ::core::ffi::c_ulong;
 }
 extern "C" {
     pub fn strlcat(
-        __dest: *mut ::std::os::raw::c_char,
-        __src: *const ::std::os::raw::c_char,
-        __n: ::std::os::raw::c_ulong,
-    ) -> ::std::os::raw::c_ulong;
+        __dest: *mut ::core::ffi::c_char,
+        __src: *const ::core::ffi::c_char,
+        __n: ::core::ffi::c_ulong,
+    ) -> ::core::ffi::c_ulong;
 }
 pub type int_least8_t = __int_least8_t;
 pub type int_least16_t = __int_least16_t;
@@ -4763,40 +5422,40 @@ pub type uint_least8_t = __uint_least8_t;
 pub type uint_least16_t = __uint_least16_t;
 pub type uint_least32_t = __uint_least32_t;
 pub type uint_least64_t = __uint_least64_t;
-pub type int_fast8_t = ::std::os::raw::c_schar;
-pub type int_fast16_t = ::std::os::raw::c_long;
-pub type int_fast32_t = ::std::os::raw::c_long;
-pub type int_fast64_t = ::std::os::raw::c_long;
-pub type uint_fast8_t = ::std::os::raw::c_uchar;
-pub type uint_fast16_t = ::std::os::raw::c_ulong;
-pub type uint_fast32_t = ::std::os::raw::c_ulong;
-pub type uint_fast64_t = ::std::os::raw::c_ulong;
+pub type int_fast8_t = ::core::ffi::c_schar;
+pub type int_fast16_t = ::core::ffi::c_long;
+pub type int_fast32_t = ::core::ffi::c_long;
+pub type int_fast64_t = ::core::ffi::c_long;
+pub type uint_fast8_t = ::core::ffi::c_uchar;
+pub type uint_fast16_t = ::core::ffi::c_ulong;
+pub type uint_fast32_t = ::core::ffi::c_ulong;
+pub type uint_fast64_t = ::core::ffi::c_ulong;
 pub type intmax_t = __intmax_t;
 pub type uintmax_t = __uintmax_t;
 #[repr(C)]
 #[repr(align(16))]
 #[derive(Debug, Copy, Clone)]
 pub struct max_align_t {
-    pub __clang_max_align_nonce1: ::std::os::raw::c_longlong,
+    pub __clang_max_align_nonce1: ::core::ffi::c_longlong,
     pub __bindgen_padding_0: u64,
     pub __clang_max_align_nonce2: u128,
 }
 #[test]
 fn bindgen_test_layout_max_align_t() {
-    const UNINIT: ::std::mem::MaybeUninit<max_align_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<max_align_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<max_align_t>(),
+        ::core::mem::size_of::<max_align_t>(),
         32usize,
         concat!("Size of: ", stringify!(max_align_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<max_align_t>(),
+        ::core::mem::align_of::<max_align_t>(),
         16usize,
         concat!("Alignment of ", stringify!(max_align_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__clang_max_align_nonce1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__clang_max_align_nonce1) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -4806,7 +5465,7 @@ fn bindgen_test_layout_max_align_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__clang_max_align_nonce2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__clang_max_align_nonce2) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -4817,200 +5476,194 @@ fn bindgen_test_layout_max_align_t() {
     );
 }
 pub type z_size_t = usize;
-pub type Byte = ::std::os::raw::c_uchar;
-pub type uInt = ::std::os::raw::c_uint;
-pub type uLong = ::std::os::raw::c_ulong;
+pub type Byte = ::core::ffi::c_uchar;
+pub type uInt = ::core::ffi::c_uint;
+pub type uLong = ::core::ffi::c_ulong;
 pub type Bytef = Byte;
-pub type charf = ::std::os::raw::c_char;
-pub type intf = ::std::os::raw::c_int;
+pub type charf = ::core::ffi::c_char;
+pub type intf = ::core::ffi::c_int;
 pub type uIntf = uInt;
 pub type uLongf = uLong;
-pub type voidpc = *const ::std::os::raw::c_void;
-pub type voidpf = *mut ::std::os::raw::c_void;
-pub type voidp = *mut ::std::os::raw::c_void;
-pub type z_crc_t = ::std::os::raw::c_uint;
+pub type voidpc = *const ::core::ffi::c_void;
+pub type voidpf = *mut ::core::ffi::c_void;
+pub type voidp = *mut ::core::ffi::c_void;
+pub type z_crc_t = ::core::ffi::c_uint;
 pub type useconds_t = __useconds_t;
 pub type socklen_t = __socklen_t;
 extern "C" {
     pub fn access(
-        __name: *const ::std::os::raw::c_char,
-        __type: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __name: *const ::core::ffi::c_char,
+        __type: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn faccessat(
-        __fd: ::std::os::raw::c_int,
-        __file: *const ::std::os::raw::c_char,
-        __type: ::std::os::raw::c_int,
-        __flag: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __fd: ::core::ffi::c_int,
+        __file: *const ::core::ffi::c_char,
+        __type: ::core::ffi::c_int,
+        __flag: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn lseek(
-        __fd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
         __offset: __off_t,
-        __whence: ::std::os::raw::c_int,
+        __whence: ::core::ffi::c_int,
     ) -> __off_t;
 }
 extern "C" {
-    pub fn close(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn close(__fd: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn closefrom(__lowfd: ::std::os::raw::c_int);
+    pub fn closefrom(__lowfd: ::core::ffi::c_int);
 }
 extern "C" {
     pub fn read(
-        __fd: ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_void,
+        __fd: ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_void,
         __nbytes: usize,
     ) -> isize;
 }
 extern "C" {
-    pub fn write(
-        __fd: ::std::os::raw::c_int,
-        __buf: *const ::std::os::raw::c_void,
-        __n: usize,
-    ) -> isize;
+    pub fn write(__fd: ::core::ffi::c_int, __buf: *const ::core::ffi::c_void, __n: usize) -> isize;
 }
 extern "C" {
     pub fn pread(
-        __fd: ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_void,
+        __fd: ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_void,
         __nbytes: usize,
         __offset: __off_t,
     ) -> isize;
 }
 extern "C" {
     pub fn pwrite(
-        __fd: ::std::os::raw::c_int,
-        __buf: *const ::std::os::raw::c_void,
+        __fd: ::core::ffi::c_int,
+        __buf: *const ::core::ffi::c_void,
         __n: usize,
         __offset: __off_t,
     ) -> isize;
 }
 extern "C" {
-    pub fn pipe(__pipedes: *mut ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn pipe(__pipedes: *mut ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn alarm(__seconds: ::std::os::raw::c_uint) -> ::std::os::raw::c_uint;
+    pub fn alarm(__seconds: ::core::ffi::c_uint) -> ::core::ffi::c_uint;
 }
 extern "C" {
-    pub fn sleep(__seconds: ::std::os::raw::c_uint) -> ::std::os::raw::c_uint;
+    pub fn sleep(__seconds: ::core::ffi::c_uint) -> ::core::ffi::c_uint;
 }
 extern "C" {
     pub fn ualarm(__value: __useconds_t, __interval: __useconds_t) -> __useconds_t;
 }
 extern "C" {
-    pub fn usleep(__useconds: __useconds_t) -> ::std::os::raw::c_int;
+    pub fn usleep(__useconds: __useconds_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pause() -> ::std::os::raw::c_int;
+    pub fn pause() -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn chown(
-        __file: *const ::std::os::raw::c_char,
+        __file: *const ::core::ffi::c_char,
         __owner: __uid_t,
         __group: __gid_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn fchown(
-        __fd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
         __owner: __uid_t,
         __group: __gid_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn lchown(
-        __file: *const ::std::os::raw::c_char,
+        __file: *const ::core::ffi::c_char,
         __owner: __uid_t,
         __group: __gid_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn fchownat(
-        __fd: ::std::os::raw::c_int,
-        __file: *const ::std::os::raw::c_char,
+        __fd: ::core::ffi::c_int,
+        __file: *const ::core::ffi::c_char,
         __owner: __uid_t,
         __group: __gid_t,
-        __flag: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __flag: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn chdir(__path: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn chdir(__path: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fchdir(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn fchdir(__fd: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getcwd(__buf: *mut ::std::os::raw::c_char, __size: usize)
-        -> *mut ::std::os::raw::c_char;
+    pub fn getcwd(__buf: *mut ::core::ffi::c_char, __size: usize) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn getwd(__buf: *mut ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn getwd(__buf: *mut ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn dup(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn dup(__fd: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn dup2(__fd: ::std::os::raw::c_int, __fd2: ::std::os::raw::c_int)
-        -> ::std::os::raw::c_int;
+    pub fn dup2(__fd: ::core::ffi::c_int, __fd2: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub static mut __environ: *mut *mut ::std::os::raw::c_char;
+    pub static mut __environ: *mut *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn execve(
-        __path: *const ::std::os::raw::c_char,
-        __argv: *const *mut ::std::os::raw::c_char,
-        __envp: *const *mut ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __path: *const ::core::ffi::c_char,
+        __argv: *const *mut ::core::ffi::c_char,
+        __envp: *const *mut ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn fexecve(
-        __fd: ::std::os::raw::c_int,
-        __argv: *const *mut ::std::os::raw::c_char,
-        __envp: *const *mut ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __fd: ::core::ffi::c_int,
+        __argv: *const *mut ::core::ffi::c_char,
+        __envp: *const *mut ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn execv(
-        __path: *const ::std::os::raw::c_char,
-        __argv: *const *mut ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __path: *const ::core::ffi::c_char,
+        __argv: *const *mut ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn execle(
-        __path: *const ::std::os::raw::c_char,
-        __arg: *const ::std::os::raw::c_char,
+        __path: *const ::core::ffi::c_char,
+        __arg: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn execl(
-        __path: *const ::std::os::raw::c_char,
-        __arg: *const ::std::os::raw::c_char,
+        __path: *const ::core::ffi::c_char,
+        __arg: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn execvp(
-        __file: *const ::std::os::raw::c_char,
-        __argv: *const *mut ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __file: *const ::core::ffi::c_char,
+        __argv: *const *mut ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn execlp(
-        __file: *const ::std::os::raw::c_char,
-        __arg: *const ::std::os::raw::c_char,
+        __file: *const ::core::ffi::c_char,
+        __arg: *const ::core::ffi::c_char,
         ...
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn nice(__inc: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn nice(__inc: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn _exit(__status: ::std::os::raw::c_int) -> !;
+    pub fn _exit(__status: ::core::ffi::c_int) -> !;
 }
 pub const _PC_LINK_MAX: _bindgen_ty_1 = 0;
 pub const _PC_MAX_CANON: _bindgen_ty_1 = 1;
@@ -5033,7 +5686,7 @@ pub const _PC_REC_XFER_ALIGN: _bindgen_ty_1 = 17;
 pub const _PC_ALLOC_SIZE_MIN: _bindgen_ty_1 = 18;
 pub const _PC_SYMLINK_MAX: _bindgen_ty_1 = 19;
 pub const _PC_2_SYMLINKS: _bindgen_ty_1 = 20;
-pub type _bindgen_ty_1 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_1 = ::core::ffi::c_uint;
 pub const _SC_ARG_MAX: _bindgen_ty_2 = 0;
 pub const _SC_CHILD_MAX: _bindgen_ty_2 = 1;
 pub const _SC_CLK_TCK: _bindgen_ty_2 = 2;
@@ -5251,7 +5904,7 @@ pub const _SC_THREAD_ROBUST_PRIO_INHERIT: _bindgen_ty_2 = 247;
 pub const _SC_THREAD_ROBUST_PRIO_PROTECT: _bindgen_ty_2 = 248;
 pub const _SC_MINSIGSTKSZ: _bindgen_ty_2 = 249;
 pub const _SC_SIGSTKSZ: _bindgen_ty_2 = 250;
-pub type _bindgen_ty_2 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_2 = ::core::ffi::c_uint;
 pub const _CS_PATH: _bindgen_ty_3 = 0;
 pub const _CS_V6_WIDTH_RESTRICTED_ENVS: _bindgen_ty_3 = 1;
 pub const _CS_GNU_LIBC_VERSION: _bindgen_ty_3 = 2;
@@ -5316,26 +5969,23 @@ pub const _CS_POSIX_V7_LPBIG_OFFBIG_LIBS: _bindgen_ty_3 = 1146;
 pub const _CS_POSIX_V7_LPBIG_OFFBIG_LINTFLAGS: _bindgen_ty_3 = 1147;
 pub const _CS_V6_ENV: _bindgen_ty_3 = 1148;
 pub const _CS_V7_ENV: _bindgen_ty_3 = 1149;
-pub type _bindgen_ty_3 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_3 = ::core::ffi::c_uint;
 extern "C" {
     pub fn pathconf(
-        __path: *const ::std::os::raw::c_char,
-        __name: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_long;
+        __path: *const ::core::ffi::c_char,
+        __name: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn fpathconf(
-        __fd: ::std::os::raw::c_int,
-        __name: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_long;
+    pub fn fpathconf(__fd: ::core::ffi::c_int, __name: ::core::ffi::c_int) -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn sysconf(__name: ::std::os::raw::c_int) -> ::std::os::raw::c_long;
+    pub fn sysconf(__name: ::core::ffi::c_int) -> ::core::ffi::c_long;
 }
 extern "C" {
     pub fn confstr(
-        __name: ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_char,
+        __name: ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_char,
         __len: usize,
     ) -> usize;
 }
@@ -5355,10 +6005,10 @@ extern "C" {
     pub fn getpgid(__pid: __pid_t) -> __pid_t;
 }
 extern "C" {
-    pub fn setpgid(__pid: __pid_t, __pgid: __pid_t) -> ::std::os::raw::c_int;
+    pub fn setpgid(__pid: __pid_t, __pgid: __pid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn setpgrp() -> ::std::os::raw::c_int;
+    pub fn setpgrp() -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn setsid() -> __pid_t;
@@ -5379,184 +6029,172 @@ extern "C" {
     pub fn getegid() -> __gid_t;
 }
 extern "C" {
-    pub fn getgroups(__size: ::std::os::raw::c_int, __list: *mut __gid_t) -> ::std::os::raw::c_int;
+    pub fn getgroups(__size: ::core::ffi::c_int, __list: *mut __gid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn setuid(__uid: __uid_t) -> ::std::os::raw::c_int;
+    pub fn setuid(__uid: __uid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn setreuid(__ruid: __uid_t, __euid: __uid_t) -> ::std::os::raw::c_int;
+    pub fn setreuid(__ruid: __uid_t, __euid: __uid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn seteuid(__uid: __uid_t) -> ::std::os::raw::c_int;
+    pub fn seteuid(__uid: __uid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn setgid(__gid: __gid_t) -> ::std::os::raw::c_int;
+    pub fn setgid(__gid: __gid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn setregid(__rgid: __gid_t, __egid: __gid_t) -> ::std::os::raw::c_int;
+    pub fn setregid(__rgid: __gid_t, __egid: __gid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn setegid(__gid: __gid_t) -> ::std::os::raw::c_int;
+    pub fn setegid(__gid: __gid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn fork() -> __pid_t;
 }
 extern "C" {
-    pub fn vfork() -> ::std::os::raw::c_int;
+    pub fn vfork() -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn ttyname(__fd: ::std::os::raw::c_int) -> *mut ::std::os::raw::c_char;
+    pub fn ttyname(__fd: ::core::ffi::c_int) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn ttyname_r(
-        __fd: ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_char,
+        __fd: ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_char,
         __buflen: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn isatty(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn isatty(__fd: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn ttyslot() -> ::std::os::raw::c_int;
+    pub fn ttyslot() -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn link(
-        __from: *const ::std::os::raw::c_char,
-        __to: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __from: *const ::core::ffi::c_char,
+        __to: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn linkat(
-        __fromfd: ::std::os::raw::c_int,
-        __from: *const ::std::os::raw::c_char,
-        __tofd: ::std::os::raw::c_int,
-        __to: *const ::std::os::raw::c_char,
-        __flags: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __fromfd: ::core::ffi::c_int,
+        __from: *const ::core::ffi::c_char,
+        __tofd: ::core::ffi::c_int,
+        __to: *const ::core::ffi::c_char,
+        __flags: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn symlink(
-        __from: *const ::std::os::raw::c_char,
-        __to: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __from: *const ::core::ffi::c_char,
+        __to: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn readlink(
-        __path: *const ::std::os::raw::c_char,
-        __buf: *mut ::std::os::raw::c_char,
+        __path: *const ::core::ffi::c_char,
+        __buf: *mut ::core::ffi::c_char,
         __len: usize,
     ) -> isize;
 }
 extern "C" {
     pub fn symlinkat(
-        __from: *const ::std::os::raw::c_char,
-        __tofd: ::std::os::raw::c_int,
-        __to: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        __from: *const ::core::ffi::c_char,
+        __tofd: ::core::ffi::c_int,
+        __to: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn readlinkat(
-        __fd: ::std::os::raw::c_int,
-        __path: *const ::std::os::raw::c_char,
-        __buf: *mut ::std::os::raw::c_char,
+        __fd: ::core::ffi::c_int,
+        __path: *const ::core::ffi::c_char,
+        __buf: *mut ::core::ffi::c_char,
         __len: usize,
     ) -> isize;
 }
 extern "C" {
-    pub fn unlink(__name: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn unlink(__name: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn unlinkat(
-        __fd: ::std::os::raw::c_int,
-        __name: *const ::std::os::raw::c_char,
-        __flag: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __fd: ::core::ffi::c_int,
+        __name: *const ::core::ffi::c_char,
+        __flag: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rmdir(__path: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn rmdir(__path: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn tcgetpgrp(__fd: ::std::os::raw::c_int) -> __pid_t;
+    pub fn tcgetpgrp(__fd: ::core::ffi::c_int) -> __pid_t;
 }
 extern "C" {
-    pub fn tcsetpgrp(__fd: ::std::os::raw::c_int, __pgrp_id: __pid_t) -> ::std::os::raw::c_int;
+    pub fn tcsetpgrp(__fd: ::core::ffi::c_int, __pgrp_id: __pid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getlogin() -> *mut ::std::os::raw::c_char;
+    pub fn getlogin() -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn getlogin_r(
-        __name: *mut ::std::os::raw::c_char,
-        __name_len: usize,
-    ) -> ::std::os::raw::c_int;
+    pub fn getlogin_r(__name: *mut ::core::ffi::c_char, __name_len: usize) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn setlogin(__name: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn setlogin(__name: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub static mut optarg: *mut ::std::os::raw::c_char;
+    pub static mut optarg: *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub static mut optind: ::std::os::raw::c_int;
+    pub static mut optind: ::core::ffi::c_int;
 }
 extern "C" {
-    pub static mut opterr: ::std::os::raw::c_int;
+    pub static mut opterr: ::core::ffi::c_int;
 }
 extern "C" {
-    pub static mut optopt: ::std::os::raw::c_int;
+    pub static mut optopt: ::core::ffi::c_int;
 }
 extern "C" {
     pub fn getopt(
-        ___argc: ::std::os::raw::c_int,
-        ___argv: *const *mut ::std::os::raw::c_char,
-        __shortopts: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        ___argc: ::core::ffi::c_int,
+        ___argv: *const *mut ::core::ffi::c_char,
+        __shortopts: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gethostname(__name: *mut ::std::os::raw::c_char, __len: usize) -> ::std::os::raw::c_int;
+    pub fn gethostname(__name: *mut ::core::ffi::c_char, __len: usize) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sethostname(
-        __name: *const ::std::os::raw::c_char,
-        __len: usize,
-    ) -> ::std::os::raw::c_int;
+    pub fn sethostname(__name: *const ::core::ffi::c_char, __len: usize) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sethostid(__id: ::std::os::raw::c_long) -> ::std::os::raw::c_int;
+    pub fn sethostid(__id: ::core::ffi::c_long) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getdomainname(
-        __name: *mut ::std::os::raw::c_char,
-        __len: usize,
-    ) -> ::std::os::raw::c_int;
+    pub fn getdomainname(__name: *mut ::core::ffi::c_char, __len: usize) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn setdomainname(
-        __name: *const ::std::os::raw::c_char,
-        __len: usize,
-    ) -> ::std::os::raw::c_int;
+    pub fn setdomainname(__name: *const ::core::ffi::c_char, __len: usize) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn vhangup() -> ::std::os::raw::c_int;
+    pub fn vhangup() -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn revoke(__file: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn revoke(__file: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn profil(
-        __sample_buffer: *mut ::std::os::raw::c_ushort,
+        __sample_buffer: *mut ::core::ffi::c_ushort,
         __size: usize,
         __offset: usize,
-        __scale: ::std::os::raw::c_uint,
-    ) -> ::std::os::raw::c_int;
+        __scale: ::core::ffi::c_uint,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn acct(__name: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn acct(__name: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getusershell() -> *mut ::std::os::raw::c_char;
+    pub fn getusershell() -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn endusershell();
@@ -5566,74 +6204,68 @@ extern "C" {
 }
 extern "C" {
     pub fn daemon(
-        __nochdir: ::std::os::raw::c_int,
-        __noclose: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __nochdir: ::core::ffi::c_int,
+        __noclose: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn chroot(__path: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn chroot(__path: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getpass(__prompt: *const ::std::os::raw::c_char) -> *mut ::std::os::raw::c_char;
+    pub fn getpass(__prompt: *const ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn fsync(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn fsync(__fd: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gethostid() -> ::std::os::raw::c_long;
+    pub fn gethostid() -> ::core::ffi::c_long;
 }
 extern "C" {
     pub fn sync();
 }
 extern "C" {
-    pub fn getpagesize() -> ::std::os::raw::c_int;
+    pub fn getpagesize() -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn getdtablesize() -> ::std::os::raw::c_int;
+    pub fn getdtablesize() -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn truncate(
-        __file: *const ::std::os::raw::c_char,
-        __length: __off_t,
-    ) -> ::std::os::raw::c_int;
+    pub fn truncate(__file: *const ::core::ffi::c_char, __length: __off_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn ftruncate(__fd: ::std::os::raw::c_int, __length: __off_t) -> ::std::os::raw::c_int;
+    pub fn ftruncate(__fd: ::core::ffi::c_int, __length: __off_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn brk(__addr: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
+    pub fn brk(__addr: *mut ::core::ffi::c_void) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sbrk(__delta: isize) -> *mut ::std::os::raw::c_void;
+    pub fn sbrk(__delta: isize) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
-    pub fn syscall(__sysno: ::std::os::raw::c_long, ...) -> ::std::os::raw::c_long;
+    pub fn syscall(__sysno: ::core::ffi::c_long, ...) -> ::core::ffi::c_long;
 }
 extern "C" {
     pub fn lockf(
-        __fd: ::std::os::raw::c_int,
-        __cmd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
+        __cmd: ::core::ffi::c_int,
         __len: __off_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn fdatasync(__fildes: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn fdatasync(__fildes: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn crypt(
-        __key: *const ::std::os::raw::c_char,
-        __salt: *const ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __key: *const ::core::ffi::c_char,
+        __salt: *const ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn getentropy(
-        __buffer: *mut ::std::os::raw::c_void,
-        __length: usize,
-    ) -> ::std::os::raw::c_int;
+    pub fn getentropy(__buffer: *mut ::core::ffi::c_void, __length: usize) -> ::core::ffi::c_int;
 }
 pub type alloc_func =
-    ::std::option::Option<unsafe extern "C" fn(opaque: voidpf, items: uInt, size: uInt) -> voidpf>;
-pub type free_func = ::std::option::Option<unsafe extern "C" fn(opaque: voidpf, address: voidpf)>;
+    ::core::option::Option<unsafe extern "C" fn(opaque: voidpf, items: uInt, size: uInt) -> voidpf>;
+pub type free_func = ::core::option::Option<unsafe extern "C" fn(opaque: voidpf, address: voidpf)>;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct internal_state {
@@ -5648,31 +6280,31 @@ pub struct z_stream_s {
     pub next_out: *mut Bytef,
     pub avail_out: uInt,
     pub total_out: uLong,
-    pub msg: *mut ::std::os::raw::c_char,
+    pub msg: *mut ::core::ffi::c_char,
     pub state: *mut internal_state,
     pub zalloc: alloc_func,
     pub zfree: free_func,
     pub opaque: voidpf,
-    pub data_type: ::std::os::raw::c_int,
+    pub data_type: ::core::ffi::c_int,
     pub adler: uLong,
     pub reserved: uLong,
 }
 #[test]
 fn bindgen_test_layout_z_stream_s() {
-    const UNINIT: ::std::mem::MaybeUninit<z_stream_s> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<z_stream_s> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<z_stream_s>(),
+        ::core::mem::size_of::<z_stream_s>(),
         112usize,
         concat!("Size of: ", stringify!(z_stream_s))
     );
     assert_eq!(
-        ::std::mem::align_of::<z_stream_s>(),
+        ::core::mem::align_of::<z_stream_s>(),
         8usize,
         concat!("Alignment of ", stringify!(z_stream_s))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).next_in) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).next_in) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -5682,7 +6314,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).avail_in) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).avail_in) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -5692,7 +6324,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).total_in) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).total_in) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -5702,7 +6334,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).next_out) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).next_out) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -5712,7 +6344,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).avail_out) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).avail_out) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -5722,7 +6354,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).total_out) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).total_out) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -5732,7 +6364,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).msg) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).msg) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -5742,7 +6374,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
         56usize,
         concat!(
             "Offset of field: ",
@@ -5752,7 +6384,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zalloc) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zalloc) as usize - ptr as usize },
         64usize,
         concat!(
             "Offset of field: ",
@@ -5762,7 +6394,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zfree) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zfree) as usize - ptr as usize },
         72usize,
         concat!(
             "Offset of field: ",
@@ -5772,7 +6404,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).opaque) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).opaque) as usize - ptr as usize },
         80usize,
         concat!(
             "Offset of field: ",
@@ -5782,7 +6414,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).data_type) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).data_type) as usize - ptr as usize },
         88usize,
         concat!(
             "Offset of field: ",
@@ -5792,7 +6424,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).adler) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).adler) as usize - ptr as usize },
         96usize,
         concat!(
             "Offset of field: ",
@@ -5802,7 +6434,7 @@ fn bindgen_test_layout_z_stream_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).reserved) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).reserved) as usize - ptr as usize },
         104usize,
         concat!(
             "Offset of field: ",
@@ -5817,10 +6449,10 @@ pub type z_streamp = *mut z_stream;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gz_header_s {
-    pub text: ::std::os::raw::c_int,
+    pub text: ::core::ffi::c_int,
     pub time: uLong,
-    pub xflags: ::std::os::raw::c_int,
-    pub os: ::std::os::raw::c_int,
+    pub xflags: ::core::ffi::c_int,
+    pub os: ::core::ffi::c_int,
     pub extra: *mut Bytef,
     pub extra_len: uInt,
     pub extra_max: uInt,
@@ -5828,25 +6460,25 @@ pub struct gz_header_s {
     pub name_max: uInt,
     pub comment: *mut Bytef,
     pub comm_max: uInt,
-    pub hcrc: ::std::os::raw::c_int,
-    pub done: ::std::os::raw::c_int,
+    pub hcrc: ::core::ffi::c_int,
+    pub done: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_gz_header_s() {
-    const UNINIT: ::std::mem::MaybeUninit<gz_header_s> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<gz_header_s> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<gz_header_s>(),
+        ::core::mem::size_of::<gz_header_s>(),
         80usize,
         concat!("Size of: ", stringify!(gz_header_s))
     );
     assert_eq!(
-        ::std::mem::align_of::<gz_header_s>(),
+        ::core::mem::align_of::<gz_header_s>(),
         8usize,
         concat!("Alignment of ", stringify!(gz_header_s))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).text) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).text) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -5856,7 +6488,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).time) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -5866,7 +6498,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).xflags) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).xflags) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -5876,7 +6508,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).os) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).os) as usize - ptr as usize },
         20usize,
         concat!(
             "Offset of field: ",
@@ -5886,7 +6518,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).extra) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).extra) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -5896,7 +6528,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).extra_len) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).extra_len) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -5906,7 +6538,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).extra_max) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).extra_max) as usize - ptr as usize },
         36usize,
         concat!(
             "Offset of field: ",
@@ -5916,7 +6548,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -5926,7 +6558,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).name_max) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).name_max) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -5936,7 +6568,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).comment) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).comment) as usize - ptr as usize },
         56usize,
         concat!(
             "Offset of field: ",
@@ -5946,7 +6578,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).comm_max) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).comm_max) as usize - ptr as usize },
         64usize,
         concat!(
             "Offset of field: ",
@@ -5956,7 +6588,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).hcrc) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).hcrc) as usize - ptr as usize },
         68usize,
         concat!(
             "Offset of field: ",
@@ -5966,7 +6598,7 @@ fn bindgen_test_layout_gz_header_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).done) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).done) as usize - ptr as usize },
         72usize,
         concat!(
             "Offset of field: ",
@@ -5979,55 +6611,55 @@ fn bindgen_test_layout_gz_header_s() {
 pub type gz_header = gz_header_s;
 pub type gz_headerp = *mut gz_header;
 extern "C" {
-    pub fn zlibVersion() -> *const ::std::os::raw::c_char;
+    pub fn zlibVersion() -> *const ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn deflate(strm: z_streamp, flush: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn deflate(strm: z_streamp, flush: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn deflateEnd(strm: z_streamp) -> ::std::os::raw::c_int;
+    pub fn deflateEnd(strm: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflate(strm: z_streamp, flush: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn inflate(strm: z_streamp, flush: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflateEnd(strm: z_streamp) -> ::std::os::raw::c_int;
+    pub fn inflateEnd(strm: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn deflateSetDictionary(
         strm: z_streamp,
         dictionary: *const Bytef,
         dictLength: uInt,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn deflateGetDictionary(
         strm: z_streamp,
         dictionary: *mut Bytef,
         dictLength: *mut uInt,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn deflateCopy(dest: z_streamp, source: z_streamp) -> ::std::os::raw::c_int;
+    pub fn deflateCopy(dest: z_streamp, source: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn deflateReset(strm: z_streamp) -> ::std::os::raw::c_int;
+    pub fn deflateReset(strm: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn deflateParams(
         strm: z_streamp,
-        level: ::std::os::raw::c_int,
-        strategy: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        level: ::core::ffi::c_int,
+        strategy: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn deflateTune(
         strm: z_streamp,
-        good_length: ::std::os::raw::c_int,
-        max_lazy: ::std::os::raw::c_int,
-        nice_length: ::std::os::raw::c_int,
-        max_chain: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        good_length: ::core::ffi::c_int,
+        max_lazy: ::core::ffi::c_int,
+        nice_length: ::core::ffi::c_int,
+        max_chain: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn deflateBound(strm: z_streamp, sourceLen: uLong) -> uLong;
@@ -6035,86 +6667,83 @@ extern "C" {
 extern "C" {
     pub fn deflatePending(
         strm: z_streamp,
-        pending: *mut ::std::os::raw::c_uint,
-        bits: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        pending: *mut ::core::ffi::c_uint,
+        bits: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn deflatePrime(
         strm: z_streamp,
-        bits: ::std::os::raw::c_int,
-        value: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        bits: ::core::ffi::c_int,
+        value: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn deflateSetHeader(strm: z_streamp, head: gz_headerp) -> ::std::os::raw::c_int;
+    pub fn deflateSetHeader(strm: z_streamp, head: gz_headerp) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn inflateSetDictionary(
         strm: z_streamp,
         dictionary: *const Bytef,
         dictLength: uInt,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn inflateGetDictionary(
         strm: z_streamp,
         dictionary: *mut Bytef,
         dictLength: *mut uInt,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflateSync(strm: z_streamp) -> ::std::os::raw::c_int;
+    pub fn inflateSync(strm: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflateCopy(dest: z_streamp, source: z_streamp) -> ::std::os::raw::c_int;
+    pub fn inflateCopy(dest: z_streamp, source: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflateReset(strm: z_streamp) -> ::std::os::raw::c_int;
+    pub fn inflateReset(strm: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflateReset2(
-        strm: z_streamp,
-        windowBits: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+    pub fn inflateReset2(strm: z_streamp, windowBits: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn inflatePrime(
         strm: z_streamp,
-        bits: ::std::os::raw::c_int,
-        value: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        bits: ::core::ffi::c_int,
+        value: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflateMark(strm: z_streamp) -> ::std::os::raw::c_long;
+    pub fn inflateMark(strm: z_streamp) -> ::core::ffi::c_long;
 }
 extern "C" {
-    pub fn inflateGetHeader(strm: z_streamp, head: gz_headerp) -> ::std::os::raw::c_int;
+    pub fn inflateGetHeader(strm: z_streamp, head: gz_headerp) -> ::core::ffi::c_int;
 }
-pub type in_func = ::std::option::Option<
+pub type in_func = ::core::option::Option<
     unsafe extern "C" fn(
-        arg1: *mut ::std::os::raw::c_void,
-        arg2: *mut *mut ::std::os::raw::c_uchar,
-    ) -> ::std::os::raw::c_uint,
+        arg1: *mut ::core::ffi::c_void,
+        arg2: *mut *mut ::core::ffi::c_uchar,
+    ) -> ::core::ffi::c_uint,
 >;
-pub type out_func = ::std::option::Option<
+pub type out_func = ::core::option::Option<
     unsafe extern "C" fn(
-        arg1: *mut ::std::os::raw::c_void,
-        arg2: *mut ::std::os::raw::c_uchar,
-        arg3: ::std::os::raw::c_uint,
-    ) -> ::std::os::raw::c_int,
+        arg1: *mut ::core::ffi::c_void,
+        arg2: *mut ::core::ffi::c_uchar,
+        arg3: ::core::ffi::c_uint,
+    ) -> ::core::ffi::c_int,
 >;
 extern "C" {
     pub fn inflateBack(
         strm: z_streamp,
         in_: in_func,
-        in_desc: *mut ::std::os::raw::c_void,
+        in_desc: *mut ::core::ffi::c_void,
         out: out_func,
-        out_desc: *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
+        out_desc: *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflateBackEnd(strm: z_streamp) -> ::std::os::raw::c_int;
+    pub fn inflateBackEnd(strm: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn zlibCompileFlags() -> uLong;
@@ -6125,7 +6754,7 @@ extern "C" {
         destLen: *mut uLongf,
         source: *const Bytef,
         sourceLen: uLong,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn compress2(
@@ -6133,8 +6762,8 @@ extern "C" {
         destLen: *mut uLongf,
         source: *const Bytef,
         sourceLen: uLong,
-        level: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        level: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn compressBound(sourceLen: uLong) -> uLong;
@@ -6145,7 +6774,7 @@ extern "C" {
         destLen: *mut uLongf,
         source: *const Bytef,
         sourceLen: uLong,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn uncompress2(
@@ -6153,87 +6782,79 @@ extern "C" {
         destLen: *mut uLongf,
         source: *const Bytef,
         sourceLen: *mut uLong,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 pub type gzFile = *mut gzFile_s;
 extern "C" {
-    pub fn gzdopen(fd: ::std::os::raw::c_int, mode: *const ::std::os::raw::c_char) -> gzFile;
+    pub fn gzdopen(fd: ::core::ffi::c_int, mode: *const ::core::ffi::c_char) -> gzFile;
 }
 extern "C" {
-    pub fn gzbuffer(file: gzFile, size: ::std::os::raw::c_uint) -> ::std::os::raw::c_int;
+    pub fn gzbuffer(file: gzFile, size: ::core::ffi::c_uint) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn gzsetparams(
         file: gzFile,
-        level: ::std::os::raw::c_int,
-        strategy: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        level: ::core::ffi::c_int,
+        strategy: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzread(file: gzFile, buf: voidp, len: ::std::os::raw::c_uint) -> ::std::os::raw::c_int;
+    pub fn gzread(file: gzFile, buf: voidp, len: ::core::ffi::c_uint) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn gzfread(buf: voidp, size: z_size_t, nitems: z_size_t, file: gzFile) -> z_size_t;
 }
 extern "C" {
-    pub fn gzwrite(file: gzFile, buf: voidpc, len: ::std::os::raw::c_uint)
-        -> ::std::os::raw::c_int;
+    pub fn gzwrite(file: gzFile, buf: voidpc, len: ::core::ffi::c_uint) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn gzfwrite(buf: voidpc, size: z_size_t, nitems: z_size_t, file: gzFile) -> z_size_t;
 }
 extern "C" {
-    pub fn gzprintf(
-        file: gzFile,
-        format: *const ::std::os::raw::c_char,
-        ...
-    ) -> ::std::os::raw::c_int;
+    pub fn gzprintf(file: gzFile, format: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzputs(file: gzFile, s: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    pub fn gzputs(file: gzFile, s: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn gzgets(
         file: gzFile,
-        buf: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        buf: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn gzputc(file: gzFile, c: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn gzputc(file: gzFile, c: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzgetc(file: gzFile) -> ::std::os::raw::c_int;
+    pub fn gzgetc(file: gzFile) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzungetc(c: ::std::os::raw::c_int, file: gzFile) -> ::std::os::raw::c_int;
+    pub fn gzungetc(c: ::core::ffi::c_int, file: gzFile) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzflush(file: gzFile, flush: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn gzflush(file: gzFile, flush: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzrewind(file: gzFile) -> ::std::os::raw::c_int;
+    pub fn gzrewind(file: gzFile) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzeof(file: gzFile) -> ::std::os::raw::c_int;
+    pub fn gzeof(file: gzFile) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzdirect(file: gzFile) -> ::std::os::raw::c_int;
+    pub fn gzdirect(file: gzFile) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzclose(file: gzFile) -> ::std::os::raw::c_int;
+    pub fn gzclose(file: gzFile) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzclose_r(file: gzFile) -> ::std::os::raw::c_int;
+    pub fn gzclose_r(file: gzFile) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzclose_w(file: gzFile) -> ::std::os::raw::c_int;
+    pub fn gzclose_w(file: gzFile) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzerror(
-        file: gzFile,
-        errnum: *mut ::std::os::raw::c_int,
-    ) -> *const ::std::os::raw::c_char;
+    pub fn gzerror(file: gzFile, errnum: *mut ::core::ffi::c_int) -> *const ::core::ffi::c_char;
 }
 extern "C" {
     pub fn gzclearerr(file: gzFile);
@@ -6256,70 +6877,70 @@ extern "C" {
 extern "C" {
     pub fn deflateInit_(
         strm: z_streamp,
-        level: ::std::os::raw::c_int,
-        version: *const ::std::os::raw::c_char,
-        stream_size: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        level: ::core::ffi::c_int,
+        version: *const ::core::ffi::c_char,
+        stream_size: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn inflateInit_(
         strm: z_streamp,
-        version: *const ::std::os::raw::c_char,
-        stream_size: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        version: *const ::core::ffi::c_char,
+        stream_size: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn deflateInit2_(
         strm: z_streamp,
-        level: ::std::os::raw::c_int,
-        method: ::std::os::raw::c_int,
-        windowBits: ::std::os::raw::c_int,
-        memLevel: ::std::os::raw::c_int,
-        strategy: ::std::os::raw::c_int,
-        version: *const ::std::os::raw::c_char,
-        stream_size: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        level: ::core::ffi::c_int,
+        method: ::core::ffi::c_int,
+        windowBits: ::core::ffi::c_int,
+        memLevel: ::core::ffi::c_int,
+        strategy: ::core::ffi::c_int,
+        version: *const ::core::ffi::c_char,
+        stream_size: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn inflateInit2_(
         strm: z_streamp,
-        windowBits: ::std::os::raw::c_int,
-        version: *const ::std::os::raw::c_char,
-        stream_size: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        windowBits: ::core::ffi::c_int,
+        version: *const ::core::ffi::c_char,
+        stream_size: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn inflateBackInit_(
         strm: z_streamp,
-        windowBits: ::std::os::raw::c_int,
-        window: *mut ::std::os::raw::c_uchar,
-        version: *const ::std::os::raw::c_char,
-        stream_size: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        windowBits: ::core::ffi::c_int,
+        window: *mut ::core::ffi::c_uchar,
+        version: *const ::core::ffi::c_char,
+        stream_size: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct gzFile_s {
-    pub have: ::std::os::raw::c_uint,
-    pub next: *mut ::std::os::raw::c_uchar,
+    pub have: ::core::ffi::c_uint,
+    pub next: *mut ::core::ffi::c_uchar,
     pub pos: off_t,
 }
 #[test]
 fn bindgen_test_layout_gzFile_s() {
-    const UNINIT: ::std::mem::MaybeUninit<gzFile_s> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<gzFile_s> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<gzFile_s>(),
+        ::core::mem::size_of::<gzFile_s>(),
         24usize,
         concat!("Size of: ", stringify!(gzFile_s))
     );
     assert_eq!(
-        ::std::mem::align_of::<gzFile_s>(),
+        ::core::mem::align_of::<gzFile_s>(),
         8usize,
         concat!("Alignment of ", stringify!(gzFile_s))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).have) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).have) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6329,7 +6950,7 @@ fn bindgen_test_layout_gzFile_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -6339,7 +6960,7 @@ fn bindgen_test_layout_gzFile_s() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pos) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pos) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -6350,16 +6971,13 @@ fn bindgen_test_layout_gzFile_s() {
     );
 }
 extern "C" {
-    pub fn gzgetc_(file: gzFile) -> ::std::os::raw::c_int;
+    pub fn gzgetc_(file: gzFile) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn gzopen(
-        arg1: *const ::std::os::raw::c_char,
-        arg2: *const ::std::os::raw::c_char,
-    ) -> gzFile;
+    pub fn gzopen(arg1: *const ::core::ffi::c_char, arg2: *const ::core::ffi::c_char) -> gzFile;
 }
 extern "C" {
-    pub fn gzseek(arg1: gzFile, arg2: off_t, arg3: ::std::os::raw::c_int) -> off_t;
+    pub fn gzseek(arg1: gzFile, arg2: off_t, arg3: ::core::ffi::c_int) -> off_t;
 }
 extern "C" {
     pub fn gztell(arg1: gzFile) -> off_t;
@@ -6377,58 +6995,58 @@ extern "C" {
     pub fn crc32_combine_gen(arg1: off_t) -> uLong;
 }
 extern "C" {
-    pub fn zError(arg1: ::std::os::raw::c_int) -> *const ::std::os::raw::c_char;
+    pub fn zError(arg1: ::core::ffi::c_int) -> *const ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn inflateSyncPoint(arg1: z_streamp) -> ::std::os::raw::c_int;
+    pub fn inflateSyncPoint(arg1: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn get_crc_table() -> *const z_crc_t;
 }
 extern "C" {
-    pub fn inflateUndermine(arg1: z_streamp, arg2: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn inflateUndermine(arg1: z_streamp, arg2: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflateValidate(arg1: z_streamp, arg2: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn inflateValidate(arg1: z_streamp, arg2: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn inflateCodesUsed(arg1: z_streamp) -> ::std::os::raw::c_ulong;
+    pub fn inflateCodesUsed(arg1: z_streamp) -> ::core::ffi::c_ulong;
 }
 extern "C" {
-    pub fn inflateResetKeep(arg1: z_streamp) -> ::std::os::raw::c_int;
+    pub fn inflateResetKeep(arg1: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn deflateResetKeep(arg1: z_streamp) -> ::std::os::raw::c_int;
+    pub fn deflateResetKeep(arg1: z_streamp) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn gzvprintf(
         file: gzFile,
-        format: *const ::std::os::raw::c_char,
+        format: *const ::core::ffi::c_char,
         va: *mut __va_list_tag,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct timezone {
-    pub tz_minuteswest: ::std::os::raw::c_int,
-    pub tz_dsttime: ::std::os::raw::c_int,
+    pub tz_minuteswest: ::core::ffi::c_int,
+    pub tz_dsttime: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_timezone() {
-    const UNINIT: ::std::mem::MaybeUninit<timezone> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<timezone> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<timezone>(),
+        ::core::mem::size_of::<timezone>(),
         8usize,
         concat!("Size of: ", stringify!(timezone))
     );
     assert_eq!(
-        ::std::mem::align_of::<timezone>(),
+        ::core::mem::align_of::<timezone>(),
         4usize,
         concat!("Alignment of ", stringify!(timezone))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tz_minuteswest) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tz_minuteswest) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6438,7 +7056,7 @@ fn bindgen_test_layout_timezone() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tz_dsttime) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tz_dsttime) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -6449,21 +7067,18 @@ fn bindgen_test_layout_timezone() {
     );
 }
 extern "C" {
-    pub fn gettimeofday(
-        __tv: *mut timeval,
-        __tz: *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
+    pub fn gettimeofday(__tv: *mut timeval, __tz: *mut ::core::ffi::c_void) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn settimeofday(__tv: *const timeval, __tz: *const timezone) -> ::std::os::raw::c_int;
+    pub fn settimeofday(__tv: *const timeval, __tz: *const timezone) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn adjtime(__delta: *const timeval, __olddelta: *mut timeval) -> ::std::os::raw::c_int;
+    pub fn adjtime(__delta: *const timeval, __olddelta: *mut timeval) -> ::core::ffi::c_int;
 }
 pub const __itimer_which_ITIMER_REAL: __itimer_which = 0;
 pub const __itimer_which_ITIMER_VIRTUAL: __itimer_which = 1;
 pub const __itimer_which_ITIMER_PROF: __itimer_which = 2;
-pub type __itimer_which = ::std::os::raw::c_uint;
+pub type __itimer_which = ::core::ffi::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct itimerval {
@@ -6472,20 +7087,20 @@ pub struct itimerval {
 }
 #[test]
 fn bindgen_test_layout_itimerval() {
-    const UNINIT: ::std::mem::MaybeUninit<itimerval> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<itimerval> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<itimerval>(),
+        ::core::mem::size_of::<itimerval>(),
         32usize,
         concat!("Size of: ", stringify!(itimerval))
     );
     assert_eq!(
-        ::std::mem::align_of::<itimerval>(),
+        ::core::mem::align_of::<itimerval>(),
         8usize,
         concat!("Alignment of ", stringify!(itimerval))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).it_interval) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).it_interval) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6495,7 +7110,7 @@ fn bindgen_test_layout_itimerval() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).it_value) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).it_value) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -6505,54 +7120,49 @@ fn bindgen_test_layout_itimerval() {
         )
     );
 }
-pub type __itimer_which_t = ::std::os::raw::c_int;
+pub type __itimer_which_t = ::core::ffi::c_int;
 extern "C" {
-    pub fn getitimer(__which: __itimer_which_t, __value: *mut itimerval) -> ::std::os::raw::c_int;
+    pub fn getitimer(__which: __itimer_which_t, __value: *mut itimerval) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn setitimer(
         __which: __itimer_which_t,
         __new: *const itimerval,
         __old: *mut itimerval,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn utimes(
-        __file: *const ::std::os::raw::c_char,
-        __tvp: *const timeval,
-    ) -> ::std::os::raw::c_int;
+    pub fn utimes(__file: *const ::core::ffi::c_char, __tvp: *const timeval) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn lutimes(
-        __file: *const ::std::os::raw::c_char,
-        __tvp: *const timeval,
-    ) -> ::std::os::raw::c_int;
+    pub fn lutimes(__file: *const ::core::ffi::c_char, __tvp: *const timeval)
+        -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn futimes(__fd: ::std::os::raw::c_int, __tvp: *const timeval) -> ::std::os::raw::c_int;
+    pub fn futimes(__fd: ::core::ffi::c_int, __tvp: *const timeval) -> ::core::ffi::c_int;
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct iovec {
-    pub iov_base: *mut ::std::os::raw::c_void,
+    pub iov_base: *mut ::core::ffi::c_void,
     pub iov_len: usize,
 }
 #[test]
 fn bindgen_test_layout_iovec() {
-    const UNINIT: ::std::mem::MaybeUninit<iovec> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<iovec> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<iovec>(),
+        ::core::mem::size_of::<iovec>(),
         16usize,
         concat!("Size of: ", stringify!(iovec))
     );
     assert_eq!(
-        ::std::mem::align_of::<iovec>(),
+        ::core::mem::align_of::<iovec>(),
         8usize,
         concat!("Alignment of ", stringify!(iovec))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).iov_base) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).iov_base) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6562,7 +7172,7 @@ fn bindgen_test_layout_iovec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).iov_len) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).iov_len) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -6581,30 +7191,30 @@ pub const __socket_type_SOCK_DCCP: __socket_type = 6;
 pub const __socket_type_SOCK_PACKET: __socket_type = 10;
 pub const __socket_type_SOCK_CLOEXEC: __socket_type = 524288;
 pub const __socket_type_SOCK_NONBLOCK: __socket_type = 2048;
-pub type __socket_type = ::std::os::raw::c_uint;
-pub type sa_family_t = ::std::os::raw::c_ushort;
+pub type __socket_type = ::core::ffi::c_uint;
+pub type sa_family_t = ::core::ffi::c_ushort;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct sockaddr {
     pub sa_family: sa_family_t,
-    pub sa_data: [::std::os::raw::c_char; 14usize],
+    pub sa_data: [::core::ffi::c_char; 14usize],
 }
 #[test]
 fn bindgen_test_layout_sockaddr() {
-    const UNINIT: ::std::mem::MaybeUninit<sockaddr> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<sockaddr> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<sockaddr>(),
+        ::core::mem::size_of::<sockaddr>(),
         16usize,
         concat!("Size of: ", stringify!(sockaddr))
     );
     assert_eq!(
-        ::std::mem::align_of::<sockaddr>(),
+        ::core::mem::align_of::<sockaddr>(),
         2usize,
         concat!("Alignment of ", stringify!(sockaddr))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sa_family) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sa_family) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6614,7 +7224,7 @@ fn bindgen_test_layout_sockaddr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sa_data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sa_data) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -6628,25 +7238,25 @@ fn bindgen_test_layout_sockaddr() {
 #[derive(Debug, Copy, Clone)]
 pub struct sockaddr_storage {
     pub ss_family: sa_family_t,
-    pub __ss_padding: [::std::os::raw::c_char; 118usize],
-    pub __ss_align: ::std::os::raw::c_ulong,
+    pub __ss_padding: [::core::ffi::c_char; 118usize],
+    pub __ss_align: ::core::ffi::c_ulong,
 }
 #[test]
 fn bindgen_test_layout_sockaddr_storage() {
-    const UNINIT: ::std::mem::MaybeUninit<sockaddr_storage> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<sockaddr_storage> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<sockaddr_storage>(),
+        ::core::mem::size_of::<sockaddr_storage>(),
         128usize,
         concat!("Size of: ", stringify!(sockaddr_storage))
     );
     assert_eq!(
-        ::std::mem::align_of::<sockaddr_storage>(),
+        ::core::mem::align_of::<sockaddr_storage>(),
         8usize,
         concat!("Alignment of ", stringify!(sockaddr_storage))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ss_family) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ss_family) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6656,7 +7266,7 @@ fn bindgen_test_layout_sockaddr_storage() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__ss_padding) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__ss_padding) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -6666,7 +7276,7 @@ fn bindgen_test_layout_sockaddr_storage() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__ss_align) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__ss_align) as usize - ptr as usize },
         120usize,
         concat!(
             "Offset of field: ",
@@ -6697,34 +7307,34 @@ pub const MSG_BATCH: _bindgen_ty_4 = 262144;
 pub const MSG_ZEROCOPY: _bindgen_ty_4 = 67108864;
 pub const MSG_FASTOPEN: _bindgen_ty_4 = 536870912;
 pub const MSG_CMSG_CLOEXEC: _bindgen_ty_4 = 1073741824;
-pub type _bindgen_ty_4 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_4 = ::core::ffi::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct msghdr {
-    pub msg_name: *mut ::std::os::raw::c_void,
+    pub msg_name: *mut ::core::ffi::c_void,
     pub msg_namelen: socklen_t,
     pub msg_iov: *mut iovec,
     pub msg_iovlen: usize,
-    pub msg_control: *mut ::std::os::raw::c_void,
+    pub msg_control: *mut ::core::ffi::c_void,
     pub msg_controllen: usize,
-    pub msg_flags: ::std::os::raw::c_int,
+    pub msg_flags: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_msghdr() {
-    const UNINIT: ::std::mem::MaybeUninit<msghdr> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<msghdr> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<msghdr>(),
+        ::core::mem::size_of::<msghdr>(),
         56usize,
         concat!("Size of: ", stringify!(msghdr))
     );
     assert_eq!(
-        ::std::mem::align_of::<msghdr>(),
+        ::core::mem::align_of::<msghdr>(),
         8usize,
         concat!("Alignment of ", stringify!(msghdr))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).msg_name) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).msg_name) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6734,7 +7344,7 @@ fn bindgen_test_layout_msghdr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).msg_namelen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).msg_namelen) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -6744,7 +7354,7 @@ fn bindgen_test_layout_msghdr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).msg_iov) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).msg_iov) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -6754,7 +7364,7 @@ fn bindgen_test_layout_msghdr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).msg_iovlen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).msg_iovlen) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -6764,7 +7374,7 @@ fn bindgen_test_layout_msghdr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).msg_control) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).msg_control) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -6774,7 +7384,7 @@ fn bindgen_test_layout_msghdr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).msg_controllen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).msg_controllen) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -6784,7 +7394,7 @@ fn bindgen_test_layout_msghdr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).msg_flags) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).msg_flags) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -6798,26 +7408,26 @@ fn bindgen_test_layout_msghdr() {
 #[derive(Debug)]
 pub struct cmsghdr {
     pub cmsg_len: usize,
-    pub cmsg_level: ::std::os::raw::c_int,
-    pub cmsg_type: ::std::os::raw::c_int,
-    pub __cmsg_data: __IncompleteArrayField<::std::os::raw::c_uchar>,
+    pub cmsg_level: ::core::ffi::c_int,
+    pub cmsg_type: ::core::ffi::c_int,
+    pub __cmsg_data: __IncompleteArrayField<::core::ffi::c_uchar>,
 }
 #[test]
 fn bindgen_test_layout_cmsghdr() {
-    const UNINIT: ::std::mem::MaybeUninit<cmsghdr> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<cmsghdr> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<cmsghdr>(),
+        ::core::mem::size_of::<cmsghdr>(),
         16usize,
         concat!("Size of: ", stringify!(cmsghdr))
     );
     assert_eq!(
-        ::std::mem::align_of::<cmsghdr>(),
+        ::core::mem::align_of::<cmsghdr>(),
         8usize,
         concat!("Alignment of ", stringify!(cmsghdr))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cmsg_len) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cmsg_len) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6827,7 +7437,7 @@ fn bindgen_test_layout_cmsghdr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cmsg_level) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cmsg_level) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -6837,7 +7447,7 @@ fn bindgen_test_layout_cmsghdr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cmsg_type) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cmsg_type) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -6847,7 +7457,7 @@ fn bindgen_test_layout_cmsghdr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__cmsg_data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__cmsg_data) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -6861,28 +7471,28 @@ extern "C" {
     pub fn __cmsg_nxthdr(__mhdr: *mut msghdr, __cmsg: *mut cmsghdr) -> *mut cmsghdr;
 }
 pub const SCM_RIGHTS: _bindgen_ty_5 = 1;
-pub type _bindgen_ty_5 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_5 = ::core::ffi::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __kernel_fd_set {
-    pub fds_bits: [::std::os::raw::c_ulong; 16usize],
+    pub fds_bits: [::core::ffi::c_ulong; 16usize],
 }
 #[test]
 fn bindgen_test_layout___kernel_fd_set() {
-    const UNINIT: ::std::mem::MaybeUninit<__kernel_fd_set> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__kernel_fd_set> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__kernel_fd_set>(),
+        ::core::mem::size_of::<__kernel_fd_set>(),
         128usize,
         concat!("Size of: ", stringify!(__kernel_fd_set))
     );
     assert_eq!(
-        ::std::mem::align_of::<__kernel_fd_set>(),
+        ::core::mem::align_of::<__kernel_fd_set>(),
         8usize,
         concat!("Alignment of ", stringify!(__kernel_fd_set))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fds_bits) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fds_bits) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6893,48 +7503,48 @@ fn bindgen_test_layout___kernel_fd_set() {
     );
 }
 pub type __kernel_sighandler_t =
-    ::std::option::Option<unsafe extern "C" fn(arg1: ::std::os::raw::c_int)>;
-pub type __kernel_key_t = ::std::os::raw::c_int;
-pub type __kernel_mqd_t = ::std::os::raw::c_int;
-pub type __kernel_old_uid_t = ::std::os::raw::c_ushort;
-pub type __kernel_old_gid_t = ::std::os::raw::c_ushort;
-pub type __kernel_old_dev_t = ::std::os::raw::c_ulong;
-pub type __kernel_long_t = ::std::os::raw::c_long;
-pub type __kernel_ulong_t = ::std::os::raw::c_ulong;
+    ::core::option::Option<unsafe extern "C" fn(arg1: ::core::ffi::c_int)>;
+pub type __kernel_key_t = ::core::ffi::c_int;
+pub type __kernel_mqd_t = ::core::ffi::c_int;
+pub type __kernel_old_uid_t = ::core::ffi::c_ushort;
+pub type __kernel_old_gid_t = ::core::ffi::c_ushort;
+pub type __kernel_old_dev_t = ::core::ffi::c_ulong;
+pub type __kernel_long_t = ::core::ffi::c_long;
+pub type __kernel_ulong_t = ::core::ffi::c_ulong;
 pub type __kernel_ino_t = __kernel_ulong_t;
-pub type __kernel_mode_t = ::std::os::raw::c_uint;
-pub type __kernel_pid_t = ::std::os::raw::c_int;
-pub type __kernel_ipc_pid_t = ::std::os::raw::c_int;
-pub type __kernel_uid_t = ::std::os::raw::c_uint;
-pub type __kernel_gid_t = ::std::os::raw::c_uint;
+pub type __kernel_mode_t = ::core::ffi::c_uint;
+pub type __kernel_pid_t = ::core::ffi::c_int;
+pub type __kernel_ipc_pid_t = ::core::ffi::c_int;
+pub type __kernel_uid_t = ::core::ffi::c_uint;
+pub type __kernel_gid_t = ::core::ffi::c_uint;
 pub type __kernel_suseconds_t = __kernel_long_t;
-pub type __kernel_daddr_t = ::std::os::raw::c_int;
-pub type __kernel_uid32_t = ::std::os::raw::c_uint;
-pub type __kernel_gid32_t = ::std::os::raw::c_uint;
+pub type __kernel_daddr_t = ::core::ffi::c_int;
+pub type __kernel_uid32_t = ::core::ffi::c_uint;
+pub type __kernel_gid32_t = ::core::ffi::c_uint;
 pub type __kernel_size_t = __kernel_ulong_t;
 pub type __kernel_ssize_t = __kernel_long_t;
 pub type __kernel_ptrdiff_t = __kernel_long_t;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __kernel_fsid_t {
-    pub val: [::std::os::raw::c_int; 2usize],
+    pub val: [::core::ffi::c_int; 2usize],
 }
 #[test]
 fn bindgen_test_layout___kernel_fsid_t() {
-    const UNINIT: ::std::mem::MaybeUninit<__kernel_fsid_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__kernel_fsid_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__kernel_fsid_t>(),
+        ::core::mem::size_of::<__kernel_fsid_t>(),
         8usize,
         concat!("Size of: ", stringify!(__kernel_fsid_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<__kernel_fsid_t>(),
+        ::core::mem::align_of::<__kernel_fsid_t>(),
         4usize,
         concat!("Alignment of ", stringify!(__kernel_fsid_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).val) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).val) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6945,38 +7555,38 @@ fn bindgen_test_layout___kernel_fsid_t() {
     );
 }
 pub type __kernel_off_t = __kernel_long_t;
-pub type __kernel_loff_t = ::std::os::raw::c_longlong;
+pub type __kernel_loff_t = ::core::ffi::c_longlong;
 pub type __kernel_old_time_t = __kernel_long_t;
 pub type __kernel_time_t = __kernel_long_t;
-pub type __kernel_time64_t = ::std::os::raw::c_longlong;
+pub type __kernel_time64_t = ::core::ffi::c_longlong;
 pub type __kernel_clock_t = __kernel_long_t;
-pub type __kernel_timer_t = ::std::os::raw::c_int;
-pub type __kernel_clockid_t = ::std::os::raw::c_int;
-pub type __kernel_caddr_t = *mut ::std::os::raw::c_char;
-pub type __kernel_uid16_t = ::std::os::raw::c_ushort;
-pub type __kernel_gid16_t = ::std::os::raw::c_ushort;
+pub type __kernel_timer_t = ::core::ffi::c_int;
+pub type __kernel_clockid_t = ::core::ffi::c_int;
+pub type __kernel_caddr_t = *mut ::core::ffi::c_char;
+pub type __kernel_uid16_t = ::core::ffi::c_ushort;
+pub type __kernel_gid16_t = ::core::ffi::c_ushort;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct linger {
-    pub l_onoff: ::std::os::raw::c_int,
-    pub l_linger: ::std::os::raw::c_int,
+    pub l_onoff: ::core::ffi::c_int,
+    pub l_linger: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_linger() {
-    const UNINIT: ::std::mem::MaybeUninit<linger> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<linger> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<linger>(),
+        ::core::mem::size_of::<linger>(),
         8usize,
         concat!("Size of: ", stringify!(linger))
     );
     assert_eq!(
-        ::std::mem::align_of::<linger>(),
+        ::core::mem::align_of::<linger>(),
         4usize,
         concat!("Alignment of ", stringify!(linger))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).l_onoff) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).l_onoff) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -6986,7 +7596,7 @@ fn bindgen_test_layout_linger() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).l_linger) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).l_linger) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -6999,25 +7609,25 @@ fn bindgen_test_layout_linger() {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct osockaddr {
-    pub sa_family: ::std::os::raw::c_ushort,
-    pub sa_data: [::std::os::raw::c_uchar; 14usize],
+    pub sa_family: ::core::ffi::c_ushort,
+    pub sa_data: [::core::ffi::c_uchar; 14usize],
 }
 #[test]
 fn bindgen_test_layout_osockaddr() {
-    const UNINIT: ::std::mem::MaybeUninit<osockaddr> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<osockaddr> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<osockaddr>(),
+        ::core::mem::size_of::<osockaddr>(),
         16usize,
         concat!("Size of: ", stringify!(osockaddr))
     );
     assert_eq!(
-        ::std::mem::align_of::<osockaddr>(),
+        ::core::mem::align_of::<osockaddr>(),
         2usize,
         concat!("Alignment of ", stringify!(osockaddr))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sa_family) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sa_family) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7027,7 +7637,7 @@ fn bindgen_test_layout_osockaddr() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sa_data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sa_data) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -7040,143 +7650,136 @@ fn bindgen_test_layout_osockaddr() {
 pub const SHUT_RD: _bindgen_ty_6 = 0;
 pub const SHUT_WR: _bindgen_ty_6 = 1;
 pub const SHUT_RDWR: _bindgen_ty_6 = 2;
-pub type _bindgen_ty_6 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_6 = ::core::ffi::c_uint;
 extern "C" {
     pub fn socket(
-        __domain: ::std::os::raw::c_int,
-        __type: ::std::os::raw::c_int,
-        __protocol: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __domain: ::core::ffi::c_int,
+        __type: ::core::ffi::c_int,
+        __protocol: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn socketpair(
-        __domain: ::std::os::raw::c_int,
-        __type: ::std::os::raw::c_int,
-        __protocol: ::std::os::raw::c_int,
-        __fds: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __domain: ::core::ffi::c_int,
+        __type: ::core::ffi::c_int,
+        __protocol: ::core::ffi::c_int,
+        __fds: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn bind(
-        __fd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
         __addr: *const sockaddr,
         __len: socklen_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn getsockname(
-        __fd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
         __addr: *mut sockaddr,
         __len: *mut socklen_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn connect(
-        __fd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
         __addr: *const sockaddr,
         __len: socklen_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn getpeername(
-        __fd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
         __addr: *mut sockaddr,
         __len: *mut socklen_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn send(
-        __fd: ::std::os::raw::c_int,
-        __buf: *const ::std::os::raw::c_void,
+        __fd: ::core::ffi::c_int,
+        __buf: *const ::core::ffi::c_void,
         __n: usize,
-        __flags: ::std::os::raw::c_int,
+        __flags: ::core::ffi::c_int,
     ) -> isize;
 }
 extern "C" {
     pub fn recv(
-        __fd: ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_void,
+        __fd: ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_void,
         __n: usize,
-        __flags: ::std::os::raw::c_int,
+        __flags: ::core::ffi::c_int,
     ) -> isize;
 }
 extern "C" {
     pub fn sendto(
-        __fd: ::std::os::raw::c_int,
-        __buf: *const ::std::os::raw::c_void,
+        __fd: ::core::ffi::c_int,
+        __buf: *const ::core::ffi::c_void,
         __n: usize,
-        __flags: ::std::os::raw::c_int,
+        __flags: ::core::ffi::c_int,
         __addr: *const sockaddr,
         __addr_len: socklen_t,
     ) -> isize;
 }
 extern "C" {
     pub fn recvfrom(
-        __fd: ::std::os::raw::c_int,
-        __buf: *mut ::std::os::raw::c_void,
+        __fd: ::core::ffi::c_int,
+        __buf: *mut ::core::ffi::c_void,
         __n: usize,
-        __flags: ::std::os::raw::c_int,
+        __flags: ::core::ffi::c_int,
         __addr: *mut sockaddr,
         __addr_len: *mut socklen_t,
     ) -> isize;
 }
 extern "C" {
     pub fn sendmsg(
-        __fd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
         __message: *const msghdr,
-        __flags: ::std::os::raw::c_int,
+        __flags: ::core::ffi::c_int,
     ) -> isize;
 }
 extern "C" {
     pub fn recvmsg(
-        __fd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
         __message: *mut msghdr,
-        __flags: ::std::os::raw::c_int,
+        __flags: ::core::ffi::c_int,
     ) -> isize;
 }
 extern "C" {
     pub fn getsockopt(
-        __fd: ::std::os::raw::c_int,
-        __level: ::std::os::raw::c_int,
-        __optname: ::std::os::raw::c_int,
-        __optval: *mut ::std::os::raw::c_void,
+        __fd: ::core::ffi::c_int,
+        __level: ::core::ffi::c_int,
+        __optname: ::core::ffi::c_int,
+        __optval: *mut ::core::ffi::c_void,
         __optlen: *mut socklen_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn setsockopt(
-        __fd: ::std::os::raw::c_int,
-        __level: ::std::os::raw::c_int,
-        __optname: ::std::os::raw::c_int,
-        __optval: *const ::std::os::raw::c_void,
+        __fd: ::core::ffi::c_int,
+        __level: ::core::ffi::c_int,
+        __optname: ::core::ffi::c_int,
+        __optval: *const ::core::ffi::c_void,
         __optlen: socklen_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn listen(__fd: ::std::os::raw::c_int, __n: ::std::os::raw::c_int)
-        -> ::std::os::raw::c_int;
+    pub fn listen(__fd: ::core::ffi::c_int, __n: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn accept(
-        __fd: ::std::os::raw::c_int,
+        __fd: ::core::ffi::c_int,
         __addr: *mut sockaddr,
         __addr_len: *mut socklen_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn shutdown(
-        __fd: ::std::os::raw::c_int,
-        __how: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+    pub fn shutdown(__fd: ::core::ffi::c_int, __how: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sockatmark(__fd: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn sockatmark(__fd: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn isfdtype(
-        __fd: ::std::os::raw::c_int,
-        __fdtype: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+    pub fn isfdtype(__fd: ::core::ffi::c_int, __fdtype: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 pub type in_addr_t = u32;
 #[repr(C)]
@@ -7186,20 +7789,20 @@ pub struct in_addr {
 }
 #[test]
 fn bindgen_test_layout_in_addr() {
-    const UNINIT: ::std::mem::MaybeUninit<in_addr> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<in_addr> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<in_addr>(),
+        ::core::mem::size_of::<in_addr>(),
         4usize,
         concat!("Size of: ", stringify!(in_addr))
     );
     assert_eq!(
-        ::std::mem::align_of::<in_addr>(),
+        ::core::mem::align_of::<in_addr>(),
         4usize,
         concat!("Alignment of ", stringify!(in_addr))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).s_addr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).s_addr) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7213,24 +7816,24 @@ fn bindgen_test_layout_in_addr() {
 #[derive(Debug, Copy, Clone)]
 pub struct ip_opts {
     pub ip_dst: in_addr,
-    pub ip_opts: [::std::os::raw::c_char; 40usize],
+    pub ip_opts: [::core::ffi::c_char; 40usize],
 }
 #[test]
 fn bindgen_test_layout_ip_opts() {
-    const UNINIT: ::std::mem::MaybeUninit<ip_opts> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<ip_opts> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<ip_opts>(),
+        ::core::mem::size_of::<ip_opts>(),
         44usize,
         concat!("Size of: ", stringify!(ip_opts))
     );
     assert_eq!(
-        ::std::mem::align_of::<ip_opts>(),
+        ::core::mem::align_of::<ip_opts>(),
         4usize,
         concat!("Alignment of ", stringify!(ip_opts))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ip_dst) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ip_dst) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7240,7 +7843,7 @@ fn bindgen_test_layout_ip_opts() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ip_opts) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ip_opts) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -7253,26 +7856,26 @@ fn bindgen_test_layout_ip_opts() {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct in_pktinfo {
-    pub ipi_ifindex: ::std::os::raw::c_int,
+    pub ipi_ifindex: ::core::ffi::c_int,
     pub ipi_spec_dst: in_addr,
     pub ipi_addr: in_addr,
 }
 #[test]
 fn bindgen_test_layout_in_pktinfo() {
-    const UNINIT: ::std::mem::MaybeUninit<in_pktinfo> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<in_pktinfo> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<in_pktinfo>(),
+        ::core::mem::size_of::<in_pktinfo>(),
         12usize,
         concat!("Size of: ", stringify!(in_pktinfo))
     );
     assert_eq!(
-        ::std::mem::align_of::<in_pktinfo>(),
+        ::core::mem::align_of::<in_pktinfo>(),
         4usize,
         concat!("Alignment of ", stringify!(in_pktinfo))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ipi_ifindex) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ipi_ifindex) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7282,7 +7885,7 @@ fn bindgen_test_layout_in_pktinfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ipi_spec_dst) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ipi_spec_dst) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -7292,7 +7895,7 @@ fn bindgen_test_layout_in_pktinfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ipi_addr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ipi_addr) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -7331,7 +7934,7 @@ pub const IPPROTO_ETHERNET: _bindgen_ty_7 = 143;
 pub const IPPROTO_RAW: _bindgen_ty_7 = 255;
 pub const IPPROTO_MPTCP: _bindgen_ty_7 = 262;
 pub const IPPROTO_MAX: _bindgen_ty_7 = 263;
-pub type _bindgen_ty_7 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_7 = ::core::ffi::c_uint;
 pub const IPPROTO_HOPOPTS: _bindgen_ty_8 = 0;
 pub const IPPROTO_ROUTING: _bindgen_ty_8 = 43;
 pub const IPPROTO_FRAGMENT: _bindgen_ty_8 = 44;
@@ -7339,7 +7942,7 @@ pub const IPPROTO_ICMPV6: _bindgen_ty_8 = 58;
 pub const IPPROTO_NONE: _bindgen_ty_8 = 59;
 pub const IPPROTO_DSTOPTS: _bindgen_ty_8 = 60;
 pub const IPPROTO_MH: _bindgen_ty_8 = 135;
-pub type _bindgen_ty_8 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_8 = ::core::ffi::c_uint;
 pub type in_port_t = u16;
 pub const IPPORT_ECHO: _bindgen_ty_9 = 7;
 pub const IPPORT_DISCARD: _bindgen_ty_9 = 9;
@@ -7367,7 +7970,7 @@ pub const IPPORT_WHOSERVER: _bindgen_ty_9 = 513;
 pub const IPPORT_ROUTESERVER: _bindgen_ty_9 = 520;
 pub const IPPORT_RESERVED: _bindgen_ty_9 = 1024;
 pub const IPPORT_USERRESERVED: _bindgen_ty_9 = 5000;
-pub type _bindgen_ty_9 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_9 = ::core::ffi::c_uint;
 #[repr(C)]
 #[derive(Copy, Clone)]
 pub struct in6_addr {
@@ -7382,21 +7985,21 @@ pub union in6_addr__bindgen_ty_1 {
 }
 #[test]
 fn bindgen_test_layout_in6_addr__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<in6_addr__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<in6_addr__bindgen_ty_1> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<in6_addr__bindgen_ty_1>(),
+        ::core::mem::size_of::<in6_addr__bindgen_ty_1>(),
         16usize,
         concat!("Size of: ", stringify!(in6_addr__bindgen_ty_1))
     );
     assert_eq!(
-        ::std::mem::align_of::<in6_addr__bindgen_ty_1>(),
+        ::core::mem::align_of::<in6_addr__bindgen_ty_1>(),
         4usize,
         concat!("Alignment of ", stringify!(in6_addr__bindgen_ty_1))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__u6_addr8) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__u6_addr8) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7406,7 +8009,7 @@ fn bindgen_test_layout_in6_addr__bindgen_ty_1() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__u6_addr16) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__u6_addr16) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7416,7 +8019,7 @@ fn bindgen_test_layout_in6_addr__bindgen_ty_1() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__u6_addr32) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__u6_addr32) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7428,20 +8031,20 @@ fn bindgen_test_layout_in6_addr__bindgen_ty_1() {
 }
 #[test]
 fn bindgen_test_layout_in6_addr() {
-    const UNINIT: ::std::mem::MaybeUninit<in6_addr> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<in6_addr> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<in6_addr>(),
+        ::core::mem::size_of::<in6_addr>(),
         16usize,
         concat!("Size of: ", stringify!(in6_addr))
     );
     assert_eq!(
-        ::std::mem::align_of::<in6_addr>(),
+        ::core::mem::align_of::<in6_addr>(),
         4usize,
         concat!("Alignment of ", stringify!(in6_addr))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__in6_u) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__in6_u) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7463,24 +8066,24 @@ pub struct sockaddr_in {
     pub sin_family: sa_family_t,
     pub sin_port: in_port_t,
     pub sin_addr: in_addr,
-    pub sin_zero: [::std::os::raw::c_uchar; 8usize],
+    pub sin_zero: [::core::ffi::c_uchar; 8usize],
 }
 #[test]
 fn bindgen_test_layout_sockaddr_in() {
-    const UNINIT: ::std::mem::MaybeUninit<sockaddr_in> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<sockaddr_in> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<sockaddr_in>(),
+        ::core::mem::size_of::<sockaddr_in>(),
         16usize,
         concat!("Size of: ", stringify!(sockaddr_in))
     );
     assert_eq!(
-        ::std::mem::align_of::<sockaddr_in>(),
+        ::core::mem::align_of::<sockaddr_in>(),
         4usize,
         concat!("Alignment of ", stringify!(sockaddr_in))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sin_family) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sin_family) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7490,7 +8093,7 @@ fn bindgen_test_layout_sockaddr_in() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sin_port) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sin_port) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -7500,7 +8103,7 @@ fn bindgen_test_layout_sockaddr_in() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sin_addr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sin_addr) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -7510,7 +8113,7 @@ fn bindgen_test_layout_sockaddr_in() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sin_zero) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sin_zero) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -7531,20 +8134,20 @@ pub struct sockaddr_in6 {
 }
 #[test]
 fn bindgen_test_layout_sockaddr_in6() {
-    const UNINIT: ::std::mem::MaybeUninit<sockaddr_in6> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<sockaddr_in6> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<sockaddr_in6>(),
+        ::core::mem::size_of::<sockaddr_in6>(),
         28usize,
         concat!("Size of: ", stringify!(sockaddr_in6))
     );
     assert_eq!(
-        ::std::mem::align_of::<sockaddr_in6>(),
+        ::core::mem::align_of::<sockaddr_in6>(),
         4usize,
         concat!("Alignment of ", stringify!(sockaddr_in6))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sin6_family) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sin6_family) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7554,7 +8157,7 @@ fn bindgen_test_layout_sockaddr_in6() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sin6_port) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sin6_port) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -7564,7 +8167,7 @@ fn bindgen_test_layout_sockaddr_in6() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sin6_flowinfo) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sin6_flowinfo) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -7574,7 +8177,7 @@ fn bindgen_test_layout_sockaddr_in6() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sin6_addr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sin6_addr) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -7584,7 +8187,7 @@ fn bindgen_test_layout_sockaddr_in6() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sin6_scope_id) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sin6_scope_id) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -7602,20 +8205,20 @@ pub struct ip_mreq {
 }
 #[test]
 fn bindgen_test_layout_ip_mreq() {
-    const UNINIT: ::std::mem::MaybeUninit<ip_mreq> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<ip_mreq> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<ip_mreq>(),
+        ::core::mem::size_of::<ip_mreq>(),
         8usize,
         concat!("Size of: ", stringify!(ip_mreq))
     );
     assert_eq!(
-        ::std::mem::align_of::<ip_mreq>(),
+        ::core::mem::align_of::<ip_mreq>(),
         4usize,
         concat!("Alignment of ", stringify!(ip_mreq))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imr_multiaddr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imr_multiaddr) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7625,7 +8228,7 @@ fn bindgen_test_layout_ip_mreq() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imr_interface) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imr_interface) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -7640,24 +8243,24 @@ fn bindgen_test_layout_ip_mreq() {
 pub struct ip_mreqn {
     pub imr_multiaddr: in_addr,
     pub imr_address: in_addr,
-    pub imr_ifindex: ::std::os::raw::c_int,
+    pub imr_ifindex: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_ip_mreqn() {
-    const UNINIT: ::std::mem::MaybeUninit<ip_mreqn> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<ip_mreqn> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<ip_mreqn>(),
+        ::core::mem::size_of::<ip_mreqn>(),
         12usize,
         concat!("Size of: ", stringify!(ip_mreqn))
     );
     assert_eq!(
-        ::std::mem::align_of::<ip_mreqn>(),
+        ::core::mem::align_of::<ip_mreqn>(),
         4usize,
         concat!("Alignment of ", stringify!(ip_mreqn))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imr_multiaddr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imr_multiaddr) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7667,7 +8270,7 @@ fn bindgen_test_layout_ip_mreqn() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imr_address) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imr_address) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -7677,7 +8280,7 @@ fn bindgen_test_layout_ip_mreqn() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imr_ifindex) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imr_ifindex) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -7696,20 +8299,20 @@ pub struct ip_mreq_source {
 }
 #[test]
 fn bindgen_test_layout_ip_mreq_source() {
-    const UNINIT: ::std::mem::MaybeUninit<ip_mreq_source> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<ip_mreq_source> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<ip_mreq_source>(),
+        ::core::mem::size_of::<ip_mreq_source>(),
         12usize,
         concat!("Size of: ", stringify!(ip_mreq_source))
     );
     assert_eq!(
-        ::std::mem::align_of::<ip_mreq_source>(),
+        ::core::mem::align_of::<ip_mreq_source>(),
         4usize,
         concat!("Alignment of ", stringify!(ip_mreq_source))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imr_multiaddr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imr_multiaddr) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7719,7 +8322,7 @@ fn bindgen_test_layout_ip_mreq_source() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imr_interface) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imr_interface) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -7729,7 +8332,7 @@ fn bindgen_test_layout_ip_mreq_source() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imr_sourceaddr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imr_sourceaddr) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -7743,24 +8346,24 @@ fn bindgen_test_layout_ip_mreq_source() {
 #[derive(Copy, Clone)]
 pub struct ipv6_mreq {
     pub ipv6mr_multiaddr: in6_addr,
-    pub ipv6mr_interface: ::std::os::raw::c_uint,
+    pub ipv6mr_interface: ::core::ffi::c_uint,
 }
 #[test]
 fn bindgen_test_layout_ipv6_mreq() {
-    const UNINIT: ::std::mem::MaybeUninit<ipv6_mreq> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<ipv6_mreq> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<ipv6_mreq>(),
+        ::core::mem::size_of::<ipv6_mreq>(),
         20usize,
         concat!("Size of: ", stringify!(ipv6_mreq))
     );
     assert_eq!(
-        ::std::mem::align_of::<ipv6_mreq>(),
+        ::core::mem::align_of::<ipv6_mreq>(),
         4usize,
         concat!("Alignment of ", stringify!(ipv6_mreq))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ipv6mr_multiaddr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ipv6mr_multiaddr) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7770,7 +8373,7 @@ fn bindgen_test_layout_ipv6_mreq() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ipv6mr_interface) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ipv6mr_interface) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -7788,20 +8391,20 @@ pub struct group_req {
 }
 #[test]
 fn bindgen_test_layout_group_req() {
-    const UNINIT: ::std::mem::MaybeUninit<group_req> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<group_req> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<group_req>(),
+        ::core::mem::size_of::<group_req>(),
         136usize,
         concat!("Size of: ", stringify!(group_req))
     );
     assert_eq!(
-        ::std::mem::align_of::<group_req>(),
+        ::core::mem::align_of::<group_req>(),
         8usize,
         concat!("Alignment of ", stringify!(group_req))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gr_interface) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gr_interface) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7811,7 +8414,7 @@ fn bindgen_test_layout_group_req() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gr_group) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gr_group) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -7830,20 +8433,20 @@ pub struct group_source_req {
 }
 #[test]
 fn bindgen_test_layout_group_source_req() {
-    const UNINIT: ::std::mem::MaybeUninit<group_source_req> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<group_source_req> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<group_source_req>(),
+        ::core::mem::size_of::<group_source_req>(),
         264usize,
         concat!("Size of: ", stringify!(group_source_req))
     );
     assert_eq!(
-        ::std::mem::align_of::<group_source_req>(),
+        ::core::mem::align_of::<group_source_req>(),
         8usize,
         concat!("Alignment of ", stringify!(group_source_req))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gsr_interface) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gsr_interface) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7853,7 +8456,7 @@ fn bindgen_test_layout_group_source_req() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gsr_group) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gsr_group) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -7863,7 +8466,7 @@ fn bindgen_test_layout_group_source_req() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gsr_source) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gsr_source) as usize - ptr as usize },
         136usize,
         concat!(
             "Offset of field: ",
@@ -7884,20 +8487,20 @@ pub struct ip_msfilter {
 }
 #[test]
 fn bindgen_test_layout_ip_msfilter() {
-    const UNINIT: ::std::mem::MaybeUninit<ip_msfilter> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<ip_msfilter> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<ip_msfilter>(),
+        ::core::mem::size_of::<ip_msfilter>(),
         20usize,
         concat!("Size of: ", stringify!(ip_msfilter))
     );
     assert_eq!(
-        ::std::mem::align_of::<ip_msfilter>(),
+        ::core::mem::align_of::<ip_msfilter>(),
         4usize,
         concat!("Alignment of ", stringify!(ip_msfilter))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imsf_multiaddr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imsf_multiaddr) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7907,7 +8510,7 @@ fn bindgen_test_layout_ip_msfilter() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imsf_interface) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imsf_interface) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -7917,7 +8520,7 @@ fn bindgen_test_layout_ip_msfilter() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imsf_fmode) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imsf_fmode) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -7927,7 +8530,7 @@ fn bindgen_test_layout_ip_msfilter() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imsf_numsrc) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imsf_numsrc) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -7937,7 +8540,7 @@ fn bindgen_test_layout_ip_msfilter() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).imsf_slist) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).imsf_slist) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -7958,20 +8561,20 @@ pub struct group_filter {
 }
 #[test]
 fn bindgen_test_layout_group_filter() {
-    const UNINIT: ::std::mem::MaybeUninit<group_filter> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<group_filter> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<group_filter>(),
+        ::core::mem::size_of::<group_filter>(),
         272usize,
         concat!("Size of: ", stringify!(group_filter))
     );
     assert_eq!(
-        ::std::mem::align_of::<group_filter>(),
+        ::core::mem::align_of::<group_filter>(),
         8usize,
         concat!("Alignment of ", stringify!(group_filter))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gf_interface) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gf_interface) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7981,7 +8584,7 @@ fn bindgen_test_layout_group_filter() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gf_group) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gf_group) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -7991,7 +8594,7 @@ fn bindgen_test_layout_group_filter() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gf_fmode) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gf_fmode) as usize - ptr as usize },
         136usize,
         concat!(
             "Offset of field: ",
@@ -8001,7 +8604,7 @@ fn bindgen_test_layout_group_filter() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gf_numsrc) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gf_numsrc) as usize - ptr as usize },
         140usize,
         concat!(
             "Offset of field: ",
@@ -8011,7 +8614,7 @@ fn bindgen_test_layout_group_filter() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gf_slist) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gf_slist) as usize - ptr as usize },
         144usize,
         concat!(
             "Offset of field: ",
@@ -8035,15 +8638,15 @@ extern "C" {
 }
 extern "C" {
     pub fn bindresvport(
-        __sockfd: ::std::os::raw::c_int,
+        __sockfd: ::core::ffi::c_int,
         __sock_in: *mut sockaddr_in,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn bindresvport6(
-        __sockfd: ::std::os::raw::c_int,
+        __sockfd: ::core::ffi::c_int,
         __sock_in: *mut sockaddr_in6,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 pub type rfbBool = i8;
 pub type rfbKeySym = u32;
@@ -8059,20 +8662,20 @@ pub struct rfbRectangle {
 }
 #[test]
 fn bindgen_test_layout_rfbRectangle() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbRectangle> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbRectangle> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbRectangle>(),
+        ::core::mem::size_of::<rfbRectangle>(),
         8usize,
         concat!("Size of: ", stringify!(rfbRectangle))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbRectangle>(),
+        ::core::mem::align_of::<rfbRectangle>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbRectangle))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8082,7 +8685,7 @@ fn bindgen_test_layout_rfbRectangle() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8092,7 +8695,7 @@ fn bindgen_test_layout_rfbRectangle() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).w) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).w) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -8102,7 +8705,7 @@ fn bindgen_test_layout_rfbRectangle() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).h) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).h) as usize - ptr as usize },
         6usize,
         concat!(
             "Offset of field: ",
@@ -8130,20 +8733,20 @@ pub struct rfbPixelFormat {
 }
 #[test]
 fn bindgen_test_layout_rfbPixelFormat() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbPixelFormat> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbPixelFormat> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbPixelFormat>(),
+        ::core::mem::size_of::<rfbPixelFormat>(),
         16usize,
         concat!("Size of: ", stringify!(rfbPixelFormat))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbPixelFormat>(),
+        ::core::mem::align_of::<rfbPixelFormat>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbPixelFormat))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bitsPerPixel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).bitsPerPixel) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8153,7 +8756,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).depth) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).depth) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -8163,7 +8766,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bigEndian) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).bigEndian) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8173,7 +8776,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).trueColour) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).trueColour) as usize - ptr as usize },
         3usize,
         concat!(
             "Offset of field: ",
@@ -8183,7 +8786,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).redMax) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).redMax) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -8193,7 +8796,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).greenMax) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).greenMax) as usize - ptr as usize },
         6usize,
         concat!(
             "Offset of field: ",
@@ -8203,7 +8806,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).blueMax) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).blueMax) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -8213,7 +8816,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).redShift) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).redShift) as usize - ptr as usize },
         10usize,
         concat!(
             "Offset of field: ",
@@ -8223,7 +8826,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).greenShift) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).greenShift) as usize - ptr as usize },
         11usize,
         concat!(
             "Offset of field: ",
@@ -8233,7 +8836,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).blueShift) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).blueShift) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -8243,7 +8846,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
         13usize,
         concat!(
             "Offset of field: ",
@@ -8253,7 +8856,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
         14usize,
         concat!(
             "Offset of field: ",
@@ -8263,7 +8866,7 @@ fn bindgen_test_layout_rfbPixelFormat() {
         )
     );
 }
-pub type rfbProtocolVersionMsg = [::std::os::raw::c_char; 13usize];
+pub type rfbProtocolVersionMsg = [::core::ffi::c_char; 13usize];
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct rfbClientInitMsg {
@@ -8271,20 +8874,20 @@ pub struct rfbClientInitMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbClientInitMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbClientInitMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbClientInitMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbClientInitMsg>(),
+        ::core::mem::size_of::<rfbClientInitMsg>(),
         1usize,
         concat!("Size of: ", stringify!(rfbClientInitMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbClientInitMsg>(),
+        ::core::mem::align_of::<rfbClientInitMsg>(),
         1usize,
         concat!("Alignment of ", stringify!(rfbClientInitMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).shared) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).shared) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8304,20 +8907,20 @@ pub struct rfbServerInitMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbServerInitMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbServerInitMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbServerInitMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbServerInitMsg>(),
+        ::core::mem::size_of::<rfbServerInitMsg>(),
         24usize,
         concat!("Size of: ", stringify!(rfbServerInitMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbServerInitMsg>(),
+        ::core::mem::align_of::<rfbServerInitMsg>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbServerInitMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).framebufferWidth) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).framebufferWidth) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8327,7 +8930,7 @@ fn bindgen_test_layout_rfbServerInitMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).framebufferHeight) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).framebufferHeight) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8337,7 +8940,7 @@ fn bindgen_test_layout_rfbServerInitMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).format) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).format) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -8347,7 +8950,7 @@ fn bindgen_test_layout_rfbServerInitMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).nameLength) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).nameLength) as usize - ptr as usize },
         20usize,
         concat!(
             "Offset of field: ",
@@ -8367,21 +8970,21 @@ pub struct rfbFramebufferUpdateMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbFramebufferUpdateMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbFramebufferUpdateMsg> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbFramebufferUpdateMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbFramebufferUpdateMsg>(),
+        ::core::mem::size_of::<rfbFramebufferUpdateMsg>(),
         4usize,
         concat!("Size of: ", stringify!(rfbFramebufferUpdateMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbFramebufferUpdateMsg>(),
+        ::core::mem::align_of::<rfbFramebufferUpdateMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbFramebufferUpdateMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8391,7 +8994,7 @@ fn bindgen_test_layout_rfbFramebufferUpdateMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -8401,7 +9004,7 @@ fn bindgen_test_layout_rfbFramebufferUpdateMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).nRects) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).nRects) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8419,21 +9022,21 @@ pub struct rfbFramebufferUpdateRectHeader {
 }
 #[test]
 fn bindgen_test_layout_rfbFramebufferUpdateRectHeader() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbFramebufferUpdateRectHeader> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbFramebufferUpdateRectHeader> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbFramebufferUpdateRectHeader>(),
+        ::core::mem::size_of::<rfbFramebufferUpdateRectHeader>(),
         12usize,
         concat!("Size of: ", stringify!(rfbFramebufferUpdateRectHeader))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbFramebufferUpdateRectHeader>(),
+        ::core::mem::align_of::<rfbFramebufferUpdateRectHeader>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbFramebufferUpdateRectHeader))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).r) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).r) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8443,7 +9046,7 @@ fn bindgen_test_layout_rfbFramebufferUpdateRectHeader() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).encoding) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).encoding) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -8461,20 +9064,21 @@ pub struct rfbSupportedMessages {
 }
 #[test]
 fn bindgen_test_layout_rfbSupportedMessages() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbSupportedMessages> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbSupportedMessages> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbSupportedMessages>(),
+        ::core::mem::size_of::<rfbSupportedMessages>(),
         64usize,
         concat!("Size of: ", stringify!(rfbSupportedMessages))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbSupportedMessages>(),
+        ::core::mem::align_of::<rfbSupportedMessages>(),
         1usize,
         concat!("Alignment of ", stringify!(rfbSupportedMessages))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).client2server) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).client2server) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8484,7 +9088,7 @@ fn bindgen_test_layout_rfbSupportedMessages() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).server2client) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).server2client) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -8502,20 +9106,20 @@ pub struct rfbCopyRect {
 }
 #[test]
 fn bindgen_test_layout_rfbCopyRect() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbCopyRect> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbCopyRect> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbCopyRect>(),
+        ::core::mem::size_of::<rfbCopyRect>(),
         4usize,
         concat!("Size of: ", stringify!(rfbCopyRect))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbCopyRect>(),
+        ::core::mem::align_of::<rfbCopyRect>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbCopyRect))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).srcX) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).srcX) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8525,7 +9129,7 @@ fn bindgen_test_layout_rfbCopyRect() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).srcY) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).srcY) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8542,20 +9146,20 @@ pub struct rfbRREHeader {
 }
 #[test]
 fn bindgen_test_layout_rfbRREHeader() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbRREHeader> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbRREHeader> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbRREHeader>(),
+        ::core::mem::size_of::<rfbRREHeader>(),
         4usize,
         concat!("Size of: ", stringify!(rfbRREHeader))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbRREHeader>(),
+        ::core::mem::align_of::<rfbRREHeader>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbRREHeader))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).nSubrects) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).nSubrects) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8575,20 +9179,20 @@ pub struct rfbCoRRERectangle {
 }
 #[test]
 fn bindgen_test_layout_rfbCoRRERectangle() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbCoRRERectangle> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbCoRRERectangle> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbCoRRERectangle>(),
+        ::core::mem::size_of::<rfbCoRRERectangle>(),
         4usize,
         concat!("Size of: ", stringify!(rfbCoRRERectangle))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbCoRRERectangle>(),
+        ::core::mem::align_of::<rfbCoRRERectangle>(),
         1usize,
         concat!("Alignment of ", stringify!(rfbCoRRERectangle))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8598,7 +9202,7 @@ fn bindgen_test_layout_rfbCoRRERectangle() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -8608,7 +9212,7 @@ fn bindgen_test_layout_rfbCoRRERectangle() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).w) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).w) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8618,7 +9222,7 @@ fn bindgen_test_layout_rfbCoRRERectangle() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).h) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).h) as usize - ptr as usize },
         3usize,
         concat!(
             "Offset of field: ",
@@ -8635,20 +9239,20 @@ pub struct rfbZlibHeader {
 }
 #[test]
 fn bindgen_test_layout_rfbZlibHeader() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbZlibHeader> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbZlibHeader> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbZlibHeader>(),
+        ::core::mem::size_of::<rfbZlibHeader>(),
         4usize,
         concat!("Size of: ", stringify!(rfbZlibHeader))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbZlibHeader>(),
+        ::core::mem::align_of::<rfbZlibHeader>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbZlibHeader))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).nBytes) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).nBytes) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8670,20 +9274,20 @@ pub struct rfbXCursorColors {
 }
 #[test]
 fn bindgen_test_layout_rfbXCursorColors() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbXCursorColors> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbXCursorColors> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbXCursorColors>(),
+        ::core::mem::size_of::<rfbXCursorColors>(),
         6usize,
         concat!("Size of: ", stringify!(rfbXCursorColors))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbXCursorColors>(),
+        ::core::mem::align_of::<rfbXCursorColors>(),
         1usize,
         concat!("Alignment of ", stringify!(rfbXCursorColors))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).foreRed) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).foreRed) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8693,7 +9297,7 @@ fn bindgen_test_layout_rfbXCursorColors() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).foreGreen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).foreGreen) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -8703,7 +9307,7 @@ fn bindgen_test_layout_rfbXCursorColors() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).foreBlue) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).foreBlue) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8713,7 +9317,7 @@ fn bindgen_test_layout_rfbXCursorColors() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).backRed) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).backRed) as usize - ptr as usize },
         3usize,
         concat!(
             "Offset of field: ",
@@ -8723,7 +9327,7 @@ fn bindgen_test_layout_rfbXCursorColors() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).backGreen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).backGreen) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -8733,7 +9337,7 @@ fn bindgen_test_layout_rfbXCursorColors() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).backBlue) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).backBlue) as usize - ptr as usize },
         5usize,
         concat!(
             "Offset of field: ",
@@ -8750,20 +9354,20 @@ pub struct rfbZRLEHeader {
 }
 #[test]
 fn bindgen_test_layout_rfbZRLEHeader() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbZRLEHeader> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbZRLEHeader> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbZRLEHeader>(),
+        ::core::mem::size_of::<rfbZRLEHeader>(),
         4usize,
         concat!("Size of: ", stringify!(rfbZRLEHeader))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbZRLEHeader>(),
+        ::core::mem::align_of::<rfbZRLEHeader>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbZRLEHeader))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8783,21 +9387,21 @@ pub struct rfbSetColourMapEntriesMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbSetColourMapEntriesMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbSetColourMapEntriesMsg> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbSetColourMapEntriesMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbSetColourMapEntriesMsg>(),
+        ::core::mem::size_of::<rfbSetColourMapEntriesMsg>(),
         6usize,
         concat!("Size of: ", stringify!(rfbSetColourMapEntriesMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbSetColourMapEntriesMsg>(),
+        ::core::mem::align_of::<rfbSetColourMapEntriesMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbSetColourMapEntriesMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8807,7 +9411,7 @@ fn bindgen_test_layout_rfbSetColourMapEntriesMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -8817,7 +9421,7 @@ fn bindgen_test_layout_rfbSetColourMapEntriesMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).firstColour) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).firstColour) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8827,7 +9431,7 @@ fn bindgen_test_layout_rfbSetColourMapEntriesMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).nColours) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).nColours) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -8844,20 +9448,20 @@ pub struct rfbBellMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbBellMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbBellMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbBellMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbBellMsg>(),
+        ::core::mem::size_of::<rfbBellMsg>(),
         1usize,
         concat!("Size of: ", stringify!(rfbBellMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbBellMsg>(),
+        ::core::mem::align_of::<rfbBellMsg>(),
         1usize,
         concat!("Alignment of ", stringify!(rfbBellMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8877,20 +9481,21 @@ pub struct rfbServerCutTextMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbServerCutTextMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbServerCutTextMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbServerCutTextMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbServerCutTextMsg>(),
+        ::core::mem::size_of::<rfbServerCutTextMsg>(),
         8usize,
         concat!("Size of: ", stringify!(rfbServerCutTextMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbServerCutTextMsg>(),
+        ::core::mem::align_of::<rfbServerCutTextMsg>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbServerCutTextMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8900,7 +9505,7 @@ fn bindgen_test_layout_rfbServerCutTextMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -8910,7 +9515,7 @@ fn bindgen_test_layout_rfbServerCutTextMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8920,7 +9525,7 @@ fn bindgen_test_layout_rfbServerCutTextMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -8942,20 +9547,21 @@ pub struct _rfbFileTransferMsg {
 }
 #[test]
 fn bindgen_test_layout__rfbFileTransferMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbFileTransferMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbFileTransferMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbFileTransferMsg>(),
+        ::core::mem::size_of::<_rfbFileTransferMsg>(),
         12usize,
         concat!("Size of: ", stringify!(_rfbFileTransferMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbFileTransferMsg>(),
+        ::core::mem::align_of::<_rfbFileTransferMsg>(),
         4usize,
         concat!("Alignment of ", stringify!(_rfbFileTransferMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -8965,7 +9571,7 @@ fn bindgen_test_layout__rfbFileTransferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).contentType) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).contentType) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -8975,7 +9581,7 @@ fn bindgen_test_layout__rfbFileTransferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).contentParam) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).contentParam) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -8985,7 +9591,7 @@ fn bindgen_test_layout__rfbFileTransferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         3usize,
         concat!(
             "Offset of field: ",
@@ -8995,7 +9601,7 @@ fn bindgen_test_layout__rfbFileTransferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -9005,7 +9611,7 @@ fn bindgen_test_layout__rfbFileTransferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -9026,20 +9632,20 @@ pub struct _rfbTextChatMsg {
 }
 #[test]
 fn bindgen_test_layout__rfbTextChatMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbTextChatMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbTextChatMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbTextChatMsg>(),
+        ::core::mem::size_of::<_rfbTextChatMsg>(),
         8usize,
         concat!("Size of: ", stringify!(_rfbTextChatMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbTextChatMsg>(),
+        ::core::mem::align_of::<_rfbTextChatMsg>(),
         4usize,
         concat!("Alignment of ", stringify!(_rfbTextChatMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9049,7 +9655,7 @@ fn bindgen_test_layout__rfbTextChatMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9059,7 +9665,7 @@ fn bindgen_test_layout__rfbTextChatMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -9069,7 +9675,7 @@ fn bindgen_test_layout__rfbTextChatMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -9090,20 +9696,20 @@ pub struct rfbXvpMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbXvpMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbXvpMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbXvpMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbXvpMsg>(),
+        ::core::mem::size_of::<rfbXvpMsg>(),
         4usize,
         concat!("Size of: ", stringify!(rfbXvpMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbXvpMsg>(),
+        ::core::mem::align_of::<rfbXvpMsg>(),
         1usize,
         concat!("Alignment of ", stringify!(rfbXvpMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9113,7 +9719,7 @@ fn bindgen_test_layout_rfbXvpMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9123,7 +9729,7 @@ fn bindgen_test_layout_rfbXvpMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).version) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).version) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -9133,7 +9739,7 @@ fn bindgen_test_layout_rfbXvpMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).code) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).code) as usize - ptr as usize },
         3usize,
         concat!(
             "Offset of field: ",
@@ -9151,20 +9757,21 @@ pub struct rfbExtDesktopSizeMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbExtDesktopSizeMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbExtDesktopSizeMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbExtDesktopSizeMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbExtDesktopSizeMsg>(),
+        ::core::mem::size_of::<rfbExtDesktopSizeMsg>(),
         4usize,
         concat!("Size of: ", stringify!(rfbExtDesktopSizeMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbExtDesktopSizeMsg>(),
+        ::core::mem::align_of::<rfbExtDesktopSizeMsg>(),
         1usize,
         concat!("Alignment of ", stringify!(rfbExtDesktopSizeMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).numberOfScreens) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).numberOfScreens) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9174,7 +9781,7 @@ fn bindgen_test_layout_rfbExtDesktopSizeMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9196,20 +9803,21 @@ pub struct rfbExtDesktopScreen {
 }
 #[test]
 fn bindgen_test_layout_rfbExtDesktopScreen() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbExtDesktopScreen> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbExtDesktopScreen> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbExtDesktopScreen>(),
+        ::core::mem::size_of::<rfbExtDesktopScreen>(),
         16usize,
         concat!("Size of: ", stringify!(rfbExtDesktopScreen))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbExtDesktopScreen>(),
+        ::core::mem::align_of::<rfbExtDesktopScreen>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbExtDesktopScreen))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).id) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).id) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9219,7 +9827,7 @@ fn bindgen_test_layout_rfbExtDesktopScreen() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -9229,7 +9837,7 @@ fn bindgen_test_layout_rfbExtDesktopScreen() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
         6usize,
         concat!(
             "Offset of field: ",
@@ -9239,7 +9847,7 @@ fn bindgen_test_layout_rfbExtDesktopScreen() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).width) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).width) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -9249,7 +9857,7 @@ fn bindgen_test_layout_rfbExtDesktopScreen() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).height) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).height) as usize - ptr as usize },
         10usize,
         concat!(
             "Offset of field: ",
@@ -9259,7 +9867,7 @@ fn bindgen_test_layout_rfbExtDesktopScreen() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).flags) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -9281,20 +9889,21 @@ pub struct rfbSetDesktopSizeMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbSetDesktopSizeMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbSetDesktopSizeMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbSetDesktopSizeMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbSetDesktopSizeMsg>(),
+        ::core::mem::size_of::<rfbSetDesktopSizeMsg>(),
         8usize,
         concat!("Size of: ", stringify!(rfbSetDesktopSizeMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbSetDesktopSizeMsg>(),
+        ::core::mem::align_of::<rfbSetDesktopSizeMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbSetDesktopSizeMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9304,7 +9913,7 @@ fn bindgen_test_layout_rfbSetDesktopSizeMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9314,7 +9923,7 @@ fn bindgen_test_layout_rfbSetDesktopSizeMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).width) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).width) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -9324,7 +9933,7 @@ fn bindgen_test_layout_rfbSetDesktopSizeMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).height) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).height) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -9334,7 +9943,7 @@ fn bindgen_test_layout_rfbSetDesktopSizeMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).numberOfScreens) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).numberOfScreens) as usize - ptr as usize },
         6usize,
         concat!(
             "Offset of field: ",
@@ -9344,7 +9953,7 @@ fn bindgen_test_layout_rfbSetDesktopSizeMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
         7usize,
         concat!(
             "Offset of field: ",
@@ -9364,21 +9973,21 @@ pub struct _rfbResizeFrameBufferMsg {
 }
 #[test]
 fn bindgen_test_layout__rfbResizeFrameBufferMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbResizeFrameBufferMsg> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbResizeFrameBufferMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbResizeFrameBufferMsg>(),
+        ::core::mem::size_of::<_rfbResizeFrameBufferMsg>(),
         6usize,
         concat!("Size of: ", stringify!(_rfbResizeFrameBufferMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbResizeFrameBufferMsg>(),
+        ::core::mem::align_of::<_rfbResizeFrameBufferMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(_rfbResizeFrameBufferMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9388,7 +9997,7 @@ fn bindgen_test_layout__rfbResizeFrameBufferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9398,7 +10007,7 @@ fn bindgen_test_layout__rfbResizeFrameBufferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).framebufferWidth) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).framebufferWidth) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -9408,7 +10017,7 @@ fn bindgen_test_layout__rfbResizeFrameBufferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).framebufferHeigth) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).framebufferHeigth) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -9432,21 +10041,21 @@ pub struct rfbPalmVNCReSizeFrameBufferMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbPalmVNCReSizeFrameBufferMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbPalmVNCReSizeFrameBufferMsg> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbPalmVNCReSizeFrameBufferMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbPalmVNCReSizeFrameBufferMsg>(),
+        ::core::mem::size_of::<rfbPalmVNCReSizeFrameBufferMsg>(),
         12usize,
         concat!("Size of: ", stringify!(rfbPalmVNCReSizeFrameBufferMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbPalmVNCReSizeFrameBufferMsg>(),
+        ::core::mem::align_of::<rfbPalmVNCReSizeFrameBufferMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbPalmVNCReSizeFrameBufferMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9456,7 +10065,7 @@ fn bindgen_test_layout_rfbPalmVNCReSizeFrameBufferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9466,7 +10075,7 @@ fn bindgen_test_layout_rfbPalmVNCReSizeFrameBufferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).desktop_w) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).desktop_w) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -9476,7 +10085,7 @@ fn bindgen_test_layout_rfbPalmVNCReSizeFrameBufferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).desktop_h) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).desktop_h) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -9486,7 +10095,7 @@ fn bindgen_test_layout_rfbPalmVNCReSizeFrameBufferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).buffer_w) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).buffer_w) as usize - ptr as usize },
         6usize,
         concat!(
             "Offset of field: ",
@@ -9496,7 +10105,7 @@ fn bindgen_test_layout_rfbPalmVNCReSizeFrameBufferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).buffer_h) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).buffer_h) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -9506,7 +10115,7 @@ fn bindgen_test_layout_rfbPalmVNCReSizeFrameBufferMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
         10usize,
         concat!(
             "Offset of field: ",
@@ -9533,20 +10142,21 @@ pub union rfbServerToClientMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbServerToClientMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbServerToClientMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbServerToClientMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbServerToClientMsg>(),
+        ::core::mem::size_of::<rfbServerToClientMsg>(),
         12usize,
         concat!("Size of: ", stringify!(rfbServerToClientMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbServerToClientMsg>(),
+        ::core::mem::align_of::<rfbServerToClientMsg>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbServerToClientMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9556,7 +10166,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fu) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fu) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9566,7 +10176,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).scme) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).scme) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9576,7 +10186,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).b) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).b) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9586,7 +10196,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sct) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sct) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9596,7 +10206,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rsfb) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rsfb) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9606,7 +10216,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).prsfb) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).prsfb) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9616,7 +10226,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ft) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ft) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9626,7 +10236,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tc) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tc) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9636,7 +10246,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).xvp) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).xvp) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9646,7 +10256,7 @@ fn bindgen_test_layout_rfbServerToClientMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).eds) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).eds) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9663,20 +10273,20 @@ pub struct rfbCacheRect {
 }
 #[test]
 fn bindgen_test_layout_rfbCacheRect() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbCacheRect> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbCacheRect> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbCacheRect>(),
+        ::core::mem::size_of::<rfbCacheRect>(),
         2usize,
         concat!("Size of: ", stringify!(rfbCacheRect))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbCacheRect>(),
+        ::core::mem::align_of::<rfbCacheRect>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbCacheRect))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).special) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).special) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9697,20 +10307,21 @@ pub struct rfbSetPixelFormatMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbSetPixelFormatMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbSetPixelFormatMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbSetPixelFormatMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbSetPixelFormatMsg>(),
+        ::core::mem::size_of::<rfbSetPixelFormatMsg>(),
         20usize,
         concat!("Size of: ", stringify!(rfbSetPixelFormatMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbSetPixelFormatMsg>(),
+        ::core::mem::align_of::<rfbSetPixelFormatMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbSetPixelFormatMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9720,7 +10331,7 @@ fn bindgen_test_layout_rfbSetPixelFormatMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9730,7 +10341,7 @@ fn bindgen_test_layout_rfbSetPixelFormatMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -9740,7 +10351,7 @@ fn bindgen_test_layout_rfbSetPixelFormatMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).format) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).format) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -9760,21 +10371,21 @@ pub struct rfbFixColourMapEntriesMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbFixColourMapEntriesMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbFixColourMapEntriesMsg> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbFixColourMapEntriesMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbFixColourMapEntriesMsg>(),
+        ::core::mem::size_of::<rfbFixColourMapEntriesMsg>(),
         6usize,
         concat!("Size of: ", stringify!(rfbFixColourMapEntriesMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbFixColourMapEntriesMsg>(),
+        ::core::mem::align_of::<rfbFixColourMapEntriesMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbFixColourMapEntriesMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9784,7 +10395,7 @@ fn bindgen_test_layout_rfbFixColourMapEntriesMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9794,7 +10405,7 @@ fn bindgen_test_layout_rfbFixColourMapEntriesMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).firstColour) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).firstColour) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -9804,7 +10415,7 @@ fn bindgen_test_layout_rfbFixColourMapEntriesMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).nColours) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).nColours) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -9823,20 +10434,20 @@ pub struct rfbSetEncodingsMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbSetEncodingsMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbSetEncodingsMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbSetEncodingsMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbSetEncodingsMsg>(),
+        ::core::mem::size_of::<rfbSetEncodingsMsg>(),
         4usize,
         concat!("Size of: ", stringify!(rfbSetEncodingsMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbSetEncodingsMsg>(),
+        ::core::mem::align_of::<rfbSetEncodingsMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbSetEncodingsMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9846,7 +10457,7 @@ fn bindgen_test_layout_rfbSetEncodingsMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9856,7 +10467,7 @@ fn bindgen_test_layout_rfbSetEncodingsMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).nEncodings) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).nEncodings) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -9878,21 +10489,21 @@ pub struct rfbFramebufferUpdateRequestMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbFramebufferUpdateRequestMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbFramebufferUpdateRequestMsg> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbFramebufferUpdateRequestMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbFramebufferUpdateRequestMsg>(),
+        ::core::mem::size_of::<rfbFramebufferUpdateRequestMsg>(),
         10usize,
         concat!("Size of: ", stringify!(rfbFramebufferUpdateRequestMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbFramebufferUpdateRequestMsg>(),
+        ::core::mem::align_of::<rfbFramebufferUpdateRequestMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbFramebufferUpdateRequestMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9902,7 +10513,7 @@ fn bindgen_test_layout_rfbFramebufferUpdateRequestMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).incremental) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).incremental) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9912,7 +10523,7 @@ fn bindgen_test_layout_rfbFramebufferUpdateRequestMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -9922,7 +10533,7 @@ fn bindgen_test_layout_rfbFramebufferUpdateRequestMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -9932,7 +10543,7 @@ fn bindgen_test_layout_rfbFramebufferUpdateRequestMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).w) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).w) as usize - ptr as usize },
         6usize,
         concat!(
             "Offset of field: ",
@@ -9942,7 +10553,7 @@ fn bindgen_test_layout_rfbFramebufferUpdateRequestMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).h) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).h) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -9962,20 +10573,20 @@ pub struct rfbKeyEventMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbKeyEventMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbKeyEventMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbKeyEventMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbKeyEventMsg>(),
+        ::core::mem::size_of::<rfbKeyEventMsg>(),
         8usize,
         concat!("Size of: ", stringify!(rfbKeyEventMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbKeyEventMsg>(),
+        ::core::mem::align_of::<rfbKeyEventMsg>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbKeyEventMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -9985,7 +10596,7 @@ fn bindgen_test_layout_rfbKeyEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).down) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).down) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -9995,7 +10606,7 @@ fn bindgen_test_layout_rfbKeyEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -10005,7 +10616,7 @@ fn bindgen_test_layout_rfbKeyEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).key) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).key) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -10026,21 +10637,21 @@ pub struct rfbQemuExtendedKeyEventMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbQemuExtendedKeyEventMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbQemuExtendedKeyEventMsg> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbQemuExtendedKeyEventMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbQemuExtendedKeyEventMsg>(),
+        ::core::mem::size_of::<rfbQemuExtendedKeyEventMsg>(),
         12usize,
         concat!("Size of: ", stringify!(rfbQemuExtendedKeyEventMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbQemuExtendedKeyEventMsg>(),
+        ::core::mem::align_of::<rfbQemuExtendedKeyEventMsg>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbQemuExtendedKeyEventMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10050,7 +10661,7 @@ fn bindgen_test_layout_rfbQemuExtendedKeyEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).subtype) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).subtype) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -10060,7 +10671,7 @@ fn bindgen_test_layout_rfbQemuExtendedKeyEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).down) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).down) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -10070,7 +10681,7 @@ fn bindgen_test_layout_rfbQemuExtendedKeyEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).keysym) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).keysym) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -10080,7 +10691,7 @@ fn bindgen_test_layout_rfbQemuExtendedKeyEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).keycode) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).keycode) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -10100,20 +10711,20 @@ pub struct rfbPointerEventMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbPointerEventMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbPointerEventMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbPointerEventMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbPointerEventMsg>(),
+        ::core::mem::size_of::<rfbPointerEventMsg>(),
         6usize,
         concat!("Size of: ", stringify!(rfbPointerEventMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbPointerEventMsg>(),
+        ::core::mem::align_of::<rfbPointerEventMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbPointerEventMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10123,7 +10734,7 @@ fn bindgen_test_layout_rfbPointerEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).buttonMask) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).buttonMask) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -10133,7 +10744,7 @@ fn bindgen_test_layout_rfbPointerEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -10143,7 +10754,7 @@ fn bindgen_test_layout_rfbPointerEventMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -10163,20 +10774,21 @@ pub struct rfbClientCutTextMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbClientCutTextMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbClientCutTextMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbClientCutTextMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbClientCutTextMsg>(),
+        ::core::mem::size_of::<rfbClientCutTextMsg>(),
         8usize,
         concat!("Size of: ", stringify!(rfbClientCutTextMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbClientCutTextMsg>(),
+        ::core::mem::align_of::<rfbClientCutTextMsg>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbClientCutTextMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10186,7 +10798,7 @@ fn bindgen_test_layout_rfbClientCutTextMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad1) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -10196,7 +10808,7 @@ fn bindgen_test_layout_rfbClientCutTextMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -10206,7 +10818,7 @@ fn bindgen_test_layout_rfbClientCutTextMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).length) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -10225,20 +10837,20 @@ pub struct _rfbSetScaleMsg {
 }
 #[test]
 fn bindgen_test_layout__rfbSetScaleMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbSetScaleMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbSetScaleMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbSetScaleMsg>(),
+        ::core::mem::size_of::<_rfbSetScaleMsg>(),
         4usize,
         concat!("Size of: ", stringify!(_rfbSetScaleMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbSetScaleMsg>(),
+        ::core::mem::align_of::<_rfbSetScaleMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(_rfbSetScaleMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10248,7 +10860,7 @@ fn bindgen_test_layout__rfbSetScaleMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).scale) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).scale) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -10258,7 +10870,7 @@ fn bindgen_test_layout__rfbSetScaleMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -10278,21 +10890,21 @@ pub struct rfbPalmVNCSetScaleFactorMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbPalmVNCSetScaleFactorMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbPalmVNCSetScaleFactorMsg> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbPalmVNCSetScaleFactorMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbPalmVNCSetScaleFactorMsg>(),
+        ::core::mem::size_of::<rfbPalmVNCSetScaleFactorMsg>(),
         4usize,
         concat!("Size of: ", stringify!(rfbPalmVNCSetScaleFactorMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbPalmVNCSetScaleFactorMsg>(),
+        ::core::mem::align_of::<rfbPalmVNCSetScaleFactorMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(rfbPalmVNCSetScaleFactorMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10302,7 +10914,7 @@ fn bindgen_test_layout_rfbPalmVNCSetScaleFactorMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).scale) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).scale) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -10312,7 +10924,7 @@ fn bindgen_test_layout_rfbPalmVNCSetScaleFactorMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad2) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -10331,21 +10943,21 @@ pub struct _rfbSetServerInputMsg {
 }
 #[test]
 fn bindgen_test_layout__rfbSetServerInputMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbSetServerInputMsg> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbSetServerInputMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbSetServerInputMsg>(),
+        ::core::mem::size_of::<_rfbSetServerInputMsg>(),
         4usize,
         concat!("Size of: ", stringify!(_rfbSetServerInputMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbSetServerInputMsg>(),
+        ::core::mem::align_of::<_rfbSetServerInputMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(_rfbSetServerInputMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10355,7 +10967,7 @@ fn bindgen_test_layout__rfbSetServerInputMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -10365,7 +10977,7 @@ fn bindgen_test_layout__rfbSetServerInputMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pad) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -10386,20 +10998,20 @@ pub struct _rfbSetSWMsg {
 }
 #[test]
 fn bindgen_test_layout__rfbSetSWMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbSetSWMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbSetSWMsg> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbSetSWMsg>(),
+        ::core::mem::size_of::<_rfbSetSWMsg>(),
         6usize,
         concat!("Size of: ", stringify!(_rfbSetSWMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbSetSWMsg>(),
+        ::core::mem::align_of::<_rfbSetSWMsg>(),
         2usize,
         concat!("Alignment of ", stringify!(_rfbSetSWMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10409,7 +11021,7 @@ fn bindgen_test_layout__rfbSetSWMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).status) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -10419,7 +11031,7 @@ fn bindgen_test_layout__rfbSetSWMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -10429,7 +11041,7 @@ fn bindgen_test_layout__rfbSetSWMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -10462,20 +11074,21 @@ pub union rfbClientToServerMsg {
 }
 #[test]
 fn bindgen_test_layout_rfbClientToServerMsg() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbClientToServerMsg> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbClientToServerMsg> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbClientToServerMsg>(),
+        ::core::mem::size_of::<rfbClientToServerMsg>(),
         20usize,
         concat!("Size of: ", stringify!(rfbClientToServerMsg))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbClientToServerMsg>(),
+        ::core::mem::align_of::<rfbClientToServerMsg>(),
         4usize,
         concat!("Alignment of ", stringify!(rfbClientToServerMsg))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10485,7 +11098,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).spf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).spf) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10495,7 +11108,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fcme) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fcme) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10505,7 +11118,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).se) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).se) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10515,7 +11128,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fur) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fur) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10525,7 +11138,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ke) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ke) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10535,7 +11148,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pe) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pe) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10545,7 +11158,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cct) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cct) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10555,7 +11168,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ssc) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ssc) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10565,7 +11178,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pssf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pssf) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10575,7 +11188,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sim) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sim) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10585,7 +11198,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ft) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ft) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10595,7 +11208,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sw) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sw) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10605,7 +11218,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tc) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tc) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10615,7 +11228,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).xvp) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).xvp) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10625,7 +11238,7 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sdm) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sdm) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10637,45 +11250,40 @@ fn bindgen_test_layout_rfbClientToServerMsg() {
 }
 extern "C" {
     pub fn rfbEncryptAndStorePasswd(
-        passwd: *mut ::std::os::raw::c_char,
-        fname: *mut ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        passwd: *mut ::core::ffi::c_char,
+        fname: *mut ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbDecryptPasswdFromFile(
-        fname: *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+    pub fn rfbDecryptPasswdFromFile(fname: *mut ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn rfbRandomBytes(bytes: *mut ::std::os::raw::c_uchar);
+    pub fn rfbRandomBytes(bytes: *mut ::core::ffi::c_uchar);
 }
 extern "C" {
-    pub fn rfbEncryptBytes(
-        bytes: *mut ::std::os::raw::c_uchar,
-        passwd: *mut ::std::os::raw::c_char,
-    );
+    pub fn rfbEncryptBytes(bytes: *mut ::core::ffi::c_uchar, passwd: *mut ::core::ffi::c_char);
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct sched_param {
-    pub sched_priority: ::std::os::raw::c_int,
+    pub sched_priority: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_sched_param() {
-    const UNINIT: ::std::mem::MaybeUninit<sched_param> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<sched_param> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<sched_param>(),
+        ::core::mem::size_of::<sched_param>(),
         4usize,
         concat!("Size of: ", stringify!(sched_param))
     );
     assert_eq!(
-        ::std::mem::align_of::<sched_param>(),
+        ::core::mem::align_of::<sched_param>(),
         4usize,
         concat!("Alignment of ", stringify!(sched_param))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sched_priority) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sched_priority) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10685,7 +11293,7 @@ fn bindgen_test_layout_sched_param() {
         )
     );
 }
-pub type __cpu_mask = ::std::os::raw::c_ulong;
+pub type __cpu_mask = ::core::ffi::c_ulong;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct cpu_set_t {
@@ -10693,20 +11301,20 @@ pub struct cpu_set_t {
 }
 #[test]
 fn bindgen_test_layout_cpu_set_t() {
-    const UNINIT: ::std::mem::MaybeUninit<cpu_set_t> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<cpu_set_t> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<cpu_set_t>(),
+        ::core::mem::size_of::<cpu_set_t>(),
         128usize,
         concat!("Size of: ", stringify!(cpu_set_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<cpu_set_t>(),
+        ::core::mem::align_of::<cpu_set_t>(),
         8usize,
         concat!("Alignment of ", stringify!(cpu_set_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__bits) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__bits) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10717,7 +11325,7 @@ fn bindgen_test_layout_cpu_set_t() {
     );
 }
 extern "C" {
-    pub fn __sched_cpucount(__setsize: usize, __setp: *const cpu_set_t) -> ::std::os::raw::c_int;
+    pub fn __sched_cpucount(__setsize: usize, __setp: *const cpu_set_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn __sched_cpualloc(__count: usize) -> *mut cpu_set_t;
@@ -10726,64 +11334,64 @@ extern "C" {
     pub fn __sched_cpufree(__set: *mut cpu_set_t);
 }
 extern "C" {
-    pub fn sched_setparam(__pid: __pid_t, __param: *const sched_param) -> ::std::os::raw::c_int;
+    pub fn sched_setparam(__pid: __pid_t, __param: *const sched_param) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sched_getparam(__pid: __pid_t, __param: *mut sched_param) -> ::std::os::raw::c_int;
+    pub fn sched_getparam(__pid: __pid_t, __param: *mut sched_param) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn sched_setscheduler(
         __pid: __pid_t,
-        __policy: ::std::os::raw::c_int,
+        __policy: ::core::ffi::c_int,
         __param: *const sched_param,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sched_getscheduler(__pid: __pid_t) -> ::std::os::raw::c_int;
+    pub fn sched_getscheduler(__pid: __pid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sched_yield() -> ::std::os::raw::c_int;
+    pub fn sched_yield() -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sched_get_priority_max(__algorithm: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn sched_get_priority_max(__algorithm: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sched_get_priority_min(__algorithm: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn sched_get_priority_min(__algorithm: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn sched_rr_get_interval(__pid: __pid_t, __t: *mut timespec) -> ::std::os::raw::c_int;
+    pub fn sched_rr_get_interval(__pid: __pid_t, __t: *mut timespec) -> ::core::ffi::c_int;
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct tm {
-    pub tm_sec: ::std::os::raw::c_int,
-    pub tm_min: ::std::os::raw::c_int,
-    pub tm_hour: ::std::os::raw::c_int,
-    pub tm_mday: ::std::os::raw::c_int,
-    pub tm_mon: ::std::os::raw::c_int,
-    pub tm_year: ::std::os::raw::c_int,
-    pub tm_wday: ::std::os::raw::c_int,
-    pub tm_yday: ::std::os::raw::c_int,
-    pub tm_isdst: ::std::os::raw::c_int,
-    pub tm_gmtoff: ::std::os::raw::c_long,
-    pub tm_zone: *const ::std::os::raw::c_char,
+    pub tm_sec: ::core::ffi::c_int,
+    pub tm_min: ::core::ffi::c_int,
+    pub tm_hour: ::core::ffi::c_int,
+    pub tm_mday: ::core::ffi::c_int,
+    pub tm_mon: ::core::ffi::c_int,
+    pub tm_year: ::core::ffi::c_int,
+    pub tm_wday: ::core::ffi::c_int,
+    pub tm_yday: ::core::ffi::c_int,
+    pub tm_isdst: ::core::ffi::c_int,
+    pub tm_gmtoff: ::core::ffi::c_long,
+    pub tm_zone: *const ::core::ffi::c_char,
 }
 #[test]
 fn bindgen_test_layout_tm() {
-    const UNINIT: ::std::mem::MaybeUninit<tm> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<tm> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<tm>(),
+        ::core::mem::size_of::<tm>(),
         56usize,
         concat!("Size of: ", stringify!(tm))
     );
     assert_eq!(
-        ::std::mem::align_of::<tm>(),
+        ::core::mem::align_of::<tm>(),
         8usize,
         concat!("Alignment of ", stringify!(tm))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_sec) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_sec) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10793,7 +11401,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_min) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_min) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -10803,7 +11411,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_hour) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_hour) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -10813,7 +11421,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_mday) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_mday) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -10823,7 +11431,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_mon) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_mon) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -10833,7 +11441,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_year) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_year) as usize - ptr as usize },
         20usize,
         concat!(
             "Offset of field: ",
@@ -10843,7 +11451,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_wday) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_wday) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -10853,7 +11461,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_yday) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_yday) as usize - ptr as usize },
         28usize,
         concat!(
             "Offset of field: ",
@@ -10863,7 +11471,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_isdst) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_isdst) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -10873,7 +11481,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_gmtoff) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_gmtoff) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -10883,7 +11491,7 @@ fn bindgen_test_layout_tm() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_zone) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tm_zone) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -10901,20 +11509,20 @@ pub struct itimerspec {
 }
 #[test]
 fn bindgen_test_layout_itimerspec() {
-    const UNINIT: ::std::mem::MaybeUninit<itimerspec> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<itimerspec> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<itimerspec>(),
+        ::core::mem::size_of::<itimerspec>(),
         32usize,
         concat!("Size of: ", stringify!(itimerspec))
     );
     assert_eq!(
-        ::std::mem::align_of::<itimerspec>(),
+        ::core::mem::align_of::<itimerspec>(),
         8usize,
         concat!("Alignment of ", stringify!(itimerspec))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).it_interval) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).it_interval) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -10924,7 +11532,7 @@ fn bindgen_test_layout_itimerspec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).it_value) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).it_value) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -10953,17 +11561,17 @@ extern "C" {
 }
 extern "C" {
     pub fn strftime(
-        __s: *mut ::std::os::raw::c_char,
+        __s: *mut ::core::ffi::c_char,
         __maxsize: usize,
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         __tp: *const tm,
     ) -> usize;
 }
 extern "C" {
     pub fn strftime_l(
-        __s: *mut ::std::os::raw::c_char,
+        __s: *mut ::core::ffi::c_char,
         __maxsize: usize,
-        __format: *const ::std::os::raw::c_char,
+        __format: *const ::core::ffi::c_char,
         __tp: *const tm,
         __loc: locale_t,
     ) -> usize;
@@ -10981,43 +11589,40 @@ extern "C" {
     pub fn localtime_r(__timer: *const time_t, __tp: *mut tm) -> *mut tm;
 }
 extern "C" {
-    pub fn asctime(__tp: *const tm) -> *mut ::std::os::raw::c_char;
+    pub fn asctime(__tp: *const tm) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn ctime(__timer: *const time_t) -> *mut ::std::os::raw::c_char;
+    pub fn ctime(__timer: *const time_t) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub fn asctime_r(
-        __tp: *const tm,
-        __buf: *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+    pub fn asctime_r(__tp: *const tm, __buf: *mut ::core::ffi::c_char) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn ctime_r(
         __timer: *const time_t,
-        __buf: *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        __buf: *mut ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
-    pub static mut __tzname: [*mut ::std::os::raw::c_char; 2usize];
+    pub static mut __tzname: [*mut ::core::ffi::c_char; 2usize];
 }
 extern "C" {
-    pub static mut __daylight: ::std::os::raw::c_int;
+    pub static mut __daylight: ::core::ffi::c_int;
 }
 extern "C" {
-    pub static mut __timezone: ::std::os::raw::c_long;
+    pub static mut __timezone: ::core::ffi::c_long;
 }
 extern "C" {
-    pub static mut tzname: [*mut ::std::os::raw::c_char; 2usize];
+    pub static mut tzname: [*mut ::core::ffi::c_char; 2usize];
 }
 extern "C" {
     pub fn tzset();
 }
 extern "C" {
-    pub static mut daylight: ::std::os::raw::c_int;
+    pub static mut daylight: ::core::ffi::c_int;
 }
 extern "C" {
-    pub static mut timezone: ::std::os::raw::c_long;
+    pub static mut timezone: ::core::ffi::c_long;
 }
 extern "C" {
     pub fn timegm(__tp: *mut tm) -> time_t;
@@ -11026,88 +11631,85 @@ extern "C" {
     pub fn timelocal(__tp: *mut tm) -> time_t;
 }
 extern "C" {
-    pub fn dysize(__year: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
+    pub fn dysize(__year: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn nanosleep(
         __requested_time: *const timespec,
         __remaining: *mut timespec,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn clock_getres(__clock_id: clockid_t, __res: *mut timespec) -> ::std::os::raw::c_int;
+    pub fn clock_getres(__clock_id: clockid_t, __res: *mut timespec) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn clock_gettime(__clock_id: clockid_t, __tp: *mut timespec) -> ::std::os::raw::c_int;
+    pub fn clock_gettime(__clock_id: clockid_t, __tp: *mut timespec) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn clock_settime(__clock_id: clockid_t, __tp: *const timespec) -> ::std::os::raw::c_int;
+    pub fn clock_settime(__clock_id: clockid_t, __tp: *const timespec) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn clock_nanosleep(
         __clock_id: clockid_t,
-        __flags: ::std::os::raw::c_int,
+        __flags: ::core::ffi::c_int,
         __req: *const timespec,
         __rem: *mut timespec,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn clock_getcpuclockid(__pid: pid_t, __clock_id: *mut clockid_t) -> ::std::os::raw::c_int;
+    pub fn clock_getcpuclockid(__pid: pid_t, __clock_id: *mut clockid_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn timer_create(
         __clock_id: clockid_t,
         __evp: *mut sigevent,
         __timerid: *mut timer_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn timer_delete(__timerid: timer_t) -> ::std::os::raw::c_int;
+    pub fn timer_delete(__timerid: timer_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn timer_settime(
         __timerid: timer_t,
-        __flags: ::std::os::raw::c_int,
+        __flags: ::core::ffi::c_int,
         __value: *const itimerspec,
         __ovalue: *mut itimerspec,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn timer_gettime(__timerid: timer_t, __value: *mut itimerspec) -> ::std::os::raw::c_int;
+    pub fn timer_gettime(__timerid: timer_t, __value: *mut itimerspec) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn timer_getoverrun(__timerid: timer_t) -> ::std::os::raw::c_int;
+    pub fn timer_getoverrun(__timerid: timer_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn timespec_get(
-        __ts: *mut timespec,
-        __base: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+    pub fn timespec_get(__ts: *mut timespec, __base: ::core::ffi::c_int) -> ::core::ffi::c_int;
 }
-pub type __jmp_buf = [::std::os::raw::c_long; 8usize];
+pub type __jmp_buf = [::core::ffi::c_long; 8usize];
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __jmp_buf_tag {
     pub __jmpbuf: __jmp_buf,
-    pub __mask_was_saved: ::std::os::raw::c_int,
+    pub __mask_was_saved: ::core::ffi::c_int,
     pub __saved_mask: __sigset_t,
 }
 #[test]
 fn bindgen_test_layout___jmp_buf_tag() {
-    const UNINIT: ::std::mem::MaybeUninit<__jmp_buf_tag> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__jmp_buf_tag> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__jmp_buf_tag>(),
+        ::core::mem::size_of::<__jmp_buf_tag>(),
         200usize,
         concat!("Size of: ", stringify!(__jmp_buf_tag))
     );
     assert_eq!(
-        ::std::mem::align_of::<__jmp_buf_tag>(),
+        ::core::mem::align_of::<__jmp_buf_tag>(),
         8usize,
         concat!("Alignment of ", stringify!(__jmp_buf_tag))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__jmpbuf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__jmpbuf) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -11117,7 +11719,7 @@ fn bindgen_test_layout___jmp_buf_tag() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__mask_was_saved) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__mask_was_saved) as usize - ptr as usize },
         64usize,
         concat!(
             "Offset of field: ",
@@ -11127,7 +11729,7 @@ fn bindgen_test_layout___jmp_buf_tag() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__saved_mask) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__saved_mask) as usize - ptr as usize },
         72usize,
         concat!(
             "Offset of field: ",
@@ -11139,7 +11741,7 @@ fn bindgen_test_layout___jmp_buf_tag() {
 }
 pub const PTHREAD_CREATE_JOINABLE: _bindgen_ty_10 = 0;
 pub const PTHREAD_CREATE_DETACHED: _bindgen_ty_10 = 1;
-pub type _bindgen_ty_10 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_10 = ::core::ffi::c_uint;
 pub const PTHREAD_MUTEX_TIMED_NP: _bindgen_ty_11 = 0;
 pub const PTHREAD_MUTEX_RECURSIVE_NP: _bindgen_ty_11 = 1;
 pub const PTHREAD_MUTEX_ERRORCHECK_NP: _bindgen_ty_11 = 2;
@@ -11148,55 +11750,55 @@ pub const PTHREAD_MUTEX_NORMAL: _bindgen_ty_11 = 0;
 pub const PTHREAD_MUTEX_RECURSIVE: _bindgen_ty_11 = 1;
 pub const PTHREAD_MUTEX_ERRORCHECK: _bindgen_ty_11 = 2;
 pub const PTHREAD_MUTEX_DEFAULT: _bindgen_ty_11 = 0;
-pub type _bindgen_ty_11 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_11 = ::core::ffi::c_uint;
 pub const PTHREAD_MUTEX_STALLED: _bindgen_ty_12 = 0;
 pub const PTHREAD_MUTEX_STALLED_NP: _bindgen_ty_12 = 0;
 pub const PTHREAD_MUTEX_ROBUST: _bindgen_ty_12 = 1;
 pub const PTHREAD_MUTEX_ROBUST_NP: _bindgen_ty_12 = 1;
-pub type _bindgen_ty_12 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_12 = ::core::ffi::c_uint;
 pub const PTHREAD_PRIO_NONE: _bindgen_ty_13 = 0;
 pub const PTHREAD_PRIO_INHERIT: _bindgen_ty_13 = 1;
 pub const PTHREAD_PRIO_PROTECT: _bindgen_ty_13 = 2;
-pub type _bindgen_ty_13 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_13 = ::core::ffi::c_uint;
 pub const PTHREAD_RWLOCK_PREFER_READER_NP: _bindgen_ty_14 = 0;
 pub const PTHREAD_RWLOCK_PREFER_WRITER_NP: _bindgen_ty_14 = 1;
 pub const PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP: _bindgen_ty_14 = 2;
 pub const PTHREAD_RWLOCK_DEFAULT_NP: _bindgen_ty_14 = 0;
-pub type _bindgen_ty_14 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_14 = ::core::ffi::c_uint;
 pub const PTHREAD_INHERIT_SCHED: _bindgen_ty_15 = 0;
 pub const PTHREAD_EXPLICIT_SCHED: _bindgen_ty_15 = 1;
-pub type _bindgen_ty_15 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_15 = ::core::ffi::c_uint;
 pub const PTHREAD_SCOPE_SYSTEM: _bindgen_ty_16 = 0;
 pub const PTHREAD_SCOPE_PROCESS: _bindgen_ty_16 = 1;
-pub type _bindgen_ty_16 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_16 = ::core::ffi::c_uint;
 pub const PTHREAD_PROCESS_PRIVATE: _bindgen_ty_17 = 0;
 pub const PTHREAD_PROCESS_SHARED: _bindgen_ty_17 = 1;
-pub type _bindgen_ty_17 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_17 = ::core::ffi::c_uint;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _pthread_cleanup_buffer {
-    pub __routine: ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
-    pub __arg: *mut ::std::os::raw::c_void,
-    pub __canceltype: ::std::os::raw::c_int,
+    pub __routine: ::core::option::Option<unsafe extern "C" fn(arg1: *mut ::core::ffi::c_void)>,
+    pub __arg: *mut ::core::ffi::c_void,
+    pub __canceltype: ::core::ffi::c_int,
     pub __prev: *mut _pthread_cleanup_buffer,
 }
 #[test]
 fn bindgen_test_layout__pthread_cleanup_buffer() {
-    const UNINIT: ::std::mem::MaybeUninit<_pthread_cleanup_buffer> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_pthread_cleanup_buffer> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_pthread_cleanup_buffer>(),
+        ::core::mem::size_of::<_pthread_cleanup_buffer>(),
         32usize,
         concat!("Size of: ", stringify!(_pthread_cleanup_buffer))
     );
     assert_eq!(
-        ::std::mem::align_of::<_pthread_cleanup_buffer>(),
+        ::core::mem::align_of::<_pthread_cleanup_buffer>(),
         8usize,
         concat!("Alignment of ", stringify!(_pthread_cleanup_buffer))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__routine) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__routine) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -11206,7 +11808,7 @@ fn bindgen_test_layout__pthread_cleanup_buffer() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__arg) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__arg) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -11216,7 +11818,7 @@ fn bindgen_test_layout__pthread_cleanup_buffer() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__canceltype) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__canceltype) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -11226,7 +11828,7 @@ fn bindgen_test_layout__pthread_cleanup_buffer() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__prev) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__prev) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -11238,194 +11840,194 @@ fn bindgen_test_layout__pthread_cleanup_buffer() {
 }
 pub const PTHREAD_CANCEL_ENABLE: _bindgen_ty_18 = 0;
 pub const PTHREAD_CANCEL_DISABLE: _bindgen_ty_18 = 1;
-pub type _bindgen_ty_18 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_18 = ::core::ffi::c_uint;
 pub const PTHREAD_CANCEL_DEFERRED: _bindgen_ty_19 = 0;
 pub const PTHREAD_CANCEL_ASYNCHRONOUS: _bindgen_ty_19 = 1;
-pub type _bindgen_ty_19 = ::std::os::raw::c_uint;
+pub type _bindgen_ty_19 = ::core::ffi::c_uint;
 extern "C" {
     pub fn pthread_create(
         __newthread: *mut pthread_t,
         __attr: *const pthread_attr_t,
-        __start_routine: ::std::option::Option<
-            unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void) -> *mut ::std::os::raw::c_void,
+        __start_routine: ::core::option::Option<
+            unsafe extern "C" fn(arg1: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void,
         >,
-        __arg: *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
+        __arg: *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_exit(__retval: *mut ::std::os::raw::c_void) -> !;
+    pub fn pthread_exit(__retval: *mut ::core::ffi::c_void) -> !;
 }
 extern "C" {
     pub fn pthread_join(
         __th: pthread_t,
-        __thread_return: *mut *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
+        __thread_return: *mut *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_detach(__th: pthread_t) -> ::std::os::raw::c_int;
+    pub fn pthread_detach(__th: pthread_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_self() -> pthread_t;
 }
 extern "C" {
-    pub fn pthread_equal(__thread1: pthread_t, __thread2: pthread_t) -> ::std::os::raw::c_int;
+    pub fn pthread_equal(__thread1: pthread_t, __thread2: pthread_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_attr_init(__attr: *mut pthread_attr_t) -> ::std::os::raw::c_int;
+    pub fn pthread_attr_init(__attr: *mut pthread_attr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_attr_destroy(__attr: *mut pthread_attr_t) -> ::std::os::raw::c_int;
+    pub fn pthread_attr_destroy(__attr: *mut pthread_attr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_getdetachstate(
         __attr: *const pthread_attr_t,
-        __detachstate: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __detachstate: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_setdetachstate(
         __attr: *mut pthread_attr_t,
-        __detachstate: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __detachstate: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_getguardsize(
         __attr: *const pthread_attr_t,
         __guardsize: *mut usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_setguardsize(
         __attr: *mut pthread_attr_t,
         __guardsize: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_getschedparam(
         __attr: *const pthread_attr_t,
         __param: *mut sched_param,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_setschedparam(
         __attr: *mut pthread_attr_t,
         __param: *const sched_param,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_getschedpolicy(
         __attr: *const pthread_attr_t,
-        __policy: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __policy: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_setschedpolicy(
         __attr: *mut pthread_attr_t,
-        __policy: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __policy: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_getinheritsched(
         __attr: *const pthread_attr_t,
-        __inherit: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __inherit: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_setinheritsched(
         __attr: *mut pthread_attr_t,
-        __inherit: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __inherit: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_getscope(
         __attr: *const pthread_attr_t,
-        __scope: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __scope: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_setscope(
         __attr: *mut pthread_attr_t,
-        __scope: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __scope: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_getstackaddr(
         __attr: *const pthread_attr_t,
-        __stackaddr: *mut *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
+        __stackaddr: *mut *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_setstackaddr(
         __attr: *mut pthread_attr_t,
-        __stackaddr: *mut ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
+        __stackaddr: *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_getstacksize(
         __attr: *const pthread_attr_t,
         __stacksize: *mut usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_setstacksize(
         __attr: *mut pthread_attr_t,
         __stacksize: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_getstack(
         __attr: *const pthread_attr_t,
-        __stackaddr: *mut *mut ::std::os::raw::c_void,
+        __stackaddr: *mut *mut ::core::ffi::c_void,
         __stacksize: *mut usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_attr_setstack(
         __attr: *mut pthread_attr_t,
-        __stackaddr: *mut ::std::os::raw::c_void,
+        __stackaddr: *mut ::core::ffi::c_void,
         __stacksize: usize,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_setschedparam(
         __target_thread: pthread_t,
-        __policy: ::std::os::raw::c_int,
+        __policy: ::core::ffi::c_int,
         __param: *const sched_param,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_getschedparam(
         __target_thread: pthread_t,
-        __policy: *mut ::std::os::raw::c_int,
+        __policy: *mut ::core::ffi::c_int,
         __param: *mut sched_param,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_setschedprio(
         __target_thread: pthread_t,
-        __prio: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __prio: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_once(
         __once_control: *mut pthread_once_t,
-        __init_routine: ::std::option::Option<unsafe extern "C" fn()>,
-    ) -> ::std::os::raw::c_int;
+        __init_routine: ::core::option::Option<unsafe extern "C" fn()>,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_setcancelstate(
-        __state: ::std::os::raw::c_int,
-        __oldstate: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __state: ::core::ffi::c_int,
+        __oldstate: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_setcanceltype(
-        __type: ::std::os::raw::c_int,
-        __oldtype: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __type: ::core::ffi::c_int,
+        __oldtype: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_cancel(__th: pthread_t) -> ::std::os::raw::c_int;
+    pub fn pthread_cancel(__th: pthread_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_testcancel();
@@ -11434,24 +12036,25 @@ extern "C" {
 #[derive(Debug, Copy, Clone)]
 pub struct __cancel_jmp_buf_tag {
     pub __cancel_jmp_buf: __jmp_buf,
-    pub __mask_was_saved: ::std::os::raw::c_int,
+    pub __mask_was_saved: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout___cancel_jmp_buf_tag() {
-    const UNINIT: ::std::mem::MaybeUninit<__cancel_jmp_buf_tag> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__cancel_jmp_buf_tag> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__cancel_jmp_buf_tag>(),
+        ::core::mem::size_of::<__cancel_jmp_buf_tag>(),
         72usize,
         concat!("Size of: ", stringify!(__cancel_jmp_buf_tag))
     );
     assert_eq!(
-        ::std::mem::align_of::<__cancel_jmp_buf_tag>(),
+        ::core::mem::align_of::<__cancel_jmp_buf_tag>(),
         8usize,
         concat!("Alignment of ", stringify!(__cancel_jmp_buf_tag))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__cancel_jmp_buf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__cancel_jmp_buf) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -11461,7 +12064,7 @@ fn bindgen_test_layout___cancel_jmp_buf_tag() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__mask_was_saved) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__mask_was_saved) as usize - ptr as usize },
         64usize,
         concat!(
             "Offset of field: ",
@@ -11475,25 +12078,25 @@ fn bindgen_test_layout___cancel_jmp_buf_tag() {
 #[derive(Debug, Copy, Clone)]
 pub struct __pthread_unwind_buf_t {
     pub __cancel_jmp_buf: [__cancel_jmp_buf_tag; 1usize],
-    pub __pad: [*mut ::std::os::raw::c_void; 4usize],
+    pub __pad: [*mut ::core::ffi::c_void; 4usize],
 }
 #[test]
 fn bindgen_test_layout___pthread_unwind_buf_t() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_unwind_buf_t> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__pthread_unwind_buf_t> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__pthread_unwind_buf_t>(),
+        ::core::mem::size_of::<__pthread_unwind_buf_t>(),
         104usize,
         concat!("Size of: ", stringify!(__pthread_unwind_buf_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<__pthread_unwind_buf_t>(),
+        ::core::mem::align_of::<__pthread_unwind_buf_t>(),
         8usize,
         concat!("Alignment of ", stringify!(__pthread_unwind_buf_t))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__cancel_jmp_buf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__cancel_jmp_buf) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -11503,7 +12106,7 @@ fn bindgen_test_layout___pthread_unwind_buf_t() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__pad) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__pad) as usize - ptr as usize },
         72usize,
         concat!(
             "Offset of field: ",
@@ -11517,28 +12120,28 @@ fn bindgen_test_layout___pthread_unwind_buf_t() {
 #[derive(Debug, Copy, Clone)]
 pub struct __pthread_cleanup_frame {
     pub __cancel_routine:
-        ::std::option::Option<unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void)>,
-    pub __cancel_arg: *mut ::std::os::raw::c_void,
-    pub __do_it: ::std::os::raw::c_int,
-    pub __cancel_type: ::std::os::raw::c_int,
+        ::core::option::Option<unsafe extern "C" fn(arg1: *mut ::core::ffi::c_void)>,
+    pub __cancel_arg: *mut ::core::ffi::c_void,
+    pub __do_it: ::core::ffi::c_int,
+    pub __cancel_type: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout___pthread_cleanup_frame() {
-    const UNINIT: ::std::mem::MaybeUninit<__pthread_cleanup_frame> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__pthread_cleanup_frame> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__pthread_cleanup_frame>(),
+        ::core::mem::size_of::<__pthread_cleanup_frame>(),
         24usize,
         concat!("Size of: ", stringify!(__pthread_cleanup_frame))
     );
     assert_eq!(
-        ::std::mem::align_of::<__pthread_cleanup_frame>(),
+        ::core::mem::align_of::<__pthread_cleanup_frame>(),
         8usize,
         concat!("Alignment of ", stringify!(__pthread_cleanup_frame))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__cancel_routine) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__cancel_routine) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -11548,7 +12151,7 @@ fn bindgen_test_layout___pthread_cleanup_frame() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__cancel_arg) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__cancel_arg) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -11558,7 +12161,7 @@ fn bindgen_test_layout___pthread_cleanup_frame() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__do_it) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__do_it) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -11568,7 +12171,7 @@ fn bindgen_test_layout___pthread_cleanup_frame() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).__cancel_type) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).__cancel_type) as usize - ptr as usize },
         20usize,
         concat!(
             "Offset of field: ",
@@ -11590,420 +12193,414 @@ extern "C" {
 extern "C" {
     pub fn __sigsetjmp(
         __env: *mut __jmp_buf_tag,
-        __savemask: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __savemask: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutex_init(
         __mutex: *mut pthread_mutex_t,
         __mutexattr: *const pthread_mutexattr_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_mutex_destroy(__mutex: *mut pthread_mutex_t) -> ::std::os::raw::c_int;
+    pub fn pthread_mutex_destroy(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_mutex_trylock(__mutex: *mut pthread_mutex_t) -> ::std::os::raw::c_int;
+    pub fn pthread_mutex_trylock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_mutex_lock(__mutex: *mut pthread_mutex_t) -> ::std::os::raw::c_int;
+    pub fn pthread_mutex_lock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutex_timedlock(
         __mutex: *mut pthread_mutex_t,
         __abstime: *const timespec,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_mutex_unlock(__mutex: *mut pthread_mutex_t) -> ::std::os::raw::c_int;
+    pub fn pthread_mutex_unlock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutex_getprioceiling(
         __mutex: *const pthread_mutex_t,
-        __prioceiling: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __prioceiling: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutex_setprioceiling(
         __mutex: *mut pthread_mutex_t,
-        __prioceiling: ::std::os::raw::c_int,
-        __old_ceiling: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __prioceiling: ::core::ffi::c_int,
+        __old_ceiling: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_mutex_consistent(__mutex: *mut pthread_mutex_t) -> ::std::os::raw::c_int;
+    pub fn pthread_mutex_consistent(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_mutexattr_init(__attr: *mut pthread_mutexattr_t) -> ::std::os::raw::c_int;
+    pub fn pthread_mutexattr_init(__attr: *mut pthread_mutexattr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_mutexattr_destroy(__attr: *mut pthread_mutexattr_t) -> ::std::os::raw::c_int;
+    pub fn pthread_mutexattr_destroy(__attr: *mut pthread_mutexattr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_getpshared(
         __attr: *const pthread_mutexattr_t,
-        __pshared: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pshared: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_setpshared(
         __attr: *mut pthread_mutexattr_t,
-        __pshared: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pshared: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_gettype(
         __attr: *const pthread_mutexattr_t,
-        __kind: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __kind: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_settype(
         __attr: *mut pthread_mutexattr_t,
-        __kind: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __kind: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_getprotocol(
         __attr: *const pthread_mutexattr_t,
-        __protocol: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __protocol: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_setprotocol(
         __attr: *mut pthread_mutexattr_t,
-        __protocol: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __protocol: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_getprioceiling(
         __attr: *const pthread_mutexattr_t,
-        __prioceiling: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __prioceiling: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_setprioceiling(
         __attr: *mut pthread_mutexattr_t,
-        __prioceiling: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __prioceiling: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_getrobust(
         __attr: *const pthread_mutexattr_t,
-        __robustness: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __robustness: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_mutexattr_setrobust(
         __attr: *mut pthread_mutexattr_t,
-        __robustness: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __robustness: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_rwlock_init(
         __rwlock: *mut pthread_rwlock_t,
         __attr: *const pthread_rwlockattr_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_rwlock_destroy(__rwlock: *mut pthread_rwlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_rwlock_destroy(__rwlock: *mut pthread_rwlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_rwlock_rdlock(__rwlock: *mut pthread_rwlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_rwlock_rdlock(__rwlock: *mut pthread_rwlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_rwlock_tryrdlock(__rwlock: *mut pthread_rwlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_rwlock_tryrdlock(__rwlock: *mut pthread_rwlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_rwlock_timedrdlock(
         __rwlock: *mut pthread_rwlock_t,
         __abstime: *const timespec,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_rwlock_wrlock(__rwlock: *mut pthread_rwlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_rwlock_wrlock(__rwlock: *mut pthread_rwlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_rwlock_trywrlock(__rwlock: *mut pthread_rwlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_rwlock_trywrlock(__rwlock: *mut pthread_rwlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_rwlock_timedwrlock(
         __rwlock: *mut pthread_rwlock_t,
         __abstime: *const timespec,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_rwlock_unlock(__rwlock: *mut pthread_rwlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_rwlock_unlock(__rwlock: *mut pthread_rwlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_rwlockattr_init(__attr: *mut pthread_rwlockattr_t) -> ::std::os::raw::c_int;
+    pub fn pthread_rwlockattr_init(__attr: *mut pthread_rwlockattr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_rwlockattr_destroy(__attr: *mut pthread_rwlockattr_t) -> ::std::os::raw::c_int;
+    pub fn pthread_rwlockattr_destroy(__attr: *mut pthread_rwlockattr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_rwlockattr_getpshared(
         __attr: *const pthread_rwlockattr_t,
-        __pshared: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pshared: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_rwlockattr_setpshared(
         __attr: *mut pthread_rwlockattr_t,
-        __pshared: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pshared: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_rwlockattr_getkind_np(
         __attr: *const pthread_rwlockattr_t,
-        __pref: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pref: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_rwlockattr_setkind_np(
         __attr: *mut pthread_rwlockattr_t,
-        __pref: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pref: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_cond_init(
         __cond: *mut pthread_cond_t,
         __cond_attr: *const pthread_condattr_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_cond_destroy(__cond: *mut pthread_cond_t) -> ::std::os::raw::c_int;
+    pub fn pthread_cond_destroy(__cond: *mut pthread_cond_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_cond_signal(__cond: *mut pthread_cond_t) -> ::std::os::raw::c_int;
+    pub fn pthread_cond_signal(__cond: *mut pthread_cond_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_cond_broadcast(__cond: *mut pthread_cond_t) -> ::std::os::raw::c_int;
+    pub fn pthread_cond_broadcast(__cond: *mut pthread_cond_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_cond_wait(
         __cond: *mut pthread_cond_t,
         __mutex: *mut pthread_mutex_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_cond_timedwait(
         __cond: *mut pthread_cond_t,
         __mutex: *mut pthread_mutex_t,
         __abstime: *const timespec,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_condattr_init(__attr: *mut pthread_condattr_t) -> ::std::os::raw::c_int;
+    pub fn pthread_condattr_init(__attr: *mut pthread_condattr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_condattr_destroy(__attr: *mut pthread_condattr_t) -> ::std::os::raw::c_int;
+    pub fn pthread_condattr_destroy(__attr: *mut pthread_condattr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_condattr_getpshared(
         __attr: *const pthread_condattr_t,
-        __pshared: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pshared: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_condattr_setpshared(
         __attr: *mut pthread_condattr_t,
-        __pshared: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pshared: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_condattr_getclock(
         __attr: *const pthread_condattr_t,
         __clock_id: *mut __clockid_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_condattr_setclock(
         __attr: *mut pthread_condattr_t,
         __clock_id: __clockid_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_spin_init(
         __lock: *mut pthread_spinlock_t,
-        __pshared: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pshared: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_spin_destroy(__lock: *mut pthread_spinlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_spin_destroy(__lock: *mut pthread_spinlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_spin_lock(__lock: *mut pthread_spinlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_spin_lock(__lock: *mut pthread_spinlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_spin_trylock(__lock: *mut pthread_spinlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_spin_trylock(__lock: *mut pthread_spinlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_spin_unlock(__lock: *mut pthread_spinlock_t) -> ::std::os::raw::c_int;
+    pub fn pthread_spin_unlock(__lock: *mut pthread_spinlock_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_barrier_init(
         __barrier: *mut pthread_barrier_t,
         __attr: *const pthread_barrierattr_t,
-        __count: ::std::os::raw::c_uint,
-    ) -> ::std::os::raw::c_int;
+        __count: ::core::ffi::c_uint,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_barrier_destroy(__barrier: *mut pthread_barrier_t) -> ::std::os::raw::c_int;
+    pub fn pthread_barrier_destroy(__barrier: *mut pthread_barrier_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_barrier_wait(__barrier: *mut pthread_barrier_t) -> ::std::os::raw::c_int;
+    pub fn pthread_barrier_wait(__barrier: *mut pthread_barrier_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_barrierattr_init(__attr: *mut pthread_barrierattr_t) -> ::std::os::raw::c_int;
+    pub fn pthread_barrierattr_init(__attr: *mut pthread_barrierattr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_barrierattr_destroy(__attr: *mut pthread_barrierattr_t)
-        -> ::std::os::raw::c_int;
+    pub fn pthread_barrierattr_destroy(__attr: *mut pthread_barrierattr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_barrierattr_getpshared(
         __attr: *const pthread_barrierattr_t,
-        __pshared: *mut ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pshared: *mut ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_barrierattr_setpshared(
         __attr: *mut pthread_barrierattr_t,
-        __pshared: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        __pshared: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_key_create(
         __key: *mut pthread_key_t,
-        __destr_function: ::std::option::Option<
-            unsafe extern "C" fn(arg1: *mut ::std::os::raw::c_void),
+        __destr_function: ::core::option::Option<
+            unsafe extern "C" fn(arg1: *mut ::core::ffi::c_void),
         >,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_key_delete(__key: pthread_key_t) -> ::std::os::raw::c_int;
+    pub fn pthread_key_delete(__key: pthread_key_t) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn pthread_getspecific(__key: pthread_key_t) -> *mut ::std::os::raw::c_void;
+    pub fn pthread_getspecific(__key: pthread_key_t) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     pub fn pthread_setspecific(
         __key: pthread_key_t,
-        __pointer: *const ::std::os::raw::c_void,
-    ) -> ::std::os::raw::c_int;
+        __pointer: *const ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_getcpuclockid(
         __thread_id: pthread_t,
         __clock_id: *mut __clockid_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn pthread_atfork(
-        __prepare: ::std::option::Option<unsafe extern "C" fn()>,
-        __parent: ::std::option::Option<unsafe extern "C" fn()>,
-        __child: ::std::option::Option<unsafe extern "C" fn()>,
-    ) -> ::std::os::raw::c_int;
+        __prepare: ::core::option::Option<unsafe extern "C" fn()>,
+        __parent: ::core::option::Option<unsafe extern "C" fn()>,
+        __child: ::core::option::Option<unsafe extern "C" fn()>,
+    ) -> ::core::ffi::c_int;
 }
 pub const rfbNewClientAction_RFB_CLIENT_ACCEPT: rfbNewClientAction = 0;
 pub const rfbNewClientAction_RFB_CLIENT_ON_HOLD: rfbNewClientAction = 1;
 pub const rfbNewClientAction_RFB_CLIENT_REFUSE: rfbNewClientAction = 2;
-pub type rfbNewClientAction = ::std::os::raw::c_uint;
+pub type rfbNewClientAction = ::core::ffi::c_uint;
 pub const rfbSocketState_RFB_SOCKET_INIT: rfbSocketState = 0;
 pub const rfbSocketState_RFB_SOCKET_READY: rfbSocketState = 1;
 pub const rfbSocketState_RFB_SOCKET_SHUTDOWN: rfbSocketState = 2;
-pub type rfbSocketState = ::std::os::raw::c_uint;
-pub type rfbKbdAddEventProcPtr = ::std::option::Option<
+pub type rfbSocketState = ::core::ffi::c_uint;
+pub type rfbKbdAddEventProcPtr = ::core::option::Option<
     unsafe extern "C" fn(down: rfbBool, keySym: rfbKeySym, cl: *mut _rfbClientRec),
 >;
 pub type rfbKbdReleaseAllKeysProcPtr =
-    ::std::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec)>;
-pub type rfbPtrAddEventProcPtr = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec)>;
+pub type rfbPtrAddEventProcPtr = ::core::option::Option<
     unsafe extern "C" fn(
-        buttonMask: ::std::os::raw::c_int,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
+        buttonMask: ::core::ffi::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
         cl: *mut _rfbClientRec,
     ),
 >;
-pub type rfbSetXCutTextProcPtr = ::std::option::Option<
+pub type rfbSetXCutTextProcPtr = ::core::option::Option<
     unsafe extern "C" fn(
-        str_: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
+        str_: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
         cl: *mut _rfbClientRec,
     ),
 >;
-pub type rfbSetXCutTextUTF8ProcPtr = ::std::option::Option<
+pub type rfbSetXCutTextUTF8ProcPtr = ::core::option::Option<
     unsafe extern "C" fn(
-        str_: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
+        str_: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
         cl: *mut _rfbClientRec,
     ),
 >;
 pub type rfbGetCursorProcPtr =
-    ::std::option::Option<unsafe extern "C" fn(pScreen: *mut _rfbClientRec) -> *mut rfbCursor>;
+    ::core::option::Option<unsafe extern "C" fn(pScreen: *mut _rfbClientRec) -> *mut rfbCursor>;
 pub type rfbSetTranslateFunctionProcPtr =
-    ::std::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec) -> rfbBool>;
-pub type rfbPasswordCheckProcPtr = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec) -> rfbBool>;
+pub type rfbPasswordCheckProcPtr = ::core::option::Option<
     unsafe extern "C" fn(
         cl: *mut _rfbClientRec,
-        encryptedPassWord: *const ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
+        encryptedPassWord: *const ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
     ) -> rfbBool,
 >;
 pub type rfbNewClientHookPtr =
-    ::std::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec) -> rfbNewClientAction>;
-pub type rfbDisplayHookPtr = ::std::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec)>;
-pub type rfbDisplayFinishedHookPtr = ::std::option::Option<
-    unsafe extern "C" fn(cl: *mut _rfbClientRec, result: ::std::os::raw::c_int),
+    ::core::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec) -> rfbNewClientAction>;
+pub type rfbDisplayHookPtr = ::core::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec)>;
+pub type rfbDisplayFinishedHookPtr = ::core::option::Option<
+    unsafe extern "C" fn(cl: *mut _rfbClientRec, result: ::core::ffi::c_int),
 >;
 #[doc = " support the capability to view the caps/num/scroll states of the X server"]
-pub type rfbGetKeyboardLedStateHookPtr = ::std::option::Option<
-    unsafe extern "C" fn(screen: *mut _rfbScreenInfo) -> ::std::os::raw::c_int,
->;
-pub type rfbXvpHookPtr = ::std::option::Option<
+pub type rfbGetKeyboardLedStateHookPtr =
+    ::core::option::Option<unsafe extern "C" fn(screen: *mut _rfbScreenInfo) -> ::core::ffi::c_int>;
+pub type rfbXvpHookPtr = ::core::option::Option<
     unsafe extern "C" fn(cl: *mut _rfbClientRec, arg1: u8, arg2: u8) -> rfbBool,
 >;
-pub type rfbSetDesktopSizeHookPtr = ::std::option::Option<
+pub type rfbSetDesktopSizeHookPtr = ::core::option::Option<
     unsafe extern "C" fn(
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
-        numScreens: ::std::os::raw::c_int,
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
+        numScreens: ::core::ffi::c_int,
         extDesktopScreens: *mut rfbExtDesktopScreen,
         cl: *mut _rfbClientRec,
-    ) -> ::std::os::raw::c_int,
+    ) -> ::core::ffi::c_int,
 >;
 pub type rfbNumberOfExtDesktopScreensPtr =
-    ::std::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec) -> ::std::os::raw::c_int>;
-pub type rfbGetExtDesktopScreenPtr = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec) -> ::core::ffi::c_int>;
+pub type rfbGetExtDesktopScreenPtr = ::core::option::Option<
     unsafe extern "C" fn(
-        seqnumber: ::std::os::raw::c_int,
+        seqnumber: ::core::ffi::c_int,
         extDesktopScreen: *mut rfbExtDesktopScreen,
         cl: *mut _rfbClientRec,
     ) -> rfbBool,
 >;
 #[doc = " If x==1 and y==1 then set the whole display\n else find the window underneath x and y and set the framebuffer to the dimensions\n of that window"]
-pub type rfbSetSingleWindowProcPtr = ::std::option::Option<
-    unsafe extern "C" fn(
-        cl: *mut _rfbClientRec,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-    ),
+pub type rfbSetSingleWindowProcPtr = ::core::option::Option<
+    unsafe extern "C" fn(cl: *mut _rfbClientRec, x: ::core::ffi::c_int, y: ::core::ffi::c_int),
 >;
 #[doc = " Status determines if the X11 server permits input from the local user\n status==0 or 1"]
-pub type rfbSetServerInputProcPtr = ::std::option::Option<
-    unsafe extern "C" fn(cl: *mut _rfbClientRec, status: ::std::os::raw::c_int),
+pub type rfbSetServerInputProcPtr = ::core::option::Option<
+    unsafe extern "C" fn(cl: *mut _rfbClientRec, status: ::core::ffi::c_int),
 >;
 #[doc = " Permit the server to allow or deny filetransfers.   This is defaulted to deny\n It is called when a client initiates a connection to determine if it is permitted."]
 pub type rfbFileTransferPermitted =
-    ::std::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec) -> ::std::os::raw::c_int>;
+    ::core::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec) -> ::core::ffi::c_int>;
 #[doc = " Handle the textchat messages"]
-pub type rfbSetTextChat = ::std::option::Option<
+pub type rfbSetTextChat = ::core::option::Option<
     unsafe extern "C" fn(
         cl: *mut _rfbClientRec,
-        length: ::std::os::raw::c_int,
-        string: *mut ::std::os::raw::c_char,
+        length: ::core::ffi::c_int,
+        string: *mut ::core::ffi::c_char,
     ),
 >;
 #[repr(C)]
@@ -12023,21 +12620,21 @@ pub union rfbColourMap__bindgen_ty_1 {
 }
 #[test]
 fn bindgen_test_layout_rfbColourMap__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbColourMap__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbColourMap__bindgen_ty_1> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbColourMap__bindgen_ty_1>(),
+        ::core::mem::size_of::<rfbColourMap__bindgen_ty_1>(),
         8usize,
         concat!("Size of: ", stringify!(rfbColourMap__bindgen_ty_1))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbColourMap__bindgen_ty_1>(),
+        ::core::mem::align_of::<rfbColourMap__bindgen_ty_1>(),
         8usize,
         concat!("Alignment of ", stringify!(rfbColourMap__bindgen_ty_1))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bytes) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).bytes) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -12047,7 +12644,7 @@ fn bindgen_test_layout_rfbColourMap__bindgen_ty_1() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).shorts) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).shorts) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -12059,20 +12656,20 @@ fn bindgen_test_layout_rfbColourMap__bindgen_ty_1() {
 }
 #[test]
 fn bindgen_test_layout_rfbColourMap() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbColourMap> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbColourMap> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbColourMap>(),
+        ::core::mem::size_of::<rfbColourMap>(),
         16usize,
         concat!("Size of: ", stringify!(rfbColourMap))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbColourMap>(),
+        ::core::mem::align_of::<rfbColourMap>(),
         8usize,
         concat!("Alignment of ", stringify!(rfbColourMap))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).count) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).count) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -12082,7 +12679,7 @@ fn bindgen_test_layout_rfbColourMap() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).is16) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).is16) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -12092,7 +12689,7 @@ fn bindgen_test_layout_rfbColourMap() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -12107,25 +12704,25 @@ fn bindgen_test_layout_rfbColourMap() {
 #[derive(Debug, Copy, Clone)]
 pub struct _rfbSecurity {
     pub type_: u8,
-    pub handler: ::std::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec)>,
+    pub handler: ::core::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec)>,
     pub next: *mut _rfbSecurity,
 }
 #[test]
 fn bindgen_test_layout__rfbSecurity() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbSecurity> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbSecurity> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbSecurity>(),
+        ::core::mem::size_of::<_rfbSecurity>(),
         24usize,
         concat!("Size of: ", stringify!(_rfbSecurity))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbSecurity>(),
+        ::core::mem::align_of::<_rfbSecurity>(),
         8usize,
         concat!("Alignment of ", stringify!(_rfbSecurity))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -12135,7 +12732,7 @@ fn bindgen_test_layout__rfbSecurity() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).handler) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).handler) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -12145,7 +12742,7 @@ fn bindgen_test_layout__rfbSecurity() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -12162,67 +12759,64 @@ pub type rfbSecurityHandler = _rfbSecurity;
 #[derive(Debug, Copy, Clone)]
 pub struct _rfbProtocolExtension {
     #[doc = " returns FALSE if extension should be deactivated for client.\nif newClient == NULL, it is always deactivated."]
-    pub newClient: ::std::option::Option<
+    pub newClient: ::core::option::Option<
         unsafe extern "C" fn(
             client: *mut _rfbClientRec,
-            data: *mut *mut ::std::os::raw::c_void,
+            data: *mut *mut ::core::ffi::c_void,
         ) -> rfbBool,
     >,
     #[doc = " returns FALSE if extension should be deactivated for client.\nif init == NULL, it stays activated."]
-    pub init: ::std::option::Option<
-        unsafe extern "C" fn(
-            client: *mut _rfbClientRec,
-            data: *mut ::std::os::raw::c_void,
-        ) -> rfbBool,
+    pub init: ::core::option::Option<
+        unsafe extern "C" fn(client: *mut _rfbClientRec, data: *mut ::core::ffi::c_void) -> rfbBool,
     >,
     #[doc = " if pseudoEncodings is not NULL, it contains a 0 terminated\nlist of the pseudo encodings handled by this extension."]
-    pub pseudoEncodings: *mut ::std::os::raw::c_int,
+    pub pseudoEncodings: *mut ::core::ffi::c_int,
     #[doc = " returns TRUE if that pseudo encoding is handled by the extension.\nencodingNumber==0 means \"reset encodings\"."]
-    pub enablePseudoEncoding: ::std::option::Option<
+    pub enablePseudoEncoding: ::core::option::Option<
         unsafe extern "C" fn(
             client: *mut _rfbClientRec,
-            data: *mut *mut ::std::os::raw::c_void,
-            encodingNumber: ::std::os::raw::c_int,
+            data: *mut *mut ::core::ffi::c_void,
+            encodingNumber: ::core::ffi::c_int,
         ) -> rfbBool,
     >,
     #[doc = " returns TRUE if message was handled"]
-    pub handleMessage: ::std::option::Option<
+    pub handleMessage: ::core::option::Option<
         unsafe extern "C" fn(
             client: *mut _rfbClientRec,
-            data: *mut ::std::os::raw::c_void,
+            data: *mut ::core::ffi::c_void,
             message: *const rfbClientToServerMsg,
         ) -> rfbBool,
     >,
-    pub close: ::std::option::Option<
-        unsafe extern "C" fn(client: *mut _rfbClientRec, data: *mut ::std::os::raw::c_void),
+    pub close: ::core::option::Option<
+        unsafe extern "C" fn(client: *mut _rfbClientRec, data: *mut ::core::ffi::c_void),
     >,
-    pub usage: ::std::option::Option<unsafe extern "C" fn()>,
+    pub usage: ::core::option::Option<unsafe extern "C" fn()>,
     #[doc = " processArguments returns the number of handled arguments"]
-    pub processArgument: ::std::option::Option<
+    pub processArgument: ::core::option::Option<
         unsafe extern "C" fn(
-            argc: ::std::os::raw::c_int,
-            argv: *mut *mut ::std::os::raw::c_char,
-        ) -> ::std::os::raw::c_int,
+            argc: ::core::ffi::c_int,
+            argv: *mut *mut ::core::ffi::c_char,
+        ) -> ::core::ffi::c_int,
     >,
     pub next: *mut _rfbProtocolExtension,
 }
 #[test]
 fn bindgen_test_layout__rfbProtocolExtension() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbProtocolExtension> =
-        ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbProtocolExtension> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbProtocolExtension>(),
+        ::core::mem::size_of::<_rfbProtocolExtension>(),
         72usize,
         concat!("Size of: ", stringify!(_rfbProtocolExtension))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbProtocolExtension>(),
+        ::core::mem::align_of::<_rfbProtocolExtension>(),
         8usize,
         concat!("Alignment of ", stringify!(_rfbProtocolExtension))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).newClient) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).newClient) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -12232,7 +12826,7 @@ fn bindgen_test_layout__rfbProtocolExtension() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).init) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).init) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -12242,7 +12836,7 @@ fn bindgen_test_layout__rfbProtocolExtension() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pseudoEncodings) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pseudoEncodings) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -12252,7 +12846,7 @@ fn bindgen_test_layout__rfbProtocolExtension() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).enablePseudoEncoding) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).enablePseudoEncoding) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -12262,7 +12856,7 @@ fn bindgen_test_layout__rfbProtocolExtension() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).handleMessage) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).handleMessage) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -12272,7 +12866,7 @@ fn bindgen_test_layout__rfbProtocolExtension() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).close) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).close) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -12282,7 +12876,7 @@ fn bindgen_test_layout__rfbProtocolExtension() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).usage) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).usage) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -12292,7 +12886,7 @@ fn bindgen_test_layout__rfbProtocolExtension() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).processArgument) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).processArgument) as usize - ptr as usize },
         56usize,
         concat!(
             "Offset of field: ",
@@ -12302,7 +12896,7 @@ fn bindgen_test_layout__rfbProtocolExtension() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
         64usize,
         concat!(
             "Offset of field: ",
@@ -12318,25 +12912,25 @@ pub type rfbProtocolExtension = _rfbProtocolExtension;
 #[derive(Debug, Copy, Clone)]
 pub struct _rfbExtensionData {
     pub extension: *mut rfbProtocolExtension,
-    pub data: *mut ::std::os::raw::c_void,
+    pub data: *mut ::core::ffi::c_void,
     pub next: *mut _rfbExtensionData,
 }
 #[test]
 fn bindgen_test_layout__rfbExtensionData() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbExtensionData> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbExtensionData> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbExtensionData>(),
+        ::core::mem::size_of::<_rfbExtensionData>(),
         24usize,
         concat!("Size of: ", stringify!(_rfbExtensionData))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbExtensionData>(),
+        ::core::mem::align_of::<_rfbExtensionData>(),
         8usize,
         concat!("Alignment of ", stringify!(_rfbExtensionData))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).extension) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).extension) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -12346,7 +12940,7 @@ fn bindgen_test_layout__rfbExtensionData() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -12356,7 +12950,7 @@ fn bindgen_test_layout__rfbExtensionData() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -12373,65 +12967,65 @@ pub type rfbExtensionData = _rfbExtensionData;
 pub struct _rfbScreenInfo {
     #[doc = " this structure has children that are scaled versions of this screen"]
     pub scaledScreenNext: *mut _rfbScreenInfo,
-    pub scaledScreenRefCount: ::std::os::raw::c_int,
-    pub width: ::std::os::raw::c_int,
-    pub paddedWidthInBytes: ::std::os::raw::c_int,
-    pub height: ::std::os::raw::c_int,
-    pub depth: ::std::os::raw::c_int,
-    pub bitsPerPixel: ::std::os::raw::c_int,
-    pub sizeInBytes: ::std::os::raw::c_int,
+    pub scaledScreenRefCount: ::core::ffi::c_int,
+    pub width: ::core::ffi::c_int,
+    pub paddedWidthInBytes: ::core::ffi::c_int,
+    pub height: ::core::ffi::c_int,
+    pub depth: ::core::ffi::c_int,
+    pub bitsPerPixel: ::core::ffi::c_int,
+    pub sizeInBytes: ::core::ffi::c_int,
     pub blackPixel: rfbPixel,
     pub whitePixel: rfbPixel,
     #[doc = " some screen specific data can be put into a struct where screenData\n points to. You need this if you have more than one screen at the\n same time while using the same functions."]
-    pub screenData: *mut ::std::os::raw::c_void,
+    pub screenData: *mut ::core::ffi::c_void,
     pub serverFormat: rfbPixelFormat,
     #[doc = "< set this if rfbServerFormat.trueColour==FALSE"]
     pub colourMap: rfbColourMap,
-    pub desktopName: *const ::std::os::raw::c_char,
-    pub thisHost: [::std::os::raw::c_char; 255usize],
+    pub desktopName: *const ::core::ffi::c_char,
+    pub thisHost: [::core::ffi::c_char; 255usize],
     pub autoPort: rfbBool,
-    pub port: ::std::os::raw::c_int,
-    pub listenSock: ::std::os::raw::c_int,
-    pub maxSock: ::std::os::raw::c_int,
-    pub maxFd: ::std::os::raw::c_int,
+    pub port: ::core::ffi::c_int,
+    pub listenSock: ::core::ffi::c_int,
+    pub maxSock: ::core::ffi::c_int,
+    pub maxFd: ::core::ffi::c_int,
     pub allFds: fd_set,
     pub socketState: rfbSocketState,
-    pub inetdSock: ::std::os::raw::c_int,
+    pub inetdSock: ::core::ffi::c_int,
     pub inetdInitDone: rfbBool,
-    pub udpPort: ::std::os::raw::c_int,
-    pub udpSock: ::std::os::raw::c_int,
+    pub udpPort: ::core::ffi::c_int,
+    pub udpSock: ::core::ffi::c_int,
     pub udpClient: *mut _rfbClientRec,
     pub udpSockConnected: rfbBool,
     pub udpRemoteAddr: sockaddr_in,
-    pub maxClientWait: ::std::os::raw::c_int,
+    pub maxClientWait: ::core::ffi::c_int,
     pub httpInitDone: rfbBool,
     pub httpEnableProxyConnect: rfbBool,
-    pub httpPort: ::std::os::raw::c_int,
-    pub httpDir: *mut ::std::os::raw::c_char,
-    pub httpListenSock: ::std::os::raw::c_int,
-    pub httpSock: ::std::os::raw::c_int,
+    pub httpPort: ::core::ffi::c_int,
+    pub httpDir: *mut ::core::ffi::c_char,
+    pub httpListenSock: ::core::ffi::c_int,
+    pub httpSock: ::core::ffi::c_int,
     pub passwordCheck: rfbPasswordCheckProcPtr,
-    pub authPasswdData: *mut ::std::os::raw::c_void,
+    pub authPasswdData: *mut ::core::ffi::c_void,
     #[doc = " If rfbAuthPasswdData is given a list, this is the first\nview only password."]
-    pub authPasswdFirstViewOnly: ::std::os::raw::c_int,
+    pub authPasswdFirstViewOnly: ::core::ffi::c_int,
     #[doc = " send only this many rectangles in one update"]
-    pub maxRectsPerUpdate: ::std::os::raw::c_int,
+    pub maxRectsPerUpdate: ::core::ffi::c_int,
     #[doc = " this is the amount of milliseconds to wait at least before sending\n an update."]
-    pub deferUpdateTime: ::std::os::raw::c_int,
+    pub deferUpdateTime: ::core::ffi::c_int,
     pub alwaysShared: rfbBool,
     pub neverShared: rfbBool,
     pub dontDisconnect: rfbBool,
     pub clientHead: *mut _rfbClientRec,
     #[doc = "< \"Mutex\" for pointer events"]
     pub pointerClient: *mut _rfbClientRec,
-    pub cursorX: ::std::os::raw::c_int,
-    pub cursorY: ::std::os::raw::c_int,
-    pub underCursorBufferLen: ::std::os::raw::c_int,
-    pub underCursorBuffer: *mut ::std::os::raw::c_char,
+    pub cursorX: ::core::ffi::c_int,
+    pub cursorY: ::core::ffi::c_int,
+    pub underCursorBufferLen: ::core::ffi::c_int,
+    pub underCursorBuffer: *mut ::core::ffi::c_char,
     pub dontConvertRichCursorToXCursor: rfbBool,
     pub cursor: *mut rfbCursor,
     #[doc = " the frameBuffer has to be supplied by the serving process.\n The buffer will not be freed by"]
-    pub frameBuffer: *mut ::std::os::raw::c_char,
+    pub frameBuffer: *mut ::core::ffi::c_char,
     pub kbdAddEvent: rfbKbdAddEventProcPtr,
     pub kbdReleaseAllKeys: rfbKbdReleaseAllKeysProcPtr,
     pub ptrAddEvent: rfbPtrAddEventProcPtr,
@@ -12453,30 +13047,30 @@ pub struct _rfbScreenInfo {
     #[doc = " if TRUE, an ignoring signal handler is installed for SIGPIPE"]
     pub ignoreSIGPIPE: rfbBool,
     #[doc = " if not zero, only a slice of this height is processed every time\n an update should be sent. This should make working on a slow\n link more interactive."]
-    pub progressiveSliceHeight: ::std::os::raw::c_int,
+    pub progressiveSliceHeight: ::core::ffi::c_int,
     pub listenInterface: in_addr_t,
-    pub deferPtrUpdateTime: ::std::os::raw::c_int,
+    pub deferPtrUpdateTime: ::core::ffi::c_int,
     #[doc = " handle as many input events as possible (default off)"]
     pub handleEventsEagerly: rfbBool,
     #[doc = " rfbEncodingServerIdentity"]
-    pub versionString: *mut ::std::os::raw::c_char,
+    pub versionString: *mut ::core::ffi::c_char,
     #[doc = " What does the server tell the new clients which version it supports"]
-    pub protocolMajorVersion: ::std::os::raw::c_int,
-    pub protocolMinorVersion: ::std::os::raw::c_int,
+    pub protocolMajorVersion: ::core::ffi::c_int,
+    pub protocolMinorVersion: ::core::ffi::c_int,
     #[doc = " command line authorization of file transfers"]
     pub permitFileTransfer: rfbBool,
     #[doc = " displayFinishedHook is called just after a frame buffer update"]
     pub displayFinishedHook: rfbDisplayFinishedHookPtr,
     #[doc = " xvpHook is called to handle an xvp client message"]
     pub xvpHook: rfbXvpHookPtr,
-    pub sslkeyfile: *mut ::std::os::raw::c_char,
-    pub sslcertfile: *mut ::std::os::raw::c_char,
+    pub sslkeyfile: *mut ::core::ffi::c_char,
+    pub sslcertfile: *mut ::core::ffi::c_char,
     #[doc = "< The port to listen on when using IPv6."]
-    pub ipv6port: ::std::os::raw::c_int,
-    pub listen6Interface: *mut ::std::os::raw::c_char,
-    pub listen6Sock: ::std::os::raw::c_int,
-    pub http6Port: ::std::os::raw::c_int,
-    pub httpListen6Sock: ::std::os::raw::c_int,
+    pub ipv6port: ::core::ffi::c_int,
+    pub listen6Interface: *mut ::core::ffi::c_char,
+    pub listen6Sock: ::core::ffi::c_int,
+    pub http6Port: ::core::ffi::c_int,
+    pub httpListen6Sock: ::core::ffi::c_int,
     #[doc = " hook to let client set resolution"]
     pub setDesktopSizeHook: rfbSetDesktopSizeHookPtr,
     #[doc = " Optional hooks to query ExtendedDesktopSize screen information.\n If not set it is assumed only one screen is present spanning entire fb"]
@@ -12485,25 +13079,25 @@ pub struct _rfbScreenInfo {
     #[doc = " This value between 0 and 1.0 defines which fraction of the maximum number\nof file descriptors LibVNCServer uses before denying new client connections.\nIt is set to 0.5 per default."]
     pub fdQuota: f32,
     pub listener_thread: pthread_t,
-    pub pipe_notify_listener_thread: [::std::os::raw::c_int; 2usize],
+    pub pipe_notify_listener_thread: [::core::ffi::c_int; 2usize],
     pub setXCutTextUTF8: rfbSetXCutTextUTF8ProcPtr,
 }
 #[test]
 fn bindgen_test_layout__rfbScreenInfo() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbScreenInfo> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbScreenInfo> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbScreenInfo>(),
+        ::core::mem::size_of::<_rfbScreenInfo>(),
         984usize,
         concat!("Size of: ", stringify!(_rfbScreenInfo))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbScreenInfo>(),
+        ::core::mem::align_of::<_rfbScreenInfo>(),
         8usize,
         concat!("Alignment of ", stringify!(_rfbScreenInfo))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).scaledScreenNext) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).scaledScreenNext) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -12513,7 +13107,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).scaledScreenRefCount) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).scaledScreenRefCount) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -12523,7 +13117,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).width) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).width) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -12533,7 +13127,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).paddedWidthInBytes) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).paddedWidthInBytes) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -12543,7 +13137,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).height) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).height) as usize - ptr as usize },
         20usize,
         concat!(
             "Offset of field: ",
@@ -12553,7 +13147,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).depth) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).depth) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -12563,7 +13157,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bitsPerPixel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).bitsPerPixel) as usize - ptr as usize },
         28usize,
         concat!(
             "Offset of field: ",
@@ -12573,7 +13167,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sizeInBytes) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sizeInBytes) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -12583,7 +13177,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).blackPixel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).blackPixel) as usize - ptr as usize },
         36usize,
         concat!(
             "Offset of field: ",
@@ -12593,7 +13187,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).whitePixel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).whitePixel) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -12603,7 +13197,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).screenData) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).screenData) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -12613,7 +13207,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).serverFormat) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).serverFormat) as usize - ptr as usize },
         56usize,
         concat!(
             "Offset of field: ",
@@ -12623,7 +13217,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).colourMap) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).colourMap) as usize - ptr as usize },
         72usize,
         concat!(
             "Offset of field: ",
@@ -12633,7 +13227,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).desktopName) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).desktopName) as usize - ptr as usize },
         88usize,
         concat!(
             "Offset of field: ",
@@ -12643,7 +13237,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).thisHost) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).thisHost) as usize - ptr as usize },
         96usize,
         concat!(
             "Offset of field: ",
@@ -12653,7 +13247,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).autoPort) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).autoPort) as usize - ptr as usize },
         351usize,
         concat!(
             "Offset of field: ",
@@ -12663,7 +13257,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).port) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).port) as usize - ptr as usize },
         352usize,
         concat!(
             "Offset of field: ",
@@ -12673,7 +13267,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).listenSock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).listenSock) as usize - ptr as usize },
         356usize,
         concat!(
             "Offset of field: ",
@@ -12683,7 +13277,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).maxSock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).maxSock) as usize - ptr as usize },
         360usize,
         concat!(
             "Offset of field: ",
@@ -12693,7 +13287,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).maxFd) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).maxFd) as usize - ptr as usize },
         364usize,
         concat!(
             "Offset of field: ",
@@ -12703,7 +13297,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).allFds) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).allFds) as usize - ptr as usize },
         368usize,
         concat!(
             "Offset of field: ",
@@ -12713,7 +13307,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).socketState) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).socketState) as usize - ptr as usize },
         496usize,
         concat!(
             "Offset of field: ",
@@ -12723,7 +13317,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).inetdSock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).inetdSock) as usize - ptr as usize },
         500usize,
         concat!(
             "Offset of field: ",
@@ -12733,7 +13327,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).inetdInitDone) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).inetdInitDone) as usize - ptr as usize },
         504usize,
         concat!(
             "Offset of field: ",
@@ -12743,7 +13337,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).udpPort) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).udpPort) as usize - ptr as usize },
         508usize,
         concat!(
             "Offset of field: ",
@@ -12753,7 +13347,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).udpSock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).udpSock) as usize - ptr as usize },
         512usize,
         concat!(
             "Offset of field: ",
@@ -12763,7 +13357,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).udpClient) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).udpClient) as usize - ptr as usize },
         520usize,
         concat!(
             "Offset of field: ",
@@ -12773,7 +13367,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).udpSockConnected) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).udpSockConnected) as usize - ptr as usize },
         528usize,
         concat!(
             "Offset of field: ",
@@ -12783,7 +13377,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).udpRemoteAddr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).udpRemoteAddr) as usize - ptr as usize },
         532usize,
         concat!(
             "Offset of field: ",
@@ -12793,7 +13387,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).maxClientWait) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).maxClientWait) as usize - ptr as usize },
         548usize,
         concat!(
             "Offset of field: ",
@@ -12803,7 +13397,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).httpInitDone) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).httpInitDone) as usize - ptr as usize },
         552usize,
         concat!(
             "Offset of field: ",
@@ -12813,7 +13407,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).httpEnableProxyConnect) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).httpEnableProxyConnect) as usize - ptr as usize },
         553usize,
         concat!(
             "Offset of field: ",
@@ -12823,7 +13417,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).httpPort) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).httpPort) as usize - ptr as usize },
         556usize,
         concat!(
             "Offset of field: ",
@@ -12833,7 +13427,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).httpDir) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).httpDir) as usize - ptr as usize },
         560usize,
         concat!(
             "Offset of field: ",
@@ -12843,7 +13437,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).httpListenSock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).httpListenSock) as usize - ptr as usize },
         568usize,
         concat!(
             "Offset of field: ",
@@ -12853,7 +13447,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).httpSock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).httpSock) as usize - ptr as usize },
         572usize,
         concat!(
             "Offset of field: ",
@@ -12863,7 +13457,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).passwordCheck) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).passwordCheck) as usize - ptr as usize },
         576usize,
         concat!(
             "Offset of field: ",
@@ -12873,7 +13467,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).authPasswdData) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).authPasswdData) as usize - ptr as usize },
         584usize,
         concat!(
             "Offset of field: ",
@@ -12883,7 +13477,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).authPasswdFirstViewOnly) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).authPasswdFirstViewOnly) as usize - ptr as usize },
         592usize,
         concat!(
             "Offset of field: ",
@@ -12893,7 +13487,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).maxRectsPerUpdate) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).maxRectsPerUpdate) as usize - ptr as usize },
         596usize,
         concat!(
             "Offset of field: ",
@@ -12903,7 +13497,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).deferUpdateTime) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).deferUpdateTime) as usize - ptr as usize },
         600usize,
         concat!(
             "Offset of field: ",
@@ -12913,7 +13507,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).alwaysShared) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).alwaysShared) as usize - ptr as usize },
         604usize,
         concat!(
             "Offset of field: ",
@@ -12923,7 +13517,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).neverShared) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).neverShared) as usize - ptr as usize },
         605usize,
         concat!(
             "Offset of field: ",
@@ -12933,7 +13527,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).dontDisconnect) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).dontDisconnect) as usize - ptr as usize },
         606usize,
         concat!(
             "Offset of field: ",
@@ -12943,7 +13537,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).clientHead) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).clientHead) as usize - ptr as usize },
         608usize,
         concat!(
             "Offset of field: ",
@@ -12953,7 +13547,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pointerClient) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pointerClient) as usize - ptr as usize },
         616usize,
         concat!(
             "Offset of field: ",
@@ -12963,7 +13557,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cursorX) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cursorX) as usize - ptr as usize },
         624usize,
         concat!(
             "Offset of field: ",
@@ -12973,7 +13567,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cursorY) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cursorY) as usize - ptr as usize },
         628usize,
         concat!(
             "Offset of field: ",
@@ -12983,7 +13577,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).underCursorBufferLen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).underCursorBufferLen) as usize - ptr as usize },
         632usize,
         concat!(
             "Offset of field: ",
@@ -12993,7 +13587,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).underCursorBuffer) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).underCursorBuffer) as usize - ptr as usize },
         640usize,
         concat!(
             "Offset of field: ",
@@ -13004,7 +13598,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
     );
     assert_eq!(
         unsafe {
-            ::std::ptr::addr_of!((*ptr).dontConvertRichCursorToXCursor) as usize - ptr as usize
+            ::core::ptr::addr_of!((*ptr).dontConvertRichCursorToXCursor) as usize - ptr as usize
         },
         648usize,
         concat!(
@@ -13015,7 +13609,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cursor) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cursor) as usize - ptr as usize },
         656usize,
         concat!(
             "Offset of field: ",
@@ -13025,7 +13619,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).frameBuffer) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).frameBuffer) as usize - ptr as usize },
         664usize,
         concat!(
             "Offset of field: ",
@@ -13035,7 +13629,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).kbdAddEvent) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).kbdAddEvent) as usize - ptr as usize },
         672usize,
         concat!(
             "Offset of field: ",
@@ -13045,7 +13639,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).kbdReleaseAllKeys) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).kbdReleaseAllKeys) as usize - ptr as usize },
         680usize,
         concat!(
             "Offset of field: ",
@@ -13055,7 +13649,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ptrAddEvent) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ptrAddEvent) as usize - ptr as usize },
         688usize,
         concat!(
             "Offset of field: ",
@@ -13065,7 +13659,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).setXCutText) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).setXCutText) as usize - ptr as usize },
         696usize,
         concat!(
             "Offset of field: ",
@@ -13075,7 +13669,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).getCursorPtr) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).getCursorPtr) as usize - ptr as usize },
         704usize,
         concat!(
             "Offset of field: ",
@@ -13085,7 +13679,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).setTranslateFunction) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).setTranslateFunction) as usize - ptr as usize },
         712usize,
         concat!(
             "Offset of field: ",
@@ -13095,7 +13689,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).setSingleWindow) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).setSingleWindow) as usize - ptr as usize },
         720usize,
         concat!(
             "Offset of field: ",
@@ -13105,7 +13699,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).setServerInput) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).setServerInput) as usize - ptr as usize },
         728usize,
         concat!(
             "Offset of field: ",
@@ -13115,7 +13709,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).getFileTransferPermission) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).getFileTransferPermission) as usize - ptr as usize },
         736usize,
         concat!(
             "Offset of field: ",
@@ -13125,7 +13719,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).setTextChat) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).setTextChat) as usize - ptr as usize },
         744usize,
         concat!(
             "Offset of field: ",
@@ -13135,7 +13729,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).newClientHook) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).newClientHook) as usize - ptr as usize },
         752usize,
         concat!(
             "Offset of field: ",
@@ -13145,7 +13739,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).displayHook) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).displayHook) as usize - ptr as usize },
         760usize,
         concat!(
             "Offset of field: ",
@@ -13155,7 +13749,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).getKeyboardLedStateHook) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).getKeyboardLedStateHook) as usize - ptr as usize },
         768usize,
         concat!(
             "Offset of field: ",
@@ -13165,7 +13759,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cursorMutex) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cursorMutex) as usize - ptr as usize },
         776usize,
         concat!(
             "Offset of field: ",
@@ -13175,7 +13769,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).backgroundLoop) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).backgroundLoop) as usize - ptr as usize },
         816usize,
         concat!(
             "Offset of field: ",
@@ -13185,7 +13779,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ignoreSIGPIPE) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ignoreSIGPIPE) as usize - ptr as usize },
         817usize,
         concat!(
             "Offset of field: ",
@@ -13195,7 +13789,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).progressiveSliceHeight) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).progressiveSliceHeight) as usize - ptr as usize },
         820usize,
         concat!(
             "Offset of field: ",
@@ -13205,7 +13799,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).listenInterface) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).listenInterface) as usize - ptr as usize },
         824usize,
         concat!(
             "Offset of field: ",
@@ -13215,7 +13809,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).deferPtrUpdateTime) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).deferPtrUpdateTime) as usize - ptr as usize },
         828usize,
         concat!(
             "Offset of field: ",
@@ -13225,7 +13819,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).handleEventsEagerly) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).handleEventsEagerly) as usize - ptr as usize },
         832usize,
         concat!(
             "Offset of field: ",
@@ -13235,7 +13829,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).versionString) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).versionString) as usize - ptr as usize },
         840usize,
         concat!(
             "Offset of field: ",
@@ -13245,7 +13839,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).protocolMajorVersion) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).protocolMajorVersion) as usize - ptr as usize },
         848usize,
         concat!(
             "Offset of field: ",
@@ -13255,7 +13849,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).protocolMinorVersion) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).protocolMinorVersion) as usize - ptr as usize },
         852usize,
         concat!(
             "Offset of field: ",
@@ -13265,7 +13859,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).permitFileTransfer) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).permitFileTransfer) as usize - ptr as usize },
         856usize,
         concat!(
             "Offset of field: ",
@@ -13275,7 +13869,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).displayFinishedHook) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).displayFinishedHook) as usize - ptr as usize },
         864usize,
         concat!(
             "Offset of field: ",
@@ -13285,7 +13879,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).xvpHook) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).xvpHook) as usize - ptr as usize },
         872usize,
         concat!(
             "Offset of field: ",
@@ -13295,7 +13889,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sslkeyfile) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sslkeyfile) as usize - ptr as usize },
         880usize,
         concat!(
             "Offset of field: ",
@@ -13305,7 +13899,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sslcertfile) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sslcertfile) as usize - ptr as usize },
         888usize,
         concat!(
             "Offset of field: ",
@@ -13315,7 +13909,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ipv6port) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ipv6port) as usize - ptr as usize },
         896usize,
         concat!(
             "Offset of field: ",
@@ -13325,7 +13919,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).listen6Interface) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).listen6Interface) as usize - ptr as usize },
         904usize,
         concat!(
             "Offset of field: ",
@@ -13335,7 +13929,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).listen6Sock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).listen6Sock) as usize - ptr as usize },
         912usize,
         concat!(
             "Offset of field: ",
@@ -13345,7 +13939,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).http6Port) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).http6Port) as usize - ptr as usize },
         916usize,
         concat!(
             "Offset of field: ",
@@ -13355,7 +13949,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).httpListen6Sock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).httpListen6Sock) as usize - ptr as usize },
         920usize,
         concat!(
             "Offset of field: ",
@@ -13365,7 +13959,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).setDesktopSizeHook) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).setDesktopSizeHook) as usize - ptr as usize },
         928usize,
         concat!(
             "Offset of field: ",
@@ -13376,7 +13970,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
     );
     assert_eq!(
         unsafe {
-            ::std::ptr::addr_of!((*ptr).numberOfExtDesktopScreensHook) as usize - ptr as usize
+            ::core::ptr::addr_of!((*ptr).numberOfExtDesktopScreensHook) as usize - ptr as usize
         },
         936usize,
         concat!(
@@ -13387,7 +13981,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).getExtDesktopScreenHook) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).getExtDesktopScreenHook) as usize - ptr as usize },
         944usize,
         concat!(
             "Offset of field: ",
@@ -13397,7 +13991,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fdQuota) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fdQuota) as usize - ptr as usize },
         952usize,
         concat!(
             "Offset of field: ",
@@ -13407,7 +14001,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).listener_thread) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).listener_thread) as usize - ptr as usize },
         960usize,
         concat!(
             "Offset of field: ",
@@ -13417,7 +14011,9 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pipe_notify_listener_thread) as usize - ptr as usize },
+        unsafe {
+            ::core::ptr::addr_of!((*ptr).pipe_notify_listener_thread) as usize - ptr as usize
+        },
         968usize,
         concat!(
             "Offset of field: ",
@@ -13427,7 +14023,7 @@ fn bindgen_test_layout__rfbScreenInfo() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).setXCutTextUTF8) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).setXCutTextUTF8) as usize - ptr as usize },
         976usize,
         concat!(
             "Offset of field: ",
@@ -13442,16 +14038,16 @@ pub type rfbScreenInfo = _rfbScreenInfo;
 #[doc = " Per-screen (framebuffer) structure.  There can be as many as you wish,\n each serving different clients. However, you have to call\n rfbProcessEvents for each of these."]
 pub type rfbScreenInfoPtr = *mut _rfbScreenInfo;
 #[doc = " rfbTranslateFnType is the type of translation functions."]
-pub type rfbTranslateFnType = ::std::option::Option<
+pub type rfbTranslateFnType = ::core::option::Option<
     unsafe extern "C" fn(
-        table: *mut ::std::os::raw::c_char,
+        table: *mut ::core::ffi::c_char,
         in_: *mut rfbPixelFormat,
         out: *mut rfbPixelFormat,
-        iptr: *mut ::std::os::raw::c_char,
-        optr: *mut ::std::os::raw::c_char,
-        bytesBetweenInputLines: ::std::os::raw::c_int,
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
+        iptr: *mut ::core::ffi::c_char,
+        optr: *mut ::core::ffi::c_char,
+        bytesBetweenInputLines: ::core::ffi::c_int,
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
     ),
 >;
 #[repr(C)]
@@ -13460,36 +14056,37 @@ pub struct sraRegion {
     _unused: [u8; 0],
 }
 pub type sraRegionPtr = *mut sraRegion;
-pub type ClientGoneHookPtr = ::std::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec)>;
-pub type ClientFramebufferUpdateRequestHookPtr = ::std::option::Option<
+pub type ClientGoneHookPtr = ::core::option::Option<unsafe extern "C" fn(cl: *mut _rfbClientRec)>;
+pub type ClientFramebufferUpdateRequestHookPtr = ::core::option::Option<
     unsafe extern "C" fn(cl: *mut _rfbClientRec, furMsg: *mut rfbFramebufferUpdateRequestMsg),
 >;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _rfbFileTransferData {
-    pub fd: ::std::os::raw::c_int,
-    pub compressionEnabled: ::std::os::raw::c_int,
-    pub fileSize: ::std::os::raw::c_int,
-    pub numPackets: ::std::os::raw::c_int,
-    pub receiving: ::std::os::raw::c_int,
-    pub sending: ::std::os::raw::c_int,
+    pub fd: ::core::ffi::c_int,
+    pub compressionEnabled: ::core::ffi::c_int,
+    pub fileSize: ::core::ffi::c_int,
+    pub numPackets: ::core::ffi::c_int,
+    pub receiving: ::core::ffi::c_int,
+    pub sending: ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout__rfbFileTransferData() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbFileTransferData> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbFileTransferData> =
+        ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbFileTransferData>(),
+        ::core::mem::size_of::<_rfbFileTransferData>(),
         24usize,
         concat!("Size of: ", stringify!(_rfbFileTransferData))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbFileTransferData>(),
+        ::core::mem::align_of::<_rfbFileTransferData>(),
         4usize,
         concat!("Alignment of ", stringify!(_rfbFileTransferData))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fd) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fd) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -13499,7 +14096,7 @@ fn bindgen_test_layout__rfbFileTransferData() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).compressionEnabled) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).compressionEnabled) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -13509,7 +14106,7 @@ fn bindgen_test_layout__rfbFileTransferData() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fileSize) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fileSize) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -13519,7 +14116,7 @@ fn bindgen_test_layout__rfbFileTransferData() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).numPackets) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).numPackets) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -13529,7 +14126,7 @@ fn bindgen_test_layout__rfbFileTransferData() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).receiving) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).receiving) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -13539,7 +14136,7 @@ fn bindgen_test_layout__rfbFileTransferData() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sending) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sending) as usize - ptr as usize },
         20usize,
         concat!(
             "Offset of field: ",
@@ -13564,20 +14161,20 @@ pub struct _rfbStatList {
 }
 #[test]
 fn bindgen_test_layout__rfbStatList() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbStatList> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbStatList> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbStatList>(),
+        ::core::mem::size_of::<_rfbStatList>(),
         40usize,
         concat!("Size of: ", stringify!(_rfbStatList))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbStatList>(),
+        ::core::mem::align_of::<_rfbStatList>(),
         8usize,
         concat!("Alignment of ", stringify!(_rfbStatList))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).type_) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -13587,7 +14184,7 @@ fn bindgen_test_layout__rfbStatList() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sentCount) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sentCount) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -13597,7 +14194,7 @@ fn bindgen_test_layout__rfbStatList() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bytesSent) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).bytesSent) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -13607,7 +14204,7 @@ fn bindgen_test_layout__rfbStatList() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bytesSentIfRaw) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).bytesSentIfRaw) as usize - ptr as usize },
         12usize,
         concat!(
             "Offset of field: ",
@@ -13617,7 +14214,7 @@ fn bindgen_test_layout__rfbStatList() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rcvdCount) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rcvdCount) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -13627,7 +14224,7 @@ fn bindgen_test_layout__rfbStatList() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bytesRcvd) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).bytesRcvd) as usize - ptr as usize },
         20usize,
         concat!(
             "Offset of field: ",
@@ -13637,7 +14234,7 @@ fn bindgen_test_layout__rfbStatList() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bytesRcvdIfRaw) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).bytesRcvdIfRaw) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -13647,7 +14244,7 @@ fn bindgen_test_layout__rfbStatList() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).Next) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).Next) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -13680,62 +14277,62 @@ pub struct _rfbClientRec {
     #[doc = " how did the client tell us it wanted the screen changed?  Ultra style or palm style?"]
     pub PalmVNC: rfbBool,
     #[doc = " private data. You should put any application client specific data\n into a struct and let clientData point to it. Don't forget to\n free the struct via clientGoneHook!\n\n This is useful if the IO functions have to behave client specific."]
-    pub clientData: *mut ::std::os::raw::c_void,
+    pub clientData: *mut ::core::ffi::c_void,
     pub clientGoneHook: ClientGoneHookPtr,
-    pub sock: ::std::os::raw::c_int,
-    pub host: *mut ::std::os::raw::c_char,
-    pub protocolMajorVersion: ::std::os::raw::c_int,
-    pub protocolMinorVersion: ::std::os::raw::c_int,
+    pub sock: ::core::ffi::c_int,
+    pub host: *mut ::core::ffi::c_char,
+    pub protocolMajorVersion: ::core::ffi::c_int,
+    pub protocolMinorVersion: ::core::ffi::c_int,
     pub client_thread: pthread_t,
     pub state: _rfbClientRec__bindgen_ty_1,
     pub reverseConnection: rfbBool,
     pub onHold: rfbBool,
     pub readyForSetColourMapEntries: rfbBool,
     pub useCopyRect: rfbBool,
-    pub preferredEncoding: ::std::os::raw::c_int,
-    pub correMaxWidth: ::std::os::raw::c_int,
-    pub correMaxHeight: ::std::os::raw::c_int,
+    pub preferredEncoding: ::core::ffi::c_int,
+    pub correMaxWidth: ::core::ffi::c_int,
+    pub correMaxHeight: ::core::ffi::c_int,
     pub viewOnly: rfbBool,
     pub authChallenge: [u8; 16usize],
     #[doc = "< the destination region of the copy"]
     pub copyRegion: sraRegionPtr,
     #[doc = "< the translation by which the copy happens"]
-    pub copyDX: ::std::os::raw::c_int,
+    pub copyDX: ::core::ffi::c_int,
     #[doc = "< the translation by which the copy happens"]
-    pub copyDY: ::std::os::raw::c_int,
+    pub copyDY: ::core::ffi::c_int,
     pub modifiedRegion: sraRegionPtr,
     #[doc = " As part of the FramebufferUpdateRequest, a client can express interest\nin a subrectangle of the whole framebuffer.  This is stored in the\nrequestedRegion member.  In the normal case this is the whole\nframebuffer if the client is ready, empty if it's not."]
     pub requestedRegion: sraRegionPtr,
     #[doc = " The following member represents the state of the \"deferred update\" timer\n- when the framebuffer is modified and the client is ready, in most\ncases it is more efficient to defer sending the update by a few\nmilliseconds so that several changes to the framebuffer can be combined\ninto a single update."]
     pub startDeferring: timeval,
     pub startPtrDeferring: timeval,
-    pub lastPtrX: ::std::os::raw::c_int,
-    pub lastPtrY: ::std::os::raw::c_int,
-    pub lastPtrButtons: ::std::os::raw::c_int,
+    pub lastPtrX: ::core::ffi::c_int,
+    pub lastPtrY: ::core::ffi::c_int,
+    pub lastPtrButtons: ::core::ffi::c_int,
     #[doc = " translateFn points to the translation function which is used to copy\nand translate a rectangle from the framebuffer to an output buffer."]
     pub translateFn: rfbTranslateFnType,
-    pub translateLookupTable: *mut ::std::os::raw::c_char,
+    pub translateLookupTable: *mut ::core::ffi::c_char,
     pub format: rfbPixelFormat,
-    pub updateBuf: [::std::os::raw::c_char; 32768usize],
-    pub ublen: ::std::os::raw::c_int,
+    pub updateBuf: [::core::ffi::c_char; 32768usize],
+    pub ublen: ::core::ffi::c_int,
     pub statEncList: *mut _rfbStatList,
     pub statMsgList: *mut _rfbStatList,
-    pub rawBytesEquivalent: ::std::os::raw::c_int,
-    pub bytesSent: ::std::os::raw::c_int,
+    pub rawBytesEquivalent: ::core::ffi::c_int,
+    pub bytesSent: ::core::ffi::c_int,
     pub compStream: z_stream_s,
     pub compStreamInited: rfbBool,
     pub zlibCompressLevel: u32,
     #[doc = " the quality level is also used by ZYWRLE and TightPng"]
-    pub tightQualityLevel: ::std::os::raw::c_int,
+    pub tightQualityLevel: ::core::ffi::c_int,
     pub zsStruct: [z_stream; 4usize],
     pub zsActive: [rfbBool; 4usize],
-    pub zsLevel: [::std::os::raw::c_int; 4usize],
-    pub tightCompressLevel: ::std::os::raw::c_int,
+    pub zsLevel: [::core::ffi::c_int; 4usize],
+    pub tightCompressLevel: ::core::ffi::c_int,
     pub compStreamInitedLZO: rfbBool,
-    pub lzoWrkMem: *mut ::std::os::raw::c_char,
+    pub lzoWrkMem: *mut ::core::ffi::c_char,
     pub fileTransfer: rfbFileTransferData,
     #[doc = "< keep track of last value so we can send *change* events"]
-    pub lastKeyboardLedState: ::std::os::raw::c_int,
+    pub lastKeyboardLedState: ::core::ffi::c_int,
     #[doc = "< client supports SupportedMessages encoding"]
     pub enableSupportedMessages: rfbBool,
     #[doc = "< client supports SupportedEncodings encoding"]
@@ -13757,9 +14354,9 @@ pub struct _rfbClientRec {
     #[doc = "< cursor position update should be sent"]
     pub cursorWasMoved: rfbBool,
     #[doc = "< the coordinates of the cursor,\nif enableCursorShapeUpdates = FALSE"]
-    pub cursorX: ::std::os::raw::c_int,
+    pub cursorX: ::core::ffi::c_int,
     #[doc = "< the coordinates of the cursor,\nif enableCursorShapeUpdates = FALSE"]
-    pub cursorY: ::std::os::raw::c_int,
+    pub cursorY: ::core::ffi::c_int,
     #[doc = "< client supports NewFBSize encoding"]
     pub useNewFBSize: rfbBool,
     #[doc = "< framebuffer size was changed"]
@@ -13767,47 +14364,47 @@ pub struct _rfbClientRec {
     pub prev: *mut _rfbClientRec,
     pub next: *mut _rfbClientRec,
     #[doc = " whenever a client is referenced, the refCount has to be incremented\nand afterwards decremented, so that the client is not cleaned up\nwhile being referenced.\nUse the functions rfbIncrClientRef(cl) and rfbDecrClientRef(cl);"]
-    pub refCount: ::std::os::raw::c_int,
+    pub refCount: ::core::ffi::c_int,
     pub refCountMutex: pthread_mutex_t,
     pub deleteCond: pthread_cond_t,
     pub outputMutex: pthread_mutex_t,
     pub updateMutex: pthread_mutex_t,
     pub updateCond: pthread_cond_t,
-    pub zrleData: *mut ::std::os::raw::c_void,
-    pub zywrleLevel: ::std::os::raw::c_int,
-    pub zywrleBuf: [::std::os::raw::c_int; 4096usize],
+    pub zrleData: *mut ::core::ffi::c_void,
+    pub zywrleLevel: ::core::ffi::c_int,
+    pub zywrleBuf: [::core::ffi::c_int; 4096usize],
     #[doc = " if progressive updating is on, this variable holds the current\n y coordinate of the progressive slice."]
-    pub progressiveSliceY: ::std::os::raw::c_int,
+    pub progressiveSliceY: ::core::ffi::c_int,
     pub extensions: *mut rfbExtensionData,
     #[doc = " for threaded zrle"]
-    pub zrleBeforeBuf: *mut ::std::os::raw::c_char,
-    pub paletteHelper: *mut ::std::os::raw::c_void,
+    pub zrleBeforeBuf: *mut ::core::ffi::c_char,
+    pub paletteHelper: *mut ::core::ffi::c_void,
     pub sendMutex: pthread_mutex_t,
-    pub beforeEncBuf: *mut ::std::os::raw::c_char,
-    pub beforeEncBufSize: ::std::os::raw::c_int,
-    pub afterEncBuf: *mut ::std::os::raw::c_char,
-    pub afterEncBufSize: ::std::os::raw::c_int,
-    pub afterEncBufLen: ::std::os::raw::c_int,
+    pub beforeEncBuf: *mut ::core::ffi::c_char,
+    pub beforeEncBufSize: ::core::ffi::c_int,
+    pub afterEncBuf: *mut ::core::ffi::c_char,
+    pub afterEncBufSize: ::core::ffi::c_int,
+    pub afterEncBufLen: ::core::ffi::c_int,
     pub tightEncoding: u32,
-    pub turboSubsampLevel: ::std::os::raw::c_int,
-    pub turboQualityLevel: ::std::os::raw::c_int,
+    pub turboSubsampLevel: ::core::ffi::c_int,
+    pub turboQualityLevel: ::core::ffi::c_int,
     pub sslctx: *mut rfbSslCtx,
     pub wsctx: *mut wsCtx,
-    pub wspath: *mut ::std::os::raw::c_char,
-    pub pipe_notify_client_thread: [::std::os::raw::c_int; 2usize],
+    pub wspath: *mut ::core::ffi::c_char,
+    pub pipe_notify_client_thread: [::core::ffi::c_int; 2usize],
     #[doc = " clientFramebufferUpdateRequestHook is called when a client requests a frame\n buffer update."]
     pub clientFramebufferUpdateRequestHook: ClientFramebufferUpdateRequestHookPtr,
     pub useExtDesktopSize: rfbBool,
-    pub requestedDesktopSizeChange: ::std::os::raw::c_int,
-    pub lastDesktopSizeChangeError: ::std::os::raw::c_int,
+    pub requestedDesktopSizeChange: ::core::ffi::c_int,
+    pub lastDesktopSizeChangeError: ::core::ffi::c_int,
     pub enableExtendedClipboard: rfbBool,
     pub extClipboardUserCap: u32,
     pub extClipboardMaxUnsolicitedSize: u32,
-    pub extClipboardData: *mut ::std::os::raw::c_char,
-    pub extClipboardDataSize: ::std::os::raw::c_int,
+    pub extClipboardData: *mut ::core::ffi::c_char,
+    pub extClipboardDataSize: ::core::ffi::c_int,
     pub tightUsePixelFormat24: rfbBool,
-    pub tightTJ: *mut ::std::os::raw::c_void,
-    pub tightPngDstDataLen: ::std::os::raw::c_int,
+    pub tightTJ: *mut ::core::ffi::c_void,
+    pub tightPngDstDataLen: ::core::ffi::c_int,
 }
 #[doc = "< establishing protocol version"]
 pub const _rfbClientRec_RFB_PROTOCOL_VERSION: _rfbClientRec__bindgen_ty_1 = 0;
@@ -13824,23 +14421,23 @@ pub const _rfbClientRec_RFB_INITIALISATION_SHARED: _rfbClientRec__bindgen_ty_1 =
 #[doc = "< Client is shutting down"]
 pub const _rfbClientRec_RFB_SHUTDOWN: _rfbClientRec__bindgen_ty_1 = 6;
 #[doc = " Possible client states:"]
-pub type _rfbClientRec__bindgen_ty_1 = ::std::os::raw::c_uint;
+pub type _rfbClientRec__bindgen_ty_1 = ::core::ffi::c_uint;
 #[test]
 fn bindgen_test_layout__rfbClientRec() {
-    const UNINIT: ::std::mem::MaybeUninit<_rfbClientRec> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<_rfbClientRec> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<_rfbClientRec>(),
+        ::core::mem::size_of::<_rfbClientRec>(),
         50544usize,
         concat!("Size of: ", stringify!(_rfbClientRec))
     );
     assert_eq!(
-        ::std::mem::align_of::<_rfbClientRec>(),
+        ::core::mem::align_of::<_rfbClientRec>(),
         8usize,
         concat!("Alignment of ", stringify!(_rfbClientRec))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).screen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).screen) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -13850,7 +14447,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).scaledScreen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).scaledScreen) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -13860,7 +14457,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).PalmVNC) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).PalmVNC) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -13870,7 +14467,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).clientData) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).clientData) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -13880,7 +14477,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).clientGoneHook) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).clientGoneHook) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -13890,7 +14487,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sock) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sock) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -13900,7 +14497,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).host) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).host) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -13910,7 +14507,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).protocolMajorVersion) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).protocolMajorVersion) as usize - ptr as usize },
         56usize,
         concat!(
             "Offset of field: ",
@@ -13920,7 +14517,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).protocolMinorVersion) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).protocolMinorVersion) as usize - ptr as usize },
         60usize,
         concat!(
             "Offset of field: ",
@@ -13930,7 +14527,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).client_thread) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).client_thread) as usize - ptr as usize },
         64usize,
         concat!(
             "Offset of field: ",
@@ -13940,7 +14537,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).state) as usize - ptr as usize },
         72usize,
         concat!(
             "Offset of field: ",
@@ -13950,7 +14547,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).reverseConnection) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).reverseConnection) as usize - ptr as usize },
         76usize,
         concat!(
             "Offset of field: ",
@@ -13960,7 +14557,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).onHold) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).onHold) as usize - ptr as usize },
         77usize,
         concat!(
             "Offset of field: ",
@@ -13970,7 +14567,9 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).readyForSetColourMapEntries) as usize - ptr as usize },
+        unsafe {
+            ::core::ptr::addr_of!((*ptr).readyForSetColourMapEntries) as usize - ptr as usize
+        },
         78usize,
         concat!(
             "Offset of field: ",
@@ -13980,7 +14579,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).useCopyRect) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).useCopyRect) as usize - ptr as usize },
         79usize,
         concat!(
             "Offset of field: ",
@@ -13990,7 +14589,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).preferredEncoding) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).preferredEncoding) as usize - ptr as usize },
         80usize,
         concat!(
             "Offset of field: ",
@@ -14000,7 +14599,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).correMaxWidth) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).correMaxWidth) as usize - ptr as usize },
         84usize,
         concat!(
             "Offset of field: ",
@@ -14010,7 +14609,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).correMaxHeight) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).correMaxHeight) as usize - ptr as usize },
         88usize,
         concat!(
             "Offset of field: ",
@@ -14020,7 +14619,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).viewOnly) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).viewOnly) as usize - ptr as usize },
         92usize,
         concat!(
             "Offset of field: ",
@@ -14030,7 +14629,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).authChallenge) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).authChallenge) as usize - ptr as usize },
         93usize,
         concat!(
             "Offset of field: ",
@@ -14040,7 +14639,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).copyRegion) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).copyRegion) as usize - ptr as usize },
         112usize,
         concat!(
             "Offset of field: ",
@@ -14050,7 +14649,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).copyDX) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).copyDX) as usize - ptr as usize },
         120usize,
         concat!(
             "Offset of field: ",
@@ -14060,7 +14659,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).copyDY) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).copyDY) as usize - ptr as usize },
         124usize,
         concat!(
             "Offset of field: ",
@@ -14070,7 +14669,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).modifiedRegion) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).modifiedRegion) as usize - ptr as usize },
         128usize,
         concat!(
             "Offset of field: ",
@@ -14080,7 +14679,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).requestedRegion) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).requestedRegion) as usize - ptr as usize },
         136usize,
         concat!(
             "Offset of field: ",
@@ -14090,7 +14689,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).startDeferring) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).startDeferring) as usize - ptr as usize },
         144usize,
         concat!(
             "Offset of field: ",
@@ -14100,7 +14699,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).startPtrDeferring) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).startPtrDeferring) as usize - ptr as usize },
         160usize,
         concat!(
             "Offset of field: ",
@@ -14110,7 +14709,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).lastPtrX) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).lastPtrX) as usize - ptr as usize },
         176usize,
         concat!(
             "Offset of field: ",
@@ -14120,7 +14719,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).lastPtrY) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).lastPtrY) as usize - ptr as usize },
         180usize,
         concat!(
             "Offset of field: ",
@@ -14130,7 +14729,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).lastPtrButtons) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).lastPtrButtons) as usize - ptr as usize },
         184usize,
         concat!(
             "Offset of field: ",
@@ -14140,7 +14739,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).translateFn) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).translateFn) as usize - ptr as usize },
         192usize,
         concat!(
             "Offset of field: ",
@@ -14150,7 +14749,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).translateLookupTable) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).translateLookupTable) as usize - ptr as usize },
         200usize,
         concat!(
             "Offset of field: ",
@@ -14160,7 +14759,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).format) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).format) as usize - ptr as usize },
         208usize,
         concat!(
             "Offset of field: ",
@@ -14170,7 +14769,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).updateBuf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).updateBuf) as usize - ptr as usize },
         224usize,
         concat!(
             "Offset of field: ",
@@ -14180,7 +14779,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ublen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).ublen) as usize - ptr as usize },
         32992usize,
         concat!(
             "Offset of field: ",
@@ -14190,7 +14789,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).statEncList) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).statEncList) as usize - ptr as usize },
         33000usize,
         concat!(
             "Offset of field: ",
@@ -14200,7 +14799,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).statMsgList) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).statMsgList) as usize - ptr as usize },
         33008usize,
         concat!(
             "Offset of field: ",
@@ -14210,7 +14809,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rawBytesEquivalent) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).rawBytesEquivalent) as usize - ptr as usize },
         33016usize,
         concat!(
             "Offset of field: ",
@@ -14220,7 +14819,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).bytesSent) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).bytesSent) as usize - ptr as usize },
         33020usize,
         concat!(
             "Offset of field: ",
@@ -14230,7 +14829,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).compStream) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).compStream) as usize - ptr as usize },
         33024usize,
         concat!(
             "Offset of field: ",
@@ -14240,7 +14839,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).compStreamInited) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).compStreamInited) as usize - ptr as usize },
         33136usize,
         concat!(
             "Offset of field: ",
@@ -14250,7 +14849,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zlibCompressLevel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zlibCompressLevel) as usize - ptr as usize },
         33140usize,
         concat!(
             "Offset of field: ",
@@ -14260,7 +14859,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tightQualityLevel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tightQualityLevel) as usize - ptr as usize },
         33144usize,
         concat!(
             "Offset of field: ",
@@ -14270,7 +14869,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zsStruct) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zsStruct) as usize - ptr as usize },
         33152usize,
         concat!(
             "Offset of field: ",
@@ -14280,7 +14879,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zsActive) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zsActive) as usize - ptr as usize },
         33600usize,
         concat!(
             "Offset of field: ",
@@ -14290,7 +14889,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zsLevel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zsLevel) as usize - ptr as usize },
         33604usize,
         concat!(
             "Offset of field: ",
@@ -14300,7 +14899,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tightCompressLevel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tightCompressLevel) as usize - ptr as usize },
         33620usize,
         concat!(
             "Offset of field: ",
@@ -14310,7 +14909,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).compStreamInitedLZO) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).compStreamInitedLZO) as usize - ptr as usize },
         33624usize,
         concat!(
             "Offset of field: ",
@@ -14320,7 +14919,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).lzoWrkMem) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).lzoWrkMem) as usize - ptr as usize },
         33632usize,
         concat!(
             "Offset of field: ",
@@ -14330,7 +14929,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fileTransfer) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fileTransfer) as usize - ptr as usize },
         33640usize,
         concat!(
             "Offset of field: ",
@@ -14340,7 +14939,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).lastKeyboardLedState) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).lastKeyboardLedState) as usize - ptr as usize },
         33664usize,
         concat!(
             "Offset of field: ",
@@ -14350,7 +14949,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).enableSupportedMessages) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).enableSupportedMessages) as usize - ptr as usize },
         33668usize,
         concat!(
             "Offset of field: ",
@@ -14360,7 +14959,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).enableSupportedEncodings) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).enableSupportedEncodings) as usize - ptr as usize },
         33669usize,
         concat!(
             "Offset of field: ",
@@ -14370,7 +14969,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).enableServerIdentity) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).enableServerIdentity) as usize - ptr as usize },
         33670usize,
         concat!(
             "Offset of field: ",
@@ -14380,7 +14979,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).enableKeyboardLedState) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).enableKeyboardLedState) as usize - ptr as usize },
         33671usize,
         concat!(
             "Offset of field: ",
@@ -14390,7 +14989,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).enableLastRectEncoding) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).enableLastRectEncoding) as usize - ptr as usize },
         33672usize,
         concat!(
             "Offset of field: ",
@@ -14400,7 +14999,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).enableCursorShapeUpdates) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).enableCursorShapeUpdates) as usize - ptr as usize },
         33673usize,
         concat!(
             "Offset of field: ",
@@ -14410,7 +15009,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).enableCursorPosUpdates) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).enableCursorPosUpdates) as usize - ptr as usize },
         33674usize,
         concat!(
             "Offset of field: ",
@@ -14420,7 +15019,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).useRichCursorEncoding) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).useRichCursorEncoding) as usize - ptr as usize },
         33675usize,
         concat!(
             "Offset of field: ",
@@ -14430,7 +15029,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cursorWasChanged) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cursorWasChanged) as usize - ptr as usize },
         33676usize,
         concat!(
             "Offset of field: ",
@@ -14440,7 +15039,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cursorWasMoved) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cursorWasMoved) as usize - ptr as usize },
         33677usize,
         concat!(
             "Offset of field: ",
@@ -14450,7 +15049,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cursorX) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cursorX) as usize - ptr as usize },
         33680usize,
         concat!(
             "Offset of field: ",
@@ -14460,7 +15059,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cursorY) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cursorY) as usize - ptr as usize },
         33684usize,
         concat!(
             "Offset of field: ",
@@ -14470,7 +15069,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).useNewFBSize) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).useNewFBSize) as usize - ptr as usize },
         33688usize,
         concat!(
             "Offset of field: ",
@@ -14480,7 +15079,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).newFBSizePending) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).newFBSizePending) as usize - ptr as usize },
         33689usize,
         concat!(
             "Offset of field: ",
@@ -14490,7 +15089,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).prev) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).prev) as usize - ptr as usize },
         33696usize,
         concat!(
             "Offset of field: ",
@@ -14500,7 +15099,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
         33704usize,
         concat!(
             "Offset of field: ",
@@ -14510,7 +15109,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).refCount) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).refCount) as usize - ptr as usize },
         33712usize,
         concat!(
             "Offset of field: ",
@@ -14520,7 +15119,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).refCountMutex) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).refCountMutex) as usize - ptr as usize },
         33720usize,
         concat!(
             "Offset of field: ",
@@ -14530,7 +15129,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).deleteCond) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).deleteCond) as usize - ptr as usize },
         33760usize,
         concat!(
             "Offset of field: ",
@@ -14540,7 +15139,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).outputMutex) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).outputMutex) as usize - ptr as usize },
         33808usize,
         concat!(
             "Offset of field: ",
@@ -14550,7 +15149,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).updateMutex) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).updateMutex) as usize - ptr as usize },
         33848usize,
         concat!(
             "Offset of field: ",
@@ -14560,7 +15159,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).updateCond) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).updateCond) as usize - ptr as usize },
         33888usize,
         concat!(
             "Offset of field: ",
@@ -14570,7 +15169,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zrleData) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zrleData) as usize - ptr as usize },
         33936usize,
         concat!(
             "Offset of field: ",
@@ -14580,7 +15179,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zywrleLevel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zywrleLevel) as usize - ptr as usize },
         33944usize,
         concat!(
             "Offset of field: ",
@@ -14590,7 +15189,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zywrleBuf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zywrleBuf) as usize - ptr as usize },
         33948usize,
         concat!(
             "Offset of field: ",
@@ -14600,7 +15199,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).progressiveSliceY) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).progressiveSliceY) as usize - ptr as usize },
         50332usize,
         concat!(
             "Offset of field: ",
@@ -14610,7 +15209,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).extensions) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).extensions) as usize - ptr as usize },
         50336usize,
         concat!(
             "Offset of field: ",
@@ -14620,7 +15219,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).zrleBeforeBuf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).zrleBeforeBuf) as usize - ptr as usize },
         50344usize,
         concat!(
             "Offset of field: ",
@@ -14630,7 +15229,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).paletteHelper) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).paletteHelper) as usize - ptr as usize },
         50352usize,
         concat!(
             "Offset of field: ",
@@ -14640,7 +15239,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sendMutex) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sendMutex) as usize - ptr as usize },
         50360usize,
         concat!(
             "Offset of field: ",
@@ -14650,7 +15249,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).beforeEncBuf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).beforeEncBuf) as usize - ptr as usize },
         50400usize,
         concat!(
             "Offset of field: ",
@@ -14660,7 +15259,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).beforeEncBufSize) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).beforeEncBufSize) as usize - ptr as usize },
         50408usize,
         concat!(
             "Offset of field: ",
@@ -14670,7 +15269,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).afterEncBuf) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).afterEncBuf) as usize - ptr as usize },
         50416usize,
         concat!(
             "Offset of field: ",
@@ -14680,7 +15279,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).afterEncBufSize) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).afterEncBufSize) as usize - ptr as usize },
         50424usize,
         concat!(
             "Offset of field: ",
@@ -14690,7 +15289,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).afterEncBufLen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).afterEncBufLen) as usize - ptr as usize },
         50428usize,
         concat!(
             "Offset of field: ",
@@ -14700,7 +15299,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tightEncoding) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tightEncoding) as usize - ptr as usize },
         50432usize,
         concat!(
             "Offset of field: ",
@@ -14710,7 +15309,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).turboSubsampLevel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).turboSubsampLevel) as usize - ptr as usize },
         50436usize,
         concat!(
             "Offset of field: ",
@@ -14720,7 +15319,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).turboQualityLevel) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).turboQualityLevel) as usize - ptr as usize },
         50440usize,
         concat!(
             "Offset of field: ",
@@ -14730,7 +15329,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).sslctx) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).sslctx) as usize - ptr as usize },
         50448usize,
         concat!(
             "Offset of field: ",
@@ -14740,7 +15339,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).wsctx) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).wsctx) as usize - ptr as usize },
         50456usize,
         concat!(
             "Offset of field: ",
@@ -14750,7 +15349,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).wspath) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).wspath) as usize - ptr as usize },
         50464usize,
         concat!(
             "Offset of field: ",
@@ -14760,7 +15359,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).pipe_notify_client_thread) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).pipe_notify_client_thread) as usize - ptr as usize },
         50472usize,
         concat!(
             "Offset of field: ",
@@ -14771,7 +15370,7 @@ fn bindgen_test_layout__rfbClientRec() {
     );
     assert_eq!(
         unsafe {
-            ::std::ptr::addr_of!((*ptr).clientFramebufferUpdateRequestHook) as usize - ptr as usize
+            ::core::ptr::addr_of!((*ptr).clientFramebufferUpdateRequestHook) as usize - ptr as usize
         },
         50480usize,
         concat!(
@@ -14782,7 +15381,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).useExtDesktopSize) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).useExtDesktopSize) as usize - ptr as usize },
         50488usize,
         concat!(
             "Offset of field: ",
@@ -14792,7 +15391,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).requestedDesktopSizeChange) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).requestedDesktopSizeChange) as usize - ptr as usize },
         50492usize,
         concat!(
             "Offset of field: ",
@@ -14802,7 +15401,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).lastDesktopSizeChangeError) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).lastDesktopSizeChangeError) as usize - ptr as usize },
         50496usize,
         concat!(
             "Offset of field: ",
@@ -14812,7 +15411,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).enableExtendedClipboard) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).enableExtendedClipboard) as usize - ptr as usize },
         50500usize,
         concat!(
             "Offset of field: ",
@@ -14822,7 +15421,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).extClipboardUserCap) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).extClipboardUserCap) as usize - ptr as usize },
         50504usize,
         concat!(
             "Offset of field: ",
@@ -14833,7 +15432,7 @@ fn bindgen_test_layout__rfbClientRec() {
     );
     assert_eq!(
         unsafe {
-            ::std::ptr::addr_of!((*ptr).extClipboardMaxUnsolicitedSize) as usize - ptr as usize
+            ::core::ptr::addr_of!((*ptr).extClipboardMaxUnsolicitedSize) as usize - ptr as usize
         },
         50508usize,
         concat!(
@@ -14844,7 +15443,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).extClipboardData) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).extClipboardData) as usize - ptr as usize },
         50512usize,
         concat!(
             "Offset of field: ",
@@ -14854,7 +15453,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).extClipboardDataSize) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).extClipboardDataSize) as usize - ptr as usize },
         50520usize,
         concat!(
             "Offset of field: ",
@@ -14864,7 +15463,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tightUsePixelFormat24) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tightUsePixelFormat24) as usize - ptr as usize },
         50524usize,
         concat!(
             "Offset of field: ",
@@ -14874,7 +15473,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tightTJ) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tightTJ) as usize - ptr as usize },
         50528usize,
         concat!(
             "Offset of field: ",
@@ -14884,7 +15483,7 @@ fn bindgen_test_layout__rfbClientRec() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tightPngDstDataLen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).tightPngDstDataLen) as usize - ptr as usize },
         50536usize,
         concat!(
             "Offset of field: ",
@@ -14897,10 +15496,10 @@ fn bindgen_test_layout__rfbClientRec() {
 pub type rfbClientRec = _rfbClientRec;
 pub type rfbClientPtr = *mut _rfbClientRec;
 extern "C" {
-    pub static mut rfbEndianTest: ::std::os::raw::c_char;
+    pub static mut rfbEndianTest: ::core::ffi::c_char;
 }
 extern "C" {
-    pub static mut rfbMaxClientWait: ::std::os::raw::c_int;
+    pub static mut rfbMaxClientWait: ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbInitSockets(rfbScreen: rfbScreenInfoPtr);
@@ -14917,78 +15516,72 @@ extern "C" {
 extern "C" {
     pub fn rfbReadExact(
         cl: rfbClientPtr,
-        buf: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        buf: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbReadExactTimeout(
         cl: rfbClientPtr,
-        buf: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-        timeout: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        buf: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+        timeout: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbPeekExactTimeout(
         cl: rfbClientPtr,
-        buf: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-        timeout: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        buf: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+        timeout: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbWriteExact(
         cl: rfbClientPtr,
-        buf: *const ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        buf: *const ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbCheckFds(
         rfbScreen: rfbScreenInfoPtr,
-        usec: ::std::os::raw::c_long,
-    ) -> ::std::os::raw::c_int;
+        usec: ::core::ffi::c_long,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbConnect(
         rfbScreen: rfbScreenInfoPtr,
-        host: *mut ::std::os::raw::c_char,
-        port: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        host: *mut ::core::ffi::c_char,
+        port: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbConnectToTcpAddr(
-        host: *mut ::std::os::raw::c_char,
-        port: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        host: *mut ::core::ffi::c_char,
+        port: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbListenOnTCPPort(
-        port: ::std::os::raw::c_int,
-        iface: in_addr_t,
-    ) -> ::std::os::raw::c_int;
+    pub fn rfbListenOnTCPPort(port: ::core::ffi::c_int, iface: in_addr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbListenOnTCP6Port(
-        port: ::std::os::raw::c_int,
-        iface: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        port: ::core::ffi::c_int,
+        iface: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbListenOnUDPPort(
-        port: ::std::os::raw::c_int,
-        iface: in_addr_t,
-    ) -> ::std::os::raw::c_int;
+    pub fn rfbListenOnUDPPort(port: ::core::ffi::c_int, iface: in_addr_t) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbStringToAddr(
-        string: *mut ::std::os::raw::c_char,
+        string: *mut ::core::ffi::c_char,
         addr: *mut in_addr_t,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbSetNonBlocking(sock: ::std::os::raw::c_int) -> rfbBool;
+    pub fn rfbSetNonBlocking(sock: ::core::ffi::c_int) -> rfbBool;
 }
 extern "C" {
     pub fn webSocketsCheck(cl: rfbClientPtr) -> rfbBool;
@@ -14999,17 +15592,17 @@ extern "C" {
 extern "C" {
     pub fn webSocketsEncode(
         cl: rfbClientPtr,
-        src: *const ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-        dst: *mut *mut ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        src: *const ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+        dst: *mut *mut ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn webSocketsDecode(
         cl: rfbClientPtr,
-        dst: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        dst: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn webSocketsHasDataInBuffer(cl: rfbClientPtr) -> rfbBool;
@@ -15039,10 +15632,10 @@ extern "C" {
     pub fn rfbDecrClientRef(cl: rfbClientPtr);
 }
 extern "C" {
-    pub fn rfbNewClientConnection(rfbScreen: rfbScreenInfoPtr, sock: ::std::os::raw::c_int);
+    pub fn rfbNewClientConnection(rfbScreen: rfbScreenInfoPtr, sock: ::core::ffi::c_int);
 }
 extern "C" {
-    pub fn rfbNewClient(rfbScreen: rfbScreenInfoPtr, sock: ::std::os::raw::c_int) -> rfbClientPtr;
+    pub fn rfbNewClient(rfbScreen: rfbScreenInfoPtr, sock: ::core::ffi::c_int) -> rfbClientPtr;
 }
 extern "C" {
     pub fn rfbNewUDPClient(rfbScreen: rfbScreenInfoPtr) -> rfbClientPtr;
@@ -15050,8 +15643,8 @@ extern "C" {
 extern "C" {
     pub fn rfbReverseConnection(
         rfbScreen: rfbScreenInfoPtr,
-        host: *mut ::std::os::raw::c_char,
-        port: ::std::os::raw::c_int,
+        host: *mut ::core::ffi::c_char,
+        port: ::core::ffi::c_int,
     ) -> rfbClientPtr;
 }
 extern "C" {
@@ -15061,10 +15654,10 @@ extern "C" {
     pub fn rfbProcessClientMessage(cl: rfbClientPtr);
 }
 extern "C" {
-    pub fn rfbClientConnFailed(cl: rfbClientPtr, reason: *const ::std::os::raw::c_char);
+    pub fn rfbClientConnFailed(cl: rfbClientPtr, reason: *const ::core::ffi::c_char);
 }
 extern "C" {
-    pub fn rfbNewUDPConnection(rfbScreen: rfbScreenInfoPtr, sock: ::std::os::raw::c_int);
+    pub fn rfbNewUDPConnection(rfbScreen: rfbScreenInfoPtr, sock: ::core::ffi::c_int);
 }
 extern "C" {
     pub fn rfbProcessUDPInput(rfbScreen: rfbScreenInfoPtr);
@@ -15075,10 +15668,10 @@ extern "C" {
 extern "C" {
     pub fn rfbSendRectEncodingRaw(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
@@ -15087,25 +15680,25 @@ extern "C" {
 extern "C" {
     pub fn rfbSendServerCutText(
         rfbScreen: rfbScreenInfoPtr,
-        str_: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
+        str_: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbSendServerCutTextUTF8(
         rfbScreen: rfbScreenInfoPtr,
-        str_: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-        fallbackLatin1Str: *mut ::std::os::raw::c_char,
-        latin1Len: ::std::os::raw::c_int,
+        str_: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+        fallbackLatin1Str: *mut ::core::ffi::c_char,
+        latin1Len: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbSendCopyRegion(
         cl: rfbClientPtr,
         reg: sraRegionPtr,
-        dx: ::std::os::raw::c_int,
-        dy: ::std::os::raw::c_int,
+        dx: ::core::ffi::c_int,
+        dy: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
@@ -15114,22 +15707,22 @@ extern "C" {
 extern "C" {
     pub fn rfbSendNewFBSize(
         cl: rfbClientPtr,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSendExtDesktopSize(
         cl: rfbClientPtr,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSendSetColourMapEntries(
         cl: rfbClientPtr,
-        firstColour: ::std::os::raw::c_int,
-        nColours: ::std::os::raw::c_int,
+        firstColour: ::core::ffi::c_int,
+        nColours: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
@@ -15139,7 +15732,7 @@ extern "C" {
     pub fn rfbProcessFileTransferReadBuffer(
         cl: rfbClientPtr,
         length: u32,
-    ) -> *mut ::std::os::raw::c_char;
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn rfbSendFileTransferChunk(cl: rfbClientPtr) -> rfbBool;
@@ -15147,8 +15740,8 @@ extern "C" {
 extern "C" {
     pub fn rfbSendDirContent(
         cl: rfbClientPtr,
-        length: ::std::os::raw::c_int,
-        buffer: *mut ::std::os::raw::c_char,
+        length: ::core::ffi::c_int,
+        buffer: *mut ::core::ffi::c_char,
     ) -> rfbBool;
 }
 extern "C" {
@@ -15158,7 +15751,7 @@ extern "C" {
         contentParam: u8,
         size: u32,
         length: u32,
-        buffer: *const ::std::os::raw::c_char,
+        buffer: *const ::core::ffi::c_char,
     ) -> rfbBool;
 }
 extern "C" {
@@ -15173,8 +15766,8 @@ extern "C" {
 extern "C" {
     pub fn rfbGotXCutText(
         rfbScreen: rfbScreenInfoPtr,
-        str_: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
+        str_: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
     );
 }
 extern "C" {
@@ -15182,14 +15775,14 @@ extern "C" {
 }
 extern "C" {
     pub fn rfbTranslateNone(
-        table: *mut ::std::os::raw::c_char,
+        table: *mut ::core::ffi::c_char,
         in_: *mut rfbPixelFormat,
         out: *mut rfbPixelFormat,
-        iptr: *mut ::std::os::raw::c_char,
-        optr: *mut ::std::os::raw::c_char,
-        bytesBetweenInputLines: ::std::os::raw::c_int,
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
+        iptr: *mut ::core::ffi::c_char,
+        optr: *mut ::core::ffi::c_char,
+        bytesBetweenInputLines: ::core::ffi::c_int,
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
     );
 }
 extern "C" {
@@ -15198,15 +15791,15 @@ extern "C" {
 extern "C" {
     pub fn rfbSetClientColourMap(
         cl: rfbClientPtr,
-        firstColour: ::std::os::raw::c_int,
-        nColours: ::std::os::raw::c_int,
+        firstColour: ::core::ffi::c_int,
+        nColours: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSetClientColourMaps(
         rfbScreen: rfbScreenInfoPtr,
-        firstColour: ::std::os::raw::c_int,
-        nColours: ::std::os::raw::c_int,
+        firstColour: ::core::ffi::c_int,
+        nColours: ::core::ffi::c_int,
     );
 }
 extern "C" {
@@ -15236,89 +15829,89 @@ extern "C" {
 extern "C" {
     pub fn rfbSendRectEncodingRRE(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSendRectEncodingCoRRE(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSendRectEncodingHextile(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSendRectEncodingUltra(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSendRectEncodingZlib(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbNumCodedRectsTight(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
-    ) -> ::std::os::raw::c_int;
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbSendRectEncodingTight(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSendTightHeader(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSendCompressedDataTight(
         cl: rfbClientPtr,
-        buf: *mut ::std::os::raw::c_char,
-        compressedLen: ::std::os::raw::c_int,
+        buf: *mut ::core::ffi::c_char,
+        compressedLen: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbSendRectEncodingTightPng(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 #[repr(C)]
@@ -15333,52 +15926,52 @@ pub struct rfbCursor {
     #[doc = " set this to true if LibVNCServer has to free this cursor"]
     pub cleanupRichSource: rfbBool,
     #[doc = "< points to bits"]
-    pub source: *mut ::std::os::raw::c_uchar,
+    pub source: *mut ::core::ffi::c_uchar,
     #[doc = "< points to bits"]
-    pub mask: *mut ::std::os::raw::c_uchar,
+    pub mask: *mut ::core::ffi::c_uchar,
     #[doc = "< metrics"]
-    pub width: ::std::os::raw::c_ushort,
+    pub width: ::core::ffi::c_ushort,
     #[doc = "< metrics"]
-    pub height: ::std::os::raw::c_ushort,
+    pub height: ::core::ffi::c_ushort,
     #[doc = "< metrics"]
-    pub xhot: ::std::os::raw::c_ushort,
+    pub xhot: ::core::ffi::c_ushort,
     #[doc = "< metrics"]
-    pub yhot: ::std::os::raw::c_ushort,
+    pub yhot: ::core::ffi::c_ushort,
     #[doc = "< device-independent colour"]
-    pub foreRed: ::std::os::raw::c_ushort,
+    pub foreRed: ::core::ffi::c_ushort,
     #[doc = "< device-independent colour"]
-    pub foreGreen: ::std::os::raw::c_ushort,
+    pub foreGreen: ::core::ffi::c_ushort,
     #[doc = "< device-independent colour"]
-    pub foreBlue: ::std::os::raw::c_ushort,
+    pub foreBlue: ::core::ffi::c_ushort,
     #[doc = "< device-independent colour"]
-    pub backRed: ::std::os::raw::c_ushort,
+    pub backRed: ::core::ffi::c_ushort,
     #[doc = "< device-independent colour"]
-    pub backGreen: ::std::os::raw::c_ushort,
+    pub backGreen: ::core::ffi::c_ushort,
     #[doc = "< device-independent colour"]
-    pub backBlue: ::std::os::raw::c_ushort,
+    pub backBlue: ::core::ffi::c_ushort,
     #[doc = "< source bytes for a rich cursor"]
-    pub richSource: *mut ::std::os::raw::c_uchar,
+    pub richSource: *mut ::core::ffi::c_uchar,
     #[doc = "< source for alpha blending info"]
-    pub alphaSource: *mut ::std::os::raw::c_uchar,
+    pub alphaSource: *mut ::core::ffi::c_uchar,
     #[doc = "< if richSource already has alpha applied"]
     pub alphaPreMultiplied: rfbBool,
 }
 #[test]
 fn bindgen_test_layout_rfbCursor() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbCursor> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbCursor> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbCursor>(),
+        ::core::mem::size_of::<rfbCursor>(),
         72usize,
         concat!("Size of: ", stringify!(rfbCursor))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbCursor>(),
+        ::core::mem::align_of::<rfbCursor>(),
         8usize,
         concat!("Alignment of ", stringify!(rfbCursor))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cleanup) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cleanup) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -15388,7 +15981,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cleanupSource) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cleanupSource) as usize - ptr as usize },
         1usize,
         concat!(
             "Offset of field: ",
@@ -15398,7 +15991,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cleanupMask) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cleanupMask) as usize - ptr as usize },
         2usize,
         concat!(
             "Offset of field: ",
@@ -15408,7 +16001,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).cleanupRichSource) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).cleanupRichSource) as usize - ptr as usize },
         3usize,
         concat!(
             "Offset of field: ",
@@ -15418,7 +16011,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).source) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).source) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -15428,7 +16021,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).mask) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).mask) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -15438,7 +16031,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).width) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).width) as usize - ptr as usize },
         24usize,
         concat!(
             "Offset of field: ",
@@ -15448,7 +16041,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).height) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).height) as usize - ptr as usize },
         26usize,
         concat!(
             "Offset of field: ",
@@ -15458,7 +16051,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).xhot) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).xhot) as usize - ptr as usize },
         28usize,
         concat!(
             "Offset of field: ",
@@ -15468,7 +16061,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).yhot) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).yhot) as usize - ptr as usize },
         30usize,
         concat!(
             "Offset of field: ",
@@ -15478,7 +16071,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).foreRed) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).foreRed) as usize - ptr as usize },
         32usize,
         concat!(
             "Offset of field: ",
@@ -15488,7 +16081,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).foreGreen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).foreGreen) as usize - ptr as usize },
         34usize,
         concat!(
             "Offset of field: ",
@@ -15498,7 +16091,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).foreBlue) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).foreBlue) as usize - ptr as usize },
         36usize,
         concat!(
             "Offset of field: ",
@@ -15508,7 +16101,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).backRed) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).backRed) as usize - ptr as usize },
         38usize,
         concat!(
             "Offset of field: ",
@@ -15518,7 +16111,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).backGreen) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).backGreen) as usize - ptr as usize },
         40usize,
         concat!(
             "Offset of field: ",
@@ -15528,7 +16121,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).backBlue) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).backBlue) as usize - ptr as usize },
         42usize,
         concat!(
             "Offset of field: ",
@@ -15538,7 +16131,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).richSource) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).richSource) as usize - ptr as usize },
         48usize,
         concat!(
             "Offset of field: ",
@@ -15548,7 +16141,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).alphaSource) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).alphaSource) as usize - ptr as usize },
         56usize,
         concat!(
             "Offset of field: ",
@@ -15558,7 +16151,7 @@ fn bindgen_test_layout_rfbCursor() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).alphaPreMultiplied) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).alphaPreMultiplied) as usize - ptr as usize },
         64usize,
         concat!(
             "Offset of field: ",
@@ -15570,7 +16163,7 @@ fn bindgen_test_layout_rfbCursor() {
 }
 pub type rfbCursorPtr = *mut rfbCursor;
 extern "C" {
-    pub static mut rfbReverseByte: [::std::os::raw::c_uchar; 256usize];
+    pub static mut rfbReverseByte: [::core::ffi::c_uchar; 256usize];
 }
 extern "C" {
     pub fn rfbSendCursorShape(cl: rfbClientPtr) -> rfbBool;
@@ -15580,32 +16173,32 @@ extern "C" {
 }
 extern "C" {
     pub fn rfbConvertLSBCursorBitmapOrMask(
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
-        bitmap: *mut ::std::os::raw::c_uchar,
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
+        bitmap: *mut ::core::ffi::c_uchar,
     );
 }
 extern "C" {
     pub fn rfbMakeXCursor(
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
-        cursorString: *mut ::std::os::raw::c_char,
-        maskString: *mut ::std::os::raw::c_char,
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
+        cursorString: *mut ::core::ffi::c_char,
+        maskString: *mut ::core::ffi::c_char,
     ) -> rfbCursorPtr;
 }
 extern "C" {
     pub fn rfbMakeMaskForXCursor(
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
-        cursorString: *mut ::std::os::raw::c_char,
-    ) -> *mut ::std::os::raw::c_char;
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
+        cursorString: *mut ::core::ffi::c_char,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn rfbMakeMaskFromAlphaSource(
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
-        alphaSource: *mut ::std::os::raw::c_uchar,
-    ) -> *mut ::std::os::raw::c_char;
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
+        alphaSource: *mut ::core::ffi::c_uchar,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn rfbMakeXCursorFromRichCursor(rfbScreen: rfbScreenInfoPtr, cursor: rfbCursorPtr);
@@ -15622,19 +16215,19 @@ extern "C" {
 extern "C" {
     #[doc = " cursor handling for the pointer"]
     pub fn rfbDefaultPtrAddEvent(
-        buttonMask: ::std::os::raw::c_int,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
+        buttonMask: ::core::ffi::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
         cl: rfbClientPtr,
     );
 }
 extern "C" {
     pub fn rfbSendRectEncodingZRLE(
         cl: rfbClientPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        w: ::std::os::raw::c_int,
-        h: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
@@ -15646,26 +16239,26 @@ extern "C" {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct rfbFontData {
-    pub data: *mut ::std::os::raw::c_uchar,
+    pub data: *mut ::core::ffi::c_uchar,
     #[doc = "metaData is a 256*5 array:\nfor each character\n(offset,width,height,x,y)"]
-    pub metaData: *mut ::std::os::raw::c_int,
+    pub metaData: *mut ::core::ffi::c_int,
 }
 #[test]
 fn bindgen_test_layout_rfbFontData() {
-    const UNINIT: ::std::mem::MaybeUninit<rfbFontData> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<rfbFontData> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<rfbFontData>(),
+        ::core::mem::size_of::<rfbFontData>(),
         16usize,
         concat!("Size of: ", stringify!(rfbFontData))
     );
     assert_eq!(
-        ::std::mem::align_of::<rfbFontData>(),
+        ::core::mem::align_of::<rfbFontData>(),
         8usize,
         concat!("Alignment of ", stringify!(rfbFontData))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -15675,7 +16268,7 @@ fn bindgen_test_layout_rfbFontData() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).metaData) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).metaData) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -15690,19 +16283,19 @@ extern "C" {
     pub fn rfbDrawChar(
         rfbScreen: rfbScreenInfoPtr,
         font: rfbFontDataPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        c: ::std::os::raw::c_uchar,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        c: ::core::ffi::c_uchar,
         colour: rfbPixel,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbDrawString(
         rfbScreen: rfbScreenInfoPtr,
         font: rfbFontDataPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        string: *const ::std::os::raw::c_char,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        string: *const ::core::ffi::c_char,
         colour: rfbPixel,
     );
 }
@@ -15711,28 +16304,28 @@ extern "C" {
     pub fn rfbDrawCharWithClip(
         rfbScreen: rfbScreenInfoPtr,
         font: rfbFontDataPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        c: ::std::os::raw::c_uchar,
-        x1: ::std::os::raw::c_int,
-        y1: ::std::os::raw::c_int,
-        x2: ::std::os::raw::c_int,
-        y2: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        c: ::core::ffi::c_uchar,
+        x1: ::core::ffi::c_int,
+        y1: ::core::ffi::c_int,
+        x2: ::core::ffi::c_int,
+        y2: ::core::ffi::c_int,
         colour: rfbPixel,
         backColour: rfbPixel,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbDrawStringWithClip(
         rfbScreen: rfbScreenInfoPtr,
         font: rfbFontDataPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
-        string: *const ::std::os::raw::c_char,
-        x1: ::std::os::raw::c_int,
-        y1: ::std::os::raw::c_int,
-        x2: ::std::os::raw::c_int,
-        y2: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        string: *const ::core::ffi::c_char,
+        x1: ::core::ffi::c_int,
+        y1: ::core::ffi::c_int,
+        x2: ::core::ffi::c_int,
+        y2: ::core::ffi::c_int,
         colour: rfbPixel,
         backColour: rfbPixel,
     );
@@ -15740,38 +16333,35 @@ extern "C" {
 extern "C" {
     pub fn rfbWidthOfString(
         font: rfbFontDataPtr,
-        string: *const ::std::os::raw::c_char,
-    ) -> ::std::os::raw::c_int;
+        string: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbWidthOfChar(
-        font: rfbFontDataPtr,
-        c: ::std::os::raw::c_uchar,
-    ) -> ::std::os::raw::c_int;
+    pub fn rfbWidthOfChar(font: rfbFontDataPtr, c: ::core::ffi::c_uchar) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbFontBBox(
         font: rfbFontDataPtr,
-        c: ::std::os::raw::c_uchar,
-        x1: *mut ::std::os::raw::c_int,
-        y1: *mut ::std::os::raw::c_int,
-        x2: *mut ::std::os::raw::c_int,
-        y2: *mut ::std::os::raw::c_int,
+        c: ::core::ffi::c_uchar,
+        x1: *mut ::core::ffi::c_int,
+        y1: *mut ::core::ffi::c_int,
+        x2: *mut ::core::ffi::c_int,
+        y2: *mut ::core::ffi::c_int,
     );
 }
 extern "C" {
     #[doc = " this returns the smallest box enclosing any character of font."]
     pub fn rfbWholeFontBBox(
         font: rfbFontDataPtr,
-        x1: *mut ::std::os::raw::c_int,
-        y1: *mut ::std::os::raw::c_int,
-        x2: *mut ::std::os::raw::c_int,
-        y2: *mut ::std::os::raw::c_int,
+        x1: *mut ::core::ffi::c_int,
+        y1: *mut ::core::ffi::c_int,
+        x2: *mut ::core::ffi::c_int,
+        y2: *mut ::core::ffi::c_int,
     );
 }
 extern "C" {
     #[doc = " dynamically load a linux console font (4096 bytes, 256 glyphs a 8x16"]
-    pub fn rfbLoadConsoleFont(filename: *mut ::std::os::raw::c_char) -> rfbFontDataPtr;
+    pub fn rfbLoadConsoleFont(filename: *mut ::core::ffi::c_char) -> rfbFontDataPtr;
 }
 extern "C" {
     #[doc = " free a dynamically loaded font"]
@@ -15780,81 +16370,81 @@ extern "C" {
 extern "C" {
     pub fn rfbFillRect(
         s: rfbScreenInfoPtr,
-        x1: ::std::os::raw::c_int,
-        y1: ::std::os::raw::c_int,
-        x2: ::std::os::raw::c_int,
-        y2: ::std::os::raw::c_int,
+        x1: ::core::ffi::c_int,
+        y1: ::core::ffi::c_int,
+        x2: ::core::ffi::c_int,
+        y2: ::core::ffi::c_int,
         col: rfbPixel,
     );
 }
 extern "C" {
     pub fn rfbDrawPixel(
         s: rfbScreenInfoPtr,
-        x: ::std::os::raw::c_int,
-        y: ::std::os::raw::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
         col: rfbPixel,
     );
 }
 extern "C" {
     pub fn rfbDrawLine(
         s: rfbScreenInfoPtr,
-        x1: ::std::os::raw::c_int,
-        y1: ::std::os::raw::c_int,
-        x2: ::std::os::raw::c_int,
-        y2: ::std::os::raw::c_int,
+        x1: ::core::ffi::c_int,
+        y1: ::core::ffi::c_int,
+        x2: ::core::ffi::c_int,
+        y2: ::core::ffi::c_int,
         col: rfbPixel,
     );
 }
 #[doc = " this opens a modal select box. list is an array of strings, the end marked\nwith a NULL.\nIt returns the index in the list or -1 if cancelled or something else\nwasn't kosher."]
 pub type SelectionChangedHookPtr =
-    ::std::option::Option<unsafe extern "C" fn(_index: ::std::os::raw::c_int)>;
+    ::core::option::Option<unsafe extern "C" fn(_index: ::core::ffi::c_int)>;
 extern "C" {
     pub fn rfbSelectBox(
         rfbScreen: rfbScreenInfoPtr,
         font: rfbFontDataPtr,
-        list: *mut *mut ::std::os::raw::c_char,
-        x1: ::std::os::raw::c_int,
-        y1: ::std::os::raw::c_int,
-        x2: ::std::os::raw::c_int,
-        y2: ::std::os::raw::c_int,
+        list: *mut *mut ::core::ffi::c_char,
+        x1: ::core::ffi::c_int,
+        y1: ::core::ffi::c_int,
+        x2: ::core::ffi::c_int,
+        y2: ::core::ffi::c_int,
         foreColour: rfbPixel,
         backColour: rfbPixel,
-        border: ::std::os::raw::c_int,
+        border: ::core::ffi::c_int,
         selChangedHook: SelectionChangedHookPtr,
-    ) -> ::std::os::raw::c_int;
+    ) -> ::core::ffi::c_int;
 }
 extern "C" {
     pub fn rfbUsage();
 }
 extern "C" {
     pub fn rfbPurgeArguments(
-        argc: *mut ::std::os::raw::c_int,
-        position: *mut ::std::os::raw::c_int,
-        count: ::std::os::raw::c_int,
-        argv: *mut *mut ::std::os::raw::c_char,
+        argc: *mut ::core::ffi::c_int,
+        position: *mut ::core::ffi::c_int,
+        count: ::core::ffi::c_int,
+        argv: *mut *mut ::core::ffi::c_char,
     );
 }
 extern "C" {
     pub fn rfbProcessArguments(
         rfbScreen: rfbScreenInfoPtr,
-        argc: *mut ::std::os::raw::c_int,
-        argv: *mut *mut ::std::os::raw::c_char,
+        argc: *mut ::core::ffi::c_int,
+        argv: *mut *mut ::core::ffi::c_char,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbProcessSizeArguments(
-        width: *mut ::std::os::raw::c_int,
-        height: *mut ::std::os::raw::c_int,
-        bpp: *mut ::std::os::raw::c_int,
-        argc: *mut ::std::os::raw::c_int,
-        argv: *mut *mut ::std::os::raw::c_char,
+        width: *mut ::core::ffi::c_int,
+        height: *mut ::core::ffi::c_int,
+        bpp: *mut ::core::ffi::c_int,
+        argc: *mut ::core::ffi::c_int,
+        argv: *mut *mut ::core::ffi::c_char,
     ) -> rfbBool;
 }
 extern "C" {
-    pub fn rfbLogEnable(enabled: ::std::os::raw::c_int);
+    pub fn rfbLogEnable(enabled: ::core::ffi::c_int);
 }
 pub type rfbLogProc =
-    ::std::option::Option<unsafe extern "C" fn(format: *const ::std::os::raw::c_char, ...)>;
+    ::core::option::Option<unsafe extern "C" fn(format: *const ::core::ffi::c_char, ...)>;
 extern "C" {
     pub static mut rfbLog: rfbLogProc;
 }
@@ -15862,53 +16452,53 @@ extern "C" {
     pub static mut rfbErr: rfbLogProc;
 }
 extern "C" {
-    pub fn rfbLogPerror(str_: *const ::std::os::raw::c_char);
+    pub fn rfbLogPerror(str_: *const ::core::ffi::c_char);
 }
 extern "C" {
     pub fn rfbScheduleCopyRect(
         rfbScreen: rfbScreenInfoPtr,
-        x1: ::std::os::raw::c_int,
-        y1: ::std::os::raw::c_int,
-        x2: ::std::os::raw::c_int,
-        y2: ::std::os::raw::c_int,
-        dx: ::std::os::raw::c_int,
-        dy: ::std::os::raw::c_int,
+        x1: ::core::ffi::c_int,
+        y1: ::core::ffi::c_int,
+        x2: ::core::ffi::c_int,
+        y2: ::core::ffi::c_int,
+        dx: ::core::ffi::c_int,
+        dy: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbScheduleCopyRegion(
         rfbScreen: rfbScreenInfoPtr,
         copyRegion: sraRegionPtr,
-        dx: ::std::os::raw::c_int,
-        dy: ::std::os::raw::c_int,
+        dx: ::core::ffi::c_int,
+        dy: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbDoCopyRect(
         rfbScreen: rfbScreenInfoPtr,
-        x1: ::std::os::raw::c_int,
-        y1: ::std::os::raw::c_int,
-        x2: ::std::os::raw::c_int,
-        y2: ::std::os::raw::c_int,
-        dx: ::std::os::raw::c_int,
-        dy: ::std::os::raw::c_int,
+        x1: ::core::ffi::c_int,
+        y1: ::core::ffi::c_int,
+        x2: ::core::ffi::c_int,
+        y2: ::core::ffi::c_int,
+        dx: ::core::ffi::c_int,
+        dy: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbDoCopyRegion(
         rfbScreen: rfbScreenInfoPtr,
         copyRegion: sraRegionPtr,
-        dx: ::std::os::raw::c_int,
-        dy: ::std::os::raw::c_int,
+        dx: ::core::ffi::c_int,
+        dy: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbMarkRectAsModified(
         rfbScreen: rfbScreenInfoPtr,
-        x1: ::std::os::raw::c_int,
-        y1: ::std::os::raw::c_int,
-        x2: ::std::os::raw::c_int,
-        y2: ::std::os::raw::c_int,
+        x1: ::core::ffi::c_int,
+        y1: ::core::ffi::c_int,
+        x2: ::core::ffi::c_int,
+        y2: ::core::ffi::c_int,
     );
 }
 extern "C" {
@@ -15936,7 +16526,7 @@ extern "C" {
     pub fn rfbEnableExtension(
         cl: rfbClientPtr,
         extension: *mut rfbProtocolExtension,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut ::core::ffi::c_void,
     ) -> rfbBool;
 }
 extern "C" {
@@ -15946,25 +16536,25 @@ extern "C" {
     pub fn rfbGetExtensionClientData(
         cl: rfbClientPtr,
         extension: *mut rfbProtocolExtension,
-    ) -> *mut ::std::os::raw::c_void;
+    ) -> *mut ::core::ffi::c_void;
 }
 extern "C" {
     #[doc = " to check against plain passwords"]
     pub fn rfbCheckPasswordByList(
         cl: rfbClientPtr,
-        response: *const ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
+        response: *const ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
     ) -> rfbBool;
 }
 extern "C" {
     pub fn rfbGetScreen(
-        argc: *mut ::std::os::raw::c_int,
-        argv: *mut *mut ::std::os::raw::c_char,
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
-        bitsPerSample: ::std::os::raw::c_int,
-        samplesPerPixel: ::std::os::raw::c_int,
-        bytesPerPixel: ::std::os::raw::c_int,
+        argc: *mut ::core::ffi::c_int,
+        argv: *mut *mut ::core::ffi::c_char,
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
+        bitsPerSample: ::core::ffi::c_int,
+        samplesPerPixel: ::core::ffi::c_int,
+        bytesPerPixel: ::core::ffi::c_int,
     ) -> rfbScreenInfoPtr;
 }
 extern "C" {
@@ -15976,12 +16566,12 @@ extern "C" {
 extern "C" {
     pub fn rfbNewFramebuffer(
         rfbScreen: rfbScreenInfoPtr,
-        framebuffer: *mut ::std::os::raw::c_char,
-        width: ::std::os::raw::c_int,
-        height: ::std::os::raw::c_int,
-        bitsPerSample: ::std::os::raw::c_int,
-        samplesPerPixel: ::std::os::raw::c_int,
-        bytesPerPixel: ::std::os::raw::c_int,
+        framebuffer: *mut ::core::ffi::c_char,
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
+        bitsPerSample: ::core::ffi::c_int,
+        samplesPerPixel: ::core::ffi::c_int,
+        bytesPerPixel: ::core::ffi::c_int,
     );
 }
 extern "C" {
@@ -15990,7 +16580,7 @@ extern "C" {
 extern "C" {
     pub fn rfbSetServerVersionIdentity(
         screen: rfbScreenInfoPtr,
-        fmt: *mut ::std::os::raw::c_char,
+        fmt: *mut ::core::ffi::c_char,
         ...
     );
 }
@@ -16003,12 +16593,12 @@ extern "C" {
 extern "C" {
     pub fn rfbRunEventLoop(
         screenInfo: rfbScreenInfoPtr,
-        usec: ::std::os::raw::c_long,
+        usec: ::core::ffi::c_long,
         runInBackground: rfbBool,
     );
 }
 extern "C" {
-    pub fn rfbProcessEvents(screenInfo: rfbScreenInfoPtr, usec: ::std::os::raw::c_long) -> rfbBool;
+    pub fn rfbProcessEvents(screenInfo: rfbScreenInfoPtr, usec: ::core::ffi::c_long) -> rfbBool;
 }
 extern "C" {
     pub fn rfbIsActive(screenInfo: rfbScreenInfoPtr) -> rfbBool;
@@ -16024,23 +16614,23 @@ extern "C" {
 extern "C" {
     pub fn messageNameServer2Client(
         type_: u32,
-        buf: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        buf: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn messageNameClient2Server(
         type_: u32,
-        buf: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        buf: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn encodingName(
         enc: u32,
-        buf: *mut ::std::os::raw::c_char,
-        len: ::std::os::raw::c_int,
-    ) -> *mut ::std::os::raw::c_char;
+        buf: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+    ) -> *mut ::core::ffi::c_char;
 }
 extern "C" {
     pub fn rfbStatLookupEncoding(cl: rfbClientPtr, type_: u32) -> *mut rfbStatList;
@@ -16052,71 +16642,71 @@ extern "C" {
     pub fn rfbStatRecordEncodingSent(
         cl: rfbClientPtr,
         type_: u32,
-        byteCount: ::std::os::raw::c_int,
-        byteIfRaw: ::std::os::raw::c_int,
+        byteCount: ::core::ffi::c_int,
+        byteIfRaw: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbStatRecordEncodingSentAdd(
         cl: rfbClientPtr,
         type_: u32,
-        byteCount: ::std::os::raw::c_int,
+        byteCount: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbStatRecordEncodingRcvd(
         cl: rfbClientPtr,
         type_: u32,
-        byteCount: ::std::os::raw::c_int,
-        byteIfRaw: ::std::os::raw::c_int,
+        byteCount: ::core::ffi::c_int,
+        byteIfRaw: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbStatRecordMessageSent(
         cl: rfbClientPtr,
         type_: u32,
-        byteCount: ::std::os::raw::c_int,
-        byteIfRaw: ::std::os::raw::c_int,
+        byteCount: ::core::ffi::c_int,
+        byteIfRaw: ::core::ffi::c_int,
     );
 }
 extern "C" {
     pub fn rfbStatRecordMessageRcvd(
         cl: rfbClientPtr,
         type_: u32,
-        byteCount: ::std::os::raw::c_int,
-        byteIfRaw: ::std::os::raw::c_int,
+        byteCount: ::core::ffi::c_int,
+        byteIfRaw: ::core::ffi::c_int,
     );
 }
 extern "C" {
-    pub fn rfbStatGetSentBytes(cl: rfbClientPtr) -> ::std::os::raw::c_int;
+    pub fn rfbStatGetSentBytes(cl: rfbClientPtr) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbStatGetSentBytesIfRaw(cl: rfbClientPtr) -> ::std::os::raw::c_int;
+    pub fn rfbStatGetSentBytesIfRaw(cl: rfbClientPtr) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbStatGetRcvdBytes(cl: rfbClientPtr) -> ::std::os::raw::c_int;
+    pub fn rfbStatGetRcvdBytes(cl: rfbClientPtr) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbStatGetRcvdBytesIfRaw(cl: rfbClientPtr) -> ::std::os::raw::c_int;
+    pub fn rfbStatGetRcvdBytesIfRaw(cl: rfbClientPtr) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbStatGetMessageCountSent(cl: rfbClientPtr, type_: u32) -> ::std::os::raw::c_int;
+    pub fn rfbStatGetMessageCountSent(cl: rfbClientPtr, type_: u32) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbStatGetMessageCountRcvd(cl: rfbClientPtr, type_: u32) -> ::std::os::raw::c_int;
+    pub fn rfbStatGetMessageCountRcvd(cl: rfbClientPtr, type_: u32) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbStatGetEncodingCountSent(cl: rfbClientPtr, type_: u32) -> ::std::os::raw::c_int;
+    pub fn rfbStatGetEncodingCountSent(cl: rfbClientPtr, type_: u32) -> ::core::ffi::c_int;
 }
 extern "C" {
-    pub fn rfbStatGetEncodingCountRcvd(cl: rfbClientPtr, type_: u32) -> ::std::os::raw::c_int;
+    pub fn rfbStatGetEncodingCountRcvd(cl: rfbClientPtr, type_: u32) -> ::core::ffi::c_int;
 }
 extern "C" {
     #[doc = " Set which version you want to advertise 3.3, 3.6, 3.7 and 3.8 are currently supported"]
     pub fn rfbSetProtocolVersion(
         rfbScreen: rfbScreenInfoPtr,
-        major_: ::std::os::raw::c_int,
-        minor_: ::std::os::raw::c_int,
+        major_: ::core::ffi::c_int,
+        minor_: ::core::ffi::c_int,
     );
 }
 extern "C" {
@@ -16124,7 +16714,7 @@ extern "C" {
     pub fn rfbSendTextChatMessage(
         cl: rfbClientPtr,
         length: u32,
-        buffer: *mut ::std::os::raw::c_char,
+        buffer: *mut ::core::ffi::c_char,
     ) -> rfbBool;
 }
 extern "C" {
@@ -16133,31 +16723,2084 @@ extern "C" {
 extern "C" {
     pub fn rfbUpdateClient(cl: rfbClientPtr) -> rfbBool;
 }
+#[doc = " vncrec"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rfbVNCRec {
+    pub file: *mut FILE,
+    pub tv: timeval,
+    pub readTimestamp: rfbBool,
+    pub doNotSleep: rfbBool,
+}
+#[test]
+fn bindgen_test_layout_rfbVNCRec() {
+    const UNINIT: ::core::mem::MaybeUninit<rfbVNCRec> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<rfbVNCRec>(),
+        32usize,
+        concat!("Size of: ", stringify!(rfbVNCRec))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<rfbVNCRec>(),
+        8usize,
+        concat!("Alignment of ", stringify!(rfbVNCRec))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).file) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rfbVNCRec),
+            "::",
+            stringify!(file)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tv) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rfbVNCRec),
+            "::",
+            stringify!(tv)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).readTimestamp) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rfbVNCRec),
+            "::",
+            stringify!(readTimestamp)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).doNotSleep) as usize - ptr as usize },
+        25usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rfbVNCRec),
+            "::",
+            stringify!(doNotSleep)
+        )
+    );
+}
+#[doc = " client data"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct rfbClientData {
+    pub tag: *mut ::core::ffi::c_void,
+    pub data: *mut ::core::ffi::c_void,
+    pub next: *mut rfbClientData,
+}
+#[test]
+fn bindgen_test_layout_rfbClientData() {
+    const UNINIT: ::core::mem::MaybeUninit<rfbClientData> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<rfbClientData>(),
+        24usize,
+        concat!("Size of: ", stringify!(rfbClientData))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<rfbClientData>(),
+        8usize,
+        concat!("Alignment of ", stringify!(rfbClientData))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tag) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rfbClientData),
+            "::",
+            stringify!(tag)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rfbClientData),
+            "::",
+            stringify!(data)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(rfbClientData),
+            "::",
+            stringify!(next)
+        )
+    );
+}
+#[doc = " app data (belongs into rfbClient?)"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct AppData {
+    pub shareDesktop: rfbBool,
+    pub viewOnly: rfbBool,
+    pub encodingsString: *const ::core::ffi::c_char,
+    pub useBGR233: rfbBool,
+    pub nColours: ::core::ffi::c_int,
+    pub forceOwnCmap: rfbBool,
+    pub forceTrueColour: rfbBool,
+    pub requestedDepth: ::core::ffi::c_int,
+    pub compressLevel: ::core::ffi::c_int,
+    pub qualityLevel: ::core::ffi::c_int,
+    pub enableJPEG: rfbBool,
+    pub useRemoteCursor: rfbBool,
+    #[doc = "< use palmvnc specific SetScale (vs ultravnc)"]
+    pub palmVNC: rfbBool,
+    #[doc = "< 0 means no scale set, else 1/scaleSetting"]
+    pub scaleSetting: ::core::ffi::c_int,
+}
+#[test]
+fn bindgen_test_layout_AppData() {
+    const UNINIT: ::core::mem::MaybeUninit<AppData> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<AppData>(),
+        48usize,
+        concat!("Size of: ", stringify!(AppData))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<AppData>(),
+        8usize,
+        concat!("Alignment of ", stringify!(AppData))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).shareDesktop) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(shareDesktop)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).viewOnly) as usize - ptr as usize },
+        1usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(viewOnly)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).encodingsString) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(encodingsString)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).useBGR233) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(useBGR233)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).nColours) as usize - ptr as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(nColours)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).forceOwnCmap) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(forceOwnCmap)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).forceTrueColour) as usize - ptr as usize },
+        25usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(forceTrueColour)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).requestedDepth) as usize - ptr as usize },
+        28usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(requestedDepth)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).compressLevel) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(compressLevel)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).qualityLevel) as usize - ptr as usize },
+        36usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(qualityLevel)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).enableJPEG) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(enableJPEG)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).useRemoteCursor) as usize - ptr as usize },
+        41usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(useRemoteCursor)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).palmVNC) as usize - ptr as usize },
+        42usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(palmVNC)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).scaleSetting) as usize - ptr as usize },
+        44usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(AppData),
+            "::",
+            stringify!(scaleSetting)
+        )
+    );
+}
+#[doc = " For GetCredentialProc callback function to return"]
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub union _rfbCredential {
+    pub x509Credential: _rfbCredential__bindgen_ty_1,
+    pub userCredential: _rfbCredential__bindgen_ty_2,
+}
+#[doc = " X509 (VeNCrypt)"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _rfbCredential__bindgen_ty_1 {
+    pub x509CACertFile: *mut ::core::ffi::c_char,
+    pub x509CACrlFile: *mut ::core::ffi::c_char,
+    pub x509ClientCertFile: *mut ::core::ffi::c_char,
+    pub x509ClientKeyFile: *mut ::core::ffi::c_char,
+    pub x509CrlVerifyMode: u8,
+}
+#[test]
+fn bindgen_test_layout__rfbCredential__bindgen_ty_1() {
+    const UNINIT: ::core::mem::MaybeUninit<_rfbCredential__bindgen_ty_1> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<_rfbCredential__bindgen_ty_1>(),
+        40usize,
+        concat!("Size of: ", stringify!(_rfbCredential__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<_rfbCredential__bindgen_ty_1>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_rfbCredential__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).x509CACertFile) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbCredential__bindgen_ty_1),
+            "::",
+            stringify!(x509CACertFile)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).x509CACrlFile) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbCredential__bindgen_ty_1),
+            "::",
+            stringify!(x509CACrlFile)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).x509ClientCertFile) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbCredential__bindgen_ty_1),
+            "::",
+            stringify!(x509ClientCertFile)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).x509ClientKeyFile) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbCredential__bindgen_ty_1),
+            "::",
+            stringify!(x509ClientKeyFile)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).x509CrlVerifyMode) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbCredential__bindgen_ty_1),
+            "::",
+            stringify!(x509CrlVerifyMode)
+        )
+    );
+}
+#[doc = " Plain (VeNCrypt), MSLogon (UltraVNC)"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _rfbCredential__bindgen_ty_2 {
+    pub username: *mut ::core::ffi::c_char,
+    pub password: *mut ::core::ffi::c_char,
+}
+#[test]
+fn bindgen_test_layout__rfbCredential__bindgen_ty_2() {
+    const UNINIT: ::core::mem::MaybeUninit<_rfbCredential__bindgen_ty_2> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<_rfbCredential__bindgen_ty_2>(),
+        16usize,
+        concat!("Size of: ", stringify!(_rfbCredential__bindgen_ty_2))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<_rfbCredential__bindgen_ty_2>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_rfbCredential__bindgen_ty_2))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).username) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbCredential__bindgen_ty_2),
+            "::",
+            stringify!(username)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).password) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbCredential__bindgen_ty_2),
+            "::",
+            stringify!(password)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout__rfbCredential() {
+    const UNINIT: ::core::mem::MaybeUninit<_rfbCredential> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<_rfbCredential>(),
+        40usize,
+        concat!("Size of: ", stringify!(_rfbCredential))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<_rfbCredential>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_rfbCredential))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).x509Credential) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbCredential),
+            "::",
+            stringify!(x509Credential)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).userCredential) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbCredential),
+            "::",
+            stringify!(userCredential)
+        )
+    );
+}
+#[doc = " For GetCredentialProc callback function to return"]
+pub type rfbCredential = _rfbCredential;
+#[doc = " Handles a text chat message. If your application should accept text messages\n from the server, define a function with this prototype and set\n client->HandleTextChat to a pointer to that function subsequent to your\n rfbGetClient() call.\n @param client The client which called the text chat handler\n @param value  text length if text != NULL, or one of rfbTextChatOpen,\n rfbTextChatClose, rfbTextChatFinished if text == NULL\n @param text The text message from the server"]
+pub type HandleTextChatProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        value: ::core::ffi::c_int,
+        text: *mut ::core::ffi::c_char,
+    ),
+>;
+#[doc = " Handles XVP server messages. If your application sends XVP messages to the\n server, you'll want to handle the server's XVP_FAIL and XVP_INIT responses.\n Define a function with this prototype and set client->HandleXvpMsg to a\n pointer to that function subsequent to your rfbGetClient() call.\n @param client The client which called the XVP message handler\n @param version The highest XVP extension version that the server supports\n @param opcode The opcode. 0 is XVP_FAIL, 1 is XVP_INIT"]
+pub type HandleXvpMsgProc =
+    ::core::option::Option<unsafe extern "C" fn(client: *mut _rfbClient, version: u8, opcode: u8)>;
+pub type HandleKeyboardLedStateProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        value: ::core::ffi::c_int,
+        pad: ::core::ffi::c_int,
+    ),
+>;
+pub type HandleCursorPosProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+    ) -> rfbBool,
+>;
+pub type SoftCursorLockAreaProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
+    ),
+>;
+pub type SoftCursorUnlockScreenProc =
+    ::core::option::Option<unsafe extern "C" fn(client: *mut _rfbClient)>;
+#[doc = "Callback indicating that a rectangular area of the client's framebuffer was updated.\nAs a server will usually send several rects per rfbFramebufferUpdate message, this\ncallback is usually called multiple times per rfbFramebufferUpdate message.\n@param client The client whose framebuffer was (partially) updated\n@param x The x-coordinate of the upper left corner of the updated rectangle\n@param y The y-coordinate of the upper left corner of the updated rectangle\n@param w The width of the updated rectangle\n@param h The heigth of the updated rectangle"]
+pub type GotFrameBufferUpdateProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
+    ),
+>;
+#[doc = "Callback indicating that a client has completely processed an rfbFramebufferUpdate\nmessage sent by a server.\nThis is called exactly once per each handled rfbFramebufferUpdate message.\n@param client The client which finished processing an rfbFramebufferUpdate"]
+pub type FinishedFrameBufferUpdateProc =
+    ::core::option::Option<unsafe extern "C" fn(client: *mut _rfbClient)>;
+pub type GetPasswordProc = ::core::option::Option<
+    unsafe extern "C" fn(client: *mut _rfbClient) -> *mut ::core::ffi::c_char,
+>;
+pub type GetCredentialProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        credentialType: ::core::ffi::c_int,
+    ) -> *mut rfbCredential,
+>;
+pub type MallocFrameBufferProc =
+    ::core::option::Option<unsafe extern "C" fn(client: *mut _rfbClient) -> rfbBool>;
+pub type GotXCutTextProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        text: *const ::core::ffi::c_char,
+        textlen: ::core::ffi::c_int,
+    ),
+>;
+pub type BellProc = ::core::option::Option<unsafe extern "C" fn(client: *mut _rfbClient)>;
+#[doc = "Called when a cursor shape update was received from the server. The decoded cursor shape\nwill be in client->rcSource. It's up to the application to do something with this, e.g. draw\ninto a viewer's window. If you want the server to draw the cursor into the framebuffer, be\ncareful not to announce remote cursor support, i.e. not include rfbEncodingXCursor or\nrfbEncodingRichCursor in SetFormatAndEncodings()."]
+pub type GotCursorShapeProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        xhot: ::core::ffi::c_int,
+        yhot: ::core::ffi::c_int,
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
+        bytesPerPixel: ::core::ffi::c_int,
+    ),
+>;
+pub type GotCopyRectProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        src_x: ::core::ffi::c_int,
+        src_y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
+        dest_x: ::core::ffi::c_int,
+        dest_y: ::core::ffi::c_int,
+    ),
+>;
+pub type GotFillRectProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
+        colour: u32,
+    ),
+>;
+pub type GotBitmapProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        buffer: *const u8,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
+    ),
+>;
+pub type GotJpegProc = ::core::option::Option<
+    unsafe extern "C" fn(
+        client: *mut _rfbClient,
+        buffer: *const u8,
+        length: ::core::ffi::c_int,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
+    ) -> rfbBool,
+>;
+pub type LockWriteToTLSProc =
+    ::core::option::Option<unsafe extern "C" fn(client: *mut _rfbClient) -> rfbBool>;
+#[doc = " @deprecated"]
+pub type UnlockWriteToTLSProc =
+    ::core::option::Option<unsafe extern "C" fn(client: *mut _rfbClient) -> rfbBool>;
+#[repr(C)]
+#[derive(Copy, Clone)]
+pub struct _rfbClient {
+    pub frameBuffer: *mut u8,
+    pub width: ::core::ffi::c_int,
+    pub height: ::core::ffi::c_int,
+    pub endianTest: ::core::ffi::c_int,
+    pub appData: AppData,
+    pub programName: *const ::core::ffi::c_char,
+    pub serverHost: *mut ::core::ffi::c_char,
+    #[doc = "< if -1, then use file recorded by vncrec"]
+    pub serverPort: ::core::ffi::c_int,
+    pub listenSpecified: rfbBool,
+    pub listenPort: ::core::ffi::c_int,
+    pub flashPort: ::core::ffi::c_int,
+    pub updateRect: _rfbClient__bindgen_ty_1,
+    pub buffer: [::core::ffi::c_char; 307200usize],
+    pub sock: ::core::ffi::c_int,
+    pub canUseCoRRE: rfbBool,
+    pub canUseHextile: rfbBool,
+    pub desktopName: *mut ::core::ffi::c_char,
+    pub format: rfbPixelFormat,
+    pub si: rfbServerInitMsg,
+    pub buf: [::core::ffi::c_char; 8192usize],
+    pub bufoutptr: *mut ::core::ffi::c_char,
+    pub buffered: ::core::ffi::c_uint,
+    pub ultra_buffer_size: ::core::ffi::c_int,
+    pub ultra_buffer: *mut ::core::ffi::c_char,
+    pub raw_buffer_size: ::core::ffi::c_int,
+    pub raw_buffer: *mut ::core::ffi::c_char,
+    pub decompStream: z_stream,
+    pub decompStreamInited: rfbBool,
+    pub zlib_buffer: [::core::ffi::c_char; 30000usize],
+    pub zlibStream: [z_stream; 4usize],
+    pub zlibStreamActive: [rfbBool; 4usize],
+    pub cutZeros: rfbBool,
+    pub rectWidth: ::core::ffi::c_int,
+    pub rectColors: ::core::ffi::c_int,
+    pub tightPalette: [::core::ffi::c_char; 1024usize],
+    pub tightPrevRow: [u8; 12288usize],
+    #[doc = " JPEG decoder state (obsolete-- do not use)."]
+    pub jpegError: rfbBool,
+    pub jpegSrcManager: *mut jpeg_source_mgr,
+    pub jpegBufferPtr: *mut ::core::ffi::c_void,
+    pub jpegBufferLen: usize,
+    #[doc = " Holds cursor shape data when received from server."]
+    pub rcSource: *mut u8,
+    #[doc = " Holds cursor shape data when received from server."]
+    pub rcMask: *mut u8,
+    #[doc = " private data pointer"]
+    pub clientData: *mut rfbClientData,
+    pub vncRec: *mut rfbVNCRec,
+    pub KeyboardLedStateEnabled: ::core::ffi::c_int,
+    pub CurrentKeyboardLedState: ::core::ffi::c_int,
+    pub canHandleNewFBSize: ::core::ffi::c_int,
+    pub HandleTextChat: HandleTextChatProc,
+    pub HandleKeyboardLedState: HandleKeyboardLedStateProc,
+    pub HandleCursorPos: HandleCursorPosProc,
+    pub SoftCursorLockArea: SoftCursorLockAreaProc,
+    pub SoftCursorUnlockScreen: SoftCursorUnlockScreenProc,
+    pub GotFrameBufferUpdate: GotFrameBufferUpdateProc,
+    #[doc = " the pointer returned by GetPassword will be freed after use!"]
+    pub GetPassword: GetPasswordProc,
+    pub MallocFrameBuffer: MallocFrameBufferProc,
+    pub GotXCutText: GotXCutTextProc,
+    pub Bell: BellProc,
+    pub GotCursorShape: GotCursorShapeProc,
+    pub GotCopyRect: GotCopyRectProc,
+    #[doc = " Which messages are supported by the server\n This is a *guess* for most servers.\n (If we can even detect the type of server)\n\n If the server supports the \"rfbEncodingSupportedMessages\"\n then this will be updated when the encoding is received to\n accurately reflect the servers capabilities."]
+    pub supportedMessages: rfbSupportedMessages,
+    #[doc = " negotiated protocol version"]
+    pub major: ::core::ffi::c_int,
+    #[doc = " negotiated protocol version"]
+    pub minor: ::core::ffi::c_int,
+    #[doc = " The selected security types"]
+    pub authScheme: u32,
+    #[doc = " The selected security types"]
+    pub subAuthScheme: u32,
+    #[doc = " The TLS session for Anonymous TLS and VeNCrypt"]
+    pub tlsSession: *mut ::core::ffi::c_void,
+    #[doc = " To support security types that requires user input (except VNC password\n authentication), for example VeNCrypt and MSLogon, this callback function\n must be set before the authentication. Otherwise, it implicates that the\n caller application does not support it and related security types should\n be bypassed."]
+    pub GetCredential: GetCredentialProc,
+    #[doc = " The 0-terminated security types supported by the client.\n Set by function SetClientAuthSchemes()"]
+    pub clientAuthSchemes: *mut u32,
+    #[doc = " When the server is a repeater, this specifies the final destination"]
+    pub destHost: *mut ::core::ffi::c_char,
+    pub destPort: ::core::ffi::c_int,
+    #[doc = " the QoS IP DSCP for this client"]
+    pub QoS_DSCP: ::core::ffi::c_int,
+    #[doc = " hook to handle xvp server messages"]
+    pub HandleXvpMsg: HandleXvpMsgProc,
+    pub listenSock: ::core::ffi::c_int,
+    pub FinishedFrameBufferUpdate: FinishedFrameBufferUpdateProc,
+    pub listenAddress: *mut ::core::ffi::c_char,
+    pub listen6Sock: ::core::ffi::c_int,
+    pub listen6Address: *mut ::core::ffi::c_char,
+    pub listen6Port: ::core::ffi::c_int,
+    pub outputWindow: ::core::ffi::c_ulong,
+    #[doc = " These lock/unlock hooks are not used anymore. LibVNCClient will now use\n platform-specific synchronization library to protect concurrent TLS R/W.\n\n @deprecated"]
+    pub LockWriteToTLS: LockWriteToTLSProc,
+    pub UnlockWriteToTLS: UnlockWriteToTLSProc,
+    #[doc = " Hooks for custom rendering\n\n VNC rendering boils down to 3 activities:\n - GotCopyRect: copy an area of the framebuffer\n - GotFillRect: fill an area of the framebuffer with a solid color\n - GotBitmap: copy the bitmap in the buffer into the framebuffer\n The client application should either set all three of these or none!"]
+    pub GotFillRect: GotFillRectProc,
+    pub GotBitmap: GotBitmapProc,
+    #[doc = " Hook for custom JPEG decoding and rendering"]
+    pub GotJpeg: GotJpegProc,
+    #[doc = " JPEG decoder state."]
+    pub tjhnd: *mut ::core::ffi::c_void,
+    pub connectTimeout: ::core::ffi::c_uint,
+    pub readTimeout: ::core::ffi::c_uint,
+    #[doc = " Mutex to protect concurrent TLS read/write.\n For internal use only."]
+    pub tlsRwMutex: pthread_mutex_t,
+    pub requestedResize: rfbBool,
+    #[doc = " Used for intended dimensions, rfbClient.width and rfbClient.height are used to manage the real framebuffer dimensions."]
+    pub screen: rfbExtDesktopScreen,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _rfbClient__bindgen_ty_1 {
+    pub x: ::core::ffi::c_int,
+    pub y: ::core::ffi::c_int,
+    pub w: ::core::ffi::c_int,
+    pub h: ::core::ffi::c_int,
+}
+#[test]
+fn bindgen_test_layout__rfbClient__bindgen_ty_1() {
+    const UNINIT: ::core::mem::MaybeUninit<_rfbClient__bindgen_ty_1> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<_rfbClient__bindgen_ty_1>(),
+        16usize,
+        concat!("Size of: ", stringify!(_rfbClient__bindgen_ty_1))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<_rfbClient__bindgen_ty_1>(),
+        4usize,
+        concat!("Alignment of ", stringify!(_rfbClient__bindgen_ty_1))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient__bindgen_ty_1),
+            "::",
+            stringify!(x)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).y) as usize - ptr as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient__bindgen_ty_1),
+            "::",
+            stringify!(y)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).w) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient__bindgen_ty_1),
+            "::",
+            stringify!(w)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).h) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient__bindgen_ty_1),
+            "::",
+            stringify!(h)
+        )
+    );
+}
+#[test]
+fn bindgen_test_layout__rfbClient() {
+    const UNINIT: ::core::mem::MaybeUninit<_rfbClient> = ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<_rfbClient>(),
+        359984usize,
+        concat!("Size of: ", stringify!(_rfbClient))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<_rfbClient>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_rfbClient))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).frameBuffer) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(frameBuffer)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).width) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(width)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).height) as usize - ptr as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(height)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).endianTest) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(endianTest)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).appData) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(appData)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).programName) as usize - ptr as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(programName)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).serverHost) as usize - ptr as usize },
+        80usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(serverHost)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).serverPort) as usize - ptr as usize },
+        88usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(serverPort)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).listenSpecified) as usize - ptr as usize },
+        92usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(listenSpecified)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).listenPort) as usize - ptr as usize },
+        96usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(listenPort)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).flashPort) as usize - ptr as usize },
+        100usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(flashPort)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).updateRect) as usize - ptr as usize },
+        104usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(updateRect)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).buffer) as usize - ptr as usize },
+        120usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(buffer)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).sock) as usize - ptr as usize },
+        307320usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(sock)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).canUseCoRRE) as usize - ptr as usize },
+        307324usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(canUseCoRRE)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).canUseHextile) as usize - ptr as usize },
+        307325usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(canUseHextile)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).desktopName) as usize - ptr as usize },
+        307328usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(desktopName)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).format) as usize - ptr as usize },
+        307336usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(format)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).si) as usize - ptr as usize },
+        307352usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(si)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).buf) as usize - ptr as usize },
+        307376usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(buf)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).bufoutptr) as usize - ptr as usize },
+        315568usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(bufoutptr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).buffered) as usize - ptr as usize },
+        315576usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(buffered)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ultra_buffer_size) as usize - ptr as usize },
+        315580usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(ultra_buffer_size)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).ultra_buffer) as usize - ptr as usize },
+        315584usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(ultra_buffer)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).raw_buffer_size) as usize - ptr as usize },
+        315592usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(raw_buffer_size)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).raw_buffer) as usize - ptr as usize },
+        315600usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(raw_buffer)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).decompStream) as usize - ptr as usize },
+        315608usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(decompStream)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).decompStreamInited) as usize - ptr as usize },
+        315720usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(decompStreamInited)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).zlib_buffer) as usize - ptr as usize },
+        315721usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(zlib_buffer)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).zlibStream) as usize - ptr as usize },
+        345728usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(zlibStream)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).zlibStreamActive) as usize - ptr as usize },
+        346176usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(zlibStreamActive)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).cutZeros) as usize - ptr as usize },
+        346180usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(cutZeros)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rectWidth) as usize - ptr as usize },
+        346184usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(rectWidth)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rectColors) as usize - ptr as usize },
+        346188usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(rectColors)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tightPalette) as usize - ptr as usize },
+        346192usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(tightPalette)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tightPrevRow) as usize - ptr as usize },
+        347216usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(tightPrevRow)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).jpegError) as usize - ptr as usize },
+        359504usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(jpegError)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).jpegSrcManager) as usize - ptr as usize },
+        359512usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(jpegSrcManager)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).jpegBufferPtr) as usize - ptr as usize },
+        359520usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(jpegBufferPtr)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).jpegBufferLen) as usize - ptr as usize },
+        359528usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(jpegBufferLen)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rcSource) as usize - ptr as usize },
+        359536usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(rcSource)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).rcMask) as usize - ptr as usize },
+        359544usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(rcMask)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).clientData) as usize - ptr as usize },
+        359552usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(clientData)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).vncRec) as usize - ptr as usize },
+        359560usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(vncRec)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).KeyboardLedStateEnabled) as usize - ptr as usize },
+        359568usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(KeyboardLedStateEnabled)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).CurrentKeyboardLedState) as usize - ptr as usize },
+        359572usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(CurrentKeyboardLedState)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).canHandleNewFBSize) as usize - ptr as usize },
+        359576usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(canHandleNewFBSize)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).HandleTextChat) as usize - ptr as usize },
+        359584usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(HandleTextChat)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).HandleKeyboardLedState) as usize - ptr as usize },
+        359592usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(HandleKeyboardLedState)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).HandleCursorPos) as usize - ptr as usize },
+        359600usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(HandleCursorPos)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).SoftCursorLockArea) as usize - ptr as usize },
+        359608usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(SoftCursorLockArea)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).SoftCursorUnlockScreen) as usize - ptr as usize },
+        359616usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(SoftCursorUnlockScreen)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).GotFrameBufferUpdate) as usize - ptr as usize },
+        359624usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(GotFrameBufferUpdate)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).GetPassword) as usize - ptr as usize },
+        359632usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(GetPassword)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).MallocFrameBuffer) as usize - ptr as usize },
+        359640usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(MallocFrameBuffer)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).GotXCutText) as usize - ptr as usize },
+        359648usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(GotXCutText)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).Bell) as usize - ptr as usize },
+        359656usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(Bell)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).GotCursorShape) as usize - ptr as usize },
+        359664usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(GotCursorShape)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).GotCopyRect) as usize - ptr as usize },
+        359672usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(GotCopyRect)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).supportedMessages) as usize - ptr as usize },
+        359680usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(supportedMessages)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).major) as usize - ptr as usize },
+        359744usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(major)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).minor) as usize - ptr as usize },
+        359748usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(minor)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).authScheme) as usize - ptr as usize },
+        359752usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(authScheme)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).subAuthScheme) as usize - ptr as usize },
+        359756usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(subAuthScheme)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tlsSession) as usize - ptr as usize },
+        359760usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(tlsSession)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).GetCredential) as usize - ptr as usize },
+        359768usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(GetCredential)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).clientAuthSchemes) as usize - ptr as usize },
+        359776usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(clientAuthSchemes)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).destHost) as usize - ptr as usize },
+        359784usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(destHost)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).destPort) as usize - ptr as usize },
+        359792usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(destPort)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).QoS_DSCP) as usize - ptr as usize },
+        359796usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(QoS_DSCP)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).HandleXvpMsg) as usize - ptr as usize },
+        359800usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(HandleXvpMsg)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).listenSock) as usize - ptr as usize },
+        359808usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(listenSock)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).FinishedFrameBufferUpdate) as usize - ptr as usize },
+        359816usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(FinishedFrameBufferUpdate)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).listenAddress) as usize - ptr as usize },
+        359824usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(listenAddress)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).listen6Sock) as usize - ptr as usize },
+        359832usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(listen6Sock)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).listen6Address) as usize - ptr as usize },
+        359840usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(listen6Address)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).listen6Port) as usize - ptr as usize },
+        359848usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(listen6Port)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).outputWindow) as usize - ptr as usize },
+        359856usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(outputWindow)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).LockWriteToTLS) as usize - ptr as usize },
+        359864usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(LockWriteToTLS)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).UnlockWriteToTLS) as usize - ptr as usize },
+        359872usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(UnlockWriteToTLS)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).GotFillRect) as usize - ptr as usize },
+        359880usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(GotFillRect)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).GotBitmap) as usize - ptr as usize },
+        359888usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(GotBitmap)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).GotJpeg) as usize - ptr as usize },
+        359896usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(GotJpeg)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tjhnd) as usize - ptr as usize },
+        359904usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(tjhnd)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).connectTimeout) as usize - ptr as usize },
+        359912usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(connectTimeout)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).readTimeout) as usize - ptr as usize },
+        359916usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(readTimeout)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).tlsRwMutex) as usize - ptr as usize },
+        359920usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(tlsRwMutex)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).requestedResize) as usize - ptr as usize },
+        359960usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(requestedResize)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).screen) as usize - ptr as usize },
+        359964usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClient),
+            "::",
+            stringify!(screen)
+        )
+    );
+}
+pub type rfbClient = _rfbClient;
+extern "C" {
+    #[doc = " Handles XCursor and RichCursor shape updates from the server.\n We emulate cursor operating on the frame buffer (that is\n why we call it \"software cursor\"). This decodes the received cursor\n shape and hands it over to GotCursorShapeProc, if set."]
+    pub fn HandleCursorShape(
+        client: *mut rfbClient,
+        xhot: ::core::ffi::c_int,
+        yhot: ::core::ffi::c_int,
+        width: ::core::ffi::c_int,
+        height: ::core::ffi::c_int,
+        enc: u32,
+    ) -> rfbBool;
+}
+extern "C" {
+    pub fn listenForIncomingConnections(viewer: *mut rfbClient);
+}
+extern "C" {
+    pub fn listenForIncomingConnectionsNoFork(
+        viewer: *mut rfbClient,
+        usec_timeout: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
+}
+extern "C" {
+    pub static mut rfbEnableClientLogging: rfbBool;
+}
+pub type rfbClientLogProc =
+    ::core::option::Option<unsafe extern "C" fn(format: *const ::core::ffi::c_char, ...)>;
+extern "C" {
+    pub static mut rfbClientLog: rfbClientLogProc;
+}
+extern "C" {
+    pub static mut rfbClientErr: rfbClientLogProc;
+}
+extern "C" {
+    pub fn ConnectToRFBServer(
+        client: *mut rfbClient,
+        hostname: *const ::core::ffi::c_char,
+        port: ::core::ffi::c_int,
+    ) -> rfbBool;
+}
+extern "C" {
+    pub fn ConnectToRFBRepeater(
+        client: *mut rfbClient,
+        repeaterHost: *const ::core::ffi::c_char,
+        repeaterPort: ::core::ffi::c_int,
+        destHost: *const ::core::ffi::c_char,
+        destPort: ::core::ffi::c_int,
+    ) -> rfbBool;
+}
+extern "C" {
+    pub fn SetClientAuthSchemes(
+        client: *mut rfbClient,
+        authSchemes: *const u32,
+        size: ::core::ffi::c_int,
+    );
+}
+extern "C" {
+    pub fn InitialiseRFBConnection(client: *mut rfbClient) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Sends format and encoding parameters to the server. Your application can\n modify the 'client' data structure directly. However some changes to this\n structure must be communicated back to the server. For instance, if you\n change the encoding to hextile, the server needs to know that it should send\n framebuffer updates in hextile format. Likewise if you change the pixel\n format of the framebuffer, the server must be notified about this as well.\n Call this function to propagate your changes of the local 'client' structure\n over to the server.\n @li Encoding type\n @li RFB protocol extensions announced via pseudo-encodings\n @li Framebuffer pixel format (like RGB vs ARGB)\n @li Remote cursor support\n @param client The client in which the format or encodings have been changed\n @return true if the format or encodings were sent to the server successfully,\n false otherwise"]
+    pub fn SetFormatAndEncodings(client: *mut rfbClient) -> rfbBool;
+}
+extern "C" {
+    pub fn SendIncrementalFramebufferUpdateRequest(client: *mut rfbClient) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Sends a framebuffer update request to the server. A VNC client may request an\n update from the server at any time. You can also specify which portions of\n the screen you want updated. This can be handy if a pointer is at certain\n location and the user pressed a mouse button, for instance. Then you can\n immediately request an update of the region around the pointer from the\n server.\n @note The coordinate system is a left-handed Cartesian coordinate system with\n the Z axis (unused) pointing out of the screen. Alternately you can think of\n it as a right-handed Cartesian coordinate system with the Z axis pointing\n into the screen. The origin is at the upper left corner of the framebuffer.\n @param client The client through which to send the request\n @param x The horizontal position of the update request rectangle\n @param y The vertical position of the update request rectangle\n @param w The width of the update request rectangle\n @param h The height of the update request rectangle\n @param incremental false: server sends rectangle even if nothing changed.\n true: server only sends changed parts of rectangle.\n @return true if the update request was sent successfully, false otherwise"]
+    pub fn SendFramebufferUpdateRequest(
+        client: *mut rfbClient,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        w: ::core::ffi::c_int,
+        h: ::core::ffi::c_int,
+        incremental: rfbBool,
+    ) -> rfbBool;
+}
+extern "C" {
+    pub fn SendScaleSetting(client: *mut rfbClient, scaleSetting: ::core::ffi::c_int) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Sends a pointer event to the server. A pointer event includes a cursor\n location and a button mask. The button mask indicates which buttons on the\n pointing device are pressed. Each button is represented by a bit in the\n button mask. A 1 indicates the button is pressed while a 0 indicates that it\n is not pressed. You may use these pre-defined button masks by ORing them\n together: rfbButton1Mask, rfbButton2Mask, rfbButton3Mask, rfbButton4Mask\n rfbButton5Mask\n @note  The cursor location is relative to the client's framebuffer, not the\n client's screen itself.\n @note The coordinate system is a left-handed Cartesian coordinate system with\n the Z axis (unused) pointing out of the screen. Alternately you can think of\n it as a right-handed Cartesian coordinate system with the Z axis pointing\n into the screen. The origin is at the upper left corner of the screen.\n @param client The client through which to send the pointer event\n @param x the horizontal location of the cursor\n @param y the vertical location of the cursor\n @param buttonMask the button mask indicating which buttons are pressed\n @return true if the pointer event was sent successfully, false otherwise"]
+    pub fn SendPointerEvent(
+        client: *mut rfbClient,
+        x: ::core::ffi::c_int,
+        y: ::core::ffi::c_int,
+        buttonMask: ::core::ffi::c_int,
+    ) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Sends a SetDesktopSize event to the server.\n @param client The client through which to send the SetDesktopSize event\n @param width The width of the update request rectangle\n @param height The height of the update request rectangle\n @return true if the SetDesktopSize event was send successfully, false otherwise"]
+    pub fn SendExtDesktopSize(client: *mut rfbClient, width: u16, height: u16) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Sends a key event to the server. If your application is not merely a VNC\n viewer (i.e. it controls the server), you'll want to send the keys that the\n user presses to the server. Use this function to do that.\n @param client The client through which to send the key event\n @param key An rfbKeySym defined in rfb/keysym.h\n @param down true if this was a key down event, false otherwise\n @return true if the key event was send successfully, false otherwise"]
+    pub fn SendKeyEvent(client: *mut rfbClient, key: u32, down: rfbBool) -> rfbBool;
+}
+extern "C" {
+    #[doc = " The same as SendKeyEvent, except a key code will be sent along with the\n symbol if the server supports extended key events.\n @param client The client through which to send the key event\n @param keysym An rfbKeySym defined in rfb/keysym.h\n @param keycode An XT key code\n @param down true if this was a key down event, false otherwise\n @return true if the extended key event is supported and was sent\n successfully, false otherwise"]
+    pub fn SendExtendedKeyEvent(
+        client: *mut rfbClient,
+        keysym: u32,
+        keycode: u32,
+        down: rfbBool,
+    ) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Places a string on the server's clipboard. Use this function if you want to\n be able to copy and paste between the server and your application. For\n instance, when your application is notified that the user copied some text\n onto the clipboard, you would call this function to synchronize the server's\n clipboard with your local clipboard.\n @param client The client structure through which to send the client cut text\n message\n @param str The string to send (doesn't need to be NULL terminated)\n @param len The length of the string\n @return true if the client cut message was sent successfully, false otherwise"]
+    pub fn SendClientCutText(
+        client: *mut rfbClient,
+        str_: *mut ::core::ffi::c_char,
+        len: ::core::ffi::c_int,
+    ) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Handles messages from the RFB server. You must call this function\n intermittently so LibVNCClient can parse messages from the server. For\n example, if your app has a draw loop, you could place a call to this\n function within that draw loop.\n @note You must call WaitForMessage() before you call this function.\n @param client The client which will handle the RFB server messages\n @return true if the client was able to handle the RFB server messages, false\n otherwise"]
+    pub fn HandleRFBServerMessage(client: *mut rfbClient) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Sends a text chat message to the server.\n @param client The client through which to send the message\n @param text The text to send\n @return true if the text was sent successfully, false otherwise"]
+    pub fn TextChatSend(client: *mut rfbClient, text: *mut ::core::ffi::c_char) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Opens a text chat window on the server.\n @param client The client through which to send the message\n @return true if the window was opened successfully, false otherwise"]
+    pub fn TextChatOpen(client: *mut rfbClient) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Closes the text chat window on the server.\n @param client The client through which to send the message\n @return true if the window was closed successfully, false otherwise"]
+    pub fn TextChatClose(client: *mut rfbClient) -> rfbBool;
+}
+extern "C" {
+    pub fn TextChatFinish(client: *mut rfbClient) -> rfbBool;
+}
+extern "C" {
+    pub fn PermitServerInput(client: *mut rfbClient, enabled: ::core::ffi::c_int) -> rfbBool;
+}
+extern "C" {
+    pub fn SendXvpMsg(client: *mut rfbClient, version: u8, code: u8) -> rfbBool;
+}
+extern "C" {
+    pub fn PrintPixelFormat(format: *mut rfbPixelFormat);
+}
+extern "C" {
+    pub fn SupportsClient2Server(
+        client: *mut rfbClient,
+        messageType: ::core::ffi::c_int,
+    ) -> rfbBool;
+}
+extern "C" {
+    pub fn SupportsServer2Client(
+        client: *mut rfbClient,
+        messageType: ::core::ffi::c_int,
+    ) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Associates a client data tag with the given pointer. LibVNCClient has\n several events to which you can associate your own handlers. These handlers\n have the client structure as one of their parameters. Sometimes, you may want\n to make data from elsewhere in your application available to these handlers\n without using a global variable. To do this, you call\n rfbClientSetClientData() and associate the data with a tag. Then, your\n handler can call rfbClientGetClientData() and get the a pointer to the data\n associated with that tag.\n @param client The client in which to set the client data\n @param tag A unique tag which identifies the data\n @param data A pointer to the data to associate with the tag"]
+    pub fn rfbClientSetClientData(
+        client: *mut rfbClient,
+        tag: *mut ::core::ffi::c_void,
+        data: *mut ::core::ffi::c_void,
+    );
+}
+extern "C" {
+    #[doc = " Returns a pointer to the client data associated with the given tag. See the\n the documentation for rfbClientSetClientData() for a discussion of how you\n can use client data.\n @param client The client from which to get the client data\n @param tag The tag which identifies the client data\n @return a pointer to the client data"]
+    pub fn rfbClientGetClientData(
+        client: *mut rfbClient,
+        tag: *mut ::core::ffi::c_void,
+    ) -> *mut ::core::ffi::c_void;
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct _rfbClientProtocolExtension {
+    pub encodings: *mut ::core::ffi::c_int,
+    #[doc = " returns TRUE if the encoding was handled"]
+    pub handleEncoding: ::core::option::Option<
+        unsafe extern "C" fn(
+            cl: *mut rfbClient,
+            rect: *mut rfbFramebufferUpdateRectHeader,
+        ) -> rfbBool,
+    >,
+    #[doc = " returns TRUE if it handled the message"]
+    pub handleMessage: ::core::option::Option<
+        unsafe extern "C" fn(cl: *mut rfbClient, message: *mut rfbServerToClientMsg) -> rfbBool,
+    >,
+    pub next: *mut _rfbClientProtocolExtension,
+    pub securityTypes: *const u32,
+    #[doc = " returns TRUE if it handled the authentication"]
+    pub handleAuthentication: ::core::option::Option<
+        unsafe extern "C" fn(cl: *mut rfbClient, authScheme: u32) -> rfbBool,
+    >,
+}
+#[test]
+fn bindgen_test_layout__rfbClientProtocolExtension() {
+    const UNINIT: ::core::mem::MaybeUninit<_rfbClientProtocolExtension> =
+        ::core::mem::MaybeUninit::uninit();
+    let ptr = UNINIT.as_ptr();
+    assert_eq!(
+        ::core::mem::size_of::<_rfbClientProtocolExtension>(),
+        48usize,
+        concat!("Size of: ", stringify!(_rfbClientProtocolExtension))
+    );
+    assert_eq!(
+        ::core::mem::align_of::<_rfbClientProtocolExtension>(),
+        8usize,
+        concat!("Alignment of ", stringify!(_rfbClientProtocolExtension))
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).encodings) as usize - ptr as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClientProtocolExtension),
+            "::",
+            stringify!(encodings)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).handleEncoding) as usize - ptr as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClientProtocolExtension),
+            "::",
+            stringify!(handleEncoding)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).handleMessage) as usize - ptr as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClientProtocolExtension),
+            "::",
+            stringify!(handleMessage)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).next) as usize - ptr as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClientProtocolExtension),
+            "::",
+            stringify!(next)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).securityTypes) as usize - ptr as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClientProtocolExtension),
+            "::",
+            stringify!(securityTypes)
+        )
+    );
+    assert_eq!(
+        unsafe { ::core::ptr::addr_of!((*ptr).handleAuthentication) as usize - ptr as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(_rfbClientProtocolExtension),
+            "::",
+            stringify!(handleAuthentication)
+        )
+    );
+}
+pub type rfbClientProtocolExtension = _rfbClientProtocolExtension;
+extern "C" {
+    pub fn rfbClientRegisterExtension(e: *mut rfbClientProtocolExtension);
+}
+extern "C" {
+    pub static mut errorMessageOnReadFailure: rfbBool;
+}
+extern "C" {
+    pub fn ReadFromRFBServer(
+        client: *mut rfbClient,
+        out: *mut ::core::ffi::c_char,
+        n: ::core::ffi::c_uint,
+    ) -> rfbBool;
+}
+extern "C" {
+    pub fn WriteToRFBServer(
+        client: *mut rfbClient,
+        buf: *const ::core::ffi::c_char,
+        n: ::core::ffi::c_uint,
+    ) -> rfbBool;
+}
+extern "C" {
+    pub fn FindFreeTcpPort() -> ::core::ffi::c_int;
+}
+extern "C" {
+    pub fn ListenAtTcpPort(port: ::core::ffi::c_int) -> ::core::ffi::c_int;
+}
+extern "C" {
+    pub fn ListenAtTcpPortAndAddress(
+        port: ::core::ffi::c_int,
+        address: *const ::core::ffi::c_char,
+    ) -> ::core::ffi::c_int;
+}
+extern "C" {
+    #[doc = "Tries to connect to an IPv4 host.\n@param host Binary IPv4 address\n@param port Port\n@return A blocking socket or RFB_INVALID_SOCKET if the connection failed"]
+    pub fn ConnectClientToTcpAddr(
+        host: ::core::ffi::c_uint,
+        port: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
+}
+extern "C" {
+    #[doc = "Tries to connect to an IPv4 or IPv6 host.\n@param hostname A hostname or IP address\n@param port Port\n@return A blocking socket or RFB_INVALID_SOCKET if the connection failed"]
+    pub fn ConnectClientToTcpAddr6(
+        hostname: *const ::core::ffi::c_char,
+        port: ::core::ffi::c_int,
+    ) -> ::core::ffi::c_int;
+}
+extern "C" {
+    #[doc = "Tries to connect to a Unix socket.\n@param sockFile Path of the socket file\n@return A blocking socket or RFB_INVALID_SOCKET if the connection failed"]
+    pub fn ConnectClientToUnixSock(sockFile: *const ::core::ffi::c_char) -> ::core::ffi::c_int;
+}
+extern "C" {
+    #[doc = "Tries to connect to an IPv4 host using the given timeout value.\n@param host Binary IPv4 address\n@param port Port\n@param timeout The time in seconds to wait for a connection\n@return A nonblocking socket or RFB_INVALID_SOCKET if the connection failed"]
+    pub fn ConnectClientToTcpAddrWithTimeout(
+        host: ::core::ffi::c_uint,
+        port: ::core::ffi::c_int,
+        timeout: ::core::ffi::c_uint,
+    ) -> ::core::ffi::c_int;
+}
+extern "C" {
+    #[doc = "Tries to connect to an IPv4 or IPv6 host using the given timeout value.\n@param hostname A hostname or IP address\n@param port Port\n@param timeout The time in seconds to wait for a connection\n@return A nonblocking socket or RFB_INVALID_SOCKET if the connection failed"]
+    pub fn ConnectClientToTcpAddr6WithTimeout(
+        hostname: *const ::core::ffi::c_char,
+        port: ::core::ffi::c_int,
+        timeout: ::core::ffi::c_uint,
+    ) -> ::core::ffi::c_int;
+}
+extern "C" {
+    #[doc = "Tries to connect to a Unix socket using the given timeout value.\n@param sockFile Path of the socket file\n@param timeout The time in seconds to wait for a connection\n@return A nonblocking socket or RFB_INVALID_SOCKET if the connection failed"]
+    pub fn ConnectClientToUnixSockWithTimeout(
+        sockFile: *const ::core::ffi::c_char,
+        timeout: ::core::ffi::c_uint,
+    ) -> ::core::ffi::c_int;
+}
+extern "C" {
+    pub fn AcceptTcpConnection(listenSock: ::core::ffi::c_int) -> ::core::ffi::c_int;
+}
+extern "C" {
+    pub fn SetNonBlocking(sock: ::core::ffi::c_int) -> rfbBool;
+}
+extern "C" {
+    pub fn SetBlocking(sock: ::core::ffi::c_int) -> rfbBool;
+}
+extern "C" {
+    pub fn SetDSCP(sock: ::core::ffi::c_int, dscp: ::core::ffi::c_int) -> rfbBool;
+}
+extern "C" {
+    pub fn StringToIPAddr(
+        str_: *const ::core::ffi::c_char,
+        addr: *mut ::core::ffi::c_uint,
+    ) -> rfbBool;
+}
+extern "C" {
+    pub fn SameMachine(sock: ::core::ffi::c_int) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Waits for an RFB message to arrive from the server. Before handling a message\n with HandleRFBServerMessage(), you must wait for your client to receive one.\n This function blocks until a message is received. You may specify a timeout\n in microseconds. Once this number of microseconds have elapsed, the function\n will return.\n @param client The client to cause to wait until a message is received\n @param usecs The timeout in microseconds\n @return the return value of the underlying select() call"]
+    pub fn WaitForMessage(client: *mut rfbClient, usecs: ::core::ffi::c_uint)
+        -> ::core::ffi::c_int;
+}
+extern "C" {
+    #[doc = " Allocates and returns a pointer to an rfbClient structure. This will probably\n be the first LibVNCClient function your client code calls. Most libVNCClient\n functions operate on an rfbClient structure, and this function allocates\n memory for that structure. When you're done with the rfbClient structure\n pointer this function returns, you should free the memory rfbGetClient()\n allocated by calling rfbClientCleanup().\n\n A pixel is one dot on the screen. The number of bytes in a pixel will depend\n on the number of samples in that pixel and the number of bits in each sample.\n A sample represents one of the primary colors in a color model. The RGB\n color model uses red, green, and blue samples respectively. Suppose you\n wanted to use 16-bit RGB color: You would have three samples per pixel (one\n for each primary color), five bits per sample (the quotient of 16 RGB bits\n divided by three samples), and two bytes per pixel (the smallest multiple of\n eight bits in which the 16-bit pixel will fit). If you wanted 32-bit RGB\n color, you would have three samples per pixel again, eight bits per sample\n (since that's how 32-bit color is defined), and four bytes per pixel (the\n smallest multiple of eight bits in which the 32-bit pixel will fit.\n @param bitsPerSample The number of bits in a sample\n @param samplesPerPixel The number of samples in a pixel\n @param bytesPerPixel The number of bytes in a pixel\n @return a pointer to the allocated rfbClient structure"]
+    pub fn rfbGetClient(
+        bitsPerSample: ::core::ffi::c_int,
+        samplesPerPixel: ::core::ffi::c_int,
+        bytesPerPixel: ::core::ffi::c_int,
+    ) -> *mut rfbClient;
+}
+extern "C" {
+    #[doc = " Initializes the client. The format is {PROGRAM_NAME, [OPTIONS]..., HOST}. This\n function does not initialize the program name if the rfbClient's program\n name is set already. The options are as follows:\n <table>\n <tr><th>Option</th><th>Description</th></tr>\n <tr><td>-listen</td><td>Listen for incoming connections.</td></tr>\n <tr><td>-listennofork</td><td>Listen for incoming connections without forking.\n </td></tr>\n <tr><td>-play</td><td>Set this client to replay a previously recorded session.</td></tr>\n <tr><td>-encodings</td><td>Set the encodings to use. The next item in the\n argv array is the encodings string, consisting of comma separated encodings like 'tight,ultra,raw'.</td></tr>\n <tr><td>-compress</td><td>Set the compression level. The next item in the\n argv array is the compression level as an integer. Ranges from 0 (lowest) to 9 (highest).\n </td></tr>\n <tr><td>-scale</td><td>Set the scaling level. The next item in the\n argv array is the scaling level as an integer. The screen will be scaled down by this factor.</td></tr>\n <tr><td>-qosdscp</td><td>Set the Quality of Service Differentiated Services\n Code Point (QoS DSCP). The next item in the argv array is the code point as\n an integer.</td></tr>\n <tr><td>-repeaterdest</td><td>Set a VNC repeater address. The next item in the argv array is\n the repeater's address as a string.</td></tr>\n </table>\n\n The host may include a port number (delimited by a ':').\n @param client The client to initialize\n @param argc The number of arguments to the initializer\n @param argv The arguments to the initializer as an array of NULL terminated\n strings\n @return true if the client was initialized successfully, false otherwise."]
+    pub fn rfbInitClient(
+        client: *mut rfbClient,
+        argc: *mut ::core::ffi::c_int,
+        argv: *mut *mut ::core::ffi::c_char,
+    ) -> rfbBool;
+}
+extern "C" {
+    #[doc = " Cleans up the client structure and releases the memory allocated for it. You\n should call this when you're done with the rfbClient structure that you\n allocated with rfbGetClient().\n @note rfbClientCleanup() does not touch client->frameBuffer.\n @param client The client to clean up"]
+    pub fn rfbClientCleanup(client: *mut rfbClient);
+}
 pub type __builtin_va_list = [__va_list_tag; 1usize];
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __va_list_tag {
-    pub gp_offset: ::std::os::raw::c_uint,
-    pub fp_offset: ::std::os::raw::c_uint,
-    pub overflow_arg_area: *mut ::std::os::raw::c_void,
-    pub reg_save_area: *mut ::std::os::raw::c_void,
+    pub gp_offset: ::core::ffi::c_uint,
+    pub fp_offset: ::core::ffi::c_uint,
+    pub overflow_arg_area: *mut ::core::ffi::c_void,
+    pub reg_save_area: *mut ::core::ffi::c_void,
 }
 #[test]
 fn bindgen_test_layout___va_list_tag() {
-    const UNINIT: ::std::mem::MaybeUninit<__va_list_tag> = ::std::mem::MaybeUninit::uninit();
+    const UNINIT: ::core::mem::MaybeUninit<__va_list_tag> = ::core::mem::MaybeUninit::uninit();
     let ptr = UNINIT.as_ptr();
     assert_eq!(
-        ::std::mem::size_of::<__va_list_tag>(),
+        ::core::mem::size_of::<__va_list_tag>(),
         24usize,
         concat!("Size of: ", stringify!(__va_list_tag))
     );
     assert_eq!(
-        ::std::mem::align_of::<__va_list_tag>(),
+        ::core::mem::align_of::<__va_list_tag>(),
         8usize,
         concat!("Alignment of ", stringify!(__va_list_tag))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).gp_offset) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).gp_offset) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -16167,7 +18810,7 @@ fn bindgen_test_layout___va_list_tag() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).fp_offset) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).fp_offset) as usize - ptr as usize },
         4usize,
         concat!(
             "Offset of field: ",
@@ -16177,7 +18820,7 @@ fn bindgen_test_layout___va_list_tag() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).overflow_arg_area) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).overflow_arg_area) as usize - ptr as usize },
         8usize,
         concat!(
             "Offset of field: ",
@@ -16187,7 +18830,7 @@ fn bindgen_test_layout___va_list_tag() {
         )
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).reg_save_area) as usize - ptr as usize },
+        unsafe { ::core::ptr::addr_of!((*ptr).reg_save_area) as usize - ptr as usize },
         16usize,
         concat!(
             "Offset of field: ",
@@ -16200,5 +18843,10 @@ fn bindgen_test_layout___va_list_tag() {
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __locale_data {
+    pub _address: u8,
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct jpeg_source_mgr {
     pub _address: u8,
 }

@@ -11,13 +11,20 @@ fn bindgen_vncserver() {
     println!("cargo:rustc-link-search={}", lib_path.display());
     println!("cargo:rustc-link-lib=dylib=vncserver");
 
-    let header = format!(
+    let rfb_header = format!(
         "{}/{}",
         libvncserver.include_paths[0].to_str().unwrap(),
         "rfb/rfb.h"
     );
+    let rfbclient_header = format!(
+        "{}/{}",
+        libvncserver.include_paths[0].to_str().unwrap(),
+        "rfb/rfbclient.h"
+    );
     let bindings = bindgen::Builder::default()
-        .header(header)
+        .header(rfb_header)
+        .header(rfbclient_header)
+        .use_core()
         .clang_arg(format!(
             "-I{}",
             libvncserver.include_paths[0].to_str().unwrap(),

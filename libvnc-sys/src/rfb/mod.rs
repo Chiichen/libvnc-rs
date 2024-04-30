@@ -92,3 +92,11 @@ pub fn rfb_run_event_loop(ptr: rfbScreenInfoPtr, usec: i64, run_in_background: r
         rfbRunEventLoop(ptr, usec as ::std::os::raw::c_long, run_in_background);
     };
 }
+
+pub fn rfb_get_client(
+    bits_per_sample: i32,
+    samples_per_pixel: i32,
+    bytes_per_pixel: i32,
+) -> *mut _rfbClient {
+    unsafe { rfbGetClient(bits_per_sample, samples_per_pixel, bytes_per_pixel) }
+}

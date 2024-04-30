@@ -1,12 +1,12 @@
 [package]
-name = "libvnc-rs"
+name = "libvnc"
 authors = ["Chiichen <chiichen@qq.com>"]
 version = "0.1.0"
 edition = "2021"
 keywords = ["vnc", "libvnc", "vncserver", "rfb"]
 license = "LGPL-3.0-only"
 readme = "README.md"
-
+description = "libvncserver(client) bindings for Rust. VNC is a set of programs using the RFB (Remote Frame Buffer) protocol. They are designed to export a frame buffer via net: you set up a server and can connect to it via VNC viewers. If the server supports WebSockets (which LibVNCServer does), you can also connect using an in-browser VNC viewer like noVNC."
 
 [dependencies]
 libvnc-sys = { version = "0.1.0" }
