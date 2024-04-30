@@ -4,7 +4,7 @@ authors = ["Chiichen <chiichen@qq.com>"]
 version = "0.1.0"
 edition = "2021"
 keywords = ["vnc", "libvnc", "vncserver", "binding"]
-license = "LGPL 3.0"
+license = "LGPL-3.0-only"
 readme = "README.md"
 
 
