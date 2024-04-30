@@ -6,6 +6,7 @@ edition = "2021"
 keywords = ["vnc", "libvnc", "vncserver", "binding"]
 license = "LGPL-3.0-only"
 readme = "README.md"
+description = "The binding of libvnc"
 
 
 [dependencies]
