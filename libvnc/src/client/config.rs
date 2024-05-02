@@ -1,4 +1,4 @@
-use libvnc_sys::rfb::bindings::rfbPixelFormat;
+use libvnc_sys::rfb::rfbPixelFormat;
 
 pub struct RfbPixelFormat {
     pub bits_per_pixel: u8,

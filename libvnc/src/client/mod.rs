@@ -1,5 +1,5 @@
 pub mod config;
-use libvnc_sys::rfb::bindings::{_rfbClient, rfbClientCleanup, rfbGetClient};
+use libvnc_sys::rfb::{_rfbClient, rfbClientCleanup, rfbGetClient};
 
 use self::config::ClientConfig;
 pub struct RfbClient(*mut _rfbClient);

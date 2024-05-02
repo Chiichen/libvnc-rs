@@ -32,9 +32,9 @@ fn bindgen_vncserver() {
         .generate()
         .expect("unable to generate rfb bindings");
 
-    let out_path = PathBuf::from("src/rfb");
+    let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
     bindings
-        .write_to_file(out_path.join("bindings.rs"))
+        .write_to_file(out_path.join("rfb.rs"))
         .expect("couldn't write bindings!");
 }
 

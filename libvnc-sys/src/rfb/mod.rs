@@ -1,5 +1,4 @@
-pub mod bindings;
-use bindings::*;
+include!(concat!(std::env!("OUT_DIR"), "/rfb.rs"));
 
 pub fn rfb_get_screen(
     width: i32,
