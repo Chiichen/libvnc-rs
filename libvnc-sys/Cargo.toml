@@ -1,22 +1,23 @@
 [package]
-name = "libvnc-sys"
-authors = ["Chiichen <chiichen@qq.com>"]
-version = "0.1.1"
-edition = "2021"
-keywords = ["vnc", "libvnc", "vncserver", "binding"]
-license = "LGPL-3.0-only"
-readme = "README.md"
+name        = "libvnc-sys"
+authors     = ["Chiichen <chiichen@qq.com>"]
+version     = "0.1.1"
+edition     = "2021"
+keywords    = ["vnc", "libvnc", "vncserver", "binding"]
+license     = "LGPL-3.0-only"
+readme      = "README.md"
 description = "The binding of libvnc"
-
+repository  = "https://github.com/Chiichen/libvnc-rs/tree/master/libvnc-sys"
+homepage    = "https://github.com/Chiichen/libvnc-rs"
 
 [dependencies]
 
 [build-dependencies]
-bindgen = "0.69.4"
-cc = "1.0.95"
+bindgen    = "0.69.4"
+cc         = "1.0.95"
 pkg-config = "0.3.30"
 
 [features]
 default = ["pkg"]
-source = []
-pkg = []
+source  = []
+pkg     = []
