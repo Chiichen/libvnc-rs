@@ -1,3 +1,7 @@
+#![allow(non_upper_case_globals)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
+#![allow(improper_ctypes)]
 include!(concat!(std::env!("OUT_DIR"), "/rfb.rs"));
 
 pub fn rfb_get_screen(
