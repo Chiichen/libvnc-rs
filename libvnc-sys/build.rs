@@ -3,7 +3,8 @@ use std::path::PathBuf;
 
 #[cfg(feature = "pkg")]
 fn bindgen_vncserver() {
-    let libvncserver = pkg_config::probe_library("libvncserver").unwrap();
+    let libvncserver =
+        pkg_config::probe_library("libvncserver").expect("libvncserver package not found. Please install libvncserver/libvncserver-dev/libvncserver-devel with your package manager ");
 
     let link_paths = format!("{}", libvncserver.link_paths[0].to_str().unwrap());
     let lib_path = PathBuf::from(env::current_dir().unwrap().join(link_paths));
