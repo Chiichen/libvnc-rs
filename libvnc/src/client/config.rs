@@ -50,7 +50,25 @@ pub struct ClientConfig {
     pub(crate) bytes_per_pixel: i32,
 }
 
+impl ClientConfig {
+    /// Creates a new [`ClientConfig`] with given bits_per_sample, samples_per_pixel and bytes_per_pixel
+    pub fn new(bits_per_sample: i32, samples_per_pixel: i32, bytes_per_pixel: i32) -> Self {
+        Self {
+            bits_per_sample,
+            samples_per_pixel,
+            bytes_per_pixel,
+        }
+    }
+}
+
 impl Default for ClientConfig {
+    /// Default value
+    ///
+    /// ## Value
+    ///
+    /// - `bits_per_sample` =  8,
+    /// - `samples_per_pixel` = 3,
+    /// - `bytes_per_pixel` = 4,
     fn default() -> Self {
         Self {
             bits_per_sample: 8,
