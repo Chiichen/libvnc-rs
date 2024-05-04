@@ -24,11 +24,11 @@ impl RfbClient {
         };
         let host_addr = CString::new(addr.ip().to_string()).unwrap(); //What if this CString is dropped at the end of new
         (unsafe { *client }).serverHost = host_addr.as_ptr() as *mut i8;
-        unsafe { *client }.serverPort = addr.port().try_into().unwrap();
+        unsafe { *client }.serverPort = addr.port().into();
         Self(NonNull::new(client).unwrap())
     }
     fn from_raw(ptr: *mut _rfbClient) -> Option<RfbClient> {
-        NonNull::new(ptr).map(|inner| Self(inner))
+        NonNull::new(ptr).map(Self)
     }
     pub fn size(&self) -> (i32, i32) {
         (

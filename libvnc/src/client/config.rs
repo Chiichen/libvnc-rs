@@ -29,7 +29,7 @@ impl From<RfbPixelFormat> for rfbPixelFormat {
         } = value;
         Self {
             bitsPerPixel: bits_per_pixel,
-            depth: depth,
+            depth,
             bigEndian: big_endian.unwrap_or(0),
             trueColour: true_colour,
             redMax: red_max,
