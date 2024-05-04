@@ -3,7 +3,7 @@ use core::net::SocketAddr;
 use core::ptr::NonNull;
 use std::{ffi::CString, marker::PhantomData};
 
-use libvnc_sys::rfb::{
+use libvnc_sys::rfb::bindings::{
     _rfbClient, rfbClientCleanup, rfbClientGetClientData, rfbClientSetClientData, rfbGetClient,
     rfbInitClient, HandleRFBServerMessage, WaitForMessage,
 };
@@ -22,7 +22,7 @@ impl RfbClient {
                 config.bytes_per_pixel,
             )
         };
-        let host_addr = std::ffi::CString::new(addr.ip().to_string()).unwrap(); //What if this CString is dropped at the end of new
+        let host_addr = CString::new(addr.ip().to_string()).unwrap(); //What if this CString is dropped at the end of new
         (unsafe { *client }).serverHost = host_addr.as_ptr() as *mut i8;
         unsafe { *client }.serverPort = addr.port().try_into().unwrap();
         Self(NonNull::new(client).unwrap())
