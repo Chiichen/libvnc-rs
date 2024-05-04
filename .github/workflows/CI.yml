@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install libvncserver
+      run: sudo apt-get install libvncserver-dev 
+    - name: Install Rust nightly
+      run : rustup update nightly
+    - name: Build
+      run: cargo build --verbose
+    - name: Test
+      run: cargo test --verbose
+    - name: Clippy
+      run: cargo clippy -- -D warnings
+    - name: Cargo Fmt Check
+      run : cargo fmt --all -- --check
