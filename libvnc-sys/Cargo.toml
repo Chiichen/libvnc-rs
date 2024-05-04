@@ -1,7 +1,7 @@
 [package]
 name        = "libvnc-sys"
 authors     = ["Chiichen <chiichen@qq.com>"]
-version     = "0.1.2"
+version     = "0.1.3"
 edition     = "2021"
 keywords    = ["vnc", "libvnc", "vncserver", "binding"]
 license     = "LGPL-3.0-only"

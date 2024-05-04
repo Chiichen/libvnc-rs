@@ -1,7 +1,7 @@
 [package]
 name = "libvnc"
 authors = ["Chiichen <chiichen@qq.com>"]
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 keywords = ["vnc", "libvnc", "vncserver", "rfb"]
 license = "LGPL-3.0-only"
@@ -10,5 +10,5 @@ description = "libvncserver(client) bindings for Rust. VNC is a set of programs 
 repository = "https://github.com/Chiichen/libvnc-rs/tree/master/libvnc"
 homepage = "https://github.com/Chiichen/libvnc-rs"
 [dependencies]
-libvnc-sys = { version = "0.1.2" }
+libvnc-sys = { version = "0.1.3" }
 log = "0.4.21"
