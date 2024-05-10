@@ -1,12 +1,7 @@
 use std::env;
 use std::path::PathBuf;
 
-#[cfg(not(any(feature = "pkg", feature = "source")))]
-compile_error!("You need to specify at least one feature (build from pkg or source)");
-#[cfg(all(feature = "pkg", feature = "source"))]
-compile_error!("You can not specify both feature (build from pkg or source)");
-
-#[cfg(feature = "pkg")]
+#[cfg(not(feature = "source"))]
 fn bindgen_vncserver() {
     let libvncserver =
         pkg_config::probe_library("libvncserver").expect("libvncserver package not found. Please install libvncserver/libvncserver-dev/libvncserver-devel with your package manager ");

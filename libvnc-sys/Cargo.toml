@@ -20,6 +20,5 @@ pkg-config = "0.3.30"
 cmake      = "0.1.50"
 
 [features]
-default = ["pkg"]
+default = []
 source  = []
-pkg     = []
