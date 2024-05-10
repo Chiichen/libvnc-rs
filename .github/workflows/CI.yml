@@ -26,3 +26,13 @@ jobs:
       run: cargo clippy -- -D warnings
     - name: Cargo Fmt Check
       run : cargo fmt --all -- --check
+  build-from-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust nightly
+        run : rustup update nightly
+      - name: Build
+        run: cargo build -p libvnc-sys --no-default-features --features "source" --verbose
+      - name: Test
+        run: cargo test -p libvnc-sys --no-default-features --features "source" --verbose

@@ -12,10 +12,12 @@ homepage    = "https://github.com/Chiichen/libvnc-rs"
 
 [dependencies]
 
+
 [build-dependencies]
 bindgen    = "0.69.4"
 cc         = "1.0.95"
 pkg-config = "0.3.30"
+cmake      = "0.1.50"
 
 [features]
 default = ["pkg"]

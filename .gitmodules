@@ -1,0 +1,3 @@
+[submodule "libvnc-sys/libvncserver"]
+	path = libvnc-sys/libvncserver
+	url = https://github.com/LibVNC/libvncserver.git
