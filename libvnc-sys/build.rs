@@ -55,13 +55,13 @@ fn bindgen_vncserver() {
     println!("cargo:rustc-link-lib=dylib={}", "vncserver");
     println!("cargo:rustc-link-lib=dylib=vncclient"); //There's no libvncclient , so we need to specify the vncclient manually
     println!("cargo:rustc-link-search=native={}", dst.display());
-    let rfb_header = format!("{}/{}", "./libvncserver/include", "rfb/rfb.h");
-    let rfbclient_header = format!("{}/{}", "./libvncserver/include", "rfb/rfbclient.h");
+    let rfb_header = format!("{}/{}", dst.display(), "include/rfb/rfb.h");
+    let rfbclient_header = format!("{}/{}", dst.display(), "include/rfb/rfbclient.h");
     let bindings = bindgen::Builder::default()
         .header(rfb_header)
         .header(rfbclient_header)
         .use_core()
-        .clang_arg(format!("-I{}", "./libvncserver/include"))
+        .clang_arg(format!("-I{}/{}", dst.display(),"include"))
         .generate()
         .expect("unable to generate rfb bindings");
 
