@@ -52,16 +52,16 @@ fn bindgen_vncserver() {
         "../cmake/Toolchain-cross-mingw32-linux.cmake",
     );
     let dst = config.build();
-    println!("cargo:rustc-link-lib=dylib={}", "vncserver");
+    println!("cargo:rustc-link-lib=dylib=vncserver");
     println!("cargo:rustc-link-lib=dylib=vncclient"); //There's no libvncclient , so we need to specify the vncclient manually
-    println!("cargo:rustc-link-search=native={}", dst.display());
+    println!("cargo:rustc-link-search={}/{}", dst.display(), "build");
     let rfb_header = format!("{}/{}", dst.display(), "include/rfb/rfb.h");
     let rfbclient_header = format!("{}/{}", dst.display(), "include/rfb/rfbclient.h");
     let bindings = bindgen::Builder::default()
         .header(rfb_header)
         .header(rfbclient_header)
         .use_core()
-        .clang_arg(format!("-I{}/{}", dst.display(),"include"))
+        .clang_arg(format!("-I{}/{}", dst.display(), "include"))
         .generate()
         .expect("unable to generate rfb bindings");
 
