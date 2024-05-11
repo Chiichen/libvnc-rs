@@ -30,10 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - name: Install Rust nightly
         run : rustup update nightly
-      - name: Init Submodule
-        run: git submodule init & git submodule update
       - name: Build
         run: cargo build -p libvnc-sys --features "source" --verbose
       - name: Test
