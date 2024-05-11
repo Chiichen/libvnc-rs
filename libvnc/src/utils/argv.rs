@@ -26,6 +26,7 @@ impl Argv {
         self.argv_ptr.as_ptr()
     }
 
+    #[allow(unused)]
     /// Returns the C language's `argv[0]` (`*const c_char`).
     pub fn get_argv0(&self) -> *const c_char {
         self.argv_ptr[0]
