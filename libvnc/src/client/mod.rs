@@ -10,7 +10,7 @@ use libvnc_sys::rfb::bindings::{
 use log::info;
 
 use self::config::ClientConfig;
-pub struct RfbClient(pub NonNull<_rfbClient>); //Ptr's lifecycle is not
+pub struct RfbClient(NonNull<_rfbClient>); //Ptr's lifecycle is not
 
 impl RfbClient {
     /// Creates a new [`RfbClient`] with given [`ClientConfig`] and [`SocketAddr`]
@@ -35,6 +35,10 @@ impl RfbClient {
             unsafe { self.0.as_ref() }.width,
             unsafe { self.0.as_ref() }.height,
         )
+    }
+
+    pub unsafe fn framebuffer_ptr(&self) -> *const u8 {
+        return unsafe { self.0.as_ref() }.frameBuffer as *const u8;
     }
 }
 pub struct VncClient<T> {

@@ -38,7 +38,7 @@ impl ClientCallbackHandler for CallbackHandler {
         let image_path = output_path.join("vnc_screen_shot.bmp");
         let r = image::save_buffer(
             &image_path,
-            unsafe { core::slice::from_raw_parts(client.0.as_ref().frameBuffer as *const u8, len) },
+            unsafe { core::slice::from_raw_parts(client.framebuffer_ptr(), len) },
             width,
             height,
             image::ExtendedColorType::Rgba8,
