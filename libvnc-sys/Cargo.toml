@@ -21,4 +21,4 @@ cmake      = "0.1.50"
 
 [features]
 default = []
-source  = []
+pkg     = [] #Build from libvncserver package

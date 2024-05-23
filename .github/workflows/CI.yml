@@ -35,6 +35,6 @@ jobs:
       - name: Install Rust nightly
         run : rustup update nightly
       - name: Build
-        run: cargo build -p libvnc-sys --features "source" --verbose
+        run: cargo build -p libvnc --no-default-features --verbose
       - name: Test
-        run: cargo test -p libvnc-sys --features "source" --verbose
+        run: cargo test -p libvnc --no-default-features --verbose

@@ -1,7 +1,7 @@
 use std::env;
 use std::path::PathBuf;
 
-#[cfg(not(feature = "source"))]
+#[cfg(feature = "pkg")]
 fn bindgen_vncserver() {
     let libvncserver =
         pkg_config::probe_library("libvncserver").expect("libvncserver package not found. Please install libvncserver/libvncserver-dev/libvncserver-devel with your package manager ");
@@ -40,7 +40,7 @@ fn bindgen_vncserver() {
         .write_to_file(out_path.join("rfb.rs"))
         .expect("couldn't write bindings!");
 }
-#[cfg(feature = "source")]
+#[cfg(not(feature = "pkg"))]
 fn bindgen_vncserver() {
     #[cfg(target_os = "android")]
     compile_error!("Unsupported Target Android");
@@ -51,6 +51,7 @@ fn bindgen_vncserver() {
         "CMAKE_TOOLCHAIN_FILE",
         "../cmake/Toolchain-cross-mingw32-linux.cmake",
     );
+    //TODO In WSL, if QT is installed in Windows system, then the build process might fail on Qt example.
     let dst = config.build();
     println!("cargo:rustc-link-lib=dylib=vncserver");
     println!("cargo:rustc-link-lib=dylib=vncclient"); //There's no libvncclient , so we need to specify the vncclient manually
