@@ -9,7 +9,7 @@ readme      = "README.md"
 description = "The binding of libvnc"
 repository  = "https://github.com/Chiichen/libvnc-rs/tree/master/libvnc-sys"
 homepage    = "https://github.com/Chiichen/libvnc-rs"
-
+exclude     = ["compile_commands.json"]
 [dependencies]
 
 
