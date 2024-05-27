@@ -46,16 +46,36 @@ fn bindgen_vncserver() {
     compile_error!("Unsupported Target Android");
 
     let mut config = cmake::Config::new("libvncserver");
-    #[cfg(target_os = "windows")]
-    config.define(
-        "CMAKE_TOOLCHAIN_FILE",
-        "../cmake/Toolchain-cross-mingw32-linux.cmake",
-    );
+    let target_os = env::var("CARGO_CFG_TARGET_OS").unwrap();
+    let target_triple = env::var("TARGET").unwrap();
+    if target_triple != env::var("HOST").unwrap() {
+        if !cfg!(target_os = "linux") {
+            //cfg!(target_os) in build.rs means the host os that build script is running
+            panic!("Cross-compilation on platforms other than linux is not supported")
+        }
+        if target_os == "windows" {
+            config.define(
+                "CMAKE_TOOLCHAIN_FILE",
+                "../cmake/Toolchain-cross-mingw32-linux.cmake",
+            );
+        }
+    } else {
+        if target_os == "windows" {
+            config.define(
+                "CMAKE_TOOLCHAIN_FILE",
+                "C:/vcpkg/scripts/buildsystems/vcpkg.cmake", //TODO BETTER toolchain path
+            );
+            config.define("WITH_OPENSSL", "OFF");
+            config.define("WITH_GNUTLS", "OFF");
+            config.define("WITH_GCRYPT", "OFF");
+        }
+    }
+
     //TODO In WSL, if QT is installed in Windows system, then the build process might fail on Qt example.
     let dst = config.build();
     println!("cargo:rustc-link-lib=dylib=vncserver");
     println!("cargo:rustc-link-lib=dylib=vncclient"); //There's no libvncclient , so we need to specify the vncclient manually
-    println!("cargo:rustc-link-search={}/{}", dst.display(), "build");
+    println!("cargo:rustc-link-search={}/build", dst.display(),);
     let rfb_header = format!("{}/{}", dst.display(), "include/rfb/rfb.h");
     let rfbclient_header = format!("{}/{}", dst.display(), "include/rfb/rfbclient.h");
     let bindings = bindgen::Builder::default()

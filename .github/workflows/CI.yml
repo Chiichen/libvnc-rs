@@ -11,11 +11,18 @@ env:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest,macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
-    - name: Install libvncserver
+    - name: Install libvncserver (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
       run: sudo apt-get install libvncserver-dev 
+    - name: Install libvncserver (Macos)
+      if: matrix.os == 'macos-latest'
+      run: brew install libvncserver
     - name: Install Rust nightly
       run : rustup update nightly
     - name: Build
@@ -27,7 +34,10 @@ jobs:
     - name: Cargo Fmt Check
       run : cargo fmt --all -- --check
   build-from-source:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest,macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -37,4 +47,6 @@ jobs:
       - name: Build
         run: cargo build -p libvnc --no-default-features --verbose
       - name: Test
-        run: cargo test -p libvnc --no-default-features --verbose
+        run: |
+          cargo test -p libvnc --no-default-features --verbose &
+          cargo test -p libvnc-sys --verbose
