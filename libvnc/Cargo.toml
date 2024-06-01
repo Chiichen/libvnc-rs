@@ -17,5 +17,5 @@ log        = "0.4.21"
 libc = "0.2.154"
 
 [features]
-default = ["pkg"]
+default = []
 pkg     = ["libvnc-sys/pkg"]
