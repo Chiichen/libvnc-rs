@@ -22,7 +22,9 @@ jobs:
       - name: Install Rust nightly
         run: rustup update nightly
       - name: Install libvncserver
-        run: sudo apt-get install libvncserver-dev 
+        run: |
+          sudo apt-get update &&
+          sudo apt-get install libvncserver-dev 
       - name: Install cargo-llvm-cov
         uses: taiki-e/install-action@cargo-llvm-cov
       - name: Generate code coverage
