@@ -19,14 +19,6 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    - name: Install libvncserver (Ubuntu)
-      if: matrix.os == 'ubuntu-latest'
-      run: |
-        sudo apt-get update &&
-        sudo apt-get install libvncserver-dev 
-    - name: Install libvncserver (Macos)
-      if: matrix.os == 'macos-latest'
-      run: brew install libvncserver
     - name: Install Rust nightly
       run : rustup update nightly
     - name: Build
@@ -37,20 +29,26 @@ jobs:
       run: cargo clippy -- -D warnings
     - name: Cargo Fmt Check
       run : cargo fmt --all -- --check
-  build-from-source:
+  build-from-package:
     strategy:
       matrix:
         os: [ubuntu-latest,macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
       - name: Install Rust nightly
         run : rustup update nightly
+      - name: Install libvncserver (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update &&
+          sudo apt-get install libvncserver-dev 
+      - name: Install libvncserver (Macos)
+        if: matrix.os == 'macos-latest'
+        run: brew install libvncserver
       - name: Build
-        run: cargo build -p libvnc --no-default-features --verbose
+        run: cargo build -p libvnc --features pkg --verbose
       - name: Test
         run: |
-          cargo test -p libvnc --no-default-features --verbose &
-          cargo test -p libvnc-sys --verbose
+          cargo test -p libvnc --features pkg --verbose &
+          cargo test -p libvnc-sys --features pkg --verbose
