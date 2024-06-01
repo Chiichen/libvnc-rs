@@ -59,16 +59,16 @@ fn bindgen_vncserver() {
                 "../cmake/Toolchain-cross-mingw32-linux.cmake",
             );
         }
-    } else {
-        if target_os == "windows" {
-            config.define(
-                "CMAKE_TOOLCHAIN_FILE",
-                "C:/vcpkg/scripts/buildsystems/vcpkg.cmake", //TODO BETTER toolchain path
-            );
-            config.define("WITH_OPENSSL", "OFF");
-            config.define("WITH_GNUTLS", "OFF");
-            config.define("WITH_GCRYPT", "OFF");
-        }
+    } else if target_os == "windows" {
+        config.define(
+            "CMAKE_TOOLCHAIN_FILE",
+            "C:/vcpkg/scripts/buildsystems/vcpkg.cmake", //TODO BETTER toolchain path
+        );
+        config.define("WITH_OPENSSL", "OFF");
+        config.define("WITH_GNUTLS", "OFF");
+        config.define("WITH_GCRYPT", "OFF");
+    } else if target_os == "android" {
+        panic!("unsupported build target {}", target_os)
     }
 
     //TODO In WSL, if QT is installed in Windows system, then the build process might fail on Qt example.
