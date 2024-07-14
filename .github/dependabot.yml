@@ -8,3 +8,7 @@ updates:
     directory: "/libvnc"
     schedule:
       interval: "weekly"
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "weekly"
