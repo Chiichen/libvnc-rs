@@ -17,8 +17,8 @@ exclude     = ["compile_commands.json"]
 bindgen    = "0.70.0"
 cc         = "1.0.95"
 pkg-config = "0.3.30"
-# cmake      = "0.1.50"
-# which      = "6.0.3"
+cmake      = { git = "https://github.com/Chiichen/cmake-rs.git", rev = "b0fdc01b3bedd3cec8dfbbff660bec9f496734ed" }
+which      = "6.0.3"
 
 [features]
 default = []
