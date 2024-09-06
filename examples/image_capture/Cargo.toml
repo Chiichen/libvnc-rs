@@ -1,13 +1,13 @@
 [package]
-name = "image_capture"
+name    = "image_capture"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 env_logger = "0.11.3"
-image = "0.25.1"
-libvnc = "0.1.1"
-log = "0.4.21"
+image      = "0.25.1"
+libvnc     = "*"
+log        = "0.4.21"
 
 
 [dev-dependencies]
