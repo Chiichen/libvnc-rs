@@ -1,7 +1,7 @@
 [workspace]
-members = ["examples/image_capture", "libvnc", "libvnc-sys"]
+members  = ["libvnc", "libvnc-sys"]
 resolver = "2"
 
 [patch.crates-io]
 libvnc-sys = { path = "./libvnc-sys" }
-libvnc = { path = "./libvnc" }
+libvnc     = { path = "./libvnc" }
