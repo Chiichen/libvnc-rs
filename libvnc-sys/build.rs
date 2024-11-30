@@ -60,11 +60,19 @@ fn bindgen_vncserver() {
             );
         }
     } else if target_os == "windows" {
-        config.generator("Ninja");
-        config.no_default_flags(true);
+        // Is it necessary?
+        // config.define(
+        //     "CMAKE_TOOLCHAIN_FILE",
+        //     which::which("vcpkg")
+        //         .expect("Install vcpkg and make sure it can be found in current environment")
+        //         .parent()
+        //         .unwrap()
+        //         .join("scripts/buildsystems/vcpkg.cmake"),
+        // );
         config.define("WITH_OPENSSL", "OFF");
         config.define("WITH_GNUTLS", "OFF");
         config.define("WITH_GCRYPT", "OFF");
+        config.cflag("-DWIN32");  //TODO I think it's a bug in libvncserver. It's expected to use _WIN32 macro to determine whether it's on Windows platform. However, it uses WIN32 instead.@see https://stackoverflow.com/questions/662084/whats-the-difference-between-the-win32-and-win32-defines-in-c
     } else if target_os == "android" {
         panic!("unsupported build target {}", target_os)
     }
@@ -83,7 +91,7 @@ fn bindgen_vncserver() {
         .clang_args([
             format!("-I{}/{}", dst.display(), "include"),
             #[cfg(target_os = "windows")]
-            r#"-DWIN32"#.to_string(), //TODO I think it's a bug in libvncserver. It's expected to use _WIN32 macro to determine whether it's on Windows platform. However, it uses WIN32 instead.@see https://stackoverflow.com/questions/662084/whats-the-difference-between-the-win32-and-win32-defines-in-c
+            r#"-DWIN32"#.to_string(), // As Above
         ])
         .generate()
         .expect("unable to generate rfb bindings");

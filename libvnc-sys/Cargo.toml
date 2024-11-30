@@ -18,7 +18,7 @@ bindgen    = "0.70.0"
 cc         = "1.0.95"
 pkg-config = "0.3.30"
 cmake      = "0.1.52"
-which      = "7.0.0"
+# which      = "7.0.0"
 
 [features]
 default = []
