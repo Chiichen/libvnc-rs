@@ -60,17 +60,8 @@ fn bindgen_vncserver() {
             );
         }
     } else if target_os == "windows" {
-        // Is it necessary?
-        // config.define(
-        //     "CMAKE_TOOLCHAIN_FILE",
-        //     which::which("vcpkg")
-        //         .expect("Install vcpkg and make sure it can be found in current environment")
-        //         .parent()
-        //         .unwrap()
-        //         .join("scripts/buildsystems/vcpkg.cmake"),
-        // );
-        config.no_default_c_flags(true);
-        config.no_default_cxx_flags(true);
+        config.generator("Ninja");
+        config.no_default_flags(true);
         config.define("WITH_OPENSSL", "OFF");
         config.define("WITH_GNUTLS", "OFF");
         config.define("WITH_GCRYPT", "OFF");
