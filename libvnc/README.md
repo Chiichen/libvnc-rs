@@ -2,16 +2,16 @@
 
 ## What's this
 
-[libvncserver](https://github.com/LibVNC/libvncserver) safe bindings for Rust. Although its name is libvncserver, it actually provides both server and client functions
+Higher level safe bindings of [libvncserver](https://github.com/LibVNC/libvncserver) for Rust. Although its name is libvncserver, it actually provides both server and client
 
 ## Quick Start
 
-`Build from source` is not implemented yet, so we need to install the pre-built libvncserver package.
+We build libvncserver from source as default. If you want to use prebuilt package, you can install it by following the instructions below and enable feature `pkg`.
 
-### Install libvncserver package
+### Install libvncserver package (Optional)
 
 - Ubuntu
-```bash 
+```bash
 sudo apt-get install libvncserver-dev
 ```
 
