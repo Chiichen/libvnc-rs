@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.5](https://github.com/Chiichen/libvnc-rs/compare/libvnc-v0.1.4...libvnc-v0.1.5) - 2024-11-30
+
+### Other
+
+- update README
+
 ## [0.1.4](https://github.com/Chiichen/libvnc-rs/compare/libvnc-v0.1.3...libvnc-v0.1.4) - 2024-11-30
 
 ### Other
