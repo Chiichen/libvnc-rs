@@ -72,7 +72,7 @@ fn bindgen_vncserver() {
         config.define("WITH_OPENSSL", "OFF");
         config.define("WITH_GNUTLS", "OFF");
         config.define("WITH_GCRYPT", "OFF");
-        config.cflag("-DWIN32");  //TODO I think it's a bug in libvncserver. It's expected to use _WIN32 macro to determine whether it's on Windows platform. However, it uses WIN32 instead.@see https://stackoverflow.com/questions/662084/whats-the-difference-between-the-win32-and-win32-defines-in-c
+        config.cflag("-DWIN32"); //TODO I think it's a bug in libvncserver. It's expected to use _WIN32 macro to determine whether it's on Windows platform. However, it uses WIN32 instead.@see https://stackoverflow.com/questions/662084/whats-the-difference-between-the-win32-and-win32-defines-in-c
     } else if target_os == "android" {
         panic!("unsupported build target {}", target_os)
     }
