@@ -1,5 +1,6 @@
 use std::env;
-use std::path::PathBuf;
+use std::fs::remove_file;
+use std::path::{Path, PathBuf};
 
 #[cfg(feature = "pkg")]
 fn bindgen_vncserver() {
@@ -101,6 +102,15 @@ fn bindgen_vncserver() {
         .write_to_file(out_path.join("rfb.rs"))
         .expect("couldn't write bindings!");
 }
+
+fn post_build() {
+    // Delete libvncserver/compile_commands.json to make the verification in cargo publish
+    let compile_commands_path = Path::new("libvncserver").join("compile_commands.json");
+    let ret = remove_file(compile_commands_path);
+    println!("remove libvncserver/compile_commands.json {ret:?}")
+}
+
 fn main() {
     bindgen_vncserver();
+    post_build();
 }
