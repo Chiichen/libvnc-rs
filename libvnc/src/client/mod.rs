@@ -41,7 +41,7 @@ impl RfbClient {
     ///
     /// This function should not be called expect `update` callback of ClientCallbackHandler
     pub unsafe fn framebuffer_ptr(&self) -> *const u8 {
-        return unsafe { self.0.as_ref() }.frameBuffer as *const u8;
+        unsafe { self.0.as_ref() }.frameBuffer as *const u8
     }
 }
 pub struct VncClient<T> {
